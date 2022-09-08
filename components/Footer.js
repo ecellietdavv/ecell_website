@@ -3,8 +3,8 @@ import React from "react";
 function Footer() {
 	return (
 		<>
-    <div className="bg-light py-8">
-			<div className="grid lg:grid-cols-4 md:grid-cols-4 sm:grid-cols-1 space-x-4 my-8">
+    <div className="bg-light dark:bg-dark py-8">
+			<div className="grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1 space-x-4 my-8">
 				<div className="flex flex-col mx-5 mb-8 lg:mx-10 md:mx-7 lg:w-1/2">
 					<h3 className="text-lg subpixel-antialiased font-semibold">Information</h3>
           <p className="mt-4">We Are On Mission To Provide A Better Platform For Upcoming Entrapeneaure From Initial Investment To Funding.</p> 
@@ -16,15 +16,15 @@ function Footer() {
         Khandwa Road Indore-452017 (M.P.)</p>
         <p className="mt-3">ph :<span className="font-semibold">+91 9617316561</span></p>
         </div>
-				<div className="flex flex-col mx-10 mb-8 ml-20 md:pl-8">
+				<div className="flex flex-col mx-10 mb-8 ml-20 md:pl-3 md:mt-2">
 					<h3 className="text-lg subpixel-antialiased font-semibold">Links</h3>
-          <ul className="mt-4">
-          <li className="hover:font-semibold w-fit hover:text-brand focus:text-brand"><a href="#">Home</a></li>
-          <li className="hover:font-semibold w-fit hover:text-brand focus:text-brand mt-4"><a href="#">About</a></li>
-          <li className="hover:font-semibold w-fit hover:text-brand focus:text-brand mt-4"><a href="#">Contact</a></li>
-          <li className="hover:font-semibold w-fit hover:text-brand focus:text-brand mt-4"><a href="#">Collab</a></li>
-          <li className="hover:font-semibold w-fit hover:text-brand focus:text-brand mt-4"><a href="#">Other</a></li>
-          </ul>
+					<ul className="mt-4">
+					<li className="hover:font-semibold w-fit hover:text-brand focus:text-brand dark:hover:text-light dark:focus:text-brand "><a href="#">Home</a></li>
+					<li className="hover:font-semibold w-fit hover:text-brand focus:text-brand dark:hover:text-light dark:focus:text-brand mt-4"><a href="#">About</a></li>
+					<li className="hover:font-semibold w-fit hover:text-brand focus:text-brand dark:hover:text-light dark:focus:text-brand mt-4"><a href="#">Contact</a></li>
+					<li className="hover:font-semibold w-fit hover:text-brand focus:text-brand dark:hover:text-light dark:focus:text-brand mt-4"><a href="#">Collab</a></li>
+					<li className="hover:font-semibold w-fit hover:text-brand focus:text-brand dark:hover:text-light dark:focus:text-brand mt-4"><a href="#">Other</a></li>
+					</ul>
 				</div>
 				<div className="flex flex-col mx-10">
 					<h3 className="text-lg subpixel-antialiased font-semibold">
@@ -34,7 +34,7 @@ function Footer() {
 						<input
 							type="text"
 							id="small-input"
-							class="block p-2 w-full mt-4 text-dark bg-white rounded-lg border border-gray-300 sm:text-xs focus:ring-mid focus:border-mid dark:bg-light0 dark:border-gray-600 dark:placeholder-dark dark:text-black dark:focus:ring-mid dark:focus:border-mid"
+							class="block p-2 w-full mt-4 text-dark bg-white rounded-lg border border-gray-300 sm:text-xs focus:ring-mid focus:border-mid dark:bg-light0 dark:border-gray-600 dark:placeholder-mid dark:text-light dark:focus:ring-mid dark:focus:border-mid"
 							placeholder="Your Name"
 							required
 						/>
@@ -42,20 +42,20 @@ function Footer() {
 							type="email"
 							name="email"
 							id="email"
-							class="block p-2 mt-2 w-full text-dark bg-white rounded-lg border border-gray-300 sm:text-xs focus:ring-mid focus:border-mid dark:bg-light0 dark:border-gray-600 dark:placeholder-dark dark:text-black dark:focus:ring-mid dark:focus:border-mid"
+							class="block p-2 mt-2 w-full text-dark bg-white rounded-lg border border-gray-300 sm:text-xs focus:ring-mid focus:border-mid dark:bg-light0 dark:border-gray-600 dark:placeholder-mid dark:text-light dark:focus:ring-mid dark:focus:border-mid"
 							placeholder="Email Address"
 							required
 						/>
             <textarea id="message" rows="4" class="block p-2.5 mt-2 w-full text-sm text-gray-900 bg-white rounded-lg border border-mid focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Leave a comment..."></textarea>
-            <button type="submit" class="text-light mt-3 w-full bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-1 focus:ring-blue-200 font-medium rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:bg-blue-200 dark:hover:bg-brand">
-              Submit
+            <button type="submit" class="text-light mt-3 w-full bg-blue-600 hover:bg-blue-800 focus:outline-none focus:ring-1 focus:ring-blue-200 font-medium rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:bg-blue-200 dark:hover:bg-brand">
+                Submit
             </button>
-          </form>
+        </form>
 				</div>
 			</div>
-			<hr class="my-6 border-gray-300 sm:mx-auto dark:border-dark lg:my-8" />
+			<hr class="my-6 border-gray-300 sm:mx-auto dark:border-light lg:my-8" />
 			<div class="lg:mx-24 mx-4 lg:my-8 sm:flex sm:justify-between justify-evenly">
-				<span class="text-base text-dark sm:text-center dark:bg-black text-center">
+				<span class="text-base text-dark sm:text-center dark:bg-light text-center">
 					© {new Date().getFullYear()}{" "}
 					<a href="#" class="hover:underline">
 						Ecell IET-Davv
@@ -65,7 +65,7 @@ function Footer() {
 				<div class="flex mt-4 space-x-6 sm:justify-center justify-evenly sm:mt-0">
 					<a
 						href="#"
-						class="text-gray-800 hover:text-black dark:hover:text-white"
+						class="text-gray-800 hover:text-black dark:hover:text-white dark:text-light"
 					>
 						<svg
 							class="w-6 h-6"
@@ -83,7 +83,7 @@ function Footer() {
 					</a>
 					<a
 						href="#"
-						class="text-gray-800 hover:text-black dark:hover:text-white"
+						class="text-gray-800 hover:text-black dark:hover:text-white dark:text-light"
 					>
 						<svg
 							class="w-6 h-6"
@@ -101,7 +101,7 @@ function Footer() {
 					</a>
 					<a
 						href="#"
-						class="text-gray-800 hover:text-black dark:hover:text-white"
+						class="text-gray-800 hover:text-black dark:hover:text-white dark:text-light"
 					>
 						<svg
 							class="w-6 h-6"
@@ -115,7 +115,7 @@ function Footer() {
 					</a>
 					<a
 						href="#"
-						class="text-gray-800 hover:text-black dark:hover:text-white"
+						class="text-gray-800 hover:text-black dark:hover:text-white dark:text-light"
 					>
 						<svg
 							class="w-6 h-6"
@@ -133,7 +133,7 @@ function Footer() {
 					</a>
 				</div>
 			</div>
-      </div>
+    	</div>
 		</>
 	);
 }
