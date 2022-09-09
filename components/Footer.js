@@ -1,6 +1,15 @@
 import React from "react";
 
 function Footer() {
+
+	const navLinks = [
+		{name: "Home", link: ""},
+		{name: "About", link: ""},
+		{name: "Contact", link: ""},
+		{name: "Collab", link: ""},
+		{name: "Others", link: ""},
+	]
+
 	return (
 		<footer className="bg-light dark:bg-dark py-8 dark:text-white">
 			<div className="max-w-7xl px-10 mx-auto">
@@ -26,11 +35,13 @@ function Footer() {
 					<div className="flex flex-col">
 						<h3 className="text-lg subpixel-antialiased font-semibold dark:text-white">Links</h3>
 						<ul className="mt-4 space-y-2">
-							<li className="hover:font-semibold w-fit hover:text-brand focus:text-brand dark:focus:text-brand "><a href="#">Home</a></li>
-							<li className="hover:font-semibold w-fit hover:text-brand focus:text-brand dark:focus:text-brand"><a href="#">About</a></li>
-							<li className="hover:font-semibold w-fit hover:text-brand focus:text-brand dark:focus:text-brand"><a href="#">Contact</a></li>
-							<li className="hover:font-semibold w-fit hover:text-brand focus:text-brand dark:focus:text-brand"><a href="#">Collab</a></li>
-							<li className="hover:font-semibold w-fit hover:text-brand focus:text-brand dark:focus:text-brand"><a href="#">Other</a></li>
+							{
+								navLinks?.map((value, idx) => {
+									return (
+										<li className="hover:font-semibold w-fit hover:text-brand focus:text-brand dark:focus:text-brand" key={idx}><a href={value.link}>{value.name}</a></li>
+									)
+								})
+							}
 						</ul>
 					</div>
 
@@ -56,7 +67,7 @@ function Footer() {
 								required
 							/>
 							<textarea id="message" rows="4" class="block p-2.5 mt-2 w-full text-sm text-gray-900 bg-white rounded-lg border border-mid focus:ring-blue-500 focus:border-blue-500 dark:bg-light dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Leave a comment..."></textarea>
-							<button type="submit" class="text-light mt-3 w-full bg-brand hover:bg-blue-800 focus:outline-none focus:ring-1 focus:ring-blue-200 font-medium rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2">
+							<button type="submit" class="text-light mt-3 w-full bg-blue-600 hover:bg-blue-800 focus:outline-none focus:ring-1 focus:ring-blue-200 font-medium rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2">
 								Submit
 							</button>
 						</form>
