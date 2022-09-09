@@ -6,10 +6,8 @@ import Tags from "./Tags";
 export default function Layout({ children }) {
     return (
         <>
-            <Navbar/>
-            <Tags/>
+            <Navbar />
             <main>{children}</main>
-            <TFCtemplate />
             <Footer />
         </>
     )
