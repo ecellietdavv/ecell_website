@@ -21,30 +21,33 @@ function Navbar() {
     <>
       <style>
         {`
-            
 
 
             `}
       </style>
-<div>
-      <nav className="flex  border-b-2 border-dark rounded bg-brand items-center align-middle w-auto">
+<div className="bg-light lg:h-52 dark:bg-dark">
+      <nav className="flex border-b-2 mx-5 border-dark rounded-lg bg-brand items-center align-middle w-auto h-20">
       <div className="mt-7 justify-start -ml-5 order-1">
         <Image src={logo} width={100} height={100} alt="Logo" layout="fixed" />
         </div>
-        <div className="hidden md:flex justify-center lg:ml-80 order-2 ">
-          <div className="mx-1 text-lg hover:underline "><button className="wave-effect btn-flat dark:text-light hover:underline hover:bg-blue-500"><i className="lni lni-home"></i> Home</button> </div>
-          <div className="mx-1 text-lg hover:underline "><button className="wave-effect dark:text-light hover:underline hover:bg-blue-500 btn-flat"><i className="lni lni-agenda"></i> About</button> </div>
-          <div className="mx-1 text-lg hover:underline "><button className="hover:underline hover:bg-blue-500 dark:text-light wave-effect btn-flat"><i className="las la-user-friends"></i>Team</button> </div>
-          <div className="mx-1 text-lg hover:underline "><button className="hover:underline dark:text-light hover:bg-blue-500 wave-effect btn-flat"><i className="lar la-calendar"></i> Events</button></div>
+        <div className="hidden md:flex justify-center lg:ml-96 order-2 ">
+          <div className="mx-1 text-lg hover:underline "><button className="wave-effect btn-flat dark:text-light hover:underline hover:bg-blue-500"> <i className="material-icons tiny">home</i>Home</button> </div>
+          <div className="mx-1 text-lg hover:underline "><button className="wave-effect dark:text-light hover:underline hover:bg-blue-500 btn-flat"> <i className="material-icons tiny">format_align_justify</i>About</button> </div>
+          <div className="mx-1 text-lg hover:underline "><button className="hover:underline hover:bg-blue-500 dark:text-light wave-effect btn-flat"> <i className="tiny material-icons">group</i>Team</button> </div>
+          <div className="mx-1 text-lg hover:underline "><button className="hover:underline dark:text-light hover:bg-blue-500 wave-effect btn-flat"> <i className="tiny material-icons">event</i> Events</button></div>
         </div>
-          <div className="mx-1 order-3 hidden lg:block mb-1"><button className="wave-effect hover:underline ml-36 md:ml-0 hover:bg-blue-500 btn-flat dark:text-light"><i className="las la-phone-volume"></i>Contact</button> </div>
+          <div className="mx-1 order-3 hidden lg:block mb-1"><button className="wave-effect hover:underline ml-36 md:ml-0 hover:bg-blue-500 btn-flat dark:text-light"> <i className="tiny material-icons">phone</i>Contact</button> </div>
           <div className="order-5 align-middle place-self-end ml-60 md:ml-96"><button
               type="button"
               onClick={handleDarkMode}
-              className="waves-effect waves-dark btn-flat dark:text-light"
+              className=" dark:text-light"
             >
-              Mode
-            </button></div>
+            <button type="button" className="text-white border border-blue-500 hover:bg-blue-700 hover:text-white focus:ring-4 focus:outline-none  font-medium rounded-lg h-10 text-sm p-2.5 text-center inline-flex items-center  dark:text-blue-500 dark:hover:text-white ">
+  
+              <i className="large material-icons ">lightbulb_outline</i>
+</button>
+</button>
+    </div>
       </nav>
       </div>
       {/* <nav className="bg-brand border-b-2 border-dark px-2 sm:px-4 py-2.5 rounded dark:bg-gray-900">
