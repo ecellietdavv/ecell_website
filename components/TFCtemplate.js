@@ -1,64 +1,64 @@
 import React from 'react'
 
 const TFCtemplate = () => {
-  return (
-    <>
-        <h2 className='lg:text-4xl text-3xl antialiased text-center my-8 mb-10 font-bold dark:text-light'>Welcome To E-Cell IET DAVV</h2>
-        <div className="border-t-4 -mt-8 lg:w-1/5 md:w-1/5 w-2/4 mx-auto my-8 mb-10 border-brand border-opacity-20"></div>
-        <div className="grid lg:grid-cols-3 grid-cols-1 mb-8">
-            <div className='mx-4 shadow-lg mb-12'>
-                <div className="flex flex-col mx-auto w-48 h-48">
-                <svg x="0px" y="0px"
-	                viewBox="0 0 100 100">
-<path className="opacity-[.45] fill-brand" d="M49.9,100c27.3,0,49.5-22.4,49.5-50S77.2,0,49.9,0S0.4,22.4,0.4,50S22.6,100,49.9,100z"/>
-<path className="fill-brand" d="M50,22.5c-10.9,0-19.8,8.9-19.8,19.8c0,7,3.9,11.6,7.1,15.3c2.1,2.5,3.9,4.6,3.9,6.7v11h6.6v2.2h4.4v-2.2h6.6
-	v-11c0-2.1,1.8-4.2,3.9-6.7c3.1-3.7,7.1-8.3,7.1-15.3C69.8,31.4,60.9,22.5,50,22.5z M54.4,70.9h-8.8v-4.4h8.8V70.9z M59.4,54.8
-	c-2,2.4-4,4.7-4.7,7.3h-9.4c-0.7-2.7-2.7-5-4.7-7.3c-3-3.5-6-7.1-6-12.5c0-8.5,6.9-15.4,15.4-15.4s15.4,6.9,15.4,15.4
-	C65.4,47.7,62.3,51.3,59.4,54.8z M50,29.1v4.4c-4.9,0-8.8,3.9-8.8,8.8h-4.4C36.8,35,42.7,29.1,50,29.1z"/>
-</svg>
-            </div>
-                <h3 className='text-center font-semibold text-2xl dark:text-light my-3 mx-auto'>Think</h3>
-                <p className='capitalize text-sm lg:max-w-[16rem] md:max-w-md max-w-[15.5rem] 2xl:max-w-xl text-center mb-8 dark:text-light my-2 mx-auto sm:max-w-md'>
-                    A true <span className='font-semibold'>entrepreneur</span> can think of the ways to keep up with any 
-                    kind of problem at any point of time. The <span className='font-semibold'>power of thinking </span> 
-                     enables us to give our best at any possible situation. Through 
-                    various on the spot competitions and face offs we encourage our 
-                    <span className='font-semibold'> student's minds</span> to inculcate thinking and grow each passing day.
-                </p>
-            </div>
-            <div className="mx-4 shadow-lg mb-12">
-                <div className='flex flex-col mx-auto items-center w-48 h-48'>
-                <svg x="0px" y="0px"
-	 viewBox="0 0 100 100">
-<path class="opacity-[.45] fill-brand" d="M50,100c27.6,0,50-22.4,50-50S77.6,0,50,0S0,22.4,0,50S22.4,100,50,100z"/>
-<g>
-	<g>
-		<circle class="fill-brand" cx="51.5" cy="31.6" r="6.6"/>
-		<polygon class="fill-brand" points="68.4,37.5 67.6,34.2 57,39.1 53.9,39.1 51.4,42.1 49,39.1 44.2,40 44.2,40.1 34,33.6 31.6,37.3 
-			44.9,45.8 45.5,52 45.7,54.4 46,54.4 46,55.9 46,57 43.2,62.2 37.8,59.3 35.6,63.3 35.6,63.3 35,64.4 36.5,65.2 37,64.1 
-			44.8,68.2 46.9,64.1 46.9,64.1 50.7,57 52.4,57 54.3,64.9 49.7,71.8 49.7,71.8 49.7,71.8 54.5,75 55.6,73.3 54.6,72.6 59.2,65.7 
-			59.2,65.7 57.1,57 57.1,55.9 57.1,54.4 57.5,54.4 58.3,43.6 		"/>
-	</g>
-</g>
-</svg>
-            </div>
-                <h3 className='text-center font-semibold text-2xl my-3 mx-auto dark:text-light'>Feel</h3>
-                <p className='capitalize text-sm lg:max-w-[16.7rem] max-w-[15rem] sm:max-w-md 2xl:max-w-xl text-center dark:text-light my-2 mx-auto mb-6'>
-                    Its often said that rational thinking can win you the world. But 
-                    in the startup arena a sight of connection and belonging is what 
-                    keeps the work going and flourishing on an another level.<span className='font-semibold'> Ecell IET 
-                    DAVV</span> provides various platforms to the students where they can find 
-                    their neeche and feel a sense of being and belonging to the <span className='font-semibold'>startup 
-                    world</span> and can <span className='font-semibold'>connect</span> to it.
-                </p>
-            </div>
-            <div className="mx-4 shadow-lg mb-12">
-                <div className="flex flex-col items-center w-48 h-48 mx-auto">
-                <svg x="0px" y="0px" width="20rem" height="20rem" viewBox="0 0 100 100">
-                    <path class="opacity-[.45] fill-brand" d="M50.4,100c27.6,0,50-22.4,50-50S78,0,50.4,0s-50,22.4-50,50S22.8,100,50.4,100z"/>
-                    <svg>
-                        <svg>
-                            <path class="fill-brand" d="M76.5,60.7c0-3-0.9-6-2.6-8.5c-1.2-1.8-2.8-3.3-4.7-4.4c2.2-2.1,3.5-5,3.5-8.2c0-6.3-5.1-11.3-11.3-11.3
+    return (
+        <section className='dark:bg-dark'>
+            <h2 className='lg:text-4xl text-3xl antialiased text-center my-8 mb-10 font-bold dark:text-light'>Welcome To E-Cell IET DAVV</h2>
+            <div className="border-t-4 -mt-8 lg:w-1/5 md:w-1/5 w-2/4 mx-auto my-8 mb-10 border-brand border-opacity-20"></div>
+            <div className="grid lg:grid-cols-3 grid-cols-1 mb-8">
+                <div className='mx-4 shadow-lg mb-12'>
+                    <div className="flex flex-col mx-auto w-48 h-48">
+                        <svg x="0px" y="0px"
+                            viewBox="0 0 100 100">
+                            <path className="opacity-[.45] fill-brand" d="M49.9,100c27.3,0,49.5-22.4,49.5-50S77.2,0,49.9,0S0.4,22.4,0.4,50S22.6,100,49.9,100z" />
+                            <path className="fill-brand" d="M50,22.5c-10.9,0-19.8,8.9-19.8,19.8c0,7,3.9,11.6,7.1,15.3c2.1,2.5,3.9,4.6,3.9,6.7v11h6.6v2.2h4.4v-2.2h6.6
+                            v-11c0-2.1,1.8-4.2,3.9-6.7c3.1-3.7,7.1-8.3,7.1-15.3C69.8,31.4,60.9,22.5,50,22.5z M54.4,70.9h-8.8v-4.4h8.8V70.9z M59.4,54.8
+                            c-2,2.4-4,4.7-4.7,7.3h-9.4c-0.7-2.7-2.7-5-4.7-7.3c-3-3.5-6-7.1-6-12.5c0-8.5,6.9-15.4,15.4-15.4s15.4,6.9,15.4,15.4
+                            C65.4,47.7,62.3,51.3,59.4,54.8z M50,29.1v4.4c-4.9,0-8.8,3.9-8.8,8.8h-4.4C36.8,35,42.7,29.1,50,29.1z"/>
+                        </svg>
+                    </div>
+                    <h3 className='text-center font-semibold text-2xl dark:text-light my-3 mx-auto'>Think</h3>
+                    <p className='capitalize text-sm lg:max-w-[16rem] md:max-w-md max-w-[15.5rem] 2xl:max-w-xl text-center mb-8 dark:text-light my-2 mx-auto sm:max-w-md'>
+                        A true <span className='font-semibold'>entrepreneur</span> can think of the ways to keep up with any
+                        kind of problem at any point of time. The <span className='font-semibold'>power of thinking </span>
+                        enables us to give our best at any possible situation. Through
+                        various on the spot competitions and face offs we encourage our
+                        <span className='font-semibold'> student's minds</span> to inculcate thinking and grow each passing day.
+                    </p>
+                </div>
+                <div className="mx-4 shadow-lg mb-12">
+                    <div className='flex flex-col mx-auto items-center w-48 h-48'>
+                        <svg x="0px" y="0px"
+                            viewBox="0 0 100 100">
+                            <path class="opacity-[.45] fill-brand" d="M50,100c27.6,0,50-22.4,50-50S77.6,0,50,0S0,22.4,0,50S22.4,100,50,100z" />
+                            <g>
+                                <g>
+                                    <circle class="fill-brand" cx="51.5" cy="31.6" r="6.6" />
+                                    <polygon class="fill-brand" points="68.4,37.5 67.6,34.2 57,39.1 53.9,39.1 51.4,42.1 49,39.1 44.2,40 44.2,40.1 34,33.6 31.6,37.3 
+                                    44.9,45.8 45.5,52 45.7,54.4 46,54.4 46,55.9 46,57 43.2,62.2 37.8,59.3 35.6,63.3 35.6,63.3 35,64.4 36.5,65.2 37,64.1 
+                                    44.8,68.2 46.9,64.1 46.9,64.1 50.7,57 52.4,57 54.3,64.9 49.7,71.8 49.7,71.8 49.7,71.8 54.5,75 55.6,73.3 54.6,72.6 59.2,65.7 
+                                    59.2,65.7 57.1,57 57.1,55.9 57.1,54.4 57.5,54.4 58.3,43.6 		"/>
+                                </g>
+                            </g>
+                        </svg>
+                    </div>
+                    <h3 className='text-center font-semibold text-2xl my-3 mx-auto dark:text-light'>Feel</h3>
+                    <p className='capitalize text-sm lg:max-w-[16.7rem] max-w-[15rem] sm:max-w-md 2xl:max-w-xl text-center dark:text-light my-2 mx-auto mb-6'>
+                        Its often said that rational thinking can win you the world. But
+                        in the startup arena a sight of connection and belonging is what
+                        keeps the work going and flourishing on an another level.<span className='font-semibold'> Ecell IET
+                            DAVV</span> provides various platforms to the students where they can find
+                        their neeche and feel a sense of being and belonging to the <span className='font-semibold'>startup
+                            world</span> and can <span className='font-semibold'>connect</span> to it.
+                    </p>
+                </div>
+                <div className="mx-4 shadow-lg mb-12">
+                    <div className="flex flex-col items-center w-48 h-48 mx-auto">
+                        <svg x="0px" y="0px" width="20rem" height="20rem" viewBox="0 0 100 100">
+                            <path class="opacity-[.45] fill-brand" d="M50.4,100c27.6,0,50-22.4,50-50S78,0,50.4,0s-50,22.4-50,50S22.8,100,50.4,100z" />
+                            <svg>
+                                <svg>
+                                    <path class="fill-brand" d="M76.5,60.7c0-3-0.9-6-2.6-8.5c-1.2-1.8-2.8-3.3-4.7-4.4c2.2-2.1,3.5-5,3.5-8.2c0-6.3-5.1-11.3-11.3-11.3
                                 c-3.7,0-7.2,1.8-9.3,4.8C51.6,33,51.1,33,50.5,33c-0.6,0-1.1,0-1.6,0.1c-2.1-3-5.6-4.8-9.3-4.8c-6.3,0-11.3,5.1-11.3,11.3
                                 c0,3.2,1.4,6.2,3.5,8.2c-1.9,1.1-3.5,2.6-4.7,4.4c-1.7,2.5-2.6,5.5-2.6,8.5V67h10.9v4.7h30.2V67h10.9L76.5,60.7L76.5,60.7
                                 L76.5,60.7z M61.4,31c4.7,0,8.5,3.8,8.5,8.5s-3.8,8.5-8.5,8.5c-0.1,0-0.2,0-0.3,0c0,0,0,0,0-0.1c0.1-0.4,0.3-0.8,0.4-1.3
@@ -135,22 +135,22 @@ const TFCtemplate = () => {
                                 c0,0,0.1-0.1,0.1-0.1c0.1-0.1,0.2-0.2,0.3-0.3c0,0,0.1-0.1,0.1-0.1c0.1-0.1,0.2-0.2,0.3-0.3c0,0,0.1-0.1,0.1-0.1
                                 c0.1-0.1,0.2-0.2,0.3-0.3c0,0,0.1-0.1,0.1-0.1c0.1-0.1,0.2-0.2,0.3-0.4c0.5,0.1,1.1,0.1,1.6,0.1c1.9,0,3.7-0.5,5.3-1.3
                                 c4.3,2,7.1,6.3,7.1,11.1v3.5H65.6z"/>
+                                </svg>
+                            </svg>
                         </svg>
-                    </svg>
-                    </svg>
+                    </div>
+                    <h3 className='text-center font-semibold text-2xl my-3 mx-auto dark:text-light'>Collaborate</h3>
+                    <p className='capitalize text-sm max-w-[14.3rem] sm:max-w-md lg:max-w-[15.5rem] 2xl:max-w-xl text-center my-2 mx-auto mb-9 dark:text-light'>
+                        A <span className='font-semibold'>great team </span>is what makes a <span className='font-semibold'>great dream </span>. Managing to work with varied
+                        opinions and wisely incooperate the best ones as a group is what makes
+                        a team grow . A will to  associate and co-operate is what <span className='font-semibold'> E-Cell IET DAVV
+                            aims </span> to ingrain in its students through several group projects and events,
+                        workshops and many more.
+                    </p>
                 </div>
-                <h3 className='text-center font-semibold text-2xl my-3 mx-auto dark:text-light'>Collaborate</h3>
-                <p className='capitalize text-sm max-w-[14.3rem] sm:max-w-md lg:max-w-[15.5rem] 2xl:max-w-xl text-center my-2 mx-auto mb-9 dark:text-light'>
-                    A <span className='font-semibold'>great team </span>is what makes a <span className='font-semibold'>great dream </span>. Managing to work with varied 
-                    opinions and wisely incooperate the best ones as a group is what makes 
-                    a team grow . A will to  associate and co-operate is what <span className='font-semibold'> E-Cell IET DAVV 
-                    aims </span> to ingrain in its students through several group projects and events, 
-                    workshops and many more.
-                </p>
             </div>
-        </div>
-    </>
-  )
+        </section>
+    )
 }
 
 export default TFCtemplate
