@@ -1,4 +1,5 @@
 import Footer from "./Footer";
+import TFCtemplate from "./TFCtemplate";
 import Navbar from "./Navbar";
 
 export default function Layout({ children }) {
@@ -6,6 +7,7 @@ export default function Layout({ children }) {
         <>
             <Navbar />
             <main>{children}</main>
+            <TFCtemplate />
             <Footer />
         </>
     )
