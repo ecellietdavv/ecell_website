@@ -7,7 +7,7 @@ import Navbar from "../components/Navbar";
 function MyApp({ Component, pageProps }) {
   return (
     <Layout>
-      <Navbar/>
+      {/* <Navbar/> */}
       <Component {...pageProps} />
       <Head>
         <link

@@ -37,8 +37,8 @@ function Navbar() {
           <div className="mx-1 text-lg hover:underline "><button className="hover:underline hover:bg-blue-500 dark:text-light wave-effect btn-flat"><i className="las la-user-friends"></i>Team</button> </div>
           <div className="mx-1 text-lg hover:underline "><button className="hover:underline dark:text-light hover:bg-blue-500 wave-effect btn-flat"><i className="lar la-calendar"></i> Events</button></div>
         </div>
-          <div className="mx-1 order-3 mb-1"><button className="wave-effect hover:underline ml-36 md:ml-0 hover:bg-blue-500 btn-flat dark:text-light"><i class="las la-phone-volume"></i> Contact</button> </div>
-          <div className="order-5 align-middle place-self-end md:ml-96"><button
+          <div className="mx-1 order-3 hidden lg:block mb-1"><button className="wave-effect hover:underline ml-36 md:ml-0 hover:bg-blue-500 btn-flat dark:text-light"><i className="las la-phone-volume"></i>Contact</button> </div>
+          <div className="order-5 align-middle place-self-end ml-60 md:ml-96"><button
               type="button"
               onClick={handleDarkMode}
               className="waves-effect waves-dark btn-flat dark:text-light"
