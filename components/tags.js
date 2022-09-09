@@ -1,9 +1,9 @@
 import React from 'react'
 
-const tags = () => {
+const Tags = () => {
   return (
-    <div></div>
+    <div className='flex flex-wrap'></div>
   )
 }
 
-export default tags
+export default Tags
