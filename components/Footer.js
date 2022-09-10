@@ -54,7 +54,7 @@ function Footer() {
 							<input
 								type="text"
 								id="small-input"
-								class="block p-2 w-full mt-4 text-dark bg-white rounded-lg border border-gray-300 sm:text-xs focus:ring-mid focus:border-mid dark:bg-light0 dark:border-gray-600 dark:placeholder-mid dark:text-light dark:focus:ring-mid dark:focus:border-mid"
+								className="block p-2 w-full mt-4 text-dark bg-white rounded-lg border border-gray-300 sm:text-xs focus:ring-mid focus:border-mid dark:bg-light0 dark:border-gray-600 dark:placeholder-mid dark:text-light dark:focus:ring-mid dark:focus:border-mid"
 								placeholder="Your Name"
 								required
 							/>
@@ -62,35 +62,35 @@ function Footer() {
 								type="email"
 								name="email"
 								id="email"
-								class="block p-2 mt-2 w-full text-dark bg-white rounded-lg border border-gray-300 sm:text-xs focus:ring-mid focus:border-mid dark:bg-light0 dark:border-gray-600 dark:placeholder-mid dark:text-light dark:focus:ring-mid dark:focus:border-mid"
+								className="block p-2 mt-2 w-full text-dark bg-white rounded-lg border border-gray-300 sm:text-xs focus:ring-mid focus:border-mid dark:bg-light0 dark:border-gray-600 dark:placeholder-mid dark:text-light dark:focus:ring-mid dark:focus:border-mid"
 								placeholder="Email Address"
 								required
 							/>
-							<textarea id="message" rows="4" class="block p-2.5 mt-2 w-full text-sm text-gray-900 bg-white rounded-lg border border-mid focus:ring-blue-500 focus:border-blue-500 dark:bg-light dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Leave a comment..."></textarea>
-							<button type="submit" class="text-light mt-3 w-full bg-blue-600 hover:bg-blue-800 focus:outline-none focus:ring-1 focus:ring-blue-200 font-medium rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2">
+							<textarea id="message" rows="4" className="block p-2.5 mt-2 w-full text-sm text-gray-900 bg-white rounded-lg border border-mid focus:ring-blue-500 focus:border-blue-500 dark:bg-light dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Leave a comment..."></textarea>
+							<button type="submit" className="text-light mt-3 w-full bg-blue-600 hover:bg-blue-800 focus:outline-none focus:ring-1 focus:ring-blue-200 font-medium rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2">
 								Submit
 							</button>
 						</form>
 					</div>
 				</div>
 
-				<hr class="my-6 border-gray-300 sm:mx-auto dark:border-light lg:my-8" />
-				<div class="lg:w-11/12 mx-auto lg:my-8 sm:flex sm:justify-between justify-evenly">
-					<span class="text-base text-dark sm:text-center dark:text-light text-center">
+				<hr className="my-6 border-gray-300 sm:mx-auto dark:border-light lg:my-8" />
+				<div className="lg:w-11/12 mx-auto lg:my-8 sm:flex sm:justify-between justify-evenly">
+					<span className="text-base text-dark sm:text-center dark:text-light text-center">
 						© {new Date().getFullYear()}{" "}
-						<a href="#" class="hover:underline">
+						<a href="#" className="hover:underline">
 							Ecell IET-Davv
 						</a>
 						. All Rights Reserved.
 					</span>
 
-					<div class="flex mt-4 space-x-6 sm:justify-center justify-evenly sm:mt-0">
+					<div className="flex mt-4 space-x-6 sm:justify-center justify-evenly sm:mt-0">
 						<a
 							href="#"
-							class="text-gray-800 hover:text-black dark:text-white dark:hover:text-white"
+							className="text-gray-800 hover:text-black dark:text-white dark:hover:text-white"
 						>
 							<svg
-								class="w-6 h-6"
+								className="w-6 h-6"
 								fill="currentColor"
 								viewBox="0 0 24 24"
 								aria-hidden="true"
@@ -101,14 +101,14 @@ function Footer() {
 									clip-rule="evenodd"
 								/>
 							</svg>
-							<span class="sr-only">Facebook page</span>
+							<span className="sr-only">Facebook page</span>
 						</a>
 						<a
 							href="#"
-							class="text-gray-800 hover:text-black dark:text-white dark:hover:text-white"
+							className="text-gray-800 hover:text-black dark:text-white dark:hover:text-white"
 						>
 							<svg
-								class="w-6 h-6"
+								className="w-6 h-6"
 								fill="currentColor"
 								viewBox="0 0 24 24"
 								aria-hidden="true"
@@ -119,28 +119,28 @@ function Footer() {
 									clip-rule="evenodd"
 								/>
 							</svg>
-							<span class="sr-only">Instagram page</span>
+							<span className="sr-only">Instagram page</span>
 						</a>
 						<a
 							href="#"
-							class="text-gray-800 hover:text-black dark:text-white dark:hover:text-white"
+							className="text-gray-800 hover:text-black dark:text-white dark:hover:text-white"
 						>
 							<svg
-								class="w-6 h-6"
+								className="w-6 h-6"
 								fill="currentColor"
 								viewBox="0 0 24 24"
 								aria-hidden="true"
 							>
 								<path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" />
 							</svg>
-							<span class="sr-only">Twitter page</span>
+							<span className="sr-only">Twitter page</span>
 						</a>
 						<a
 							href="#"
-							class="text-gray-800 hover:text-black dark:text-white dark:hover:text-white"
+							className="text-gray-800 hover:text-black dark:text-white dark:hover:text-white"
 						>
 							<svg
-								class="w-6 h-6"
+								className="w-6 h-6"
 								fill="currentColor"
 								viewBox="0 0 24 24"
 								aria-hidden="true"
@@ -151,7 +151,7 @@ function Footer() {
 									clip-rule="evenodd"
 								/>
 							</svg>
-							<span class="sr-only">GitHub account</span>
+							<span className="sr-only">GitHub account</span>
 						</a>
 					</div>
 				</div>
