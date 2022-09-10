@@ -5,7 +5,7 @@ module.exports = {
     "./pages/**/*.{js,ts,jsx,tsx}",
     "./components/**/*.{js,ts,jsx,tsx}",
   ],
-  darkMode: 'class',
+  darkMode: "class",
   theme: {
     extend: {
       colors: {
@@ -19,9 +19,8 @@ module.exports = {
         darker:"#14143d",
         dark: "#27272A",
         mid: "#52525B",
-        light: "#F5F5F5"
+        light: "#F5F5F5",
       },
     },
   },
-  plugins: [],
-}
+};

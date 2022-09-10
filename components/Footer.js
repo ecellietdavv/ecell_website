@@ -11,8 +11,8 @@ function Footer() {
 	]
 
 	return (
-		<footer className="bg-light dark:bg-dark dark:text-white">
-			<div className="max-w-7xl px-10 pb-1 mt-20 mx-auto">
+		<footer className="bg-light dark:bg-dark dark:text-white pt-[0.2rem]">
+			<div className="max-w-7xl px-10 pb-1 mx-auto">
 				<div className="grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1 space-y-8 sm:space-y-0 sm:gap-8 sm:space-x-4 my-8">
 
 					{/* Information  */}
@@ -34,7 +34,7 @@ function Footer() {
 					{/* Links  */}
 					<div className="flex flex-col">
 						<h3 className="text-lg subpixel-antialiased font-semibold dark:text-white">Links</h3>
-						<ul className="mt-3 space-y-6 text-dark">
+						<ul className="mt-4 space-y-6 text-dark">
 							{
 								navLinks?.map((value, idx) => {
 									return (
@@ -50,22 +50,23 @@ function Footer() {
 					<h3 className="text-lg subpixel-antialiased font-semibold">
 						Contact Us
 					</h3>
-					<form action="#" className="mr-3">
+					<form action="#" className="mr-3 mt-4">
 					<input
 							type="text"
 							id="small-input"
-							className="block text-base placeholder:text-base p-2 w-full text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"							placeholder="Your Name"
+							class="block h-10 text-base placeholder:text-base p-2 mt-2 w-full text-dark bg-white rounded-lg border border-mid sm:text-xs focus:ring-mid focus:border-mid dark:bg-light dark:border-gray-600 dark:placeholder-mid dark:text-light dark:focus:ring-mid dark:focus:border-mid"
+							placeholder="Your Name"
 							required
 						/>
 						<input
 							type="email"
 							name="email"
 							id="email"
-							class="block text-base placeholder:text-base p-2 mt-2 w-full text-dark bg-white rounded-lg border border-gray-300 sm:text-xs focus:ring-mid focus:border-mid dark:bg-light dark:border-gray-600 dark:placeholder-mid dark:text-light dark:focus:ring-mid dark:focus:border-mid"
+							class="block h-10 text-base placeholder:text-base p-2 mt-2 w-full text-dark bg-white rounded-lg border border-mid sm:text-xs focus:ring-mid focus:border-mid dark:bg-light dark:border-gray-600 dark:placeholder-mid dark:text-light dark:focus:ring-mid dark:focus:border-mid"
 							placeholder="Email Address"
 							required
 						/>
-            <textarea id="message" rows="4" class="block p-2 mt-2 w-full h-20 text-sm text-gray-900 bg-white rounded-lg border border-mid focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Leave a comment..."></textarea>
+            <textarea id="message" rows="5" class="block p-2 mt-2 w-full h-20 text-sm text-gray-900 bg-white rounded-lg border border-mid focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Leave a comment..."></textarea>
             <button type="submit" class="text-light mt-3 w-full bg-brand-500 dark:bg-brand-400 dark:hover:bg-brand-600 hover:bg-brand-600 focus:outline-none focus:ring-1 focus:ring-blue-200 font-medium rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:hover:bg-brand">
                 Submit
             </button>
