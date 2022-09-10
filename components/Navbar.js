@@ -4,12 +4,12 @@ import Image from "next/image";
 import logo from "../assets/images/images-event/Ecell Logo (B).png";
 import WbSunnyIcon from "@mui/icons-material/WbSunny";
 import DarkModeIcon from "@mui/icons-material/DarkMode";
-import Drawer from "./Drawer";
-// import '../styles/navbar.css'
+import MenuIcon from '@mui/icons-material/Menu';
+
 function Navbar() {
   const [dark, setDark] = useState("false");
   const handleDarkMode = () => {
-    localStorage.theme = localStorage.theme === "dark" ? "divght" : "dark";
+    localStorage.theme = localStorage.theme === "dark" ? "light" : "dark";
     if (
       localStorage.theme === "dark" ||
       (!("theme" in localStorage) &&
@@ -31,9 +31,9 @@ function Navbar() {
   ];
 
   return (
-    <nav className="bg-dark flex justify-between px-4 fixed top-0">
+    <nav className="bg-light dark:bg-dark w-full py-4 flex dark:text-white text-dark justify-between px-4 fixed top-0">
       <p>Ecell</p>
-      <ul className="space-x-4 md:flex hidden text-white px-4">
+      <ul className="space-x-4 md:flex hidden px-4">
         {navItems.map((value, idx) => {
           return <li key={idx}>{value.name}</li>;
         })}
@@ -44,20 +44,12 @@ function Navbar() {
         ) : (
           <WbSunnyIcon className="cursor-pointer" onClick={handleDarkMode} />
         )}
-        <button className="md:block hidden">Contact Us</button>
-        <button
+        <button className="md:block hidden bg-brand py-2 px-4 rounded-full text-white">Contact Us</button>
+        <MenuIcon
           className="block md:hidden"
-          data-drawer-target="drawer-navigation"
-          data-drawer-show="drawer-navigation"
-          aria-controls="drawer-navigation"
-        >
-          Ham
-        </button>
+          data-drawer-target="drawer-navigation" data-drawer-show="drawer-navigation" aria-controls="drawer-navigation"
+        />
       </div>
-
-      {/* <div className="md:hidden block"> */}
-      <Drawer />
-      {/* </div> */}
     </nav>
   );
 }
