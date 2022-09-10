@@ -11,7 +11,7 @@ function Footer() {
 	]
 
 	return (
-		<footer className="bg-light dark:bg-dark dark:text-white pt-[0.2rem]">
+		<footer className="bg-light dark:bg-dark dark:text-white pt-[1rem]">
 			<div className="max-w-7xl px-10 pb-1 mx-auto">
 				<div className="grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1 space-y-8 sm:space-y-0 sm:gap-8 sm:space-x-4 my-8">
 
@@ -54,7 +54,7 @@ function Footer() {
 					<input
 							type="text"
 							id="small-input"
-							class="block h-10 text-base placeholder:text-base p-2 mt-2 w-full text-dark bg-white rounded-lg border border-mid sm:text-xs focus:ring-mid focus:border-mid dark:bg-light dark:border-gray-600 dark:placeholder-mid dark:text-light dark:focus:ring-mid dark:focus:border-mid"
+							class="block h-10 text-base placeholder:text-base p-2 mt-2 w-full text-dark bg-white rounded-lg border border-mid sm:text-xs focus:ring-mid focus:border-mid dark:bg-gray-700 dark:border-gray-600 dark:placeholder-light dark:text-light dark:focus:ring-mid dark:focus:border-brand-600"
 							placeholder="Your Name"
 							required
 						/>
@@ -62,12 +62,12 @@ function Footer() {
 							type="email"
 							name="email"
 							id="email"
-							class="block h-10 text-base placeholder:text-base p-2 mt-2 w-full text-dark bg-white rounded-lg border border-mid sm:text-xs focus:ring-mid focus:border-mid dark:bg-light dark:border-gray-600 dark:placeholder-mid dark:text-light dark:focus:ring-mid dark:focus:border-mid"
+							class="block h-10 text-base placeholder:text-base p-2 mt-2 w-full text-dark bg-white rounded-lg border border-mid sm:text-xs focus:ring-mid focus:border-mid dark:bg-gray-700 dark:border-gray-600 dark:placeholder-light dark:text-light dark:focus:ring-mid dark:focus:border-brand-600"
 							placeholder="Email Address"
 							required
 						/>
             <textarea id="message" rows="5" class="block p-2 mt-2 w-full h-20 text-sm text-gray-900 bg-white rounded-lg border border-mid focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Leave a comment..."></textarea>
-            <button type="submit" class="text-light mt-3 w-full bg-brand-500 dark:bg-brand-400 dark:hover:bg-brand-600 hover:bg-brand-600 focus:outline-none focus:ring-1 focus:ring-blue-200 font-medium rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:hover:bg-brand">
+            <button type="submit" class="text-light mt-3 w-full bg-brand-500 dark:bg-brand-500 dark:hover:bg-brand-600 hover:bg-brand-600 focus:outline-none focus:ring-1 focus:ring-blue-200 font-medium rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:hover:bg-brand">
                 Submit
             </button>
         </form>
