@@ -143,7 +143,7 @@ const TFCtemplate = () => {
                 <h3 className='text-center font-semibold text-2xl my-3 mx-auto dark:text-light'>Collaborate</h3>
                 <p className='capitalize text-sm max-w-[14.3rem] sm:max-w-md lg:max-w-[15.5rem] 2xl:max-w-xl text-center my-2 mx-auto mb-9 dark:text-light'>
                     A <span className='font-semibold'>great team </span>is what makes a <span className='font-semibold'>great dream </span>. Managing to work with varied 
-                    opinions and wisely incooperate the best ones as a group is what makes 
+                    opinions and wisely incorporate the best ones as a group is what makes 
                     a team grow . A will to  associate and co-operate is what <span className='font-semibold'> E-Cell IET DAVV 
                     aims </span> to ingrain in its students through several group projects and events, 
                     workshops and many more.
