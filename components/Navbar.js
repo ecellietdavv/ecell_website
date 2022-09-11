@@ -1,12 +1,9 @@
 import React, { useState } from "react";
-import link from "next/link";
 import Image from "next/image";
-import logo from "../assets/images/images-event/Ecell Logo (B).png";
+
 import WbSunnyIcon from "@mui/icons-material/WbSunny";
 import DarkModeIcon from "@mui/icons-material/DarkMode";
 import MenuIcon from '@mui/icons-material/Menu';
-import logoB from "../assets/Logos/logo_b.png"
-import logoW from "../assets/Logos/logo_w.png"
 
 function Navbar() {
   const [dark, setDark] = useState("false");
@@ -33,8 +30,8 @@ function Navbar() {
   ];
 
   return (
-    <nav className="bg-light dark:bg-dark w-full py-4 flex dark:text-white text-dark justify-between px-6 fixed top-0">
-      <Image src={!dark? logoW : logoB} width={60} height={60}/>
+    <nav className="bg-light dark:bg-dark items-center w-full py-4 flex dark:text-white text-dark justify-between px-6 fixed top-0">
+      <Image src={dark? "/assets/Logos/logo_b.png" : "/assets/Logos/logo_w.png"} width={60} height={60}/>
       <ul className="space-x-8 md:flex hidden py-2 px-4 ">
         {navItems.map((value, idx) => {
           return <li className="hover:underline hover:cursor-pointer hover:text-brand-300" key={idx}>{value.icon}{value.name}</li>;

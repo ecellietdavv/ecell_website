@@ -1,7 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
 import React from "react";
 import Image from "next/image";
-import logo from "../assets/images/images-event/Feature_Mission.jpg"
 
 const About = () => {
   return (
@@ -32,7 +31,7 @@ const About = () => {
 
             <div className="relative h-56 overflow-hidden rounded-lg md:h-96">
               <div className="hidden rounded-lg duration-200 ease-linear absolute inset-0 transition-all transform" data-carousel-item="active">
-                <Image src={logo} alt="image 1"></Image>
+                {/* <Image src={logo} alt="image 1"></Image> */}
                 {/* <img src="/docs/images/carousel/carousel-1.svg" className="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="..."> */}
               </div>
               <div className="duration-200 ease-linear absolute inset-0 transition-all transform -translate-x-full z-10" data-carousel-item="">
