@@ -3,7 +3,7 @@ import React from 'react'
 const TFCtemplate = () => {
   return (
     <div className='dark:bg-dark pb-2 '>
-        <h2 className='pt-20 lg:text-4xl text-3xl antialiased text-center my-8 mb-10 font-bold dark:text-light'>Welcome To E-Cell IET DAVV</h2>
+        <h2 className=' lg:text-4xl text-3xl antialiased text-center my-8 mb-10 font-bold dark:text-light'>Welcome To E-Cell IET DAVV</h2>
         <div className="border-t-4 -mt-8 lg:w-1/5 md:w-1/5 w-2/4 mx-auto my-8 mb-10 border-brand-500 border-opacity-20"></div>
         <div className="grid lg:grid-cols-3 dark:bg-dark grid-cols-1 mb-8">
             <div className='mx-4 shadow-lg mb-12'>

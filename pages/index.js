@@ -3,6 +3,8 @@ import Head from "next/head"
 // import Script from "next/script"
 import Drawer from "../components/Drawer"
 import TFCtemplate from "../components/TFCtemplate"
+import Event from "../components/Event"
+import Initiative from "../components/Initiative"
 
 function HomePage() {
   return (
@@ -16,9 +18,12 @@ function HomePage() {
         <script src="https://unpkg.com/flowbite@1.5.3/dist/flowbite.js"></script>
       </Head>
       <Drawer />
+      <Event />
+      <Initiative />
       <TFCtemplate />
     </div>
   )
 }
+import initiative from "../components/Initiative"
 
 export default HomePage
