@@ -1,8 +1,9 @@
+/* eslint-disable react/no-unescaped-entities */
 import React from 'react'
 
 const TFCtemplate = () => {
   return (
-    <div className='dark:bg-dark pb-2 '>
+    <div className='dark:bg-dark bg-light pb-2 '>
         <h2 className='pt-20 lg:text-4xl text-3xl antialiased text-center my-8 mb-10 font-bold dark:text-light'>Welcome To E-Cell IET DAVV</h2>
         <div className="border-t-4 -mt-8 lg:w-1/5 md:w-1/5 w-2/4 mx-auto my-8 mb-10 border-brand-500 border-opacity-20"></div>
         <div className="grid lg:grid-cols-3 dark:bg-dark grid-cols-1 mb-8">
@@ -30,11 +31,11 @@ const TFCtemplate = () => {
                 <div className='flex flex-col mx-auto items-center w-48 h-48'>
                 <svg x="0px" y="0px"
 	 viewBox="0 0 100 100">
-<path class="opacity-[.45] fill-brand-500" d="M50,100c27.6,0,50-22.4,50-50S77.6,0,50,0S0,22.4,0,50S22.4,100,50,100z"/>
+<path className="opacity-[.45] fill-brand-500" d="M50,100c27.6,0,50-22.4,50-50S77.6,0,50,0S0,22.4,0,50S22.4,100,50,100z"/>
 <g>
 	<g>
-		<circle class="fill-brand-500 dark:fill-brand-400" cx="51.5" cy="31.6" r="6.6"/>
-		<polygon class="fill-brand-600 dark:fill-brand-500" points="68.4,37.5 67.6,34.2 57,39.1 53.9,39.1 51.4,42.1 49,39.1 44.2,40 44.2,40.1 34,33.6 31.6,37.3 
+		<circle className="fill-brand-500 dark:fill-brand-400" cx="51.5" cy="31.6" r="6.6"/>
+		<polygon className="fill-brand-600 dark:fill-brand-500" points="68.4,37.5 67.6,34.2 57,39.1 53.9,39.1 51.4,42.1 49,39.1 44.2,40 44.2,40.1 34,33.6 31.6,37.3 
 			44.9,45.8 45.5,52 45.7,54.4 46,54.4 46,55.9 46,57 43.2,62.2 37.8,59.3 35.6,63.3 35.6,63.3 35,64.4 36.5,65.2 37,64.1 
 			44.8,68.2 46.9,64.1 46.9,64.1 50.7,57 52.4,57 54.3,64.9 49.7,71.8 49.7,71.8 49.7,71.8 54.5,75 55.6,73.3 54.6,72.6 59.2,65.7 
 			59.2,65.7 57.1,57 57.1,55.9 57.1,54.4 57.5,54.4 58.3,43.6 		"/>
@@ -55,10 +56,10 @@ const TFCtemplate = () => {
             <div className="mx-4 shadow-lg mb-12">
                 <div className="flex flex-col items-center w-48 h-48 mx-auto">
                 <svg x="0px" y="0px" width="20rem" height="20rem" viewBox="0 0 100 100">
-                    <path class="opacity-[.45] fill-brand-500" d="M50.4,100c27.6,0,50-22.4,50-50S78,0,50.4,0s-50,22.4-50,50S22.8,100,50.4,100z"/>
+                    <path className="opacity-[.45] fill-brand-500" d="M50.4,100c27.6,0,50-22.4,50-50S78,0,50.4,0s-50,22.4-50,50S22.8,100,50.4,100z"/>
                     <svg>
                         <svg>
-                            <path class="fill-brand-600 dark:fill-brand-400" d="M76.5,60.7c0-3-0.9-6-2.6-8.5c-1.2-1.8-2.8-3.3-4.7-4.4c2.2-2.1,3.5-5,3.5-8.2c0-6.3-5.1-11.3-11.3-11.3
+                            <path className="fill-brand-600 dark:fill-brand-400" d="M76.5,60.7c0-3-0.9-6-2.6-8.5c-1.2-1.8-2.8-3.3-4.7-4.4c2.2-2.1,3.5-5,3.5-8.2c0-6.3-5.1-11.3-11.3-11.3
                                 c-3.7,0-7.2,1.8-9.3,4.8C51.6,33,51.1,33,50.5,33c-0.6,0-1.1,0-1.6,0.1c-2.1-3-5.6-4.8-9.3-4.8c-6.3,0-11.3,5.1-11.3,11.3
                                 c0,3.2,1.4,6.2,3.5,8.2c-1.9,1.1-3.5,2.6-4.7,4.4c-1.7,2.5-2.6,5.5-2.6,8.5V67h10.9v4.7h30.2V67h10.9L76.5,60.7L76.5,60.7
                                 L76.5,60.7z M61.4,31c4.7,0,8.5,3.8,8.5,8.5s-3.8,8.5-8.5,8.5c-0.1,0-0.2,0-0.3,0c0,0,0,0,0-0.1c0.1-0.4,0.3-0.8,0.4-1.3

@@ -1,9 +1,11 @@
+/* eslint-disable @next/next/no-sync-scripts */
 import Head from "next/head"
 // import Link from "next/link"
 // import Script from "next/script"
 import Drawer from "../components/Drawer"
 import TFCtemplate from "../components/TFCtemplate"
-
+import About from "../components/About"
+// import Carousel from "../components/Carousel"
 function HomePage() {
   return (
     <div className="w-full">
@@ -17,6 +19,7 @@ function HomePage() {
       </Head>
       <Drawer />
       <TFCtemplate />
+      <About/>
     </div>
   )
 }

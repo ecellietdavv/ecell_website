@@ -5,6 +5,7 @@ import logo from "../assets/images/images-event/Ecell Logo (B).png";
 import WbSunnyIcon from "@mui/icons-material/WbSunny";
 import DarkModeIcon from "@mui/icons-material/DarkMode";
 import MenuIcon from '@mui/icons-material/Menu';
+
 import {AiOutlineInfoCircle,AiOutlineForm,AiOutlinePhone, AiFillHome,AiOutlineTeam } from "react-icons/ai";
 
 function Navbar() {
@@ -25,20 +26,19 @@ function Navbar() {
   };
 
   const navItems = [
-    { name: "Home",icon: <AiFillHome/>, link: "" },
+    { name: "Home", link: "" },
     { name: "About", link: "" },
     { name: "Our Team", link: "" },
     { name: "Events", link: "" },
   ];
 
   return (
-    <nav className="bg-light dark:bg-dark w-full py-4 flex dark:text-white text-dark justify-between px-4 fixed top-0">
-      <div className="block">
-      logo svg
-    </div>
-      <ul className="space-x-4 md:flex hidden px-4">
+    <nav className="bg-light dark:bg-dark w-full py-4 flex dark:text-white text-dark justify-between px-6 fixed top-0">
+       svg fix
+       {/* <div className="block"><Image src={logo} layout="fill" alt="logo" ></Image></div> */}
+      <ul className="space-x-8 md:flex hidden py-2 px-4 ">
         {navItems.map((value, idx) => {
-          return <li key={idx}>{value.icon}{value.name}</li>;
+          return <li className="hover:underline hover:cursor-pointer hover:text-brand-300" key={idx}>{value.icon}{value.name}</li>;
         })}
       </ul>
       <div className="flex space-x-4 items-center justify-center px-4">
@@ -47,7 +47,7 @@ function Navbar() {
         ) : (
           <WbSunnyIcon className="cursor-pointer" onClick={handleDarkMode} />
         )}
-        <button className="md:block hidden bg-brand-400 dark:bg-brand-400 hover:bg-brand-600 py-2 px-4 rounded-full text-dark dark:text-white">Contact Us</button>
+        <button className="md:block hidden bg-brand-400 dark:bg-brand-400 hover:bg-brand-600 py-2 px-4 rounded-full text-dark dark:hover:bg-brand-600 dark:text-white">Contact Us</button>
         <MenuIcon
           className="block md:hidden"
           data-drawer-target="drawer-navigation" data-drawer-show="drawer-navigation" aria-controls="drawer-navigation"
