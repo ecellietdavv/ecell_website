@@ -14,20 +14,20 @@ const Event = () => {
 	const EventCard = ({ img, name, desc, idx }) => {
 		const [show, setShow] = useState(false)
 		return (
-			<div className="flex flex-col text-center text-dark dark:text-white justify-start h-full space-y-2" key={idx}>
+			<div className="flex flex-col text-center text-dark dark:text-white justify-start items-center h-full space-y-2" key={idx}>
 
 				<div className="h-52 bg-white overflow-hidden">
 					<Image src={img} alt={name} height={400} width={600} className="object-cover"/>
 				</div>
 
-				<h3>{name}</h3>
+				<h3 className={`${show? "text-brand-500 border-b-2 border-brand-500 w-fit": ""}`}>{name}</h3>
+				{show ? <p>{desc}</p> : null}
 				{
 					show ?
-						<ArrowDropUpIcon className="text-4xl text-center w-full cursor-pointer" onClick={() => setShow(!show)} />
+						<ArrowDropUpIcon className={`${show? "text-brand-500": ""} text-4xl text-center w-full cursor-pointer`} onClick={() => setShow(!show)} />
 						:
-						<ArrowDropDownIcon className="text-4xl text-center w-full cursor-pointer" onClick={() => setShow(!show)} />
+						<ArrowDropDownIcon className={`${show? "text-brand-500": ""} text-4xl text-center w-full cursor-pointer`} onClick={() => setShow(!show)} />
 				}
-				{show ? <p>{desc}</p> : null}
 			</div>
 		)
 	}
