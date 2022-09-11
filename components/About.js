@@ -17,13 +17,13 @@ const About = () => {
       <style>
         {`
         .isometric-card{
-            margin: 0 auto;
+            margin: 0 10px 0 -50px;
   transform: rotateX(53deg) rotateZ(25deg) rotateY(3deg);
   transform-style: preserve-3d;
   background-color: #fcfcfc;
   will-change: transform;
-  width: 240px;
-  height: 240px;
+  width: 250px;
+  height: 250px;
   border-radius: 2rem;
   box-shadow: 1px 1px 0 1px #f9f9fb, -1px 0 28px 0 rgba(34, 33, 81, 0.01),
     28px 28px 28px 0 rgba(34, 33, 81, 0.25);
@@ -59,7 +59,7 @@ const About = () => {
           </button>
         </div>
         <div className="pt-14 hidden md:flex  ">
-          <div className="isometric-card card-1 dark:bg-slate-600"></div>
+          <div className="isometric-card card-1  dark:bg-slate-600 "></div>
           <div className="isometric-card card-2 dark:bg-slate-600"></div>
           <div className="isometric-card card-3 dark:bg-slate-600"></div>
         </div>
