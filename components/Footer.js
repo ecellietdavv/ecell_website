@@ -1,30 +1,30 @@
 import React from "react";
-
+import Link from "next/link";
 function Footer() {
 
 	const navLinks = [
-		{name: "Home", link: ""},
-		{name: "About", link: ""},
-		{name: "Contact", link: ""},
-		{name: "Collab", link: ""},
-		{name: "Others", link: ""},
+		{ name: "Home", link: "#" },
+		{ name: "About", link: "#" },
+		{ name: "Contact", link: "#" },
+		{ name: "Collab", link: "#" },
+		{ name: "Others", link: "#" },
 	]
 
 	return (
-		<footer className="bg-light dark:bg-dark py-8 dark:text-white">
-			<div className="max-w-7xl px-10 mx-auto">
+		<footer className="bg-light dark:bg-dark dark:text-white pt-[1rem]">
+			<div className="max-w-7xl px-10 pb-1 mx-auto">
 				<div className="grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1 space-y-8 sm:space-y-0 sm:gap-8 sm:space-x-4 my-8">
 
 					{/* Information  */}
 					<div className="flex flex-col lg:w-1/2">
 						<h3 className="text-lg subpixel-antialiased font-semibold">Information</h3>
-						<p className="mt-4">We Are On Mission To Provide A Better Platform For Upcoming Entrapeneaure From Initial Investment To Funding.</p>
+						<p className="mt-4">We Are On Mission To Provide A Better Platform For Upcoming Entrepreneur From Initial Investment To Funding.</p>
 					</div>
 
 					{/* Address  */}
 					<div className="flex flex-col">
 						<h3 className="text-lg subpixel-antialiased font-semibold">Address</h3>
-						<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3681.2656451339208!2d75.87759341496154!3d22.681152885127144!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3962fcc03e36712d%3A0xb6f3c2bf734a7c!2sIET%20DAVV!5e0!3m2!1sen!2sin!4v1662713117254!5m2!1sen!2sin" className="border-none my-4" width="90%" allowFullScreen="true" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+						<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3681.2656451339208!2d75.87759341496154!3d22.681152885127144!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3962fcc03e36712d%3A0xb6f3c2bf734a7c!2sIET%20DAVV!5e0!3m2!1sen!2sin!4v1662713117254!5m2!1sen!2sin" className="border-none my-4" width="0%" allowFullScreen="true" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
 						<p className="">Institute of Engineering and Technology
 							Devi Ahilya Vishwavidyalaya
 							Khandwa Road Indore-452017 (M.P.)</p>
@@ -34,11 +34,11 @@ function Footer() {
 					{/* Links  */}
 					<div className="flex flex-col">
 						<h3 className="text-lg subpixel-antialiased font-semibold dark:text-white">Links</h3>
-						<ul className="mt-4 space-y-2">
+						<ul className="mt-4 space-y-6 text-dark">
 							{
 								navLinks?.map((value, idx) => {
 									return (
-										<li className="hover:font-semibold w-fit hover:text-brand focus:text-brand dark:focus:text-brand" key={idx}><a href={value.link}>{value.name}</a></li>
+										<li className="hover:font-semibold w-fit" key={idx}><Link href={value.link}><a className="text-dark dark:text-light dark:hover:text-brand-500 hover:text-brand-500 focus:text-brand-500 dark:focus:text-brand-500">{value.name}</a></Link></li>
 									)
 								})
 							}
@@ -46,15 +46,15 @@ function Footer() {
 					</div>
 
 					{/* Contact Us  */}
-					<div className="flex flex-col">
+					<div className="flex flex-col mx-10">
 						<h3 className="text-lg subpixel-antialiased font-semibold">
 							Contact Us
 						</h3>
-						<form action="#" className="">
+						<form action="#" className="mr-3 mt-4">
 							<input
 								type="text"
 								id="small-input"
-								className="block p-2 w-full mt-4 text-dark bg-white rounded-lg border border-gray-300 sm:text-xs focus:ring-mid focus:border-mid dark:bg-light0 dark:border-gray-600 dark:placeholder-mid dark:text-light dark:focus:ring-mid dark:focus:border-mid"
+								className="block h-10 text-base placeholder:text-base p-2 mt-2 w-full text-dark bg-white rounded-lg border border-mid sm:text-xs focus:ring-mid focus:border-mid dark:bg-gray-700 dark:border-gray-600 dark:placeholder-light dark:text-light dark:focus:ring-mid dark:focus:border-brand-600"
 								placeholder="Your Name"
 								required
 							/>
@@ -62,23 +62,23 @@ function Footer() {
 								type="email"
 								name="email"
 								id="email"
-								className="block p-2 mt-2 w-full text-dark bg-white rounded-lg border border-gray-300 sm:text-xs focus:ring-mid focus:border-mid dark:bg-light0 dark:border-gray-600 dark:placeholder-mid dark:text-light dark:focus:ring-mid dark:focus:border-mid"
+								className="block h-10 text-base placeholder:text-base p-2 mt-2 w-full text-dark bg-white rounded-lg border border-mid sm:text-xs focus:ring-mid focus:border-mid dark:bg-gray-700 dark:border-gray-600 dark:placeholder-light dark:text-light dark:focus:ring-mid dark:focus:border-brand-600"
 								placeholder="Email Address"
 								required
 							/>
-							<textarea id="message" rows="4" className="block p-2.5 mt-2 w-full text-sm text-gray-900 bg-white rounded-lg border border-mid focus:ring-blue-500 focus:border-blue-500 dark:bg-light dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Leave a comment..."></textarea>
-							<button type="submit" className="text-light mt-3 w-full bg-blue-600 hover:bg-blue-800 focus:outline-none focus:ring-1 focus:ring-blue-200 font-medium rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2">
+							<textarea id="message" rows="5" className="block p-2 mt-2 w-full h-20 text-sm text-gray-900 bg-white rounded-lg border border-mid focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Leave a comment..."></textarea>
+							<button type="submit" className="text-light mt-3 w-full bg-brand-500 dark:bg-brand-500 dark:hover:bg-brand-600 hover:bg-brand-600 focus:outline-none focus:ring-1 focus:ring-blue-200 font-medium rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:hover:bg-brand">
 								Submit
 							</button>
 						</form>
+
 					</div>
 				</div>
-
 				<hr className="my-6 border-gray-300 sm:mx-auto dark:border-light lg:my-8" />
 				<div className="lg:w-11/12 mx-auto lg:my-8 sm:flex sm:justify-between justify-evenly">
 					<span className="text-base text-dark sm:text-center dark:text-light text-center">
 						© {new Date().getFullYear()}{" "}
-						<a href="#" className="hover:underline">
+						<a href="#" className="hover:underline text-brand-500">
 							Ecell IET-Davv
 						</a>
 						. All Rights Reserved.
@@ -96,9 +96,9 @@ function Footer() {
 								aria-hidden="true"
 							>
 								<path
-									fill-rule="evenodd"
+									fillRule="evenodd"
 									d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"
-									clip-rule="evenodd"
+									clipRule="evenodd"
 								/>
 							</svg>
 							<span className="sr-only">Facebook page</span>
@@ -114,9 +114,9 @@ function Footer() {
 								aria-hidden="true"
 							>
 								<path
-									fill-rule="evenodd"
+									fillRule="evenodd"
 									d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z"
-									clip-rule="evenodd"
+									clipRule="evenodd"
 								/>
 							</svg>
 							<span className="sr-only">Instagram page</span>
@@ -146,9 +146,9 @@ function Footer() {
 								aria-hidden="true"
 							>
 								<path
-									fill-rule="evenodd"
+									fillRule="evenodd"
 									d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
-									clip-rule="evenodd"
+									clipRule="evenodd"
 								/>
 							</svg>
 							<span className="sr-only">GitHub account</span>

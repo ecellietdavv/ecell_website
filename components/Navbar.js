@@ -5,6 +5,8 @@ import logo from "../assets/images/images-event/Ecell Logo (B).png";
 import WbSunnyIcon from "@mui/icons-material/WbSunny";
 import DarkModeIcon from "@mui/icons-material/DarkMode";
 import MenuIcon from '@mui/icons-material/Menu';
+import logoB from "../assets/Logos/logo_b.png"
+import logoW from "../assets/Logos/logo_w.png"
 
 function Navbar() {
   const [dark, setDark] = useState("false");
@@ -24,18 +26,18 @@ function Navbar() {
   };
 
   const navItems = [
+    { name: "Home", link: "" },
     { name: "About", link: "" },
-    { name: "Contact", link: "" },
-    { name: "YT", link: "" },
-    { name: "Good", link: "" },
+    { name: "Our Team", link: "" },
+    { name: "Events", link: "" },
   ];
 
   return (
-    <nav className="bg-light dark:bg-dark w-full py-4 flex dark:text-white text-dark justify-between px-4 fixed top-0">
-      <p>Ecell</p>
-      <ul className="space-x-4 md:flex hidden px-4">
+    <nav className="bg-light dark:bg-dark w-full py-4 flex dark:text-white text-dark justify-between px-6 fixed top-0">
+      <Image src={!dark? logoW : logoB} width={60} height={60}/>
+      <ul className="space-x-8 md:flex hidden py-2 px-4 ">
         {navItems.map((value, idx) => {
-          return <li key={idx}>{value.name}</li>;
+          return <li className="hover:underline hover:cursor-pointer hover:text-brand-300" key={idx}>{value.icon}{value.name}</li>;
         })}
       </ul>
       <div className="flex space-x-4 items-center justify-center px-4">
@@ -44,7 +46,7 @@ function Navbar() {
         ) : (
           <WbSunnyIcon className="cursor-pointer" onClick={handleDarkMode} />
         )}
-        <button className="md:block hidden bg-brand py-2 px-4 rounded-full text-white">Contact Us</button>
+        <button className="md:block hidden bg-brand-400 dark:bg-brand-400 hover:bg-brand-600 py-2 px-4 rounded-full text-dark dark:hover:bg-brand-600 dark:text-white">Contact Us</button>
         <MenuIcon
           className="block md:hidden"
           data-drawer-target="drawer-navigation" data-drawer-show="drawer-navigation" aria-controls="drawer-navigation"
