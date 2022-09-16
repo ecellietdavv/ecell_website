@@ -20,10 +20,12 @@ function HomePage() {
       <Drawer />
       <Event />
       <Initiative />
+      <VissionMission/>
       <TFCtemplate />
     </div>
   )
 }
 import initiative from "../components/Initiative"
+import VissionMission from "../components/VissionMission"
 
 export default HomePage
