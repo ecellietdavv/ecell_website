@@ -3,6 +3,7 @@ import Head from "next/head"
 import Drawer from "../components/Drawer"
 import TFCtemplate from "../components/TFCtemplate"
 import About from "../components/About"
+import AboutCarousel from "../components/AboutCarousel"
 // import Carousel from "../components/Carousel"
 function HomePage() {
   return (
@@ -18,6 +19,7 @@ function HomePage() {
       <Drawer />
       <TFCtemplate />
       <About/>
+      <AboutCarousel/>
     </div>
   )
 }
