@@ -1,10 +1,11 @@
+/* eslint-disable @next/next/no-sync-scripts */
 import Head from "next/head"
-// import Link from "next/link"
-// import Script from "next/script"
 import Drawer from "../components/Drawer"
 import TFCtemplate from "../components/TFCtemplate"
 import Event from "../components/Event"
 import Initiative from "../components/Initiative"
+import About from "../components/About"
+// import Carousel from "../components/Carousel"
 
 function HomePage() {
   return (
@@ -16,10 +17,12 @@ function HomePage() {
         <link rel="shortcut icon" href="assets\images\images-event\Ecell Logo (W).png" type="image/x-icon" />
         <link rel="stylesheet" href="https://unpkg.com/flowbite@1.5.3/dist/flowbite.min.css" />
         <script src="https://unpkg.com/flowbite@1.5.3/dist/flowbite.js"></script>
+
       </Head>
       <Drawer />
+      <About />
       <Event />
-      <Initiative />
+      {/* <Initiative /> */}
       <TFCtemplate />
     </div>
   )
