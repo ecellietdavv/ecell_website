@@ -17,6 +17,7 @@ const TFCtemplate = () => {
 	c-2,2.4-4,4.7-4.7,7.3h-9.4c-0.7-2.7-2.7-5-4.7-7.3c-3-3.5-6-7.1-6-12.5c0-8.5,6.9-15.4,15.4-15.4s15.4,6.9,15.4,15.4
 	C65.4,47.7,62.3,51.3,59.4,54.8z M50,29.1v4.4c-4.9,0-8.8,3.9-8.8,8.8h-4.4C36.8,35,42.7,29.1,50,29.1z"/>
                         </svg>
+                        {/* <Image src="/assets/TFC/Think.svg"/> */}
                     </div>
                     <h3 className='text-center font-semibold text-2xl dark:text-light my-3 mx-auto'>Think</h3>
                     <p className='capitalize text-sm lg:max-w-[16rem] md:max-w-md max-w-[15.5rem] 2xl:max-w-xl text-center mb-8 dark:text-light my-2 mx-auto sm:max-w-md'>

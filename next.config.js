@@ -2,7 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
-  images:{domains: ['xsgames.co']}
+  images:{domains: ['xsgames.co', 'mdbcdn.b-cdn.net']}
 }
 
 module.exports = nextConfig

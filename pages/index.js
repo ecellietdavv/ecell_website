@@ -7,6 +7,9 @@ import Initiative from "../components/Initiative"
 import About from "../components/About"
 import AboutCarousel from "../components/AboutCarousel"
 // import Carousel from "../components/Carousel"
+import VissionMission from "../components/VissionMission"
+import Teams from "../components/Teams"
+import SectionDivider from "../components/SectionDivider"
 
 function HomePage() {
   return (
@@ -15,17 +18,17 @@ function HomePage() {
         <meta httpEquiv="X-UA-Compatible" content="IE=7" />
         <meta name="description" content="" />
         <meta name="keywords" content="ecell, E-cell, ietdavv, ecelliet, ietclubs, ietsocieties, ecelldavv, davv, ietdavv, engineering davv, ietdavv.edu.in, clubs in ietdavv, engineering, science, enterpreneurship, tech, web, html, jsx, css, nextjs, colleges in indore, colleges with ecell" />
-        <link rel="shortcut icon" href="assets\images\images-event\Ecell Logo (W).png" type="image/x-icon" />
-        <link rel="stylesheet" href="https://unpkg.com/flowbite@1.5.3/dist/flowbite.min.css" />
-        <script src="https://unpkg.com/flowbite@1.5.3/dist/flowbite.js"></script>
-
       </Head>
+
+      <TFCtemplate />
+      <SectionDivider name="Vission Mission" img="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(70).webp"/>
+      <VissionMission />
       <Drawer />
       <About />
-      <AboutCarousel/>
+      <AboutCarousel />
       <Event />
-      {/* <Initiative /> */}
-      <TFCtemplate />
+      <Initiative />
+      <Teams />
     </div>
   )
 }
