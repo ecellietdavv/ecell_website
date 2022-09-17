@@ -5,6 +5,7 @@ import TFCtemplate from "../components/TFCtemplate"
 import Event from "../components/Event"
 import Initiative from "../components/Initiative"
 import About from "../components/About"
+import AboutCarousel from "../components/AboutCarousel"
 // import Carousel from "../components/Carousel"
 
 function HomePage() {
@@ -21,12 +22,12 @@ function HomePage() {
       </Head>
       <Drawer />
       <About />
+      <AboutCarousel/>
       <Event />
       {/* <Initiative /> */}
       <TFCtemplate />
     </div>
   )
 }
-import initiative from "../components/Initiative"
 
 export default HomePage
