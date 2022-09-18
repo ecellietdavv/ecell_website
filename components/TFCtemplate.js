@@ -43,7 +43,7 @@ const TFCtemplate = () => {
                         <div className="flex flex-col mx-auto w-48 h-48">
                         <img src={value.img} alt={value.headg}/>
                     </div>
-                    <h3 className='text-center font-semibold text-2xl dark:text-light my-3 mx-auto'>Think</h3>
+                    <h3 className='text-center font-semibold text-2xl dark:text-light my-3 mx-auto'>{value.headg}</h3>
                     <p className='capitalize text-sm lg:max-w-[16rem] md:max-w-md max-w-[15.5rem] 2xl:max-w-xl text-center mb-8 dark:text-light my-2 mx-auto sm:max-w-md'>
                         {value.desc}
                     </p>
