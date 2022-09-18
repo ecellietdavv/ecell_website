@@ -243,7 +243,7 @@ function Teams() {
           <h3 className="text-5xl pb-5 font-semibold">
             Team {teams[activeTeam]?.year}
           </h3>
-          <div className="grid grid-cols-3 dark:bg-mid rounded-3xl bg-light p-5">
+          <div className="grid grid-cols-3 dark:bg-mid shadow-md rounded-3xl bg-light p-5">
             {teams[activeTeam]?.members?.map((member, idx) => {
               const { name, designation, social, img } = member;
               return (

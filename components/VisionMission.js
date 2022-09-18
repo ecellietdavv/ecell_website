@@ -1,9 +1,9 @@
 import React from 'react'
 import Image from 'next/image'
 
-function VissionMission() {
+function VisionMission() {
     return (
-        <section className="overflow-hidden dark:bg-dark text-gray-700">
+        <section className="overflow-hidden bg-light dark:bg-dark text-gray-700">
             <div className="container px-5 py-6 mx-auto lg:px-32">
                 <div className="flex flex-wrap -m-1 md:-m-2">
                     <div className="flex flex-wrap w-1/2">
@@ -41,4 +41,4 @@ function VissionMission() {
     )
 }
 
-export default VissionMission
+export default VisionMission

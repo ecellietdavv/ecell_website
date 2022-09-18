@@ -7,7 +7,7 @@ import Initiative from "../components/Initiative"
 import About from "../components/About"
 import AboutCarousel from "../components/AboutCarousel"
 // import Carousel from "../components/Carousel"
-import VissionMission from "../components/VissionMission"
+import VisionMission from "../components/VisionMission"
 import Teams from "../components/Teams"
 import SectionDivider from "../components/SectionDivider"
 
@@ -22,7 +22,7 @@ function HomePage() {
 
       <TFCtemplate />
       <SectionDivider name="Vission Mission" img="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(70).webp"/>
-      <VissionMission />
+      <VisionMission />
       <Drawer />
       <About />
       <AboutCarousel />
