@@ -6,11 +6,10 @@ import Image from "next/image";
 
 const Event = () => {
 	const card = [
-		{ img: "https://xsgames.co/randomusers/avatar.php?g=male", desc: "lorem20jjkshvdhfuhihhn", name: "Event Name" },
-		{ img: "https://xsgames.co/randomusers/avatar.php?g=female", desc: "ldfbdfvb20jjkshvdhfuhi", name: "Event Name" },
-		{ img: "https://xsgames.co/randomusers/avatar.php?g=male", desc: "lorem20jcvzvzcvfdjkshv", name: "Event Name" },
+		{ img: "https://xsgames.co/randomusers/avatar.php?g=male", desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente omnis, obcaecati deserunt porro possimus eius illum recusandae impedit, necessitatibus repellendus sit dolores at iure perspiciatis ipsa perferendis. Perferendis, est? Tempora eligendi commodi quis neque facere ducimus ea earum error eaque quas rem id veritatis delectus laborum odit, ad nostrum deleniti?", name: "Event Name" },
+		{ img: "https://xsgames.co/randomusers/avatar.php?g=female", desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente omnis, obcaecati deserunt porro possimus eius illum recusandae impedit, necessitatibus repellendus sit dolores at iure perspiciatis ipsa perferendis. Perferendis, est? Tempora eligendi commodi quis neque facere ducimus ea earum error eaque quas rem id veritatis delectus laborum odit, ad nostrum deleniti?", name: "Event Name" },
+		{ img: "https://xsgames.co/randomusers/avatar.php?g=male", desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente omnis, obcaecati deserunt porro possimus eius illum recusandae impedit, necessitatibus repellendus sit dolores at iure perspiciatis ipsa perferendis. Perferendis, est? Tempora eligendi commodi quis neque facere ducimus ea earum error eaque quas rem id veritatis delectus laborum odit, ad nostrum deleniti?", name: "Event Name" },
 	];
-
 	const EventCard = ({ img, name, desc, idx }) => {
 		const [show, setShow] = useState(false)
 		return (
@@ -48,6 +47,7 @@ const Event = () => {
 				{card?.map((value, idx) => {
 					const { img, name, desc } = value
 					return (
+						// eslint-disable-next-line react/jsx-key
 						<EventCard img={img} name={name} desc={desc} idx={idx} />
 					)
 				})}

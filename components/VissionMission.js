@@ -8,8 +8,9 @@ function VissionMission() {
                 <div className="flex flex-wrap -m-1 md:-m-2">
                     <div className="flex flex-wrap w-1/2">
                         <div className="w-full sm:w-1/2 p-2 sm:p-1 md:p-2">
-                            <Image height={400} width={600} alt="gallery" className="block object-cover object-center w-full h-full rounded-lg"
+                            <Image height={400} width={600} alt="gallery" className="block absolute object-cover object-center w-full h-full rounded-lg"
                                 src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(70).webp"/>
+                
                         </div>
                         <div className="w-full sm:w-1/2 p-2 sm:p-1 md:p-2">
                             <Image height={400} width={600} alt="gallery" className="block object-cover object-center w-full h-full rounded-lg"
