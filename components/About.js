@@ -4,7 +4,7 @@ import Image from "next/image";
 
 const About = () => {
   return (
-    <section className="bg-light sm:max-h-screen dark:bg-dark text-dark dark:text-white">
+    <section className="bg-light sm:max-h-screen dark:bg-dark text-dark dark:text-white mb-10 lg:mb-0">
       <div className="grid md:grid-cols-2 sm:items-center sm:h-screen overflow-hidden text-center sm:text-left">
         <div className="flex flex-col space-y-14 sm:mx-20">
           <h1 className="text-6xl underline underline-offset-8">About Us</h1>
