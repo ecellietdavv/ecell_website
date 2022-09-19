@@ -12,7 +12,7 @@ class MyDocument extends Document {
             <Html>
                 <Head>
                     <link rel="stylesheet" href="https://unpkg.com/flowbite@1.5.3/dist/flowbite.min.css" />
-                    <Script src="https://unpkg.com/flowbite@1.5.3/dist/flowbite.js"></Script>
+                    <script src="https://unpkg.com/flowbite@1.5.3/dist/flowbite.js" async/>
                 </Head>
                 <body>
                     <Main />

@@ -6,7 +6,7 @@ function Drawer() {
 
   return (
     <nav>
-      <div id="drawer-navigation" className="fixed z-40 h-screen p-4 overflow-y-auto bg-white w-80 dark:bg-dark" tabIndex="-1" aria-labelledby="drawer-navigation-label">
+      <div id="drawer-navigation" className="fixed z-[100] h-screen p-4 overflow-y-auto bg-white w-80 dark:bg-dark" tabIndex="-1" aria-labelledby="drawer-navigation-label">
         <h5 id="drawer-navigation-label" className="text-base font-semibold text-gray-400 uppercase dark:text-gray-700">Contents</h5>
         <button type="button" data-drawer-dismiss="drawer-navigation" aria-controls="drawer-navigation" className="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 absolute top-2.5 right-2.5 inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white">
           <svg aria-hidden="true" className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clipRule="evenodd"></path></svg>
@@ -43,11 +43,7 @@ function Drawer() {
               </a>
             </li>
             <li>
-              <button className="rounded-xl  bg-brand-400 dark:bg-brand-600 "><a href="Footer.js" className="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
-                {/* <svg aria-hidden="true" className="flex-shrink-0 w-6 h-6 text-gray-500 dark:text-dark transition duration-75  group-hover:text-gray-900 dark:group-hover:text-white" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M5 4a3 3 0 00-3 3v6a3 3 0 003 3h10a3 3 0 003-3V7a3 3 0 00-3-3H5zm-1 9v-1h5v2H5a1 1 0 01-1-1zm7 1h4a1 1 0 001-1v-1h-5v2zm0-4h5V8h-5v2zM9 8H4v2h5V8z" clipRule="evenodd"></path></svg> */}
-                <AiOutlinePhone className="rotate-90" />
-                <span className="flex-1 ml-3 whitespace-nowrap ">Contact Us</span>
-              </a></button>
+              <button className="rounded-xl px-6 py-2  bg-brand-500 text-white ">Contact Us</button>
             </li>
           </ul>
         </div>
