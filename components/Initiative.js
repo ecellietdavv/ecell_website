@@ -27,8 +27,8 @@ const initiative = () => {
         <div className="order-1 md:w-5/12">
           <Image width={600} height={200} className="object-cover rounded-t-lg md:rounded-lg" src={img} />
         </div>
-        <div className="z-20 right-2 top-2 absolute md:block flex items-center order-1 dark:bg-light  bg-dark shadow-xl w-8 h-8 rounded-full">
-          <h1 className=" mx-auto font-semibold text-lg text-light dark:text-dark">{idx + 1}</h1>
+        <div className="z-20 right-2 top-2 absolute md:static md:block flex items-center order-1 dark:bg-light bg-dark shadow-xl w-8 h-8 rounded-full">
+          <h1 className=" mx-auto font-semibold text-lg text-center text-light dark:text-dark">{idx + 1}</h1>
         </div>
         <div className={idx % 2 === 0 ? "order-1 rounded-b-lg bg-gray-400 md:rounded-lg shadow-xl md:w-5/12 px-6 py-4" : "order-1 rounded-b-lg bg-brand-400 md:rounded-lg shadow-xl md:w-5/12 px-6 py-4"}>
           <h3 className="mb-3 font-bold text-gray-800 text-xl">{name}</h3>
