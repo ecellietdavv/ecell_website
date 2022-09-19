@@ -23,7 +23,7 @@ const initiative = () => {
 
   const IntiativeCard = ({ img, name, desc, idx }) => {
     return (
-      <div className={idx % 2 === 0 ? "flex p-4 sm:p-0 relative flex-col md:flex-row md:justify-between items-center w-full right-timeline " : " flex p-4 sm:p-0 relative flex-col md:justify-between md:flex-row-reverse items-center w-full"}>
+      <div key={idx} className={idx % 2 === 0 ? "flex p-4 sm:p-0 relative flex-col md:flex-row md:justify-between items-center w-full right-timeline " : " flex p-4 sm:p-0 relative flex-col md:justify-between md:flex-row-reverse items-center w-full"}>
         <div className="order-1 md:w-5/12">
           <Image width={600} height={200} className="object-cover rounded-t-lg md:rounded-lg" src={img} />
         </div>

@@ -19,6 +19,7 @@ function Footer() {
 				href={link}
 				className="text-gray-800 hover:text-black dark:text-white dark:hover:text-white"
 				target="_blank"
+				rel="noreferrer"
 			>
 				<Icon className="w-6 h-6" />
 			</a>

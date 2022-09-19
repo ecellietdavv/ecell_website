@@ -1,4 +1,5 @@
 import Document, { Html, Head, Main, NextScript } from "next/document";
+import Script from "next/script";
 
 class MyDocument extends Document {
     static async getInitialProps(ctx) {
@@ -11,7 +12,7 @@ class MyDocument extends Document {
             <Html>
                 <Head>
                     <link rel="stylesheet" href="https://unpkg.com/flowbite@1.5.3/dist/flowbite.min.css" />
-                    <script src="https://unpkg.com/flowbite@1.5.3/dist/flowbite.js"></script>
+                    <Script src="https://unpkg.com/flowbite@1.5.3/dist/flowbite.js"></Script>
                 </Head>
                 <body>
                     <Main />
