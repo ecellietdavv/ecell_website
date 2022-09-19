@@ -47,7 +47,7 @@ const initiative = () => {
             initiatives && initiatives?.map((insitiative, idx) => {
               const { name, img, desc } = insitiative
               return (
-                <IntiativeCard name={name} img={img} desc={desc} idx={idx} />
+                <IntiativeCard name={name} img={img} desc={desc} idx={idx} key={idx}/>
               )
             })
           }
