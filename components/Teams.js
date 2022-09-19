@@ -168,30 +168,32 @@ function Teams() {
   const MemberCard = ({ name, designation, img, social, idx }) => {
     return (
       <div
-        className="flex flex-col m-5 items-center p-8 transition-colors duration-200 transform cursor-pointer group bg-light border border-dark dark:bg-mid dark:hover:bg-brand-600 hover:bg-brand-600 rounded-xl"
+        className="flex group flex-col items-center p-8 transition-colors duration-200 transform cursor-pointer group bg-light border border-dark dark:bg-mid dark:border-light dark:text-white dark:hover:bg-brand-600 hover:bg-brand-600 rounded-xl"
         key={idx}
       >
-        <Image
-          width={128}
-          height={128}
-          className="object-cover rounded-full ring-4 ring-gray-300"
-          src={img}
-          alt={name}
-        />
+        <div className="rounded-full overflow-hidden h-32 w-32">
+          <Image
+            width={128}
+            height={128}
+            className="object-cover duration-200 group-hover:scale-105 ease-in-out"
+            src={img}
+            alt={name}
+          />
+        </div>
 
-        <h1 className="mt-4 text-2xl font-semibold text-gray-700 capitalize dark:text-white ">
+        <h1 className="mt-4 text-2xl font-semibold capitalize">
           {name}
         </h1>
 
-        <p className="mt-2 text-gray-500 capitalize dark:text-gray-300 group-hover:text-gray-300">
+        <p className="mt-2 capitalize">
           {designation}
         </p>
 
-        <div className="flex mt-3 text-white -mx-2">
+        <div className="flex mt-3 text-dark dark:text-white -mx-2">
           <a
             href={social?.email}
             target="_blank"
-            className="mx-2 text-dark dark:text-light"
+            className="mx-2"
             aria-label="Email"
             rel="noreferrer"
           >
@@ -200,7 +202,7 @@ function Teams() {
           <a
             href={social?.phone}
             target="_blank"
-            className="mx-2 text-dark dark:text-light"
+            className="mx-2"
             aria-label="Phone"
             rel="noreferrer"
           >
@@ -209,7 +211,7 @@ function Teams() {
           <a
             href={social?.linkedin}
             target="_blank"
-            className="mx-2 text-dark dark:text-light"
+            className="mx-2"
             aria-label="Linkedin"
             rel="noreferrer"
           >
@@ -221,15 +223,15 @@ function Teams() {
   };
 
   return (
-    <div className="h-screen">
-      <div className="flex h-full lg:flex-row flex-col">
-        <div className="w-1/4 h-full flex flex-col justify-center items-center space-y-10 py-4 px-6 bg-brand-500">
+    <div className="xl:h-screen">
+      <div className="flex h-full xl:flex-row flex-col">
+        <div className="xl:w-1/4 min-h-[400px] h-full flex flex-row xl:flex-col justify-center items-center space-x-10 xl:space-x-0 xl:space-y-10 py-4 px-6 bg-brand-500">
           {teams &&
             teams?.map((team, idx) => {
               return (
                 <button
                   key={idx}
-                  className="w-1/2 bg-light px-6 py-2 text-center rounded-sm border-none"
+                  className="xl:w-1/2 h-20 w-20 rounded-full bg-light px-6 py-2 text-center xl:rounded-sm border-none"
                   onClick={() => {
                     setActiveTeam(idx);
                   }}
@@ -239,11 +241,11 @@ function Teams() {
               );
             })}
         </div>
-        <div className="w-3/4 overflow-auto p-6 dark:bg-mid">
-          <h3 className="text-5xl pb-5 font-semibold">
+        <div className="xl:w-3/4 max-h-screen overflow-y-auto overflow-auto py-6 sm:p-6 bg-light dark:bg-dark dark:text-white">
+          <h3 className="text-5xl text-center pb-5 font-semibold">
             Team {teams[activeTeam]?.year}
           </h3>
-          <div className="grid grid-cols-3 dark:bg-mid shadow-md rounded-3xl bg-light p-5">
+          <div className="grid sm:grid-cols-2 2xl:grid-cols-3 shadow-md rounded-3xl gap-6 p-5">
             {teams[activeTeam]?.members?.map((member, idx) => {
               const { name, designation, social, img } = member;
               return (

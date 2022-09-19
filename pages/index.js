@@ -21,14 +21,17 @@ function HomePage() {
       </Head>
 
       <TFCtemplate />
-      <SectionDivider name="Vission Mission" img="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(70).webp"/>
       <VisionMission />
+      <SectionDivider name="" img="img1" />
       <Drawer />
       <About />
-      <AboutCarousel />
+      <SectionDivider name="Events" img="img2" />
       <Event />
+      <SectionDivider name="Our Initiatives" img="img1" />
       <Initiative />
+      <SectionDivider name="Our Team" img="img2" />
       <Teams />
+      <SectionDivider name="" img="img3" />
     </div>
   )
 }

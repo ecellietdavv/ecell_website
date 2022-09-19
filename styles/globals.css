@@ -2,6 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
+.img1{
+  background-image: url("https://mdbcdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(50).webp");
+}
+
+.img2{
+  background-image: url("https://mdbcdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(51).webp");
+}
+
+.img3{
+  background-image: url("https://mdbcdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(52).webp");
+}
+
 html,
 body {
   padding: 0;

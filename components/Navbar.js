@@ -31,24 +31,29 @@ function Navbar() {
   ];
 
   return (
-    <nav className="bg-light dark:bg-dark items-center w-full py-4 flex dark:text-white text-dark justify-between px-6 fixed z-50 top-0">
-      <Image src={dark ? "/assets/Logos/logo_b.png" : "/assets/Logos/logo_w.png"} width={60} height={60} />
-      <ul className="space-x-8 md:flex hidden py-2 px-4 ">
-        {navItems.map((value, idx) => {
-          return <li className="hover:underline hover:cursor-pointer hover:text-brand-300" key={idx}>{value.icon}{value.name}</li>;
-        })}
-      </ul>
-      <div className="flex space-x-4 items-center justify-center px-4">
-        {dark ? (
-          <DarkModeIcon className="cursor-pointer" onClick={handleDarkMode} />
-        ) : (
-          <WbSunnyIcon className="cursor-pointer" onClick={handleDarkMode} />
-        )}
-        <button className="md:block hidden bg-brand-400 dark:bg-brand-400 hover:bg-brand-600 py-2 px-4 rounded-full text-dark dark:hover:bg-brand-600 dark:text-white">Contact Us</button>
-        <MenuIcon
-          className="block md:hidden"
-          data-drawer-target="drawer-navigation" data-drawer-show="drawer-navigation" aria-controls="drawer-navigation"
-        />
+    <nav className="bg-light dark:bg-dark  w-full py-2 flex dark:text-white text-dark fixed z-50 top-0">
+      <div className="max-w-7xl flex w-full items-center justify-between mx-auto px-4 sm:px-6">
+
+        <Image src={dark ? "/assets/Logos/logo_b.png" : "/assets/Logos/logo_w.png"} width={70} height={70} />
+
+        <ul className="space-x-8 md:flex hidden py-2 px-4 ">
+          {navItems.map((value, idx) => {
+            return <li className="hover:underline cursor-pointer text-md" key={idx}>{value.icon}{value.name}</li>;
+          })}
+        </ul>
+
+        <div className="flex space-x-4 items-center justify-center px-4">
+          {dark ? (
+            <DarkModeIcon className="cursor-pointer" onClick={handleDarkMode} />
+          ) : (
+            <WbSunnyIcon className="cursor-pointer" onClick={handleDarkMode} />
+          )}
+          <button className="md:block hidden bg-brand-400 dark:bg-brand-400 hover:bg-brand-600 py-2 px-4 rounded-full dark:hover:bg-brand-600 text-white">Contact Us</button>
+          <MenuIcon
+            className="block md:hidden"
+            data-drawer-target="drawer-navigation" data-drawer-show="drawer-navigation" aria-controls="drawer-navigation"
+          />
+        </div>
       </div>
     </nav>
   );
