@@ -24,17 +24,17 @@ function Navbar() {
   };
 
   const navItems = [
-    { name: "Home", link: "" },
-    { name: "About", link: "" },
-    { name: "Our Team", link: "" },
-    { name: "Events", link: "" },
+    { name: "Home", link: "home" },
+    { name: "About", link: "about" },
+    { name: "Our Team", link: "team" },
+    { name: "Events", link: "events" },
   ];
 
   return (
     <nav className="bg-light dark:bg-dark  w-full py-2 flex dark:text-white text-dark fixed z-50 top-0">
       <div className="max-w-7xl flex w-full items-center justify-between mx-auto px-4 sm:px-6">
 
-        <Image src={dark ? "/assets/Logos/logo_b.png" : "/assets/Logos/logo_w.png"} width={70} height={70} />
+        <Image loading="lazy" src={dark ? "/assets/Logos/logo_b.png" : "/assets/Logos/logo_w.png"} width={70} height={70} />
 
         <ul className="space-x-8 md:flex hidden py-2 px-4 ">
           {navItems.map((value, idx) => {

@@ -6,11 +6,11 @@ import {FaQuora} from 'react-icons/fa'
 function Footer() {
 
 	const navLinks = [
-		{ name: "Home", link: "#" },
-		{ name: "About", link: "#" },
-		{ name: "Contact", link: "#" },
-		{ name: "Collab", link: "#" },
-		{ name: "Others", link: "#" },
+		{ name: "Home", link: "#home" },
+		{ name: "About", link: "#about" },
+		{ name: "Team", link: "#team" },
+		{ name: "Events", link: "#event" },
+		{ name: "Initiatives", link: "#initiative" },
 	]
 
 	const SocialLink = ({ link, Icon }) => {
@@ -32,9 +32,9 @@ function Footer() {
 				<div className="grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1 space-y-8 sm:space-y-0 sm:gap-8 sm:space-x-4 my-8">
 
 					{/* Information  */}
-					<div className="flex flex-col lg:w-1/2">
-						<h3 className="text-lg subpixel-antialiased font-semibold">Information</h3>
-						<p className="mt-4">We Are On Mission To Provide A Better Platform For Upcoming Entrepreneur From Initial Investment To Funding.</p>
+					<div className="flex flex-col">
+						<h3 className="text-lg subpixel-antialiased font-semibold">About Us</h3>
+						<p className="mt-4">E-Cell IET DAVV - A cradle for the development of the Entrepreneurial skills in the excellent minds of IET DAVV. Think, feel and collaborate with us, to give a major boost to your entrepreneurial journey.</p>
 					</div>
 
 					{/* Address  */}
@@ -50,7 +50,7 @@ function Footer() {
 					{/* Links  */}
 					<div className="flex flex-col">
 						<h3 className="text-lg subpixel-antialiased font-semibold dark:text-white">Links</h3>
-						<ul className="mt-4 space-y-6 text-dark">
+						<ul className="mt-4 space-y-2 text-dark">
 							{
 								navLinks?.map((value, idx) => {
 									return (
@@ -95,7 +95,7 @@ function Footer() {
 					<span className="text-base text-dark sm:text-center dark:text-light text-center">
 						© {new Date().getFullYear()}{" "}
 						<a href="#" className="hover:underline text-brand-500">
-							Ecell IET-Davv
+							E-Cell IET-DAVV
 						</a>
 						. All Rights Reserved.
 					</span>

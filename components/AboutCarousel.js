@@ -8,13 +8,13 @@ function AboutCarousel() {
 
                 <div className="relative w-full h-56 overflow-hidden rounded-lg md:h-96">
                     <div className="hidden duration-700 ease-in-out w-full h-full" data-carousel-item>
-                        <Image src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(73).webp" className="" layout="fill" objectFit="cover" />
+                        <Image loading="lazy" src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(73).webp" className="" layout="fill" objectFit="cover" />
                     </div>
                     <div className="hidden duration-700 ease-in-out w-full h-full" data-carousel-item>
-                        <Image src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(72).webp" className="" layout="fill" objectFit="cover" />
+                        <Image loading="lazy" src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(72).webp" className="" layout="fill" objectFit="cover" />
                     </div>
                     <div className="hidden duration-700 ease-in-out w-full h-full" data-carousel-item>
-                        <Image src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(71).webp" className="" layout="fill" objectFit="cover" />
+                        <Image loading="lazy" src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(71).webp" className="" layout="fill" objectFit="cover" />
                     </div>
                 </div>
 

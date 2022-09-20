@@ -25,7 +25,7 @@ function HomePage() {
       <SectionDivider name="" img="img1" />
       <Drawer />
       <About />
-      <SectionDivider name="Events" img="img2" />
+      <SectionDivider name="" img="img2" />
       <Event />
       <SectionDivider name="Our Initiatives" img="img1" />
       <Initiative />

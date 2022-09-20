@@ -2,6 +2,7 @@
 
 # dependencies
 /node_modules
+/ecell-website-backend/node_modules
 /.pnp
 .pnp.js
 

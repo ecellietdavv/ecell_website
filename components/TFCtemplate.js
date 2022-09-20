@@ -41,7 +41,7 @@ const TFCtemplate = () => {
                 {tfc?.map((value, idx) => {
                     return (
                         <div className='shadow-lg flex py-8 flex-col justify-center space-y-4 items-center' key={idx}>
-                            <Image height={192} width={192} src={value.img} alt={value.headg} />
+                            <Image loading="lazy" height={192} width={192} src={value.img} alt={value.headg} />
                             <h3 className='text-center font-semibold text-2xl dark:text-light'>{value.headg}</h3>
                             <p className='capitalize text-sm text-center mb-8 dark:text-light my-2 mx-auto px-10'>
                                 {value.desc}

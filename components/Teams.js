@@ -172,7 +172,7 @@ function Teams() {
         key={idx}
       >
         <div className="rounded-full overflow-hidden h-32 w-32">
-          <Image
+          <Image loading="lazy"
             width={128}
             height={128}
             className="object-cover duration-200 group-hover:scale-105 ease-in-out"

@@ -30,7 +30,7 @@ const Event = () => {
 				key={idx}
 			>
 				<div className="h-52 bg-light overflow-hidden">
-					<Image
+					<Image loading="lazy"
 						src={img}
 						alt={name}
 						height={490}
