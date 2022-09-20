@@ -1,31 +1,32 @@
 import React from 'react'
 import Image from 'next/image'
+import { urlFor } from '../utils/sanity'
 
-const initiative = () => {
+const initiative = ({initiatives}) => {
 
-  const initiatives = [
-    {
-      name: "Thinkers Cafe",
-      img: "https://mdbcdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(70).webp",
-      desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, quae sint sapiente soluta, id hic rem praesentium culpa necessitatibus distinctio doloribus aliquam. Architecto amet harum veniam voluptatibus iure provident commodi!"
-    },
-    {
-      name: "Thinkers Cafe",
-      img: "https://mdbcdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(70).webp",
-      desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, quae sint sapiente soluta, id hic rem praesentium culpa necessitatibus distinctio doloribus aliquam. Architecto amet harum veniam voluptatibus iure provident commodi!"
-    },
-    {
-      name: "Thinkers Cafe",
-      img: "https://mdbcdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(70).webp",
-      desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, quae sint sapiente soluta, id hic rem praesentium culpa necessitatibus distinctio doloribus aliquam. Architecto amet harum veniam voluptatibus iure provident commodi!"
-    },
-  ]
+  // const initiatives = [
+  //   {
+  //     name: "Thinkers Cafe",
+  //     img: "https://mdbcdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(70).webp",
+  //     desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, quae sint sapiente soluta, id hic rem praesentium culpa necessitatibus distinctio doloribus aliquam. Architecto amet harum veniam voluptatibus iure provident commodi!"
+  //   },
+  //   {
+  //     name: "Thinkers Cafe",
+  //     img: "https://mdbcdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(70).webp",
+  //     desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, quae sint sapiente soluta, id hic rem praesentium culpa necessitatibus distinctio doloribus aliquam. Architecto amet harum veniam voluptatibus iure provident commodi!"
+  //   },
+  //   {
+  //     name: "Thinkers Cafe",
+  //     img: "https://mdbcdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(70).webp",
+  //     desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, quae sint sapiente soluta, id hic rem praesentium culpa necessitatibus distinctio doloribus aliquam. Architecto amet harum veniam voluptatibus iure provident commodi!"
+  //   },
+  // ]
 
   const IntiativeCard = ({ img, name, desc, idx }) => {
     return (
       <div key={idx} className={idx % 2 === 0 ? "flex p-4 sm:p-0 relative flex-col md:flex-row md:justify-between items-center w-full right-timeline " : " flex p-4 sm:p-0 relative flex-col md:justify-between md:flex-row-reverse items-center w-full"}>
         <div className="order-1 md:w-5/12">
-          <Image loading="lazy" width={600} height={200} className="object-cover rounded-t-lg md:rounded-lg" src={img} />
+          <Image loading="lazy" width={600} height={200} className="object-cover rounded-t-lg md:rounded-lg" src={urlFor(img).url()} />
         </div>
         <div className="z-20 right-2 top-2 absolute md:static md:block flex items-center order-1 dark:bg-light bg-dark shadow-xl w-8 h-8 rounded-full">
           <h1 className=" mx-auto font-semibold text-lg text-center text-light dark:text-dark">{idx + 1}</h1>

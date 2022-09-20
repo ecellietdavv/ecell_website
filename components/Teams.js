@@ -3,166 +3,9 @@ import React, { useState } from "react";
 import { MdEmail } from "react-icons/md";
 import { AiFillPhone } from "react-icons/ai";
 import { BsLinkedin } from "react-icons/bs";
+import { urlFor } from "../utils/sanity";
 
-function Teams() {
-  const teams = [
-    {
-      year: "2022",
-      members: [
-        {
-          name: "Name Surname",
-          designation: "Lorem, ipsum",
-          img: "https://xsgames.co/randomusers/avatar.php?g=male",
-          social: {
-            email: "xyz@gmail.com",
-            phone: "9191919191",
-            linkedin: "linked in",
-          },
-        },
-        {
-          name: "Name Surname",
-          designation: "Lorem, ipsum",
-          img: "https://xsgames.co/randomusers/avatar.php?g=female",
-          social: {
-            email: "xyz@gmail.com",
-            phone: "9191919191",
-            linkedin: "linked in",
-          },
-        },
-        {
-          name: "Name Surname",
-          designation: "Lorem, ipsum",
-          img: "https://xsgames.co/randomusers/avatar.php?g=male",
-          social: {
-            email: "xyz@gmail.com",
-            phone: "9191919191",
-            linkedin: "linked in",
-          },
-        },
-        {
-          name: "Name Surname",
-          designation: "Lorem, ipsum",
-          img: "https://xsgames.co/randomusers/avatar.php?g=female",
-          social: {
-            email: "xyz@gmail.com",
-            phone: "9191919191",
-            linkedin: "linked in",
-          },
-        },
-        {
-          name: "Name Surname",
-          designation: "Lorem, ipsum",
-          img: "https://xsgames.co/randomusers/avatar.php?g=male",
-          social: {
-            email: "xyz@gmail.com",
-            phone: "9191919191",
-            linkedin: "linked in",
-          },
-        },
-        {
-          name: "Name Surname",
-          designation: "Lorem, ipsum",
-          img: "https://xsgames.co/randomusers/avatar.php?g=female",
-          social: {
-            email: "xyz@gmail.com",
-            phone: "9191919191",
-            linkedin: "linked in",
-          },
-        },
-      ],
-    },
-    {
-      year: "2021",
-      members: [
-        {
-          name: "Name Surname",
-          designation: "Lorem, ipsum",
-          img: "https://xsgames.co/randomusers/avatar.php?g=male",
-          social: {
-            email: "xyz@gmail.com",
-            phone: "9191919191",
-            linkedin: "linked in",
-          },
-        },
-        {
-          name: "Name Surname",
-          designation: "Lorem, ipsum",
-          img: "https://xsgames.co/randomusers/avatar.php?g=female",
-          social: {
-            email: "xyz@gmail.com",
-            phone: "9191919191",
-            linkedin: "linked in",
-          },
-        },
-        {
-          name: "Name Surname",
-          designation: "Lorem, ipsum",
-          img: "https://xsgames.co/randomusers/avatar.php?g=male",
-          social: {
-            email: "xyz@gmail.com",
-            phone: "9191919191",
-            linkedin: "linked in",
-          },
-        },
-        {
-          name: "Name Surname",
-          designation: "Lorem, ipsum",
-          img: "https://xsgames.co/randomusers/avatar.php?g=female",
-          social: {
-            email: "xyz@gmail.com",
-            phone: "9191919191",
-            linkedin: "linked in",
-          },
-        },
-        {
-          name: "Name Surname",
-          designation: "Lorem, ipsum",
-          img: "https://xsgames.co/randomusers/avatar.php?g=male",
-          social: {
-            email: "xyz@gmail.com",
-            phone: "9191919191",
-            linkedin: "linked in",
-          },
-        },
-      ],
-    },
-    {
-      year: "2020",
-      members: [
-        {
-          name: "Name Surname",
-          designation: "Lorem, ipsum",
-          img: "https://xsgames.co/randomusers/avatar.php?g=male",
-          social: {
-            email: "xyz@gmail.com",
-            phone: "9191919191",
-            linkedin: "linked in",
-          },
-        },
-        {
-          name: "Name Surname",
-          designation: "Lorem, ipsum",
-          img: "https://xsgames.co/randomusers/avatar.php?g=female",
-          social: {
-            email: "xyz@gmail.com",
-            phone: "9191919191",
-            linkedin: "linked in",
-          },
-        },
-        {
-          name: "Name Surname",
-          designation: "Lorem, ipsum",
-          img: "https://xsgames.co/randomusers/avatar.php?g=male",
-          social: {
-            email: "xyz@gmail.com",
-            phone: "9191919191",
-            linkedin: "linked in",
-          },
-        },
-      ],
-    },
-  ];
-
+function Teams({teams}) {
   const [activeTeam, setActiveTeam] = useState(0);
 
   const MemberCard = ({ name, designation, img, social, idx }) => {
@@ -191,20 +34,16 @@ function Teams() {
 
         <div className="flex mt-3 text-dark dark:text-white -mx-2">
           <a
-            href={social?.email}
-            target="_blank"
+            href={`mailto:${social?.email}`}
             className="mx-2"
             aria-label="Email"
-            rel="noreferrer"
           >
             <MdEmail className="h-6 w-6" />
           </a>
           <a
-            href={social?.phone}
-            target="_blank"
+            href={`tel:${social?.phone}`}
             className="mx-2"
             aria-label="Phone"
-            rel="noreferrer"
           >
             <AiFillPhone className="h-6 w-6" />
           </a>
@@ -231,7 +70,7 @@ function Teams() {
               return (
                 <button
                   key={idx}
-                  className="xl:w-1/2 h-20 w-20 rounded-full bg-light px-6 py-2 text-center xl:rounded-sm border-none"
+                  className="rounded-full bg-light px-10 py-2 text-center xl:rounded-sm border-none"
                   onClick={() => {
                     setActiveTeam(idx);
                   }}
@@ -245,7 +84,7 @@ function Teams() {
           <h3 className="text-5xl text-center pb-5 font-semibold">
             Team {teams[activeTeam]?.year}
           </h3>
-          <div className="grid sm:grid-cols-2 2xl:grid-cols-3 shadow-md rounded-3xl gap-6 p-5">
+          <div className="grid sm:grid-cols-2 2xl:grid-cols-3 gap-6 p-5">
             {teams[activeTeam]?.members?.map((member, idx) => {
               const { name, designation, social, img } = member;
               return (
@@ -254,7 +93,7 @@ function Teams() {
                   name={name}
                   designation={designation}
                   social={social}
-                  img={img}
+                  img={urlFor(img).url()}
                   idx={idx}
                 />
               );

@@ -2,8 +2,11 @@ import React from "react";
 import Link from "next/link";
 import {BsFacebook, BsLinkedin, BsYoutube, BsTwitter, BsInstagram} from 'react-icons/bs'
 import {FaQuora} from 'react-icons/fa'
+import { useForm, SubmitHandler } from 'react-hook-form'
 
 function Footer() {
+
+	const { register, handleSubmit, formState: { errors } } = useForm();
 
 	const navLinks = [
 		{ name: "Home", link: "#home" },
@@ -25,6 +28,17 @@ function Footer() {
 			</a>
 		)
 	}
+
+	const onSubmit = async data => {
+        await fetch('/api/contactUs', {
+            method: "POST",
+            body: JSON.stringify(data),
+        }).then(() => {
+            console.log(data)
+        }).catch((err) => {
+            console.log(err)
+        })
+    };
 
 	return (
 		<footer className="bg-light dark:bg-dark dark:text-white py-4">
@@ -50,11 +64,11 @@ function Footer() {
 					{/* Links  */}
 					<div className="flex flex-col">
 						<h3 className="text-lg subpixel-antialiased font-semibold dark:text-white">Links</h3>
-						<ul className="mt-4 space-y-2 text-dark">
+						<ul className="mt-4 space-y-2 text-dark dark:text-light">
 							{
 								navLinks?.map((value, idx) => {
 									return (
-										<li className="hover:font-semibold w-fit" key={idx}><Link href={value.link}><a className="text-dark dark:text-light dark:hover:text-brand-500 hover:text-brand-500 focus:text-brand-500 dark:focus:text-brand-500">{value.name}</a></Link></li>
+										<li className="hover:font-semibold w-fit" key={idx}><Link href={value.link}><a className="dark:hover:text-brand-500 hover:text-brand-500 focus:text-brand-500 dark:focus:text-brand-500">{value.name}</a></Link></li>
 									)
 								})
 							}
@@ -66,23 +80,22 @@ function Footer() {
 						<h3 className="text-lg subpixel-antialiased font-semibold">
 							Contact Us
 						</h3>
-						<form action="#" className="mr-3 mt-4">
+						<form onSubmit={handleSubmit(onSubmit)} className="mr-3 mt-4">
 							<input
 								type="text"
-								id="small-input"
+								name="name"
 								className="block h-10 text-base placeholder:text-base p-2 mt-2 w-full text-dark bg-white rounded-lg border border-mid sm:text-xs focus:ring-mid focus:border-mid dark:bg-mid  dark:placeholder-light dark:text-light dark:focus:ring-mid dark:focus:border-brand-600"
 								placeholder="Your Name"
-								required
+								{...register("name", { required: true })}
 							/>
 							<input
 								type="email"
 								name="email"
-								id="email"
+								{...register("email", { required: true })}
 								className="block h-10 text-base placeholder:text-base p-2 mt-2 w-full text-dark bg-white rounded-lg border border-mid sm:text-xs focus:ring-mid focus:border-mid dark:bg-mid  dark:placeholder-light dark:text-light dark:focus:ring-mid dark:focus:border-brand-600"
 								placeholder="Email Address"
-								required
 							/>
-							<textarea id="message" rows="5" className="block p-2 mt-2 w-full h-20 text-sm text-gray-900 bg-white rounded-lg border border-mid focus:ring-brand-500 focus:border-brand-500 dark:bg-mid  dark:placeholder-light dark:text-white dark:focus:ring-brand-500 dark:focus:border-brand-500" placeholder="Leave a comment..."></textarea>
+							<textarea {...register("message", { required: true })} rows="5" className="block p-2 mt-2 w-full h-20 text-sm text-gray-900 bg-white rounded-lg border border-mid focus:ring-brand-500 focus:border-brand-500 dark:bg-mid  dark:placeholder-light dark:text-white dark:focus:ring-brand-500 dark:focus:border-brand-500" placeholder="Leave a comment..."></textarea>
 							<button type="submit" className="text-light mt-3 w-full bg-brand-500 dark:bg-brand-500 dark:hover:bg-brand-600 hover:bg-brand-600 focus:outline-none focus:ring-1 focus:ring-blue-200 font-medium rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:hover:bg-brand">
 								Submit
 							</button>

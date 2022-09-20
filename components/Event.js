@@ -3,25 +3,27 @@ import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import ArrowDropUpIcon from "@mui/icons-material/ArrowDropUp";
 import { useState } from "react";
 import Image from "next/image";
+import { urlFor } from "../utils/sanity";
 
-const Event = () => {
-	const card = [
-		{
-			img: "https://xsgames.co/randomusers/avatar.php?g=male",
-			desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente omnis, obcaecati deserunt porro possimus eius illum recusandae impedit, necessitatibus repellendus sit dolores at iure perspiciatis ipsa perferendis. Perferendis, est? Tempora eligendi commodi quis neque facere ducimus ea earum error eaque quas rem id veritatis delectus laborum odit, ad nostrum deleniti?",
-			name: "Event Name",
-		},
-		{
-			img: "https://xsgames.co/randomusers/avatar.php?g=female",
-			desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente omnis, obcaecati deserunt porro possimus eius illum recusandae impedit, necessitatibus repellendus sit dolores at iure perspiciatis ipsa perferendis. Perferendis, est? Tempora eligendi commodi quis neque facere ducimus ea earum error eaque quas rem id veritatis delectus laborum odit, ad nostrum deleniti?",
-			name: "Event Name",
-		},
-		{
-			img: "https://xsgames.co/randomusers/avatar.php?g=male",
-			desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente omnis, obcaecati deserunt porro possimus eius illum recusandae impedit, necessitatibus repellendus sit dolores at iure perspiciatis ipsa perferendis. Perferendis, est? Tempora eligendi commodi quis neque facere ducimus ea earum error eaque quas rem id veritatis delectus laborum odit, ad nostrum deleniti?",
-			name: "Event Name",
-		},
-	];
+const Event = ({events}) => {
+	// const card = [
+	// 	{
+	// 		img: "https://xsgames.co/randomusers/avatar.php?g=male",
+	// 		desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente omnis, obcaecati deserunt porro possimus eius illum recusandae impedit, necessitatibus repellendus sit dolores at iure perspiciatis ipsa perferendis. Perferendis, est? Tempora eligendi commodi quis neque facere ducimus ea earum error eaque quas rem id veritatis delectus laborum odit, ad nostrum deleniti?",
+	// 		name: "Event Name",
+	// 	},
+	// 	{
+	// 		img: "https://xsgames.co/randomusers/avatar.php?g=female",
+	// 		desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente omnis, obcaecati deserunt porro possimus eius illum recusandae impedit, necessitatibus repellendus sit dolores at iure perspiciatis ipsa perferendis. Perferendis, est? Tempora eligendi commodi quis neque facere ducimus ea earum error eaque quas rem id veritatis delectus laborum odit, ad nostrum deleniti?",
+	// 		name: "Event Name",
+	// 	},
+	// 	{
+	// 		img: "https://xsgames.co/randomusers/avatar.php?g=male",
+	// 		desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente omnis, obcaecati deserunt porro possimus eius illum recusandae impedit, necessitatibus repellendus sit dolores at iure perspiciatis ipsa perferendis. Perferendis, est? Tempora eligendi commodi quis neque facere ducimus ea earum error eaque quas rem id veritatis delectus laborum odit, ad nostrum deleniti?",
+	// 		name: "Event Name",
+	// 	},
+	// ];
+
 	const EventCard = ({ img, name, desc, idx }) => {
 		const [show, setShow] = useState(false);
 		return (
@@ -79,11 +81,11 @@ const Event = () => {
 
 			<div className="w-full dark:bg-dark">
 				<div className="grid max-w-7xl mx-auto justify-center px-[5%] md:px-4 items-center grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 py-10">
-					{card?.map((value, idx) => {
+					{events && events?.map((value, idx) => {
 						const { img, name, desc } = value;
 						return (
 							// eslint-disable-next-line react/jsx-key
-							<EventCard img={img} name={name} desc={desc} idx={idx} />
+							<EventCard img={urlFor(img).url()} name={name} desc={desc} idx={idx} />
 						);
 					})}
 				</div>

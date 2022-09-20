@@ -5,13 +5,14 @@ import TFCtemplate from "../components/TFCtemplate"
 import Event from "../components/Event"
 import Initiative from "../components/Initiative"
 import About from "../components/About"
-import AboutCarousel from "../components/AboutCarousel"
 // import Carousel from "../components/Carousel"
 import VisionMission from "../components/VisionMission"
 import Teams from "../components/Teams"
 import SectionDivider from "../components/SectionDivider"
+import { sanityClient } from "../utils/sanity"
+import { getEventsQuery, getInitiativesQuery, getTeamsQuery } from "../utils/queries"
 
-function HomePage() {
+function HomePage({ events, initiatives, teams }) {
   return (
     <div className="w-full">
       <Head>
@@ -26,14 +27,27 @@ function HomePage() {
       <Drawer />
       <About />
       <SectionDivider name="" img="img2" />
-      <Event />
+      <Event events={events} />
       <SectionDivider name="Our Initiatives" img="img1" />
-      <Initiative />
+      <Initiative initiatives={initiatives} />
       <SectionDivider name="Our Team" img="img2" />
-      <Teams />
+      <Teams teams={teams} />
       <SectionDivider name="" img="img3" />
     </div>
   )
+}
+
+export const getServerSideProps = async () => {
+  const events = await sanityClient.fetch(getEventsQuery)
+  const initiatives = await sanityClient.fetch(getInitiativesQuery)
+  const teams = await sanityClient.fetch(getTeamsQuery)
+  return {
+    props: {
+      events,
+      initiatives,
+      teams
+    }
+  }
 }
 
 export default HomePage
