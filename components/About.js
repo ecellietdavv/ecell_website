@@ -2,19 +2,35 @@
 import React from "react";
 import Image from "next/image";
 import AboutCarousel from "./AboutCarousel";
+import { urlFor } from "../utils/sanity";
+import PortableText from "react-portable-text";
 
-const About = () => {
+const About = ({ content }) => {
   return (
     <section id="about" className="bg-light xl:max-h-screen dark:bg-dark text-dark dark:text-white">
       <div className="grid xl:grid-cols-2 max-w-[1920px] mx-auto sm:items-center xl:h-screen overflow-hidden text-center xl:text-left">
         <div className="flex flex-col space-y-10 py-10 xl:py-0 xl:space-y-14 mx-6 text-sm sm:text-base sm:mx-20">
           <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl underline underline-offset-8">About Us</h1>
-          <p className="dark:text-slate-300 mx-auto xl:mx-0 lg:w-3/4">
-            It's a widely accepted saying that "Entrepreneurs are people who solve problems instead of complaining about them" and here at Entrepreneurship Cell, IET DAVV, it's our goal to make the students of today, the entrepreneurs of tomorrow. 
-          </p>
-          <p className="dark:text-slate-300 mx-auto xl:mx-0 lg:w-3/4">
-          Entrepreneurs with technical knowledge like our students have an extraordinary capacity to innovate as well as on both, the technical and business fronts. It's our mission not only to introduce disciplined entrepreneurship to our students but to nourish their entrepreneurial spirit to transform their dreams and aspiration into reality.
-          </p>
+          <PortableText
+            className='dark:text-slate-300 mx-auto xl:mx-0 lg:w-3/4 space-y-3'
+            dataset={process.env.NEXT_PUBLIC_SANITY_DATASET}
+            projectId={process.env.NEXT_PUBLIC_SANITY_PROJECT_ID}
+            content={content?.body}
+          // serializers={{
+          //     h1: (props) => {
+          //         <h1 className='text-2xl font-bold my-5' {...props} />
+          //     },
+          //     h2: (props) => {
+          //         <h2 className='text-xl font-bold my-5' {...props} />
+          //     },
+          //     li: ({ children }) => {
+          //         <li className='ml-4 list-disc'>{children}</li>
+          //     },
+          //     link: ({ href, children }) => {
+          //         <a href={href} className='text-blue-500 hover:underline'>{children}</a>
+          //     },
+          // }}
+          />
           <button className="rounded-xl text-white mx-auto xl:mx-0 bg-brand-600 w-fit hover:bg-brand-500 font-semibold px-10 p-2">
             Know More
           </button>
@@ -23,18 +39,18 @@ const About = () => {
         <div className="hidden sm:flex xl:-rotate-45 px-10 py-10 xl:py-0 lg:px-24 xl:px-0 flex-col items-center overflow-hidden space-y-4 w-full">
           <div className="w-full flex items-end h-96 space-x-4">
             <div className="bg-gray-600 drop-shadow-xl h-full w-full xl:h-1/2 xl:w-1/3">
-              <Image loading="lazy"  src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(60).webp" layout="fill" objectFit="cover" />
+              <Image loading="lazy" src={urlFor(content.images.img1).url()} layout="fill" objectFit="cover" />
             </div>
             <div className="bg-gray-600 drop-shadow-xl h-full w-full xl:w-2/3">
-              <Image loading="lazy"  src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(61).webp" layout="fill" objectFit="cover" />
+              <Image loading="lazy" src={urlFor(content.images.img2).url()} layout="fill" objectFit="cover" />
             </div>
           </div>
           <div className="w-full bg-gray-600 h-96 drop-shadow-xl">
-            <Image loading="lazy"  src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(62).webp" layout="fill" objectFit="cover" />
+            <Image loading="lazy" src={urlFor(content.images.img3).url()} layout="fill" objectFit="cover" />
           </div>
         </div>
 
-        <AboutCarousel />
+        <AboutCarousel images={content.images}/>
       </div>
     </section>
   );

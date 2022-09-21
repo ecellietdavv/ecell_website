@@ -13,6 +13,14 @@ export default {
             ]
         },
         {
+            name: 'date',
+            title: 'Date Initiated',
+            type: 'date',
+            validation: Rule => [
+                Rule.required().error('Date is required'),
+            ]
+        },
+        {
             name: 'desc',
             title: 'Description',
             type: 'string',

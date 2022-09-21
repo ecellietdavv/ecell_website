@@ -23,11 +23,24 @@ function Navbar() {
     }
   };
 
+  const handleScroll = (id) => {
+    var element = document.getElementById(id);
+    var headerOffset = 80;
+    var elementPosition = element.getBoundingClientRect().top;
+    var offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: "smooth"
+    });
+  }
+
   const navItems = [
     { name: "Home", link: "home" },
     { name: "About", link: "about" },
-    { name: "Our Team", link: "team" },
     { name: "Events", link: "events" },
+    { name: "Initiatives", link: "initiatives" },
+    { name: "Our Team", link: "teams" },
   ];
 
   return (
@@ -38,7 +51,7 @@ function Navbar() {
 
         <ul className="space-x-8 md:flex hidden py-2 px-4 ">
           {navItems.map((value, idx) => {
-            return <li className="hover:underline cursor-pointer text-md" key={idx}>{value.icon}{value.name}</li>;
+            return <li className="hover:underline cursor-pointer text-md" key={idx} onClick={() => handleScroll(value.link)}>{value.icon}{value.name}</li>;
           })}
         </ul>
 
@@ -48,7 +61,8 @@ function Navbar() {
           ) : (
             <WbSunnyIcon className="cursor-pointer" onClick={handleDarkMode} />
           )}
-          <button className="md:block hidden bg-brand-400 dark:bg-brand-400 hover:bg-brand-600 py-2 px-4 rounded-full dark:hover:bg-brand-600 text-white">Contact Us</button>
+          <button type="button" onClick={() => handleScroll("footer")} className="md:block hidden bg-brand-400 dark:bg-brand-400 hover:bg-brand-600 py-2 px-4 rounded-full dark:hover:bg-brand-600 text-white">Contact Us</button>
+
           <MenuIcon
             className="block md:hidden"
             data-drawer-target="drawer-navigation" data-drawer-show="drawer-navigation" aria-controls="drawer-navigation"

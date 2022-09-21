@@ -15,6 +15,8 @@ import initiative from './initiative'
 import team from './team'
 import event from './event'
 import contact from './contact'
+import homepageMisc from './homepageMisc'
+import tfc from './tfc'
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -36,6 +38,8 @@ export default createSchema({
     initiative,
     team,
     event,
-    contact
+    contact,
+    homepageMisc,
+    tfc
   ]),
 })

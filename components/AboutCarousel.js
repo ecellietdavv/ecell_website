@@ -1,20 +1,21 @@
 import Image from 'next/image'
 import React from 'react'
+import { urlFor } from '../utils/sanity'
 
-function AboutCarousel() {
+function AboutCarousel({images}) {
     return (
         <div className="carousel w-5/6 mx-auto pb-5 md:hidden block ">
             <div id="animation-carousel" className="relative" data-carousel="static">
 
                 <div className="relative w-full h-56 overflow-hidden rounded-lg md:h-96">
                     <div className="hidden duration-700 ease-in-out w-full h-full" data-carousel-item>
-                        <Image loading="lazy" src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(73).webp" className="" layout="fill" objectFit="cover" />
+                        <Image loading="lazy" src={urlFor(images.img1).url()} className="" layout="fill" objectFit="cover" />
                     </div>
                     <div className="hidden duration-700 ease-in-out w-full h-full" data-carousel-item>
-                        <Image loading="lazy" src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(72).webp" className="" layout="fill" objectFit="cover" />
+                        <Image loading="lazy" src={urlFor(images.img2).url()} className="" layout="fill" objectFit="cover" />
                     </div>
                     <div className="hidden duration-700 ease-in-out w-full h-full" data-carousel-item>
-                        <Image loading="lazy" src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(71).webp" className="" layout="fill" objectFit="cover" />
+                        <Image loading="lazy" src={urlFor(images.img3).url()} className="" layout="fill" objectFit="cover" />
                     </div>
                 </div>
 

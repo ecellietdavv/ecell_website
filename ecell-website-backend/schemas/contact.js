@@ -10,7 +10,8 @@ export default {
             validation: Rule => [
                 Rule.required().min(3).error('A name of min. 10 characters is required'),
                 Rule.max(60).warning('Max name limit reached')
-            ]
+            ],
+            readOnly: true
         },
         {
             name: 'email',
@@ -19,7 +20,8 @@ export default {
             validation: Rule => [
                 Rule.required().min(3).error('A name of min. 10 characters is required'),
                 // Rule.max(60).warning('Max name limit reached')
-            ]
+            ],
+            readOnly: true
         },
         {
             name: 'message',
@@ -28,7 +30,8 @@ export default {
             validation: Rule => [
                 Rule.required().min(10).error('A description of min. 10 characters is required'),
                 // Rule.max(50).warning('Shorter titles are usually better')
-            ]
+            ],
+            readOnly: true
         },
     ],
     preview: {

@@ -5,7 +5,7 @@ import { AiFillPhone } from "react-icons/ai";
 import { BsLinkedin } from "react-icons/bs";
 import { urlFor } from "../utils/sanity";
 
-function Teams({teams}) {
+function Teams({ teams }) {
   const [activeTeam, setActiveTeam] = useState(0);
 
   const MemberCard = ({ name, designation, img, social, idx }) => {
@@ -62,7 +62,7 @@ function Teams({teams}) {
   };
 
   return (
-    <div className="xl:h-screen">
+    <section id="teams" className="xl:h-screen">
       <div className="flex h-full xl:flex-row flex-col">
         <div className="xl:w-1/4 min-h-[400px] h-full flex flex-row xl:flex-col justify-center items-center space-x-10 xl:space-x-0 xl:space-y-10 py-4 px-6 bg-brand-500">
           {teams &&
@@ -88,7 +88,6 @@ function Teams({teams}) {
             {teams[activeTeam]?.members?.map((member, idx) => {
               const { name, designation, social, img } = member;
               return (
-                // eslint-disable-next-line react/jsx-key
                 <MemberCard
                   name={name}
                   designation={designation}
@@ -101,7 +100,7 @@ function Teams({teams}) {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 

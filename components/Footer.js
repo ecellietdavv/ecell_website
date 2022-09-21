@@ -1,7 +1,6 @@
 import React from "react";
-import Link from "next/link";
-import {BsFacebook, BsLinkedin, BsYoutube, BsTwitter, BsInstagram} from 'react-icons/bs'
-import {FaQuora} from 'react-icons/fa'
+import { BsFacebook, BsLinkedin, BsYoutube, BsTwitter, BsInstagram } from 'react-icons/bs'
+import { FaQuora } from 'react-icons/fa'
 import { useForm, SubmitHandler } from 'react-hook-form'
 
 function Footer() {
@@ -9,12 +8,24 @@ function Footer() {
 	const { register, handleSubmit, formState: { errors } } = useForm();
 
 	const navLinks = [
-		{ name: "Home", link: "#home" },
-		{ name: "About", link: "#about" },
-		{ name: "Team", link: "#team" },
-		{ name: "Events", link: "#event" },
-		{ name: "Initiatives", link: "#initiative" },
-	]
+		{ name: "Home", link: "home" },
+		{ name: "About", link: "about" },
+		{ name: "Events", link: "events" },
+		{ name: "Initiatives", link: "initiatives" },
+		{ name: "Our Team", link: "teams" },
+	];
+
+	const handleScroll = (id) => {
+		var element = document.getElementById(id);
+		var headerOffset = 80;
+		var elementPosition = element.getBoundingClientRect().top;
+		var offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+		window.scrollTo({
+			top: offsetPosition,
+			behavior: "smooth"
+		});
+	}
 
 	const SocialLink = ({ link, Icon }) => {
 		return (
@@ -30,18 +41,18 @@ function Footer() {
 	}
 
 	const onSubmit = async data => {
-        await fetch('/api/contactUs', {
-            method: "POST",
-            body: JSON.stringify(data),
-        }).then(() => {
-            console.log(data)
-        }).catch((err) => {
-            console.log(err)
-        })
-    };
+		await fetch('/api/contactUs', {
+			method: "POST",
+			body: JSON.stringify(data),
+		}).then(() => {
+			console.log(data)
+		}).catch((err) => {
+			console.log(err)
+		})
+	};
 
 	return (
-		<footer className="bg-light dark:bg-dark dark:text-white py-4">
+		<footer id="footer" className="bg-light dark:bg-dark dark:text-white py-4">
 			<div className="px-10 pb-1 mx-auto">
 				<div className="grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1 space-y-8 sm:space-y-0 sm:gap-8 sm:space-x-4 my-8">
 
@@ -68,7 +79,7 @@ function Footer() {
 							{
 								navLinks?.map((value, idx) => {
 									return (
-										<li className="hover:font-semibold w-fit" key={idx}><Link href={value.link}><a className="dark:hover:text-brand-500 hover:text-brand-500 focus:text-brand-500 dark:focus:text-brand-500">{value.name}</a></Link></li>
+										<li className="w-fit dark:text-white cursor-pointer" onClick={() => handleScroll(value.link)} key={idx}>{value.name}</li>
 									)
 								})
 							}
@@ -114,12 +125,12 @@ function Footer() {
 					</span>
 
 					<div className="flex mt-4 space-x-6 sm:justify-center justify-evenly sm:mt-0">
-						<SocialLink Icon={BsFacebook} link="https://www.facebook.com/ecell.ietdavv"/>
-						<SocialLink Icon={BsTwitter} link="https://twitter.com/ecell_ietdavv"/>
-						<SocialLink Icon={BsLinkedin} link="https://www.linkedin.com/company/e-cell-iet-davv"/>
-						<SocialLink Icon={BsInstagram} link="https://www.instagram.com/ecell_ietdavv/"/>
-						<SocialLink Icon={BsYoutube} link="https://www.youtube.com/channel/UCSGBzFVv93LmFR69gLuaYSA"/>
-						<SocialLink Icon={FaQuora} link="https://www.quora.com/profile/E-Cell-IET-DAVV-1"/>
+						<SocialLink Icon={BsFacebook} link="https://www.facebook.com/ecell.ietdavv" />
+						<SocialLink Icon={BsTwitter} link="https://twitter.com/ecell_ietdavv" />
+						<SocialLink Icon={BsLinkedin} link="https://www.linkedin.com/company/e-cell-iet-davv" />
+						<SocialLink Icon={BsInstagram} link="https://www.instagram.com/ecell_ietdavv/" />
+						<SocialLink Icon={BsYoutube} link="https://www.youtube.com/channel/UCSGBzFVv93LmFR69gLuaYSA" />
+						<SocialLink Icon={FaQuora} link="https://www.quora.com/profile/E-Cell-IET-DAVV-1" />
 					</div>
 				</div>
 			</div>

@@ -6,24 +6,6 @@ import Image from "next/image";
 import { urlFor } from "../utils/sanity";
 
 const Event = ({events}) => {
-	// const card = [
-	// 	{
-	// 		img: "https://xsgames.co/randomusers/avatar.php?g=male",
-	// 		desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente omnis, obcaecati deserunt porro possimus eius illum recusandae impedit, necessitatibus repellendus sit dolores at iure perspiciatis ipsa perferendis. Perferendis, est? Tempora eligendi commodi quis neque facere ducimus ea earum error eaque quas rem id veritatis delectus laborum odit, ad nostrum deleniti?",
-	// 		name: "Event Name",
-	// 	},
-	// 	{
-	// 		img: "https://xsgames.co/randomusers/avatar.php?g=female",
-	// 		desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente omnis, obcaecati deserunt porro possimus eius illum recusandae impedit, necessitatibus repellendus sit dolores at iure perspiciatis ipsa perferendis. Perferendis, est? Tempora eligendi commodi quis neque facere ducimus ea earum error eaque quas rem id veritatis delectus laborum odit, ad nostrum deleniti?",
-	// 		name: "Event Name",
-	// 	},
-	// 	{
-	// 		img: "https://xsgames.co/randomusers/avatar.php?g=male",
-	// 		desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente omnis, obcaecati deserunt porro possimus eius illum recusandae impedit, necessitatibus repellendus sit dolores at iure perspiciatis ipsa perferendis. Perferendis, est? Tempora eligendi commodi quis neque facere ducimus ea earum error eaque quas rem id veritatis delectus laborum odit, ad nostrum deleniti?",
-	// 		name: "Event Name",
-	// 	},
-	// ];
-
 	const EventCard = ({ img, name, desc, idx }) => {
 		const [show, setShow] = useState(false);
 		return (
@@ -66,7 +48,7 @@ const Event = ({events}) => {
 	};
 
 	return (
-		<section>
+		<section id="events">
 			<div className="bg-brand-500 h-[50vh] flex flex-col items-center justify-center md:py-0 text-light">
 				<div className="max-w-7xl flex flex-col items-center justify-center space-y-5">
 					<h3 className="text-3xl sm:text-4xl bg-brand-500 w-full text-center font-bold">Events</h3>
