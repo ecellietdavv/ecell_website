@@ -9,7 +9,7 @@ import { useState } from 'react'
 import ItemsCarousel from 'react-items-carousel';
 import { BiChevronRight, BiChevronLeft } from "react-icons/bi";
 
-const initiative = ({ initiatives }) => {
+const Initiative = ({ initiatives }) => {
   const IntiativeCard = ({ img, name, desc, idx, date }) => {
     return (
       <div key={idx} className={idx % 2 === 0 ? "flex p-4 sm:p-0 relative flex-col md:flex-row md:justify-between items-center w-full right-timeline " : " flex p-4 sm:p-0 relative flex-col md:justify-between md:flex-row-reverse items-center w-full"}>
@@ -97,4 +97,4 @@ const initiative = ({ initiatives }) => {
   )
 }
 
-export default initiative
+export default Initiative
