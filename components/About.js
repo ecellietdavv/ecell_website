@@ -4,6 +4,8 @@ import Image from "next/image";
 import AboutCarousel from "./AboutCarousel";
 import { urlFor } from "../utils/sanity";
 import PortableText from "react-portable-text";
+import GradientButton from "./GradientButton";
+import { AiOutlineArrowRight } from "react-icons/ai";
 
 const About = ({ content }) => {
   return (
@@ -31,9 +33,9 @@ const About = ({ content }) => {
           //     },
           // }}
           />
-          <button className="rounded-xl text-white mx-auto xl:mx-0 bg-brand-600 w-fit hover:bg-brand-500 font-semibold px-10 p-2">
-            Know More
-          </button>
+          <div className="flex justify-center xl:justify-start item-center">
+            <GradientButton name="Know More" link="/" Icon={AiOutlineArrowRight} />
+          </div>
         </div>
 
         <div className="hidden sm:flex xl:-rotate-45 px-10 py-10 xl:py-0 lg:px-24 xl:px-0 flex-col items-center overflow-hidden space-y-4 w-full">
@@ -50,7 +52,7 @@ const About = ({ content }) => {
           </div>
         </div>
 
-        <AboutCarousel images={content.images}/>
+        <AboutCarousel images={content.images} />
       </div>
     </section>
   );

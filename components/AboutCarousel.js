@@ -4,7 +4,7 @@ import { urlFor } from '../utils/sanity'
 
 function AboutCarousel({images}) {
     return (
-        <div className="carousel w-5/6 mx-auto pb-5 md:hidden block ">
+        <div className="carousel w-5/6 mx-auto pb-5 sm:hidden block ">
             <div id="animation-carousel" className="relative" data-carousel="static">
 
                 <div className="relative w-full h-56 overflow-hidden rounded-lg md:h-96">

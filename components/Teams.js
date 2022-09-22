@@ -4,6 +4,7 @@ import { MdEmail } from "react-icons/md";
 import { AiFillPhone } from "react-icons/ai";
 import { BsLinkedin } from "react-icons/bs";
 import { urlFor } from "../utils/sanity";
+import SectionDescCard from "./SectionDescCard";
 
 function Teams({ teams }) {
   const [activeTeam, setActiveTeam] = useState(0);
@@ -11,7 +12,7 @@ function Teams({ teams }) {
   const MemberCard = ({ name, designation, img, social, idx }) => {
     return (
       <div
-        className="flex group flex-col items-center p-8 transition-colors duration-200 transform cursor-pointer group bg-light border border-dark dark:bg-mid dark:border-light dark:text-white dark:hover:bg-brand-600 hover:bg-brand-600 rounded-xl"
+        className="flex group flex-col items-center p-8 transition-colors duration-200 transform cursor-pointer group bg-light border border-dark dark:bg-mid dark:border-light dark:text-white hover:bg-brand-700 hover:text-white rounded-xl"
         key={idx}
       >
         <div className="rounded-full overflow-hidden h-32 w-32">
@@ -32,7 +33,7 @@ function Teams({ teams }) {
           {designation}
         </p>
 
-        <div className="flex mt-3 text-dark dark:text-white -mx-2">
+        <div className="flex mt-3 dark:text-white -mx-2">
           <a
             href={`mailto:${social?.email}`}
             className="mx-2"
@@ -62,15 +63,21 @@ function Teams({ teams }) {
   };
 
   return (
-    <section id="teams" className="xl:h-screen">
-      <div className="flex h-full xl:flex-row flex-col">
-        <div className="xl:w-1/4 min-h-[400px] h-full flex flex-row xl:flex-col justify-center items-center space-x-10 xl:space-x-0 xl:space-y-10 py-4 px-6 bg-brand-500">
+    <section id="teams" className="">
+
+      <SectionDescCard name="Our Team" desc="Lorem ipsum, dolor sit amet consectetur adipisicing elit. At
+						repellendus est blanditiis consequuntur iusto nostrum consectetur
+						voluptate ratione, exercitationem sint maxime nisi incidunt? A
+						voluptate deleniti eligendi odit fugit nemo tempore atque nisi ab!"/>
+
+      <div className="flex h-full xl:flex-row flex-col xl:h-screen">
+        <div className="xl:w-1/4 min-h-[400px] h-full flex flex-row xl:flex-col justify-center items-center space-x-10 xl:space-x-0 xl:space-y-10 py-4 px-6 bg-dark dark:bg-mid">
           {teams &&
             teams?.map((team, idx) => {
               return (
                 <button
                   key={idx}
-                  className="rounded-full bg-light px-10 py-2 text-center xl:rounded-sm border-none"
+                  className={idx === activeTeam ? "rounded-full bg-brand-500 text-white h-20 w-20 xl:px-10 xl:py-2 text-center xl:rounded-sm border-none xl:h-fit xl:w-fit" : "rounded-full bg-light h-20 w-20 xl:px-10 xl:py-2 text-center xl:rounded-sm border-none xl:h-fit xl:w-fit"}
                   onClick={() => {
                     setActiveTeam(idx);
                   }}
@@ -94,6 +101,7 @@ function Teams({ teams }) {
                   social={social}
                   img={urlFor(img).url()}
                   idx={idx}
+                  key={idx}
                 />
               );
             })}

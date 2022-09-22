@@ -21,16 +21,17 @@ function HomePage({ events, initiatives, teams, tfc, aboutUs, visionMission, nam
         <meta name="keywords" content="ecell, E-cell, ietdavv, ecelliet, ietclubs, ietsocieties, ecelldavv, davv, ietdavv, engineering davv, ietdavv.edu.in, clubs in ietdavv, engineering, science, enterpreneurship, tech, web, html, jsx, css, nextjs, colleges in indore, colleges with ecell" />
       </Head>
 
+      <Drawer />
+      
       <TFCtemplate content={tfc} name={name}/>
       <VisionMission content={visionMission}/>
       <SectionDivider name="" img="img1" />
-      <Drawer />
       <About content={aboutUs}/>
       <SectionDivider name="" img="img2" />
       <Event events={events} />
-      <SectionDivider name="Our Initiatives" img="img1" />
+      <SectionDivider name="" img="img1" />
       <Initiative initiatives={initiatives} />
-      <SectionDivider name="Our Team" img="img2" />
+      <SectionDivider name="" img="img2" />
       <Teams teams={teams} />
       <SectionDivider name="" img="img3" />
     </div>

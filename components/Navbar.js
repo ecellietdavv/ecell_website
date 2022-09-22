@@ -61,7 +61,8 @@ function Navbar() {
           ) : (
             <WbSunnyIcon className="cursor-pointer" onClick={handleDarkMode} />
           )}
-          <button type="button" onClick={() => handleScroll("footer")} className="md:block hidden bg-brand-400 dark:bg-brand-400 hover:bg-brand-600 py-2 px-4 rounded-full dark:hover:bg-brand-600 text-white">Contact Us</button>
+
+          <button type="button" onClick={() => handleScroll("footer")} className="md:block hidden bg-brand-400 py-2 px-4 rounded-full bg-gradient-to-r from-brand-500 to-brand-600 hover:to-brand-600 text-white">Contact Us</button>
 
           <MenuIcon
             className="block md:hidden"

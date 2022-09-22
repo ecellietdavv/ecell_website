@@ -4,8 +4,11 @@ import ArrowDropUpIcon from "@mui/icons-material/ArrowDropUp";
 import { useState } from "react";
 import Image from "next/image";
 import { urlFor } from "../utils/sanity";
+import SectionDescCard from "./SectionDescCard";
+import GradientButton from "./GradientButton";
+import { AiOutlineArrowRight } from "react-icons/ai";
 
-const Event = ({events}) => {
+const Event = ({ events }) => {
 	const EventCard = ({ img, name, desc, idx }) => {
 		const [show, setShow] = useState(false);
 		return (
@@ -48,29 +51,26 @@ const Event = ({events}) => {
 	};
 
 	return (
-		<section id="events">
-			<div className="bg-brand-500 h-[50vh] flex flex-col items-center justify-center md:py-0 text-light">
-				<div className="max-w-7xl flex flex-col items-center justify-center space-y-5">
-					<h3 className="text-3xl sm:text-4xl bg-brand-500 w-full text-center font-bold">Events</h3>
-					<p className="sm:text-base w-5/6 text-sm sm:w-4/6 text-center mx-auto">
-						Lorem ipsum, dolor sit amet consectetur adipisicing elit. At
+		<section id="events" className="dark:bg-dark">
+			<SectionDescCard name="Events" desc="Lorem ipsum, dolor sit amet consectetur adipisicing elit. At
 						repellendus est blanditiis consequuntur iusto nostrum consectetur
 						voluptate ratione, exercitationem sint maxime nisi incidunt? A
-						voluptate deleniti eligendi odit fugit nemo tempore atque nisi ab!
-					</p>
-				</div>
-			</div>
+						voluptate deleniti eligendi odit fugit nemo tempore atque nisi ab!"/>
 
-			<div className="w-full dark:bg-dark">
+			<div className="w-full">
 				<div className="grid max-w-7xl mx-auto justify-center px-[5%] md:px-4 items-center grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 py-10">
 					{events && events?.map((value, idx) => {
 						const { img, name, desc } = value;
 						return (
 							// eslint-disable-next-line react/jsx-key
-							<EventCard img={urlFor(img).url()} name={name} desc={desc} idx={idx} />
+							<EventCard img={urlFor(img).url()} name={name} desc={desc} idx={idx} key={idx} />
 						);
 					})}
 				</div>
+			</div>
+
+			<div className="flex justify-center item-center pb-10">
+				<GradientButton name="All Events" link="/events" Icon={AiOutlineArrowRight} />
 			</div>
 		</section>
 	);
