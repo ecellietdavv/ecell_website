@@ -4,6 +4,10 @@ import { urlFor } from '../utils/sanity'
 import SectionDescCard from './SectionDescCard'
 import GradientButton from './GradientButton'
 import { AiOutlineArrowRight } from 'react-icons/ai'
+import { useEffect } from 'react'
+import { useState } from 'react'
+import ItemsCarousel from 'react-items-carousel';
+import { BiChevronRight, BiChevronLeft } from "react-icons/bi";
 
 const initiative = ({ initiatives }) => {
   const IntiativeCard = ({ img, name, desc, idx, date }) => {
@@ -17,15 +21,27 @@ const initiative = ({ initiatives }) => {
           <h1 className=" mx-auto font-semibold text-lg text-center text-light dark:text-dark">{idx + 1}</h1>
         </div>
 
-        <div className={idx % 2 === 0 ? "order-1 h-full rounded-b-lg bg-gray-400 md:rounded-lg shadow-xl md:w-5/12 px-6 py-4 w-full" : "order-1 h-full rounded-b-lg bg-brand-400 md:rounded-lg shadow-xl md:w-5/12 px-6 py-4 w-full"}>
+        <div className={idx % 2 === 0 ? "order-1 h-full rounded-b-lg bg-dark dark:bg-mid text-white md:rounded-lg shadow-xl md:w-5/12 px-6 py-4 w-full" : "order-1 text-white h-full rounded-b-lg bg-brand-600 md:rounded-lg shadow-xl md:w-5/12 px-6 py-4 w-full"}>
           <div className="flex justify-between">
             <h3 className="mb-3 font-bold text-xl">{name}</h3>
-            <p className="mb-3 text-dark text-base">{date}</p>
+            <p className="mb-3 text-base">{date}</p>
           </div>
-          <p className="text-sm leading-snug tracking-wide text-gray-900 text-opacity-100">{desc}</p>
+          <p className="text-sm leading-snug tracking-wide text-opacity-100">{desc}</p>
         </div>
       </div>
     )
+  }
+
+  const [activeItemIndex, setActiveItemIndex] = useState(0);
+  const [width, setWidth] = useState(1080)
+
+  useEffect(() => {
+    setWidth(window?.innerWidth)
+  }, [width])
+
+  const getNoOfCards = () => {
+    if (width >= 640) return 2
+    else return 1
   }
 
   return (
@@ -37,7 +53,7 @@ const initiative = ({ initiatives }) => {
 						voluptate deleniti eligendi odit fugit nemo tempore atque nisi ab!"/>
 
       <div className="container mx-auto w-full h-full">
-        <div className="relative grid sm:grid-cols-2 gap-4 sm:gap-6 md:grid-cols-1 py-10 md:p-10 h-full">
+        <div className="relative hidden md:grid sm:grid-cols-2 gap-4 sm:gap-6 md:grid-cols-1 py-10 md:p-10 h-full">
           <div className="border-2-2 hidden md:block absolute border-opacity-20 border-mid h-full border left-1/2"></div>
           {
             initiatives && initiatives?.map((insitiative, idx) => {
@@ -47,6 +63,30 @@ const initiative = ({ initiatives }) => {
               )
             })
           }
+        </div>
+
+        <div className="px-2 py-8 md:hidden">
+          <ItemsCarousel
+            requestToChangeActive={setActiveItemIndex}
+            activeItemIndex={activeItemIndex}
+            numberOfCards={getNoOfCards()}
+            gutter={20}
+            leftChevron={<BiChevronLeft className="text-3xl bg-brand-600 rounded-full text-white" />}
+            rightChevron={<BiChevronRight className="text-3xl bg-brand-600 rounded-full text-white" />}
+            chevronWidth={100}
+            infiniteLoop={true}
+            slidesToScroll={1}
+            showSlither={width >= 640}
+          >
+            {
+              initiatives && initiatives?.map((insitiative, idx) => {
+                const { name, img, desc, date } = insitiative
+                return (
+                  <IntiativeCard name={name} img={img} desc={desc} idx={idx} key={idx} date={date} />
+                )
+              })
+            }
+          </ItemsCarousel>
         </div>
       </div>
 

@@ -2,20 +2,21 @@ import React from 'react'
 import Image from 'next/image'
 import PortableText from 'react-portable-text'
 import { urlFor } from '../utils/sanity'
+import ContentModal from './ContentModal'
 
 function VisionMission({ content }) {
     const { vision, mission, e_networking, incubation_center, nec } = content
 
     const ContentCard = ({ img, body, name, halfWidth = false }) => {
         return (
-            <div className={halfWidth ? "w-full sm:w-1/2 relative group p-2" : "w-full sm:w-full relative group p-2"}>
+            <div data-modal-toggle={name} className={halfWidth ? "w-full sm:w-1/2 relative group p-2" : "w-full sm:w-full relative group p-2"}>
                 <div className="relative">
                     <Image loading="lazy" height={400} width={600} alt={name} className={`block absolute object-cover object-center w-full h-full rounded-lg`}
                         src={img} />
                     <div className="bg-black rounded-lg bg-opacity-50 w-full h-full absolute top-0 left-0 z-10"></div>
                 </div>
                 <div className="absolute z-20 text-white top-0 left-0 w-full flex flex-col justify-center items-center h-full px-10">
-                    <h3 className='text-xl font-semibold lg:group-hover:hidden block'>{name}</h3>
+                    <h3 className='text-xl font-semibold text-center lg:group-hover:hidden block'>{name}</h3>
                     {/* <p className={halfWidth ? 'lg:group-hover:block hidden lg:text-xs xl:text-sm' : 'lg:group-hover:block hidden lg:text-xs xl:text-sm'}>{content}</p> */}
                     <PortableText
                         className={halfWidth ? 'lg:group-hover:block hidden lg:text-xs xl:text-sm' : 'lg:group-hover:block hidden lg:text-xs xl:text-sm'}
@@ -38,6 +39,8 @@ function VisionMission({ content }) {
                         }}
                     />
                 </div>
+
+                <ContentModal name={name} body={body} />
             </div>
         )
     }

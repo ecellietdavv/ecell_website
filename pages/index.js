@@ -11,6 +11,7 @@ import Teams from "../components/Teams"
 import SectionDivider from "../components/SectionDivider"
 import { sanityClient } from "../utils/sanity"
 import { getFlagshipEventsQuery, getInitiativesQuery, getTeamsQuery, getHomepageMiscContentQuery, getTFCContentQuery } from "../utils/queries"
+import TFCMobile from "../components/TFCMobile"
 
 function HomePage({ events, initiatives, teams, tfc, aboutUs, visionMission, name }) {
   return (

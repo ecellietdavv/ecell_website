@@ -71,7 +71,7 @@ function Teams({ teams }) {
 						voluptate deleniti eligendi odit fugit nemo tempore atque nisi ab!"/>
 
       <div className="flex h-full xl:flex-row flex-col xl:h-screen">
-        <div className="xl:w-1/4 min-h-[400px] h-full flex flex-row xl:flex-col justify-center items-center space-x-10 xl:space-x-0 xl:space-y-10 py-4 px-6 bg-dark dark:bg-mid">
+        <div className="xl:w-1/4 min-h-[200px] h-full flex flex-row xl:flex-col justify-center items-center space-x-10 xl:space-x-0 xl:space-y-10 py-4 px-6 bg-dark dark:bg-mid">
           {teams &&
             teams?.map((team, idx) => {
               return (
