@@ -106,7 +106,7 @@ function Footer() {
 								className="block h-10 text-base placeholder:text-base p-2 mt-2 w-full text-dark bg-white rounded-lg border border-mid sm:text-xs focus:ring-mid focus:border-mid dark:bg-mid  dark:placeholder-light dark:text-light dark:focus:ring-mid dark:focus:border-brand-600"
 								placeholder="Email Address"
 							/>
-							<textarea {...register("message", { required: true })} rows="5" className="block p-2 mt-2 w-full h-20 text-sm text-gray-900 bg-white rounded-lg border border-mid focus:ring-brand-500 focus:border-brand-500 dark:bg-mid  dark:placeholder-light dark:text-white dark:focus:ring-brand-500 dark:focus:border-brand-500" placeholder="Leave a comment..."></textarea>
+							<textarea {...register("message", { required: true })} rows="5" className="block resize-none p-2 mt-2 w-full h-20 text-sm text-gray-900 bg-white rounded-lg border border-mid focus:ring-brand-500 focus:border-brand-500 dark:bg-mid  dark:placeholder-light dark:text-white dark:focus:ring-brand-500 dark:focus:border-brand-500" placeholder="Leave a comment..."></textarea>
 							<button type="submit" className="text-light mt-3 w-full bg-brand-500 dark:bg-brand-500 dark:hover:bg-brand-600 hover:bg-brand-600 focus:outline-none focus:ring-1 focus:ring-blue-200 font-medium rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:hover:bg-brand">
 								Submit
 							</button>

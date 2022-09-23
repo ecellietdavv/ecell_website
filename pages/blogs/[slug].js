@@ -173,7 +173,7 @@ export const getStaticPaths = async () => {
 
 export const getStaticProps = async ({ params }) => {
     const query = `
-        *[_type=="post" && slug.current == 'tech-club'][0]{
+        *[_type=="post" && slug.current == $slug][0]{
             _id,
             publishedAt,
             title,
