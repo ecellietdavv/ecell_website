@@ -4,28 +4,26 @@ export default {
     type: 'document',
     fields: [
         {
-            name: 'name',
-            title: 'Name',
-            type: 'string',
-            validation: Rule => [
-                Rule.required().min(3).error('A name of min. 10 characters is required'),
-                Rule.max(60).warning('Max name limit reached')
-            ]
-        },
-        {
             name: 'year',
             title: 'Year',
             type: 'string',
             validation: Rule => [
-                Rule.required().min(3).error('A name of min. 10 characters is required'),
-                Rule.max(60).warning('Max name limit reached')
+                Rule.required().min(4).max(4).error('Enter Year in YYYY format'),
+            ]
+        },
+        {
+            name: 'members',
+            title: 'Members',
+            type: 'array',
+            of: [{ type: 'reference', to: { type: 'member' } }],
+            validation: Rule => [
+                Rule.required().error('Atleast one member is required'),
             ]
         },
     ],
     preview: {
         select: {
-            title: 'name',
-            media: 'image',
+            title: 'year',
         },
     },
 }

@@ -10,11 +10,12 @@ import VisionMission from "../components/VisionMission"
 import Teams from "../components/Teams"
 import SectionDivider from "../components/SectionDivider"
 import { sanityClient } from "../utils/sanity"
-import { getFlagshipEventsQuery, getInitiativesQuery, getTeamsQuery, getHomepageMiscContentQuery, getTFCContentQuery } from "../utils/queries"
-import TFCMobile from "../components/TFCMobile"
+import { getFlagshipEventsQuery, getFlagshipInitiativesQuery, getTeamsQuery, getHomepageMiscContentQuery, getTFCContentQuery } from "../utils/queries"
 import HomeHero from "../components/HomeHero"
 
-function HomePage({ events, initiatives, teams, tfc, aboutUs, visionMission, name }) {
+function HomePage({ flagshipEvents, flagshipInitiatives, teams, tfc, aboutUs, visionMission, name }) {
+  const events = flagshipEvents.categoryEvents
+  const initiatives = flagshipInitiatives.categoryInitiatives
   return (
     <div className="w-full">
       <Head>
@@ -24,11 +25,11 @@ function HomePage({ events, initiatives, teams, tfc, aboutUs, visionMission, nam
       </Head>
 
       <Drawer />
-      <HomeHero/>
-      <TFCtemplate content={tfc} name={name}/>
-      <VisionMission content={visionMission}/>
+      <HomeHero />
+      <TFCtemplate content={tfc} name={name} />
+      <VisionMission content={visionMission} />
       <SectionDivider name="" img="img1" />
-      <About content={aboutUs}/>
+      <About content={aboutUs} />
       <SectionDivider name="" img="img2" />
       <Event events={events} />
       <SectionDivider name="" img="img1" />
@@ -41,15 +42,15 @@ function HomePage({ events, initiatives, teams, tfc, aboutUs, visionMission, nam
 }
 
 export const getServerSideProps = async () => {
-  const events = await sanityClient.fetch(getFlagshipEventsQuery)
-  const initiatives = await sanityClient.fetch(getInitiativesQuery)
+  const flagshipEvents = await sanityClient.fetch(getFlagshipEventsQuery)
+  const flagshipInitiatives = await sanityClient.fetch(getFlagshipInitiativesQuery)
   const teams = await sanityClient.fetch(getTeamsQuery)
-  const {aboutUs, visionMission, name} = await sanityClient.fetch(getHomepageMiscContentQuery)
+  const { aboutUs, visionMission, name } = await sanityClient.fetch(getHomepageMiscContentQuery)
   const tfc = await sanityClient.fetch(getTFCContentQuery)
   return {
     props: {
-      events,
-      initiatives,
+      flagshipEvents,
+      flagshipInitiatives,
       teams,
       tfc,
       aboutUs,

@@ -13,14 +13,6 @@ export default {
             ]
         },
         {
-            name: 'flagship',
-            title: 'Flagship Event',
-            type: 'boolean',
-            validation: Rule => [
-                Rule.required().warning('Event is flagship?'),
-            ]
-        },
-        {
             name: 'desc',
             title: 'Description',
             type: 'string',
@@ -30,13 +22,10 @@ export default {
             ]
         },
         {
-            name: 'slug',
-            title: 'Slug',
-            type: 'slug',
-            options: {
-                source: 'name',
-                maxLength: 96,
-            },
+            name: 'blog',
+            title: 'Event Blog',
+            type: 'reference',
+            to: { type: 'post' }
         },
         {
             name: 'img',

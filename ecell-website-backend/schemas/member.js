@@ -30,12 +30,6 @@ export default {
             },
         },
         {
-            name:'team',
-            title: "Team",
-            type: "reference",
-            to: [{type: "team"}]
-        },
-        {
             name: 'social',
             title: 'Social Links',
             type: 'object',

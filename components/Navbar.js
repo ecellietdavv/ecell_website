@@ -5,6 +5,7 @@ import Image from "next/image";
 import WbSunnyIcon from "@mui/icons-material/WbSunny";
 import DarkModeIcon from "@mui/icons-material/DarkMode";
 import MenuIcon from '@mui/icons-material/Menu';
+import Link from "next/link";
 
 function Navbar() {
   const [dark, setDark] = useState("false");
@@ -36,22 +37,28 @@ function Navbar() {
   }
 
   const navItems = [
-    { name: "Home", link: "home" },
-    { name: "About", link: "about" },
-    { name: "Events", link: "events" },
-    { name: "Initiatives", link: "initiatives" },
-    { name: "Our Team", link: "teams" },
+    { name: "Home", scrollTo: "home", link: "/" },
+    { name: "About", scrollTo: "about", link: "/" },
+    { name: "Events", scrollTo: "events", link: "/" },
+    { name: "Initiatives", scrollTo: "initiatives", link: "/" },
+    { name: "Our Team", scrollTo: "teams", link: "/" },
+    { name: "Blogs", scrollTo: null, link: "/blogs" },
   ];
 
   return (
     <nav className="bg-light dark:bg-dark  w-full py-2 flex dark:text-white text-dark fixed z-50 top-0">
       <div className="max-w-7xl flex w-full items-center justify-between mx-auto px-4 sm:px-6">
 
-        <Image loading="lazy" src={dark ? "/assets/Logos/logo_b.png" : "/assets/Logos/logo_w.png"} width={70} height={70} />
+        <Link href="/">
+          <Image className="cursor-pointer" loading="lazy" src={dark ? "/assets/Logos/logo_b.png" : "/assets/Logos/logo_w.png"} width={70} height={70} />
+        </Link>
 
         <ul className="space-x-8 md:flex hidden py-2 px-4 ">
-          {navItems.map((value, idx) => {
-            return <li className="hover:underline cursor-pointer text-md" key={idx} onClick={() => handleScroll(value.link)}>{value.icon}{value.name}</li>;
+          {navItems && navItems?.map((value, idx) => {
+            if (!value?.scrollTo) return <Link href={value.link} className="hover:underline cursor-pointer text-md" key={idx}>{value.name}</Link>
+            return (
+              <li className="hover:underline cursor-pointer text-md" key={idx} onClick={() => handleScroll(value.scrollTo)}>{value.icon}{value.name}</li>
+            )
           })}
         </ul>
 

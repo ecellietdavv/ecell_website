@@ -17,6 +17,8 @@ import event from './event'
 import contact from './contact'
 import homepageMisc from './homepageMisc'
 import tfc from './tfc'
+import events from './events'
+import initiatives from './initiatives'
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -30,16 +32,20 @@ export default createSchema({
     post,
     author,
     category,
-    // When added to this list, object types can be used as
-    // { type: 'typename' } in other document schemas
     blockContent,
     comment,
+
     member,
-    initiative,
     team,
+
+    initiative,
+    initiatives,
+
     event,
-    contact,
+    events,
+    
     homepageMisc,
+    contact,
     tfc
   ]),
 })

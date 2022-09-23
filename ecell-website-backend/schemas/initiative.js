@@ -16,6 +16,10 @@ export default {
             name: 'date',
             title: 'Date Initiated',
             type: 'date',
+            options: {
+                dateFormat: 'DD-MM-YYYY',
+                calendarTodayLabel: 'Today'
+            },
             validation: Rule => [
                 Rule.required().error('Date is required'),
             ]
@@ -29,15 +33,12 @@ export default {
                 // Rule.max(50).warning('Shorter titles are usually better')
             ]
         },
-        //   {
-        //     name: 'slug',
-        //     title: 'Slug',
-        //     type: 'slug',
-        //     options: {
-        //       source: 'name',
-        //       maxLength: 96,
-        //     },
-        //   },
+        {
+            name: 'blog',
+            title: 'Initiative Blog',
+            type: 'reference',
+            to: { type: 'post' }
+        },
         {
             name: 'img',
             title: 'Image',
@@ -46,19 +47,6 @@ export default {
                 hotspot: true,
             },
         },
-        //   {
-        //     name: 'bio',
-        //     title: 'Bio',
-        //     type: 'array',
-        //     of: [
-        //       {
-        //         title: 'Block',
-        //         type: 'block',
-        //         styles: [{title: 'Normal', value: 'normal'}],
-        //         lists: [],
-        //       },
-        //     ],
-        //   },
     ],
     preview: {
         select: {

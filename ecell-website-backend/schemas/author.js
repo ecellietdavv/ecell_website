@@ -41,10 +41,6 @@ export default {
           lists: [],
         },
       ],
-      validation: Rule => [
-        Rule.required().min(10).error('A title of min. 10 characters is required'),
-        Rule.max(200).warning('Bio should be 200 words')
-      ]
     },
   ],
   preview: {

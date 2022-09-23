@@ -17,43 +17,77 @@ const getTFCContentQuery = `
 `
 
 const getFlagshipEventsQuery = `
-    *[_type=="event" && flagship == true]{
+    *[_type=="events" && name=="Flagship Events"][0]{
         _id,
         name,
-        desc,
-        img,
-        slug,
+        categoryEvents[]{
+            _type == 'reference' => @->{
+                ...,
+                blog->{slug}
+            }
+        }
+    }
+`
+
+const getCollaborativeEventsQuery = `
+    *[_type=="events" && name=="Collaborative Events"][0]{
+        _id,
+        name,
+        categoryEvents[]{
+            _type == 'reference' => @->{
+                ...,
+                blog->{slug}
+            }
+        }
     }
 `
 
 const getAllEventsQuery = `
-    *[_type=="event"]{
+    *[_type=="events" && name=="All Events"][0]{
         _id,
         name,
-        desc,
-        img,
-        slug,
+        categoryEvents[]{
+            _type == 'reference' => @->{
+                ...,
+                blog->{slug}
+            }
+        }
     }
 `
 
-const getInitiativesQuery = `
-    *[_type=="initiative"]{
+const getAllInitiativesQuery = `
+    *[_type=="initiatives" && name=="All Initiatives"][0]{
         _id,
         name,
-        desc,
-        img,
-        date,
+        categoryInitiatives[]{
+            _type == 'reference' => @->{
+                ...,
+                blog->{slug}
+            }
+        }
+    }
+`
+
+const getFlagshipInitiativesQuery = `
+    *[_type=="initiatives" && name=="Flagship Initiatives"][0]{
+        _id,
+        name,
+        categoryInitiatives[]{
+            _type == 'reference' => @->{
+                ...,
+                blog->{slug}
+            }
+        }
     }
 `
 const getTeamsQuery = `
     *[_type=="team"]{
         _id,
         year,
-        'members': *[
-        _type=="member" &&
-        team._ref == ^._id
-        ]
+        members[]{
+        _type == 'reference' => @->,
+        }
     }
 `
 
-module.exports = { getHomepageMiscContentQuery, getTFCContentQuery, getFlagshipEventsQuery, getAllEventsQuery, getInitiativesQuery, getTeamsQuery }
+module.exports = { getHomepageMiscContentQuery, getTFCContentQuery, getFlagshipEventsQuery, getAllEventsQuery, getCollaborativeEventsQuery, getAllInitiativesQuery, getFlagshipInitiativesQuery, getTeamsQuery }
