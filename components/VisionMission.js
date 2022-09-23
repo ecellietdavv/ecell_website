@@ -16,9 +16,9 @@ function VisionMission({ content }) {
                     <div className="bg-black rounded-lg bg-opacity-50 w-full h-full absolute top-0 left-0 z-10"></div>
                 </div>
                 <div className="absolute z-20 text-white top-0 left-0 w-full flex flex-col justify-center items-center h-full px-10">
-                    <h3 className='text-xl font-semibold text-center lg:group-hover:hidden block'>{name}</h3>
+                    <h3 className='text-xl font-semibold text-center'>{name}</h3>
                     {/* <p className={halfWidth ? 'lg:group-hover:block hidden lg:text-xs xl:text-sm' : 'lg:group-hover:block hidden lg:text-xs xl:text-sm'}>{content}</p> */}
-                    <PortableText
+                    {/* <PortableText
                         className={halfWidth ? 'lg:group-hover:block hidden lg:text-xs xl:text-sm' : 'lg:group-hover:block hidden lg:text-xs xl:text-sm'}
                         dataset={process.env.NEXT_PUBLIC_SANITY_DATASET}
                         projectId={process.env.NEXT_PUBLIC_SANITY_PROJECT_ID}
@@ -37,7 +37,7 @@ function VisionMission({ content }) {
                                 <a href={href} className='text-blue-500 hover:underline'>{children}</a>
                             },
                         }}
-                    />
+                    /> */}
                 </div>
 
                 <ContentModal name={name} body={body} />

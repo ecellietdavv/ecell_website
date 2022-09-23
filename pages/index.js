@@ -12,6 +12,7 @@ import SectionDivider from "../components/SectionDivider"
 import { sanityClient } from "../utils/sanity"
 import { getFlagshipEventsQuery, getInitiativesQuery, getTeamsQuery, getHomepageMiscContentQuery, getTFCContentQuery } from "../utils/queries"
 import TFCMobile from "../components/TFCMobile"
+import HomeHero from "../components/HomeHero"
 
 function HomePage({ events, initiatives, teams, tfc, aboutUs, visionMission, name }) {
   return (
@@ -23,7 +24,7 @@ function HomePage({ events, initiatives, teams, tfc, aboutUs, visionMission, nam
       </Head>
 
       <Drawer />
-      
+      <HomeHero/>
       <TFCtemplate content={tfc} name={name}/>
       <VisionMission content={visionMission}/>
       <SectionDivider name="" img="img1" />
