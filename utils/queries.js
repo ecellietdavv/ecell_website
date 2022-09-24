@@ -8,7 +8,7 @@ const getHomepageMiscContentQuery = `
 `
 
 const getTFCContentQuery = `
-    *[_type=="tfc"]{
+    *[_type=="tfc"] | order(name desc) {
         _id,
         name,
         img,
@@ -16,78 +16,72 @@ const getTFCContentQuery = `
     }
 `
 
-const getFlagshipEventsQuery = `
-    *[_type=="events" && name=="Flagship Events"][0]{
+const getEventsQuery = `
+    *[_type=="events" && name==$category][0]{
         _id,
         name,
-        categoryEvents[]{
+        events[]{
             _type == 'reference' => @->{
                 ...,
                 blog->{slug}
             }
-        }
+        } | order(date desc)
     }
 `
 
-const getCollaborativeEventsQuery = `
-    *[_type=="events" && name=="Collaborative Events"][0]{
+const getInitiativesQuery = `
+    *[_type=="initiatives" && name==$category][0]{
         _id,
         name,
-        categoryEvents[]{
+        initiatives[]{
             _type == 'reference' => @->{
                 ...,
                 blog->{slug}
             }
-        }
+        } | order(date desc)
     }
 `
 
-const getAllEventsQuery = `
-    *[_type=="events" && name=="All Events"][0]{
-        _id,
-        name,
-        categoryEvents[]{
-            _type == 'reference' => @->{
-                ...,
-                blog->{slug}
-            }
-        }
-    }
-`
-
-const getAllInitiativesQuery = `
-    *[_type=="initiatives" && name=="All Initiatives"][0]{
-        _id,
-        name,
-        categoryInitiatives[]{
-            _type == 'reference' => @->{
-                ...,
-                blog->{slug}
-            }
-        }
-    }
-`
-
-const getFlagshipInitiativesQuery = `
-    *[_type=="initiatives" && name=="Flagship Initiatives"][0]{
-        _id,
-        name,
-        categoryInitiatives[]{
-            _type == 'reference' => @->{
-                ...,
-                blog->{slug}
-            }
-        }
-    }
-`
 const getTeamsQuery = `
-    *[_type=="team"]{
+    *[_type=="team"] | order(year desc){
         _id,
         year,
-        members[]{
+        members[] | order(name) {
         _type == 'reference' => @->,
+        } | order(name)
+    }
+`
+const getBlogContentQuery = `
+    *[_type=="post" && slug.current == $slug][0]{
+        _id,
+        publishedAt,
+        title,
+        author -> {
+            name,
+            image
+        },
+        categories[]{
+            _type == 'reference' => @->{title}
+        },
+        'comments': *[
+            _type == "comment" &&
+            post.ref == ^._id &&
+            approved == true
+        ],
+        description,
+        mainImage,
+        slug,
+        body
+    }
+`
+
+const getBlogStaticPathsQuery = `
+    *[_type=="post"]{
+        _id,
+        slug {
+            current
         }
     }
 `
 
-module.exports = { getHomepageMiscContentQuery, getTFCContentQuery, getFlagshipEventsQuery, getAllEventsQuery, getCollaborativeEventsQuery, getAllInitiativesQuery, getFlagshipInitiativesQuery, getTeamsQuery }
+module.exports = { getHomepageMiscContentQuery, getTFCContentQuery, getEventsQuery, getInitiativesQuery, getTeamsQuery, getBlogContentQuery, getBlogStaticPathsQuery }

@@ -21,6 +21,16 @@ export default {
             ]
         },
     ],
+    orderings: [
+        {
+            title: 'Year Sorting',
+            name: 'yearDesc',
+            by: [
+                { field: 'year', direction: 'desc' }
+            ]
+        },
+    ],
+
     preview: {
         select: {
             title: 'year',

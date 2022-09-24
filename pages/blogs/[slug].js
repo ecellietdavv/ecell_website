@@ -3,6 +3,7 @@ import PortableText from 'react-portable-text';
 import { useForm, SubmitHandler } from 'react-hook-form'
 import { sanityClient, urlFor } from '../../utils/sanity';
 import Image from 'next/image';
+import { getBlogContentQuery, getBlogStaticPathsQuery } from '../../utils/queries';
 
 function BlogPost(props) {
     const { post } = props;
@@ -148,13 +149,7 @@ function BlogPost(props) {
 }
 
 export const getStaticPaths = async () => {
-    const query = `
-    *[_type=="post"]{
-        _id,
-        slug {
-          current
-        }
-    }`
+    const query = getBlogStaticPathsQuery
 
     const posts = await sanityClient.fetch(query);
     const paths = posts.map(post => (
@@ -172,29 +167,7 @@ export const getStaticPaths = async () => {
 }
 
 export const getStaticProps = async ({ params }) => {
-    const query = `
-        *[_type=="post" && slug.current == $slug][0]{
-            _id,
-            publishedAt,
-            title,
-            author -> {
-                name,
-                image
-            },
-            categories[]{
-                _type == 'reference' => @->{title}
-            },
-            'comments': *[
-                _type == "comment" &&
-                post.ref == ^._id &&
-                approved == true
-            ],
-            description,
-            mainImage,
-            slug,
-            body
-        }
-    `
+    const query = getBlogContentQuery
 
     const post = await sanityClient.fetch(query, {
         slug: params?.slug,

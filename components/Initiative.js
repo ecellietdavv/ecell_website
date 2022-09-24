@@ -91,7 +91,7 @@ const Initiative = ({ initiatives }) => {
       </div>
 
       <div className="flex justify-center item-center pb-10">
-        <GradientButton name="All Initiatives" link="/inititatives" Icon={AiOutlineArrowRight} />
+        <GradientButton name="All Initiatives" link="/initiatives" Icon={AiOutlineArrowRight} />
       </div>
     </section>
   )

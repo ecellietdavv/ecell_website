@@ -6,9 +6,12 @@ import WbSunnyIcon from "@mui/icons-material/WbSunny";
 import DarkModeIcon from "@mui/icons-material/DarkMode";
 import MenuIcon from '@mui/icons-material/Menu';
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 function Navbar() {
   const [dark, setDark] = useState("false");
+  const router = useRouter();
+
   const handleDarkMode = () => {
     localStorage.theme = localStorage.theme === "dark" ? "light" : "dark";
     if (
@@ -36,17 +39,28 @@ function Navbar() {
     });
   }
 
-  const navItems = [
+  const navItems = router.pathname === "/"? 
+  [
     { name: "Home", scrollTo: "home", link: "/" },
     { name: "About", scrollTo: "about", link: "/" },
     { name: "Events", scrollTo: "events", link: "/" },
     { name: "Initiatives", scrollTo: "initiatives", link: "/" },
     { name: "Our Team", scrollTo: "teams", link: "/" },
     { name: "Blogs", scrollTo: null, link: "/blogs" },
-  ];
+  ]
+  :
+  [
+    { name: "Home", scrollTo: null, link: "/" },
+    // { name: "About", scrollTo: null, link: "/" },
+    { name: "Events", scrollTo: null, link: "/events" },
+    { name: "Initiatives", scrollTo: null, link: "/initiatives" },
+    // { name: "Our Team", scrollTo: "teams", link: "/" },
+    { name: "Blogs", scrollTo: null, link: "/blogs" },
+  ]
+
 
   return (
-    <nav className="bg-light dark:bg-dark  w-full py-2 flex dark:text-white text-dark fixed z-50 top-0">
+    <nav className="bg-light dark:bg-dark shadow-lg shadow-mid/20  w-full py-2 flex dark:text-white text-dark fixed z-50 top-0">
       <div className="max-w-7xl flex w-full items-center justify-between mx-auto px-4 sm:px-6">
 
         <Link href="/">

@@ -9,7 +9,7 @@ export default {
             type: 'string',
         },
         {
-            name: 'categoryEvents',
+            name: 'events',
             title: 'Events',
             type: 'array',
             of: [{ type: "reference", to: { type: "event" } }]

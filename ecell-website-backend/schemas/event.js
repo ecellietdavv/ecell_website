@@ -13,6 +13,18 @@ export default {
             ]
         },
         {
+            name: 'date',
+            title: 'Date Of Event',
+            type: 'date',
+            options: {
+                dateFormat: 'DD-MM-YYYY',
+                calendarTodayLabel: 'Today'
+            },
+            validation: Rule => [
+                Rule.required().error('Date is required'),
+            ]
+        },
+        {
             name: 'desc',
             title: 'Description',
             type: 'string',

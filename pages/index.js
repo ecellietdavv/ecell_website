@@ -1,21 +1,19 @@
 /* eslint-disable @next/next/no-sync-scripts */
 import Head from "next/head"
-import Drawer from "../components/Drawer"
 import TFCtemplate from "../components/TFCtemplate"
 import Event from "../components/Event"
 import Initiative from "../components/Initiative"
 import About from "../components/About"
-// import Carousel from "../components/Carousel"
 import VisionMission from "../components/VisionMission"
 import Teams from "../components/Teams"
 import SectionDivider from "../components/SectionDivider"
 import { sanityClient } from "../utils/sanity"
-import { getFlagshipEventsQuery, getFlagshipInitiativesQuery, getTeamsQuery, getHomepageMiscContentQuery, getTFCContentQuery } from "../utils/queries"
+import { getEventsQuery, getInitiativesQuery, getTeamsQuery, getHomepageMiscContentQuery, getTFCContentQuery } from "../utils/queries"
 import HomeHero from "../components/HomeHero"
 
 function HomePage({ flagshipEvents, flagshipInitiatives, teams, tfc, aboutUs, visionMission, name }) {
-  const events = flagshipEvents.categoryEvents
-  const initiatives = flagshipInitiatives.categoryInitiatives
+  const {events} = flagshipEvents
+  const {initiatives} = flagshipInitiatives
   return (
     <div className="w-full">
       <Head>
@@ -24,7 +22,6 @@ function HomePage({ flagshipEvents, flagshipInitiatives, teams, tfc, aboutUs, vi
         <meta name="keywords" content="ecell, E-cell, ietdavv, ecelliet, ietclubs, ietsocieties, ecelldavv, davv, ietdavv, engineering davv, ietdavv.edu.in, clubs in ietdavv, engineering, science, enterpreneurship, tech, web, html, jsx, css, nextjs, colleges in indore, colleges with ecell" />
       </Head>
 
-      <Drawer />
       <HomeHero />
       <TFCtemplate content={tfc} name={name} />
       <VisionMission content={visionMission} />
@@ -42,11 +39,12 @@ function HomePage({ flagshipEvents, flagshipInitiatives, teams, tfc, aboutUs, vi
 }
 
 export const getServerSideProps = async () => {
-  const flagshipEvents = await sanityClient.fetch(getFlagshipEventsQuery)
-  const flagshipInitiatives = await sanityClient.fetch(getFlagshipInitiativesQuery)
+  const flagshipEvents = await sanityClient.fetch(getEventsQuery, {category: "Flagship Events"})
+  const flagshipInitiatives = await sanityClient.fetch(getInitiativesQuery, {category: "Flagship Initiatives"})
   const teams = await sanityClient.fetch(getTeamsQuery)
   const { aboutUs, visionMission, name } = await sanityClient.fetch(getHomepageMiscContentQuery)
   const tfc = await sanityClient.fetch(getTFCContentQuery)
+
   return {
     props: {
       flagshipEvents,
