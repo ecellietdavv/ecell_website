@@ -1,5 +1,7 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import React from 'react'
+import { useState } from 'react';
 import { AiOutlineArrowRight } from 'react-icons/ai'
 import { BsArrowUpSquareFill } from 'react-icons/bs'
 import { urlFor } from '../../utils/sanity';
@@ -39,13 +41,13 @@ function EventsListSection({ name, sectionBio, id, events, Icon }) {
                         >
                             {date}
                         </span>
-                        <h3>
-                            <a
-                                href="javascript:void(0)"
+                        <h3 className='flex justify-between items-center'>
+                            <span
                                 className=" font-semibold text-xl sm:text-2xl lg:text-xl xl:text-2xl mb-4 inline-block hover:text-primary "
                             >
                                 {name}
-                            </a>
+                            </span>
+                            {blog?.slug?.current && <Link href={`/blogs/${blog?.slug?.current}`}><span className='cursor-pointer'>Read more..</span></Link>}
                         </h3>
                         <p className="text-base text-body-color">
                             {desc}
@@ -55,8 +57,19 @@ function EventsListSection({ name, sectionBio, id, events, Icon }) {
             </div>
         )
     }
+
+    const [loadMore, setLoadMore] = useState(1)
+    const reset = events.length / 3
+
+    const handleLoading = () => {
+        loadMore >= reset ?
+            setLoadMore(1)
+            :
+            setLoadMore(loadMore + 1)
+    }
+
     return (
-        <section id={id} className="pt-10 px-6 sm:px-0 lg:pt-12 pb-10 lg:pb-20 relative">
+        <section id={id} style={{ height: 750 * loadMore }} className="pt-10 px-6 sm:px-0 lg:pt-12 pb-10 lg:pb-20 relative">
             <div className="container mx-auto">
                 <div className="flex flex-wrap justify-center -mx-4">
                     <div className="w-full px-4">
@@ -89,7 +102,7 @@ function EventsListSection({ name, sectionBio, id, events, Icon }) {
                     }
                 </div>
 
-                <ViewMore/>
+                <ViewMore action={handleLoading} reset={loadMore >= reset} />
             </div>
         </section>
     )

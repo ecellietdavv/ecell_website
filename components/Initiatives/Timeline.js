@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import React from 'react'
+import React, { useState } from 'react'
 import { AiOutlineArrowRight } from 'react-icons/ai'
 import { urlFor } from '../../utils/sanity'
 import ViewMore from '../UtilComponents/ViewMore'
@@ -17,17 +17,27 @@ function Timeline({ initiatives, name, desc, id }) {
                     </div>
 
                     {
-                        blog?.slug?.current ?
-                            <Link href={`/blogs/${blog?.slug?.current}`} className='border-none bg-transparent'>Read More..</Link>
-                            : null
+                        blog?.slug?.current &&
+                        <Link href={`/blogs/${blog?.slug?.current}`} className='border-none bg-transparent'>Read More..</Link>
                     }
                 </div>
                 <p className="mt-3">{desc}</p>
             </div>
         )
     }
+
+    const [loadMore, setLoadMore] = useState(1)
+    const reset = initiatives.length / 2
+
+    const handleLoading = () => {
+        loadMore >= reset?
+            setLoadMore(1)
+            :
+            setLoadMore(loadMore + 1)
+    }
+
     return (
-        <section id={id} className="dark:bg-dark pb-10 relative dark:text-gray-100">
+        <section id={id} style={{ height: 750 * loadMore }} className={`dark:bg-dark overflow-hidden pb-20 relative dark:text-gray-100`}>
             <div className="container max-w-5xl px-4 py-12 mx-auto">
                 <div className="grid gap-4 mx-4 sm:grid-cols-12">
                     <div className="col-span-12 sm:col-span-3">
@@ -51,7 +61,7 @@ function Timeline({ initiatives, name, desc, id }) {
                 </div>
             </div>
 
-            <ViewMore/>
+            <ViewMore action={handleLoading} reset={loadMore >= reset} />
         </section>
     )
 }

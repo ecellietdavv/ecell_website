@@ -43,11 +43,11 @@ function BlogPost(props) {
                     <h2 className="text-4xl font-semibold text-gray-100 leading-tight">
                         {post?.title}
                     </h2>
-                    <div className="flex mt-3">
-                        <img src="https://randomuser.me/api/portraits/men/97.jpg"
-                            className="h-10 w-10 rounded-full mr-2 object-cover" />
+                    <div className="flex mt-3 space-x-3">
+                        <Image width={40} height={40} src={urlFor(post?.author?.image).url()}
+                            className="h-10 w-10 rounded-full object-cover" />
                         <div>
-                            <p className="font-semibold text-gray-200 text-sm"> {post?.author.name} </p>
+                            <p className="font-semibold text-gray-200 text-sm"> {post?.author?.name} </p>
                             <p className="font-semibold text-gray-400 text-xs"> {post?.publishedAt}</p>
                         </div>
                     </div>

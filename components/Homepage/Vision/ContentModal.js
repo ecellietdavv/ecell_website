@@ -13,9 +13,9 @@ function ContentModal({ name, body }) {
                         <h3 className="text-xl font-semibold text-dark dark:text-white">
                             {name}
                         </h3>
-                        <button type="button" className="text-light bg-transparent hover:bg-light hover:text-dark rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-mid dark:hover:text-light" data-modal-toggle={name}>
+                        <div type="button" className="dark:text-light bg-transparent hover:bg-light hover:text-dark rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-mid dark:hover:text-light" data-modal-toggle={name}>
                             <AiOutlineClose className="w-5 h-5" />
-                        </button>
+                        </div>
                     </div>
 
                     <div className="p-6">

@@ -65,11 +65,9 @@ function Footer() {
 					{/* Address  */}
 					<div className="flex flex-col">
 						<h3 className="text-lg subpixel-antialiased font-semibold">Address</h3>
-						<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3681.2656451339208!2d75.87759341496154!3d22.681152885127144!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3962fcc03e36712d%3A0xb6f3c2bf734a7c!2sIET%20DAVV!5e0!3m2!1sen!2sin!4v1662713117254!5m2!1sen!2sin" className="border-none my-4" width="100%" height="100%" allowFullScreen={true} loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
-						<p className="">Institute of Engineering and Technology
-							Devi Ahilya Vishwavidyalaya
-							Khandwa Road Indore-452017 (M.P.)</p>
-						<p className="mt-3">ph :<span className="font-semibold">+91 9617316561</span></p>
+						<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d230.07993007636696!2d75.88147692727206!3d22.680659945513185!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3962fd900c223c9d%3A0x5520eb1a0643d268!2sEcell%20Office!5e0!3m2!1sen!2sin!4v1664038436424!5m2!1sen!2sin" className="border-none my-4" width="100%" height="100%" allowFullScreen={true} loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
+						<p className="">E-Block, Institute of Engineering and Technology, Devi Ahilya Vishwavidyalaya, Khandwa Road Indore-452017 (M.P.)</p>
+						<p className="mt-3">ph :<span className="font-semibold">+91 82900 37627</span></p>
 					</div>
 
 					{/* Links  */}

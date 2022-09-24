@@ -9,7 +9,7 @@ function VisionMission({ content }) {
 
     const ContentCard = ({ img, body, name, halfWidth = false }) => {
         return (
-            <div data-modal-toggle={name} className={halfWidth ? "w-full sm:w-1/2 relative group p-2" : "w-full sm:w-full relative group p-2"}>
+            <div data-modal-toggle={name} className={halfWidth ? "w-full cursor-pointer sm:w-1/2 relative group p-2" : "w-full cursor-pointer sm:w-full relative group p-2"}>
                 <div className="relative">
                     <Image loading="lazy" height={400} width={600} alt={name} className={`block absolute object-cover object-center w-full h-full rounded-lg`}
                         src={img} />

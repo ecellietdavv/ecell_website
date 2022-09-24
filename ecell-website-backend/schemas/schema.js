@@ -24,6 +24,7 @@ import initiatives from './initiatives/initiatives'
 import contact from './contact'
 import homepageMisc from './homepageMisc'
 import tfc from './tfc'
+import newsletters from './newsletters'
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -52,6 +53,8 @@ export default createSchema({
 
     homepageMisc,
     contact,
-    tfc
+    tfc,
+
+    newsletters
   ]),
 })
