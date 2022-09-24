@@ -109,7 +109,7 @@ function Index({ featuredBlogs, allBlogs }) {
                             featuredBlogs?.blogs && featuredBlogs?.blogs?.map((blog, idx) => {
                                 const { slug, title, description, mainImage, publishedAt } = blog
                                 return (
-                                    <FeaturedBlogCard slug={slug} title={title} description={description} mainImage={mainImage} publishedAt={publishedAt} idx={idx} />
+                                    <FeaturedBlogCard key={idx} slug={slug} title={title} description={description} mainImage={mainImage} publishedAt={publishedAt} idx={idx} />
                                 )
                             })
                         }
@@ -129,7 +129,7 @@ function Index({ featuredBlogs, allBlogs }) {
                             allBlogs?.blogs && allBlogs?.blogs?.map((blog, idx) => {
                                 const { slug, title, description, mainImage, publishedAt } = blog
                                 return (
-                                    <BlogCard slug={slug} title={title} description={description} mainImage={mainImage} publishedAt={publishedAt} idx={idx} />
+                                    <BlogCard key={idx} slug={slug} title={title} description={description} mainImage={mainImage} publishedAt={publishedAt} idx={idx} />
                                 )
                             })
                         }
