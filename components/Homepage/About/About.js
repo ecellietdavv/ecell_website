@@ -2,9 +2,9 @@
 import React from "react";
 import Image from "next/image";
 import AboutCarousel from "./AboutCarousel";
-import { urlFor } from "../utils/sanity";
+import { urlFor } from "../../../utils/sanity";
 import PortableText from "react-portable-text";
-import GradientButton from "./GradientButton";
+import GradientButton from "../../UtilComponents/GradientButton";
 import { AiOutlineArrowRight } from "react-icons/ai";
 
 const About = ({ content }) => {

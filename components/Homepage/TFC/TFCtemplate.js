@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import React from 'react'
 import PortableText from 'react-portable-text'
-import { urlFor } from '../utils/sanity'
+import { urlFor } from '../../../utils/sanity'
 import TFCMobile from './TFCMobile'
 
 const TFCtemplate = ({ content, name }) => {

@@ -75,6 +75,22 @@ const getBlogContentQuery = `
     }
 `
 
+const getBlogsQuery = `
+    *[_type=="blogs" && name==$category][0] {
+        _id,
+        name,
+        blogs[]{
+            _type == 'reference' => @->{
+                slug,
+                title, 
+                description,
+                mainImage,
+                publishedAt
+            }
+        } | order(publishedAt desc) | order(title)
+    }
+`
+
 const getBlogStaticPathsQuery = `
     *[_type=="post"]{
         _id,
@@ -84,4 +100,4 @@ const getBlogStaticPathsQuery = `
     }
 `
 
-module.exports = { getHomepageMiscContentQuery, getTFCContentQuery, getEventsQuery, getInitiativesQuery, getTeamsQuery, getBlogContentQuery, getBlogStaticPathsQuery }
+module.exports = { getHomepageMiscContentQuery, getTFCContentQuery, getEventsQuery, getInitiativesQuery, getTeamsQuery, getBlogContentQuery, getBlogStaticPathsQuery, getBlogsQuery }

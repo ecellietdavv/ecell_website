@@ -6,19 +6,24 @@ import schemaTypes from 'all:part:@sanity/base/schema-type'
 
 // We import object and document schemas
 import blockContent from './blockContent'
-import category from './category'
-import post from './post'
-import author from './author'
-import comment from './comment'
-import member from './member'
-import initiative from './initiative'
-import team from './team'
-import event from './event'
+import category from './blogs/category'
+import post from './blogs/post'
+import author from './blogs/author'
+import comment from './blogs/comment'
+import blogs from './blogs/blogs'
+
+import member from './teams/member'
+import team from './teams/team'
+
+import event from './events/event'
+import events from './events/events'
+
+import initiative from './initiatives/initiative'
+import initiatives from './initiatives/initiatives'
+
 import contact from './contact'
 import homepageMisc from './homepageMisc'
 import tfc from './tfc'
-import events from './events'
-import initiatives from './initiatives'
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -34,6 +39,7 @@ export default createSchema({
     category,
     blockContent,
     comment,
+    blogs,
 
     member,
     team,
@@ -43,7 +49,7 @@ export default createSchema({
 
     event,
     events,
-    
+
     homepageMisc,
     contact,
     tfc

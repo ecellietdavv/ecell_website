@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import React, { useState } from 'react'
 import PortableText from 'react-portable-text'
-import { urlFor } from '../utils/sanity'
+import { urlFor } from '../../../utils/sanity'
 
 const TFCMobile = ({ content, name }) => {
     const [active, setActive] = useState(0)

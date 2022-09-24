@@ -4,7 +4,7 @@ import { MdEmojiEvents } from 'react-icons/md'
 import { HiFlag } from 'react-icons/hi'
 import EventsHero from '../components/Events/EventsHero'
 import EventsListSection from '../components/Events/EventsListSection'
-import SectionDivider from '../components/SectionDivider'
+import SectionDivider from '../components/UtilComponents/SectionDivider'
 import { getEventsQuery } from '../utils/queries'
 import { sanityClient } from '../utils/sanity'
 

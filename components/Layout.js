@@ -1,6 +1,6 @@
-import Drawer from "./Drawer";
-import Footer from "./Footer";
-import Navbar from "./Navbar";
+import Drawer from "./Navigation/Drawer";
+import Footer from "./Navigation/Footer";
+import Navbar from "./Navigation/Navbar";
 
 export default function Layout({ children }) {
     return (

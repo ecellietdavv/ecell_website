@@ -1,15 +1,15 @@
 /* eslint-disable @next/next/no-sync-scripts */
 import Head from "next/head"
-import TFCtemplate from "../components/TFCtemplate"
-import Event from "../components/Event"
-import Initiative from "../components/Initiative"
-import About from "../components/About"
-import VisionMission from "../components/VisionMission"
-import Teams from "../components/Teams"
-import SectionDivider from "../components/SectionDivider"
+import TFCtemplate from "../components/Homepage/TFC/TFCtemplate"
+import Event from "../components/Homepage/Event"
+import Initiative from "../components/Homepage/Initiative"
+import About from "../components/Homepage/About/About"
+import VisionMission from "../components/Homepage/Vision/VisionMission"
+import Teams from "../components/Homepage/Teams"
+import SectionDivider from "../components/UtilComponents/SectionDivider"
 import { sanityClient } from "../utils/sanity"
 import { getEventsQuery, getInitiativesQuery, getTeamsQuery, getHomepageMiscContentQuery, getTFCContentQuery } from "../utils/queries"
-import HomeHero from "../components/HomeHero"
+import HomeHero from "../components/Homepage/HomeHero"
 
 function HomePage({ flagshipEvents, flagshipInitiatives, teams, tfc, aboutUs, visionMission, name }) {
   const {events} = flagshipEvents

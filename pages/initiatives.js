@@ -1,7 +1,7 @@
 import React from 'react'
 import InitiativesHero from '../components/Initiatives/InitiativesHero'
 import Timeline from '../components/Initiatives/Timeline'
-import SectionDivider from '../components/SectionDivider'
+import SectionDivider from '../components/UtilComponents/SectionDivider'
 import { getInitiativesQuery } from '../utils/queries'
 import { sanityClient } from '../utils/sanity'
 

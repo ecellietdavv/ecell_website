@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import React, { useState } from 'react'
-import { urlFor } from '../utils/sanity'
+import { urlFor } from '../../../utils/sanity'
 import ItemsCarousel from 'react-items-carousel';
 import { BiChevronRight, BiChevronLeft } from "react-icons/bi";
 

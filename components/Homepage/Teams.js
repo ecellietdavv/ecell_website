@@ -3,8 +3,8 @@ import React, { useState } from "react";
 import { MdEmail } from "react-icons/md";
 import { AiFillPhone } from "react-icons/ai";
 import { BsLinkedin } from "react-icons/bs";
-import { urlFor } from "../utils/sanity";
-import SectionDescCard from "./SectionDescCard";
+import { urlFor } from "../../utils/sanity";
+import SectionDescCard from "../UtilComponents/SectionDescCard";
 
 function Teams({ teams }) {
   const [activeTeam, setActiveTeam] = useState(0);
