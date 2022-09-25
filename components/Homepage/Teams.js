@@ -6,7 +6,7 @@ import { BsLinkedin } from "react-icons/bs";
 import { urlFor } from "../../utils/sanity";
 import SectionDescCard from "../UtilComponents/SectionDescCard";
 
-function Teams({ teams }) {
+function Teams({ teams, id }) {
   const [activeTeam, setActiveTeam] = useState(0);
 
   const MemberCard = ({ name, designation, img, social, idx }) => {
@@ -63,7 +63,7 @@ function Teams({ teams }) {
   };
 
   return (
-    <section id="teams" className="">
+    <section id={id} className="">
 
       <SectionDescCard name="Our Team" desc="Lorem ipsum, dolor sit amet consectetur adipisicing elit. At
 						repellendus est blanditiis consequuntur iusto nostrum consectetur

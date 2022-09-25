@@ -6,11 +6,10 @@ import WbSunnyIcon from "@mui/icons-material/WbSunny";
 import DarkModeIcon from "@mui/icons-material/DarkMode";
 import MenuIcon from '@mui/icons-material/Menu';
 import Link from "next/link";
-import { useRouter } from "next/router";
+import { handleScroll } from "../../utils/utilityFunctions";
 
 function Navbar() {
   const [dark, setDark] = useState("false");
-  const router = useRouter();
 
   const handleDarkMode = () => {
     localStorage.theme = localStorage.theme === "dark" ? "light" : "dark";
@@ -27,37 +26,12 @@ function Navbar() {
     }
   };
 
-  const handleScroll = (id) => {
-    var element = document.getElementById(id);
-    var headerOffset = 80;
-    var elementPosition = element.getBoundingClientRect().top;
-    var offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-
-    window.scrollTo({
-      top: offsetPosition,
-      behavior: "smooth"
-    });
-  }
-
-  const navItems = router.pathname === "/"? 
-  [
-    { name: "Home", scrollTo: "home", link: "/" },
-    { name: "About", scrollTo: "about", link: "/" },
-    { name: "Events", scrollTo: "events", link: "/" },
-    { name: "Initiatives", scrollTo: "initiatives", link: "/" },
-    { name: "Our Team", scrollTo: "teams", link: "/" },
-    { name: "Blogs", scrollTo: null, link: "/blogs" },
+  const navItems = [
+    { name: "Home", link: "/" },
+    { name: "Events", link: "/events" },
+    { name: "Initiatives", link: "/initiatives" },
+    { name: "Blogs", link: "/blogs" },
   ]
-  :
-  [
-    { name: "Home", scrollTo: null, link: "/" },
-    // { name: "About", scrollTo: null, link: "/" },
-    { name: "Events", scrollTo: null, link: "/events" },
-    { name: "Initiatives", scrollTo: null, link: "/initiatives" },
-    // { name: "Our Team", scrollTo: "teams", link: "/" },
-    { name: "Blogs", scrollTo: null, link: "/blogs" },
-  ]
-
 
   return (
     <nav className="bg-light dark:bg-dark shadow-lg shadow-mid/20  w-full py-2 flex dark:text-white text-dark fixed z-50 top-0">

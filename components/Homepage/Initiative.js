@@ -9,7 +9,7 @@ import { useState } from 'react'
 import ItemsCarousel from 'react-items-carousel';
 import { BiChevronRight, BiChevronLeft } from "react-icons/bi";
 
-const Initiative = ({ initiatives }) => {
+const Initiative = ({ initiatives, id }) => {
   const IntiativeCard = ({ img, name, desc, idx, date }) => {
     return (
       <div key={idx} className={idx % 2 === 0 ? "flex p-4 sm:p-0 relative flex-col md:flex-row md:justify-between items-center w-full right-timeline " : " flex p-4 sm:p-0 relative flex-col md:justify-between md:flex-row-reverse items-center w-full"}>
@@ -45,8 +45,7 @@ const Initiative = ({ initiatives }) => {
   }
 
   return (
-    <section id='initiatives' className='bg-light dark:bg-dark'>
-
+    <section id={id} className='bg-light dark:bg-dark'>
       <SectionDescCard name="Initiatives" desc="Lorem ipsum, dolor sit amet consectetur adipisicing elit. At
 						repellendus est blanditiis consequuntur iusto nostrum consectetur
 						voluptate ratione, exercitationem sint maxime nisi incidunt? A

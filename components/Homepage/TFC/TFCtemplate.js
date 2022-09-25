@@ -4,9 +4,9 @@ import PortableText from 'react-portable-text'
 import { urlFor } from '../../../utils/sanity'
 import TFCMobile from './TFCMobile'
 
-const TFCtemplate = ({ content, name }) => {
+const TFCtemplate = ({ content, name, id }) => {
     return (
-        <section id='home' className='dark:bg-dark py-8 bg-light'>
+        <section id={id} className='dark:bg-dark py-8 bg-light'>
             <TFCMobile content={content} name={name} />
             <div className="sm:block hidden">
                 <h2 className='lg:text-4xl px-4 lg:px-0 text-3xl antialiased text-center font-bold dark:text-light'>{name}</h2>

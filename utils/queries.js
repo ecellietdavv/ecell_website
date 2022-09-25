@@ -46,7 +46,7 @@ const getTeamsQuery = `
     *[_type=="team"] | order(year desc){
         _id,
         year,
-        members[] | order(name) {
+        members[] {
         _type == 'reference' => @->,
         } | order(name)
     }

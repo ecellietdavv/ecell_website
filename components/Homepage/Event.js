@@ -11,7 +11,7 @@ import { BiChevronRight, BiChevronLeft } from "react-icons/bi";
 import ItemsCarousel from 'react-items-carousel';
 import { useEffect } from "react";
 
-const Event = ({ events }) => {
+const Event = ({ events, id }) => {
 	const EventCard = ({ img, name, desc, idx }) => {
 		const [show, setShow] = useState(false);
 		return (
@@ -66,7 +66,7 @@ const Event = ({ events }) => {
 	}
 
 	return (
-		<section id="events" className="dark:bg-dark">
+		<section id={id} className="dark:bg-dark">
 			<SectionDescCard name="Events" desc="Lorem ipsum, dolor sit amet consectetur adipisicing elit. At
 						repellendus est blanditiis consequuntur iusto nostrum consectetur
 						voluptate ratione, exercitationem sint maxime nisi incidunt? A

@@ -4,7 +4,7 @@ import PortableText from 'react-portable-text'
 import { urlFor } from '../../../utils/sanity'
 import ContentModal from './ContentModal'
 
-function VisionMission({ content }) {
+function VisionMission({ content, id }) {
     const { vision, mission, e_networking, incubation_center, nec } = content
 
     const ContentCard = ({ img, body, name, halfWidth = false }) => {
@@ -46,7 +46,7 @@ function VisionMission({ content }) {
     }
 
     return (
-        <section className="bg-light dark:bg-dark">
+        <section id={id} className="bg-light dark:bg-dark">
             <div className="container px-5 py-10 mx-auto lg:px-24 max-w-7xl">
                 <div className="flex flex-wrap">
                     <div className="flex flex-wrap w-1/2">

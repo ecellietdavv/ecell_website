@@ -7,9 +7,9 @@ import PortableText from "react-portable-text";
 import GradientButton from "../../UtilComponents/GradientButton";
 import { AiOutlineArrowRight } from "react-icons/ai";
 
-const About = ({ content }) => {
+const About = ({ content, id }) => {
   return (
-    <section title="About Section" id="about" className="bg-light xl:max-h-screen max-h-full dark:bg-dark text-dark dark:text-white">
+    <section id={id} title="About Section" className="bg-light xl:max-h-screen max-h-full dark:bg-dark text-dark dark:text-white">
       <div className="grid xl:grid-cols-2 max-w-[1920px] mx-auto sm:items-center xl:h-screen overflow-hidden text-center xl:text-left">
         <div className="flex flex-col space-y-10 py-10 xl:py-0 xl:space-y-14 mx-6 text-sm sm:text-base sm:mx-20">
           <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl underline underline-offset-8">About Us</h1>

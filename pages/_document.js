@@ -16,7 +16,7 @@ class MyDocument extends Document {
                 <body>
                     <Main />
                     <NextScript />
-                    <Script src="https://unpkg.com/flowbite@1.5.3/dist/flowbite.js" strategy="beforeInteractive" />
+                    <Script src="https://unpkg.com/flowbite@1.5.3/dist/flowbite.js" strategy="afterInteractive" />
                 </body>
             </Html>
         );

@@ -9,20 +9,10 @@ import ViewMore from '../../components/UtilComponents/ViewMore'
 import Newsletter from '../../components/UtilComponents/Newsletter'
 import SectionDivider from '../../components/UtilComponents/SectionDivider'
 import SectionDescCard from '../../components/UtilComponents/SectionDescCard'
+import PageNavigation from '../../components/Navigation/PageNavigation'
+import { handleScroll } from '../../utils/utilityFunctions'
 
 function Index({ featuredBlogs, allBlogs }) {
-
-    const handleScroll = (id) => {
-        var element = document.getElementById(id);
-        var headerOffset = 80;
-        var elementPosition = element.getBoundingClientRect().top;
-        var offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-
-        window.scrollTo({
-            top: offsetPosition,
-            behavior: "smooth"
-        });
-    }
 
     const BlogCard = ({ slug, title, description, mainImage, publishedAt, idx }) => {
         return (
@@ -70,26 +60,33 @@ function Index({ featuredBlogs, allBlogs }) {
             setLoadMore(loadMore + 1)
     }
 
+    const navItems = [
+        { name: "Blogs Home", scrollTo: "blogsHome" },
+        { name: "Featured Blogs", scrollTo: "featuredBlogs" },
+        { name: "All Blogs", scrollTo: "allBlogs" },
+    ]
+
     return (
         <main className="dark:bg-dark dark:text-gray-100">
+            <PageNavigation navItems={navItems}></PageNavigation>
 
             {/* Blogs Hero  */}
-            <section className="dark:text-gray-100">
+            <section id='blogsHome' className="dark:text-gray-100">
                 <div className="container mx-auto flex flex-col items-center px-4 py-16 text-center md:py-32 md:px-10 lg:px-32 xl:max-w-3xl lg:min-h-screen">
                     <h1 className="text-4xl font-bold leading-none sm:text-5xl">Our
                         <span className="dark:text-brand-400 text-brand-500 pl-2">Blogs</span>
                     </h1>
                     <p className="px-8 mt-8 mb-12 text-lg">Cupiditate minima voluptate temporibus quia? Architecto beatae esse ab amet vero eaque explicabo!</p>
                     <div className="flex flex-wrap justify-center">
-                        <button className="px-8 py-3 m-2 text-lg font-semibold rounded bg-cyan-400 text-dark" onClick={() => { handleScroll("featured") }}>Featured</button>
-                        <button onClick={() => { handleScroll("all") }} className="px-8 py-3 m-2 text-lg border rounded dark:text-gray-50 dark:border-gray-700">All</button>
+                        <button className="px-8 py-3 m-2 text-lg font-semibold rounded bg-cyan-400 text-dark" onClick={() => { handleScroll("featuredBlogs") }}>Featured</button>
+                        <button onClick={() => { handleScroll("allBlogs") }} className="px-8 py-3 m-2 text-lg border rounded dark:text-gray-50 dark:border-gray-700">All</button>
                     </div>
                 </div>
             </section>
 
             <SectionDivider img="img1" />
 
-            <section id='featured' className=" max-w-[1920px] mx-auto">
+            <section id='featuredBlogs' className=" max-w-[1920px] mx-auto">
                 <SectionDescCard name="Featured Blogs" desc="awduihuiawdhiuhwauidhui" />
                 <div className="p-6">
 
@@ -121,7 +118,7 @@ function Index({ featuredBlogs, allBlogs }) {
             <SectionDivider img="img2" />
 
             {/* All Blogs  */}
-            <section id='all' className='container max-w-[1920px] mx-auto'>
+            <section id='allBlogs' className='container max-w-[1920px] mx-auto'>
                 <SectionDescCard name="All Blogs" desc="awduihuiawdhiuhwauidhui" />
                 <div style={{ height: 500 * loadMore }} className="relative pb-20 p-6 overflow-hidden">
                     <div className="grid justify-center grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
