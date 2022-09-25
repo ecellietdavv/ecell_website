@@ -65,7 +65,7 @@ function Footer() {
 							{
 								navLinks?.map((value, idx) => {
 									return (
-										<Link href={value?.link}><li className="w-fit dark:text-white cursor-pointer" key={idx}>{value?.name}</li></Link>
+										<Link key={idx} href={value?.link}><li className="w-fit dark:text-white cursor-pointer" key={idx}>{value?.name}</li></Link>
 									)
 								})
 							}
