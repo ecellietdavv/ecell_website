@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { handleScroll } from '../../utils/utilityFunctions'
 
-function PageNavigation({navItems}) {
+function PageNavigation({ navItems }) {
 
     const [toggel, setToggel] = useState(false)
 
@@ -17,7 +17,7 @@ function PageNavigation({navItems}) {
             <div className="flex flex-col items-center justify-center">
                 <ul className="grid grid-cols-1 gap-2 p-3">
                     {
-                        navItems && navItems?.map((value, idx)=>{
+                        navItems && navItems?.map((value, idx) => {
                             return (
                                 <li className="hover:underline dark:bg-dark bg-mid rounded-md text-center px-6 py-2 cursor-pointer text-md" key={idx} onClick={() => handleScroll(value.scrollTo)}>{value.name}</li>
                             )

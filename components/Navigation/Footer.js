@@ -2,30 +2,18 @@ import React from "react";
 import { BsFacebook, BsLinkedin, BsYoutube, BsTwitter, BsInstagram } from 'react-icons/bs'
 import { FaQuora } from 'react-icons/fa'
 import { useForm, SubmitHandler } from 'react-hook-form'
+import Link from "next/link";
 
 function Footer() {
 
 	const { register, handleSubmit, formState: { errors } } = useForm();
 
 	const navLinks = [
-		{ name: "Home", link: "home" },
-		{ name: "About", link: "about" },
-		{ name: "Events", link: "events" },
-		{ name: "Initiatives", link: "initiatives" },
-		{ name: "Our Team", link: "teams" },
+		{ name: "Home", link: "/" },
+		{ name: "Events", link: "/events" },
+		{ name: "Initiatives", link: "/initiatives" },
+		{ name: "Blogs", link: "/blogs" },
 	];
-
-	const handleScroll = (id) => {
-		var element = document.getElementById(id);
-		var headerOffset = 80;
-		var elementPosition = element.getBoundingClientRect().top;
-		var offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-
-		window.scrollTo({
-			top: offsetPosition,
-			behavior: "smooth"
-		});
-	}
 
 	const SocialLink = ({ link, Icon }) => {
 		return (
@@ -77,7 +65,7 @@ function Footer() {
 							{
 								navLinks?.map((value, idx) => {
 									return (
-										<li className="w-fit dark:text-white cursor-pointer" onClick={() => handleScroll(value.link)} key={idx}>{value.name}</li>
+										<Link href={value?.link}><li className="w-fit dark:text-white cursor-pointer" key={idx}>{value?.name}</li></Link>
 									)
 								})
 							}

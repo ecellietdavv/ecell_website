@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react'
+import { useEffect } from 'react';
 import { useState } from 'react';
 import { AiOutlineArrowRight } from 'react-icons/ai'
 import { BsArrowUpSquareFill } from 'react-icons/bs'
@@ -47,7 +48,16 @@ function EventsListSection({ name, sectionBio, id, events, Icon }) {
     }
 
     const [loadMore, setLoadMore] = useState(1)
-    const reset = events.length / 3
+    const [reset, setReset] = useState(1)
+    const [height, setHeight] = useState(700)
+
+    useEffect(() => {
+        const cardsOnScreenView = window?.innerWidth >= 640 ? 3 : 2
+        const calcHeight = window?.innerWidth >= 640 ? 700 : 1000
+        const calcReset = events.length / cardsOnScreenView
+        setReset(calcReset)
+        setHeight(calcHeight)
+    }, [])
 
     const handleLoading = () => {
         loadMore >= reset ?
@@ -57,7 +67,7 @@ function EventsListSection({ name, sectionBio, id, events, Icon }) {
     }
 
     return (
-        <section id={id} style={{ height: 750 * loadMore }} className="pt-10 px-6 sm:px-0 lg:pt-12 pb-10 lg:pb-20 relative">
+        <section id={id} style={{ height: height * loadMore }} className="pt-10 overflow-hidden px-6 sm:px-0 lg:pt-12 pb-10 lg:pb-20 relative">
             <div className="container mx-auto">
                 <div className="flex flex-wrap justify-center -mx-4">
                     <div className="w-full px-4">

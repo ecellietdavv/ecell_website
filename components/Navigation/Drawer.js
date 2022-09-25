@@ -6,6 +6,7 @@ import { handleScroll } from "../../utils/utilityFunctions";
 function Drawer() {
 
   const handleClose = () => {
+    const closeButton = document?.getElementById('close')
     closeButton.click()
   }
 
@@ -29,7 +30,7 @@ function Drawer() {
             {navItems.map((value, idx) => {
               const { name, link, Icon } = value
               return (
-                <Link key={idx} href={link}><li className="cursor-pointer bg-gray-300 dark:text-white w-full dark:bg-mid py-3 text-center rounded-lg text-md" key={idx}>{name}</li></Link>
+                <Link key={idx} href={link}><li onClick={handleClose} className="cursor-pointer bg-gray-300 dark:text-white w-full dark:bg-mid py-3 text-center rounded-lg text-md" key={idx}>{name}</li></Link>
               )
             })}
           </ul>
