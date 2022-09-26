@@ -1,11 +1,14 @@
 import Layout from "../components/Layout";
+import AppState from "../context/AppState";
 import "../styles/globals.css";
 
 function MyApp({ Component, pageProps }) {
   return (
-    <Layout>
-      <Component {...pageProps} />
-    </Layout>
+    <AppState>
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
+    </AppState>
   );
 }
 

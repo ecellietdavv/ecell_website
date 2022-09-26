@@ -11,12 +11,10 @@ class MyDocument extends Document {
         return (
             <Html>
                 <Head>
-                    <link rel="stylesheet" href="https://unpkg.com/flowbite@1.5.3/dist/flowbite.min.css" />
                 </Head>
                 <body>
                     <Main />
                     <NextScript />
-                    <Script src="https://unpkg.com/flowbite@1.5.3/dist/flowbite.js" strategy="afterInteractive" />
                 </body>
             </Html>
         );

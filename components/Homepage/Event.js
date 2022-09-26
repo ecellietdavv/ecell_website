@@ -1,6 +1,5 @@
 import React from "react";
-import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
-import ArrowDropUpIcon from "@mui/icons-material/ArrowDropUp";
+import {AiOutlineDown, AiOutlineUp} from 'react-icons/ai';
 import { useState } from "react";
 import Image from "next/image";
 import { urlFor } from "../../utils/sanity";
@@ -38,14 +37,14 @@ const Event = ({ events, id }) => {
 				</h3>
 				{show ? <p className="px-6">{desc}</p> : null}
 				{show ? (
-					<ArrowDropUpIcon
+					<AiOutlineUp
 						className={`${show ? "text-brand-500" : ""
-							} text-4xl text-center w-full`}
+							} text-center w-full`}
 					/>
 				) : (
-					<ArrowDropDownIcon
+					<AiOutlineDown
 						className={`${show ? "text-brand-500" : ""
-							} text-4xl text-center w-full`}
+							} text-center w-full`}
 					/>
 				)}
 			</div>
