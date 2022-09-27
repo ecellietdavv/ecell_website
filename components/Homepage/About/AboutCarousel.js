@@ -9,13 +9,6 @@ function AboutCarousel({ images }) {
 
     return (
         <div className="p-4 sm:hidden block ">
-            {/* <div className="hidden duration-700 ease-in-out w-full h-full" data-carousel-item>
-                    </div>
-                    <div className="hidden duration-700 ease-in-out w-full h-full" data-carousel-item>
-                    </div>
-                    <div className="hidden duration-700 ease-in-out w-full h-full" data-carousel-item>
-                    </div> */}
-
             <ItemsCarousel
                 requestToChangeActive={setActiveItemIndex}
                 activeItemIndex={activeItemIndex}
@@ -29,13 +22,13 @@ function AboutCarousel({ images }) {
                 showSlither={false}
             >
                 <div className="w-full h-full">
-                    <Image loading="lazy" src={urlFor(images.img1).url()} className="object-cover" height={200} width={400}/>
+                    <Image loading="lazy" src={images?.img1} className="object-cover" height={200} width={400} />
                 </div>
                 <div className="w-full h-full">
-                    <Image loading="lazy" src={urlFor(images.img2).url()} className="object-cover" height={200} width={400}/>
+                    <Image loading="lazy" src={images?.img2} className="object-cover" height={200} width={400} />
                 </div>
                 <div className="w-full h-full">
-                    <Image loading="lazy" src={urlFor(images.img3).url()} className="object-cover" height={200} width={400}/>
+                    <Image loading="lazy" src={images?.img3} className="object-cover" height={200} width={400} />
                 </div>
             </ItemsCarousel>
         </div>

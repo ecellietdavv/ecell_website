@@ -6,8 +6,14 @@ import { urlFor } from "../../../utils/sanity";
 import PortableText from "react-portable-text";
 import GradientButton from "../../UtilComponents/GradientButton";
 import { AiOutlineArrowRight } from "react-icons/ai";
+import { randomImage } from "../../../utils/randomAssets";
 
 const About = ({ content, id }) => {
+  const images = {
+    img1: content?.images?.img1 ? urlFor(content?.images?.img1)?.url() : randomImage,
+    img2: content?.images?.img1 ? urlFor(content?.images?.img2)?.url() : randomImage,
+    img3: content?.images?.img1 ? urlFor(content?.images?.img3)?.url() : randomImage,
+  }
   return (
     <section id={id} title="About Section" className="bg-light xl:max-h-screen max-h-full dark:bg-dark text-dark dark:text-white">
       <div className="grid xl:grid-cols-2 max-w-[1920px] mx-auto sm:items-center xl:h-screen overflow-hidden text-center xl:text-left">
@@ -18,20 +24,6 @@ const About = ({ content, id }) => {
             dataset={process.env.NEXT_PUBLIC_SANITY_DATASET}
             projectId={process.env.NEXT_PUBLIC_SANITY_PROJECT_ID}
             content={content?.body}
-          // serializers={{
-          //     h1: (props) => {
-          //         <h1 className='text-2xl font-bold my-5' {...props} />
-          //     },
-          //     h2: (props) => {
-          //         <h2 className='text-xl font-bold my-5' {...props} />
-          //     },
-          //     li: ({ children }) => {
-          //         <li className='ml-4 list-disc'>{children}</li>
-          //     },
-          //     link: ({ href, children }) => {
-          //         <a href={href} className='text-blue-500 hover:underline'>{children}</a>
-          //     },
-          // }}
           />
           <div className="flex justify-center xl:justify-start item-center">
             <GradientButton name="Know More" link="/" Icon={AiOutlineArrowRight} />
@@ -41,18 +33,18 @@ const About = ({ content, id }) => {
         <div className="hidden sm:flex xl:-rotate-45 px-10 py-10 xl:py-0 lg:px-24 xl:px-0 flex-col items-center overflow-hidden space-y-4 w-full">
           <div className="w-full flex items-end h-96 space-x-4">
             <div className="bg-gray-600 drop-shadow-xl h-full w-full xl:h-1/2 xl:w-1/3">
-              <Image loading="lazy" src={urlFor(content?.images?.img1).url()} layout="fill" objectFit="cover" />
+              <Image loading="lazy" src={images?.img1} layout="fill" objectFit="cover" />
             </div>
             <div className="bg-gray-600 drop-shadow-xl h-full w-full xl:w-2/3">
-              <Image loading="lazy" src={urlFor(content?.images?.img2).url()} layout="fill" objectFit="cover" />
+              <Image loading="lazy" src={images?.img2} layout="fill" objectFit="cover" />
             </div>
           </div>
           <div className="w-full bg-gray-600 h-96 drop-shadow-xl">
-            <Image loading="lazy" src={urlFor(content?.images?.img3).url()} layout="fill" objectFit="cover" />
+            <Image loading="lazy" src={images?.img3} layout="fill" objectFit="cover" />
           </div>
         </div>
       </div>
-      <AboutCarousel images={content?.images} />
+      <AboutCarousel images={images} />
     </section>
   );
 };

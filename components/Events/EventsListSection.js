@@ -5,12 +5,14 @@ import { useEffect } from 'react';
 import { useState } from 'react';
 import { AiOutlineArrowRight } from 'react-icons/ai'
 import { BsArrowUpSquareFill } from 'react-icons/bs'
+import { randomImage } from '../../utils/randomAssets';
 import { urlFor } from '../../utils/sanity';
 import ViewMore from '../UtilComponents/ViewMore';
 
 function EventsListSection({ name, sectionBio, id, events, Icon }) {
 
     const EventCard = ({ img, name, date, desc, blog }) => {
+        const imgUrl = img ? urlFor(img).url() : randomImage
         return (
             <div className="w-full md:w-1/2 lg:w-1/3 px-4">
                 <div className="max-w-[370px] mx-auto mb-10">
@@ -19,7 +21,7 @@ function EventsListSection({ name, sectionBio, id, events, Icon }) {
                             height={350}
                             width={600}
                             objectFit="cover"
-                            src={urlFor(img).url()}
+                            src={imgUrl}
                             alt={name}
                             className="w-full"
                         />

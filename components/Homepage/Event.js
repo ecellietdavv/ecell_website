@@ -1,5 +1,5 @@
 import React from "react";
-import {AiOutlineDown, AiOutlineUp} from 'react-icons/ai';
+import { AiOutlineDown, AiOutlineUp } from 'react-icons/ai';
 import { useState } from "react";
 import Image from "next/image";
 import { urlFor } from "../../utils/sanity";
@@ -9,6 +9,7 @@ import { AiOutlineArrowRight } from "react-icons/ai";
 import { BiChevronRight, BiChevronLeft } from "react-icons/bi";
 import ItemsCarousel from 'react-items-carousel';
 import { useEffect } from "react";
+import { randomIage } from "../../utils/randomAssets";
 
 const Event = ({ events, id }) => {
 	const EventCard = ({ img, name, desc, idx }) => {
@@ -87,8 +88,9 @@ const Event = ({ events, id }) => {
 					>
 						{events && events?.map((value, idx) => {
 							const { img, name, desc } = value;
+							const imgUrl = img ? urlFor(img)?.url() : randomIage
 							return (
-								<EventCard img={urlFor(img).url()} name={name} desc={desc} idx={idx} key={idx} />
+								<EventCard img={imgUrl} name={name} desc={desc} idx={idx} key={idx} />
 							);
 						})}
 					</ItemsCarousel>
