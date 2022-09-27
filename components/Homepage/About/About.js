@@ -18,7 +18,7 @@ const About = ({ content, id }) => {
     <section id={id} title="About Section" className="bg-light xl:max-h-screen max-h-full dark:bg-dark text-dark dark:text-white">
       <div className="grid xl:grid-cols-2 max-w-[1920px] mx-auto sm:items-center xl:h-screen overflow-hidden text-center xl:text-left">
         <div className="flex flex-col space-y-10 py-10 xl:py-0 xl:space-y-14 mx-6 text-sm sm:text-base sm:mx-20">
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl underline underline-offset-8">About Us</h1>
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl underline underline-offset-8">{content?.heading}</h1>
           <PortableText
             className='dark:text-slate-300 mx-auto xl:mx-0 lg:w-3/4 space-y-3'
             dataset={process.env.NEXT_PUBLIC_SANITY_DATASET}

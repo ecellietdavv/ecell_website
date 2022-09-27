@@ -22,9 +22,12 @@ import initiative from './initiatives/initiative'
 import initiatives from './initiatives/initiatives'
 
 import contact from './contact'
-import homepageMisc from './homepageMisc'
 import tfc from './tfc'
 import newsletters from './newsletters'
+import page from './page'
+import vision from './vision'
+import sectionDivider from './sectionDivider'
+import aboutUs from './aboutUs'
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -51,10 +54,13 @@ export default createSchema({
     event,
     events,
 
-    homepageMisc,
-    contact,
+    page,
     tfc,
-
+    aboutUs,
+    vision,
+    sectionDivider,
+    
+    contact,
     newsletters
   ]),
 })

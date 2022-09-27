@@ -12,7 +12,7 @@ function Timeline({ initiatives, name, desc, id }) {
         const imgUrl = img ? urlFor(img)?.url() : randomImage
         return (
             <div key={idx} className="flex flex-col sm:relative sm:before:absolute sm:before:top-2 sm:before:w-4 sm:before:h-4 sm:before:rounded-full sm:before:left-[-35px] sm:before:z-[1] before:bg-brand-400">
-                <Image loading="lazy" width={600} height={400} className="object-cover py-2 rounded-t-lg md:rounded-lg" src={imgUrl} alt={name} />
+                <Image loading="lazy" width={600} height={300} className="object-cover py-2 rounded-t-lg md:rounded-lg" src={imgUrl} alt={name} />
                 <div className="flex items-center justify-between">
                     <div className="">
                         <h3 className="text-xl font-semibold tracking-wide">{name}</h3>

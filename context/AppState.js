@@ -5,7 +5,7 @@ const AppState = (props) => {
 
     const [dark, setDark] = useState(false);
     const [openModal, setOpenModal] = useState(false)
-    const [modalContent, setModalContent] = useState({ name: "", body: "" })
+    const [modalContent, setModalContent] = useState({})
 
     const handleDarkMode = () => {
         localStorage.theme = localStorage.theme === "dark" ? "light" : "dark";

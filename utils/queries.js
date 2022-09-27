@@ -1,14 +1,34 @@
-const getHomepageMiscContentQuery = `
-    *[_type=="homepageMisc"][0]{
+const getPageQuery = `
+    *[_type=="page" && name==$name][0]{
         _id,
         name,
-        visionMission,
-        aboutUs,
+        heroImage,
+        heroHeading,
+        heroDescription,
+        metaTags,
     }
 `
 
 const getTFCContentQuery = `
     *[_type=="tfc"] | order(name desc) {
+        _id,
+        name,
+        img,
+        body
+    }
+`
+
+const getAboutContentQuery = `
+    *[_type=="aboutUs"][0] {
+        _id,
+        heading,
+        images,
+        body
+    }
+`
+
+const getVisionContentQuery = `
+    *[_type=="vision"] {
         _id,
         name,
         img,
@@ -100,4 +120,4 @@ const getBlogStaticPathsQuery = `
     }
 `
 
-module.exports = { getHomepageMiscContentQuery, getTFCContentQuery, getEventsQuery, getInitiativesQuery, getTeamsQuery, getBlogContentQuery, getBlogStaticPathsQuery, getBlogsQuery }
+module.exports = { getPageQuery, getTFCContentQuery, getAboutContentQuery, getVisionContentQuery, getEventsQuery, getInitiativesQuery, getTeamsQuery, getBlogContentQuery, getBlogStaticPathsQuery, getBlogsQuery }
