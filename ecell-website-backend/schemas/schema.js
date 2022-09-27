@@ -28,6 +28,12 @@ import page from './page'
 import vision from './vision'
 import sectionDivider from './sectionDivider'
 import aboutUs from './aboutUs'
+import step from './steps/step'
+import steps from './steps/steps'
+import testimonial from './testimonials/testimonial'
+import testimonials from './testimonials/testimonials'
+import partners from './partners/partners'
+import partner from './partners/partner'
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -59,6 +65,15 @@ export default createSchema({
     aboutUs,
     vision,
     sectionDivider,
+
+    step,
+    steps,
+
+    testimonial,
+    testimonials,
+
+    partner,
+    partners,
     
     contact,
     newsletters

@@ -62,11 +62,41 @@ const getInitiativesQuery = `
     }
 `
 
+const getStepsQuery = `
+    *[_type=="steps" && title==$title][0]{
+        _id,
+        title,
+        steps[]{
+            _type == 'reference' => @->
+        } | order(number)
+    }
+`
+
 const getTeamsQuery = `
     *[_type=="team"] | order(year desc){
         _id,
         year,
         members[] {
+        _type == 'reference' => @->,
+        } | order(name)
+    }
+`
+
+const getTestimonialsQuery = `
+    *[_type=="testimonials" && title==$title][0] {
+        _id,
+        title,
+        testimonials[] {
+        _type == 'reference' => @->,
+        } | order(name)
+    }
+`
+
+const getPartnersQuery = `
+    *[_type=="partners" && title==$title][0] {
+        _id,
+        title,
+        partners[] {
         _type == 'reference' => @->,
         } | order(name)
     }
@@ -120,4 +150,4 @@ const getBlogStaticPathsQuery = `
     }
 `
 
-module.exports = { getPageQuery, getTFCContentQuery, getAboutContentQuery, getVisionContentQuery, getEventsQuery, getInitiativesQuery, getTeamsQuery, getBlogContentQuery, getBlogStaticPathsQuery, getBlogsQuery }
+module.exports = { getPageQuery, getTestimonialsQuery, getTFCContentQuery, getAboutContentQuery, getVisionContentQuery, getEventsQuery, getInitiativesQuery, getTeamsQuery, getBlogContentQuery, getBlogStaticPathsQuery, getBlogsQuery, getStepsQuery, getPartnersQuery }

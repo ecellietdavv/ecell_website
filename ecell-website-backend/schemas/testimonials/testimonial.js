@@ -1,6 +1,6 @@
 export default {
-    name: 'member',
-    title: 'Member',
+    name: 'testimonial',
+    title: 'Testimonial',
     type: 'document',
     fields: [
         {
@@ -15,6 +15,15 @@ export default {
         {
             name: 'designation',
             title: 'Designation',
+            type: 'string',
+            validation: Rule => [
+                Rule.required().min(10).error('A designation of min. 10 characters is required'),
+                // Rule.max(50).warning('Shorter titles are usually better')
+            ]
+        },
+        {
+            name: 'desc',
+            title: 'Description',
             type: 'string',
             validation: Rule => [
                 Rule.required().min(10).error('A designation of min. 10 characters is required'),
@@ -47,6 +56,16 @@ export default {
                 {
                     name: "linkedin",
                     title: 'Linked In',
+                    type: 'string',
+                },
+                {
+                    name: "facebook",
+                    title: 'Facebook',
+                    type: 'string',
+                },
+                {
+                    name: "twitter",
+                    title: 'Twitter',
                     type: 'string',
                 },
             ],

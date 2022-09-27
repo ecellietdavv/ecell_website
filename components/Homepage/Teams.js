@@ -15,11 +15,11 @@ function Teams({ teams, id }) {
         className="flex group flex-col items-center p-8 transition-colors duration-200 transform cursor-pointer group bg-light border border-dark dark:bg-mid dark:border-light dark:text-white hover:bg-brand-700 hover:text-white rounded-xl"
         key={idx}
       >
-        <div className="rounded-full overflow-hidden h-32 w-32">
+        <div className="rounded-full relative overflow-hidden h-32 w-32">
           <Image loading="lazy"
-            width={128}
-            height={128}
-            className="object-cover duration-200 group-hover:scale-105 ease-in-out"
+            layout="fill"
+            objectFit="cover"
+            className="duration-200 group-hover:scale-105 ease-in-out"
             src={img}
             alt={name}
           />
