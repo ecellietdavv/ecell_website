@@ -70,14 +70,14 @@ function Teams({ teams, id }) {
 						voluptate ratione, exercitationem sint maxime nisi incidunt? A
 						voluptate deleniti eligendi odit fugit nemo tempore atque nisi ab!"/>
 
-      <div className="flex h-full xl:flex-row flex-col xl:h-screen">
-        <div className="xl:w-1/4 min-h-[200px] h-full flex flex-row xl:flex-col justify-center items-center space-x-10 xl:space-x-0 xl:space-y-10 py-4 px-6 bg-dark dark:bg-mid">
+      <div className="flex bg-dark dark:bg-mid h-full xl:flex-row flex-col xl:h-screen">
+        <div className="xl:w-1/4 xl:h-3/4 m-auto min-h-[300px] h-full grid xl:grid-cols-1 sm:grid-cols-4 grid-cols-3 py-10 justify-center items-center gap-10 xl:gap-0 sm:py-4 px-6 ">
           {teams &&
             teams?.map((team, idx) => {
               return (
                 <button
                   key={idx}
-                  className={idx === activeTeam ? "rounded-full bg-brand-500 text-white h-20 w-20 xl:px-10 xl:py-2 text-center xl:rounded-sm border-none xl:h-fit xl:w-fit" : "rounded-full bg-light h-20 w-20 xl:px-10 xl:py-2 text-center xl:rounded-sm border-none xl:h-fit xl:w-fit"}
+                  className={idx === activeTeam ? "rounded-full mx-auto bg-brand-500 text-white h-20 w-20 xl:px-10 xl:py-2 text-center xl:rounded-sm border-none xl:h-fit xl:w-fit" : "rounded-full mx-auto bg-light h-20 w-20 xl:px-10 xl:py-2 text-center xl:rounded-sm border-none xl:h-fit xl:w-fit"}
                   onClick={() => {
                     setActiveTeam(idx);
                   }}
@@ -99,7 +99,7 @@ function Teams({ teams, id }) {
                   name={name}
                   designation={designation}
                   social={social}
-                  img={img? urlFor(img)?.url() : "https://xsgames.co/randomusers/avatar.php?g=pixel"}
+                  img={img ? urlFor(img)?.url() : "https://xsgames.co/randomusers/avatar.php?g=pixel"}
                   idx={idx}
                   key={idx}
                 />

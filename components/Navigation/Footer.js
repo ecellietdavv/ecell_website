@@ -3,6 +3,7 @@ import { BsFacebook, BsLinkedin, BsYoutube, BsTwitter, BsInstagram } from 'react
 import { FaQuora } from 'react-icons/fa'
 import { useForm, SubmitHandler } from 'react-hook-form'
 import Link from "next/link";
+import { toast } from 'react-toastify';
 
 function Footer() {
 
@@ -36,9 +37,25 @@ function Footer() {
 			method: "POST",
 			body: JSON.stringify(data),
 		}).then(() => {
-			console.log(data)
+			// toast.success({
+			// 	position: "top-right",
+			// 	autoClose: 5000,
+			// 	hideProgressBar: false,
+			// 	closeOnClick: true,
+			// 	pauseOnHover: true,
+			// 	draggable: true,
+			// 	progress: undefined,
+			// });
 		}).catch((err) => {
-			console.log(err)
+			// toast.error({
+			// 	position: "top-right",
+			// 	autoClose: 5000,
+			// 	hideProgressBar: false,
+			// 	closeOnClick: true,
+			// 	pauseOnHover: true,
+			// 	draggable: true,
+			// 	progress: undefined,
+			// });
 		})
 	};
 

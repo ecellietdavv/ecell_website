@@ -19,7 +19,8 @@
     "react-hook-form": "^7.36.0",
     "react-icons": "^4.4.0",
     "react-items-carousel": "^2.8.0",
-    "react-portable-text": "^0.5.1"
+    "react-portable-text": "^0.5.1",
+    "react-toastify": "^9.0.8"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.8",

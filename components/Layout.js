@@ -1,7 +1,8 @@
 import Drawer from "./Navigation/Drawer";
 import Footer from "./Navigation/Footer";
 import Navbar from "./Navigation/Navbar";
-import PageNavigation from "./Navigation/PageNavigation";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export default function Layout({ children }) {
     return (
@@ -10,6 +11,18 @@ export default function Layout({ children }) {
             <Drawer />
             <main className="mt-20">{children}</main>
             <Footer />
+            {/* <ToastContainer
+                position="top-right"
+                autoClose={5000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+            />
+            <ToastContainer /> */}
         </>
     )
 }
