@@ -1,17 +1,17 @@
 import Drawer from "./Navigation/Drawer";
 import Footer from "./Navigation/Footer";
 import Navbar from "./Navigation/Navbar";
-import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer } from "react-toastify";
 
 export default function Layout({ children }) {
     return (
         <>
             <Navbar />
             <Drawer />
-            <main className="mt-20">{children}</main>
+            <main className="mt-20 max-w-[1920px] mx-auto relative">{children}</main>
             <Footer />
-            {/* <ToastContainer
+            <ToastContainer
                 position="top-right"
                 autoClose={5000}
                 hideProgressBar={false}
@@ -22,7 +22,7 @@ export default function Layout({ children }) {
                 draggable
                 pauseOnHover
             />
-            <ToastContainer /> */}
+            <ToastContainer />
         </>
     )
 }

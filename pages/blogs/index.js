@@ -67,28 +67,30 @@ function Index({ featuredBlogs, allBlogs }) {
     ]
 
     return (
-        <main className="dark:bg-dark dark:text-gray-100">
+        <main className="dark:bg-dark dark:text-gray-100 relative">
             <PageNavigation navItems={navItems}></PageNavigation>
 
             {/* Blogs Hero  */}
             <section id='blogsHome' className="dark:text-gray-100">
-                <div className="container mx-auto flex flex-col items-center px-4 py-16 text-center md:py-32 md:px-10 lg:px-32 xl:max-w-3xl lg:min-h-screen">
-                    <h1 className="text-4xl font-bold leading-none sm:text-5xl">Our
-                        <span className="dark:text-brand-400 text-brand-500 pl-2">Blogs</span>
-                    </h1>
-                    <p className="px-8 mt-8 mb-12 text-lg">Cupiditate minima voluptate temporibus quia? Architecto beatae esse ab amet vero eaque explicabo!</p>
-                    <div className="flex flex-wrap justify-center">
-                        <button className="px-8 py-3 m-2 text-lg font-semibold rounded bg-cyan-400 text-dark" onClick={() => { handleScroll("featuredBlogs") }}>Featured</button>
-                        <button onClick={() => { handleScroll("allBlogs") }} className="px-8 py-3 m-2 text-lg border rounded dark:text-gray-50 dark:border-gray-700">All</button>
+                <div className="container justify-center mx-auto flex flex-col items-center px-4 text-center md:px-10 lg:px-32 min-h-[700px]">
+                    <div className="max-w-7xl">
+                        <h1 className="text-4xl font-bold leading-none sm:text-5xl">Our
+                            <span className="dark:text-brand-400 text-brand-500 pl-2">Blogs</span>
+                        </h1>
+                        <p className="px-8 w-3/4 mx-auto mt-8 mb-12 text-lg">Cupiditate minima voluptate temporibus quia? Architecto beatae esse ab amet vero eaque explicabo!</p>
+                        <div className="flex flex-wrap justify-center">
+                            <button className="px-8 py-3 m-2 text-lg font-semibold rounded bg-cyan-400 text-dark" onClick={() => { handleScroll("featuredBlogs") }}>Featured</button>
+                            <button onClick={() => { handleScroll("allBlogs") }} className="px-8 py-3 m-2 text-lg border rounded dark:text-gray-50 dark:border-gray-700">All</button>
+                        </div>
                     </div>
                 </div>
             </section>
 
             <SectionDivider img="img1" />
 
-            <section id='featuredBlogs' className=" max-w-[1920px] mx-auto">
+            <section id='featuredBlogs' className="mx-auto">
                 <SectionDescCard name="Featured Blogs" desc="awduihuiawdhiuhwauidhui" />
-                <div className="p-6">
+                <div className="p-6 max-w-7xl mx-auto">
 
                     <ItemsCarousel
                         requestToChangeActive={setActiveItemIndex}

@@ -33,14 +33,14 @@ const About = ({ content, id }) => {
         <div className="hidden sm:flex xl:-rotate-45 px-10 py-10 xl:py-0 lg:px-24 xl:px-0 flex-col items-center overflow-hidden space-y-4 w-full">
           <div className="w-full flex items-end h-96 space-x-4">
             <div className="bg-gray-600 drop-shadow-xl h-full w-full xl:h-1/2 xl:w-1/3">
-              <Image loading="lazy" src={images?.img1} layout="fill" objectFit="cover" />
+              <Image loading="lazy" src={images?.img1} layout="fill" objectFit="cover"/>
             </div>
             <div className="bg-gray-600 drop-shadow-xl h-full w-full xl:w-2/3">
-              <Image loading="lazy" src={images?.img2} layout="fill" objectFit="cover" />
+              <Image loading="lazy" src={images?.img2} layout="fill" objectFit="cover"/>
             </div>
           </div>
           <div className="w-full bg-gray-600 h-96 drop-shadow-xl">
-            <Image loading="lazy" src={images?.img3} layout="fill" objectFit="cover" />
+            <Image loading="lazy" src={images?.img3} layout="fill" objectFit="cover"/>
           </div>
         </div>
       </div>

@@ -1,13 +1,15 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { BsFacebook, BsLinkedin, BsYoutube, BsTwitter, BsInstagram } from 'react-icons/bs'
 import { FaQuora } from 'react-icons/fa'
 import { useForm, SubmitHandler } from 'react-hook-form'
 import Link from "next/link";
 import { toast } from 'react-toastify';
+import Spinner from "../UtilComponents/Spinner";
 
 function Footer() {
 
-	const { register, handleSubmit, formState: { errors } } = useForm();
+	const { register, handleSubmit, formState: { errors }, reset, formState: { isSubmitSuccessful }, formState } = useForm();
+	const [processing, setProcessing] = useState(false)
 
 	const navLinks = [
 		{ name: "Home", link: "/" },
@@ -33,35 +35,30 @@ function Footer() {
 	}
 
 	const onSubmit = async data => {
+		setProcessing(true)
 		await fetch('/api/contactUs', {
 			method: "POST",
 			body: JSON.stringify(data),
 		}).then(() => {
-			// toast.success({
-			// 	position: "top-right",
-			// 	autoClose: 5000,
-			// 	hideProgressBar: false,
-			// 	closeOnClick: true,
-			// 	pauseOnHover: true,
-			// 	draggable: true,
-			// 	progress: undefined,
-			// });
+			toast.success("Thank you for your response!")
 		}).catch((err) => {
-			// toast.error({
-			// 	position: "top-right",
-			// 	autoClose: 5000,
-			// 	hideProgressBar: false,
-			// 	closeOnClick: true,
-			// 	pauseOnHover: true,
-			// 	draggable: true,
-			// 	progress: undefined,
-			// });
+			toast.error("Looks like something went wrong, while submitting you response!")
+		}).finally(() => {
+			setProcessing(false)
 		})
 	};
 
+	useEffect(() => {
+		if (formState.isSubmitSuccessful) {
+			reset({ name: '', email: '', message: '' });
+		}
+	}, [formState, reset]);
+
+	const buttonClass = `text-light mt-3 w-full bg-brand-500 dark:bg-brand-500 dark:hover:bg-brand-600 hover:bg-brand-600 focus:outline-none focus:ring-1 justify-center items-center flex space-x-2 focus:ring-blue-200 font-medium rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:hover:bg-brand`
+
 	return (
 		<footer id="footer" className="bg-light dark:bg-dark dark:text-white py-4">
-			<div className="px-6 md:px-10 pb-1 mx-auto">
+			<div className="px-6 max-w-[1920px] md:px-10 pb-1 mx-auto">
 				<div className="grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1 space-y-8 sm:space-y-0 sm:gap-8 sm:space-x-4 my-8">
 
 					{/* Information  */}
@@ -101,7 +98,7 @@ function Footer() {
 							<input
 								type="text"
 								name="name"
-								className="block h-10 text-base placeholder:text-base p-2 mt-2 w-full text-dark bg-white rounded-lg border border-mid sm:text-xs focus:ring-mid focus:border-mid dark:bg-mid  dark:placeholder-light dark:text-light dark:focus:ring-mid dark:focus:border-brand-600"
+								className="block h-10 text-base placeholder:text-base p-2 mt-2 w-full text-dark bg-white rounded-lg border border-mid focus:ring-mid focus:border-mid dark:bg-mid  dark:placeholder-light dark:text-light dark:focus:ring-mid dark:focus:border-brand-600"
 								placeholder="Your Name"
 								{...register("name", { required: true })}
 							/>
@@ -109,12 +106,14 @@ function Footer() {
 								type="email"
 								name="email"
 								{...register("email", { required: true })}
-								className="block h-10 text-base placeholder:text-base p-2 mt-2 w-full text-dark bg-white rounded-lg border border-mid sm:text-xs focus:ring-mid focus:border-mid dark:bg-mid  dark:placeholder-light dark:text-light dark:focus:ring-mid dark:focus:border-brand-600"
+								className="block h-10 text-base placeholder:text-base p-2 mt-2 w-full text-dark bg-white rounded-lg border border-mid focus:ring-mid focus:border-mid dark:bg-mid  dark:placeholder-light dark:text-light dark:focus:ring-mid dark:focus:border-brand-600"
 								placeholder="Email Address"
 							/>
-							<textarea {...register("message", { required: true })} rows="5" className="block resize-none p-2 mt-2 w-full h-20 text-sm text-gray-900 bg-white rounded-lg border border-mid focus:ring-brand-500 focus:border-brand-500 dark:bg-mid  dark:placeholder-light dark:text-white dark:focus:ring-brand-500 dark:focus:border-brand-500" placeholder="Leave a comment..."></textarea>
-							<button type="submit" className="text-light mt-3 w-full bg-brand-500 dark:bg-brand-500 dark:hover:bg-brand-600 hover:bg-brand-600 focus:outline-none focus:ring-1 focus:ring-blue-200 font-medium rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:hover:bg-brand">
-								Submit
+							<textarea {...register("message", { required: true })} rows="5" className="block resize-none p-2 mt-2 w-full h-20 text-gray-900 bg-white rounded-lg border border-mid focus:ring-brand-500 focus:border-brand-500 dark:bg-mid  dark:placeholder-light dark:text-white dark:focus:ring-brand-500 dark:focus:border-brand-500" placeholder="Leave a comment..."></textarea>
+
+							<button type="submit" className={buttonClass}>
+								<span>Submit</span>
+								{processing && <Spinner />}
 							</button>
 						</form>
 
