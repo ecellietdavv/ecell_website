@@ -40,6 +40,15 @@ export default {
                 ]
             }]
         },
+        {
+            name: 'pocs',
+            title: 'Person Of Contacts',
+            type: 'array',
+            of: [{
+                type: "reference",
+                to: { type: "member" }
+            }]
+        },
     ],
     preview: {
         select: {

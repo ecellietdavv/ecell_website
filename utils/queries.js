@@ -6,6 +6,9 @@ const getPageQuery = `
         heroHeading,
         heroDescription,
         metaTags,
+        pocs[] {
+        _type == 'reference' => @->
+        } | order(name)
     }
 `
 
