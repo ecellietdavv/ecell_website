@@ -24,7 +24,7 @@ function PageNavigation({ navItems }) {
                         })
                     }
                 </ul>
-                <button onClick={handleToggel} type="button" className="absolute flex items-center justify-center py-4 transform translate-y-1/2 w-7 bottom-1/2 rounded-l-xl right-full bg-brand-700 text-gray-50 focus:outline-none"><span className="sr-only">Toggle</span><span className="font-mono text-sm antialiased font-medium" style={{ writingMode: "vertical-lr", textOrientation: "upright" }}>CONTENT</span><span className="sr-only">menu</span></button>
+                <button onClick={handleToggel} type="button" className="absolute flex items-center justify-center py-4 transform translate-y-1/2 w-7 bottom-1/2 rounded-l-xl right-full shadow-lg shadow-mid/70 bg-brand-700 text-gray-50 focus:outline-none"><span className="sr-only">Toggle</span><span className="font-mono text-sm antialiased font-medium" style={{ writingMode: "vertical-lr", textOrientation: "upright" }}>CONTENT</span><span className="sr-only">menu</span></button>
             </div>
         </div>
     )

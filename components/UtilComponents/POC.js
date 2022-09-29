@@ -18,7 +18,7 @@ const POC = ({ poc }) => {
                 <Image layout="fill" objectFit="cover" src={imgUrl} />
             </div>
 
-            <div className="flex flex-col w-fit mx-auto justify-center pt-20 pb-10 lg:pb-0 lg:pt-0 lg:space-y-1  space-y-2">
+            <div className="flex flex-col w-fit mx-auto justify-center lg:w-full pt-20 pb-10 lg:pb-0 lg:pt-0 lg:space-y-1  space-y-2">
                 <h3 className="font-bold pt-4 lg:pt-0 text-base sm:text-base lg:mx-0 mx-auto lg:text-lg">{name}</h3>
                 <h4 className="font-semibold text-gray-200 text-base sm:text-sm lg:mx-0 mx-auto lg:text-base">{designation}</h4>
 

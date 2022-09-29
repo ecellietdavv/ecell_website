@@ -1,5 +1,6 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import PortableText from "react-portable-text";
+import ViewMore from '../UtilComponents/ViewMore';
 
 function StepsSection({ content, id }) {
     const { steps, title } = content
@@ -21,8 +22,28 @@ function StepsSection({ content, id }) {
             </div>
         )
     }
+
+    const [loadMore, setLoadMore] = useState(1)
+    const [reset, setReset] = useState(1)
+    const [height, setHeight] = useState(600)
+
+    useEffect(() => {
+        const cardsOnScreenView = window?.innerWidth >= 640 ? 3 : 2
+        const calcHeight = window?.innerWidth >= 640 ? 1000 : 1300
+        const calcReset = content?.steps?.length / cardsOnScreenView
+        setReset(calcReset)
+        setHeight(calcHeight)
+    }, [])
+
+    const handleLoading = () => {
+        loadMore >= reset ?
+            setLoadMore(1)
+            :
+            setLoadMore(loadMore + 1)
+    }
+
     return (
-        <section id={id} className="p-6 dark:bg-dark dark:text-gray-100">
+        <section id={id} style={{ height: height * loadMore }} className="p-6 py-16 overflow-hidden relative dark:bg-dark dark:text-gray-100">
             <div className="container mx-auto">
                 <span className="block mb-2 text-xs font-medium tracking-widest text-center uppercase text-brand-500">How it works</span>
                 <h2 className="text-5xl font-bold text-center dark:text-gray-50">{title}</h2>
@@ -36,6 +57,7 @@ function StepsSection({ content, id }) {
                     }
                 </div>
             </div>
+            <ViewMore action={handleLoading} reset={loadMore >= reset} />
         </section>
     )
 }

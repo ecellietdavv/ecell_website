@@ -1,8 +1,9 @@
 import React from 'react'
 import BusinessHero from '../../components/BusinessCollaborations/BusinessHero'
-import BusinessPOC from '../../components/BusinessCollaborations/BusinessPOC'
+import POCs from '../../components/UtilComponents/POCs'
 import StepsSection from '../../components/BusinessCollaborations/StepsSection'
 import Testimonials from '../../components/BusinessCollaborations/Testimonials'
+import PageNavigation from '../../components/Navigation/PageNavigation'
 import Partners from '../../components/UtilComponents/Partners'
 import POC from '../../components/UtilComponents/POC'
 import SectionDescCard from '../../components/UtilComponents/SectionDescCard'
@@ -11,10 +12,22 @@ import { getPageQuery, getPartnersQuery, getStepsQuery, getTestimonialsQuery } f
 import { sanityClient } from '../../utils/sanity'
 
 function BusinessCollaborations(props) {
+
+  const navItems = [
+    { name: "Business Collaboration Home", scrollTo: "businessHero" },
+    { name: "Our Sponsors", scrollTo: "sponsors" },
+    { name: "Flagship Events", scrollTo: "flagshipEvents" },
+    { name: "Testimonials", scrollTo: "testimonials" },
+    { name: "Collaborative Events", scrollTo: "collaborativeEvents" },
+    { name: "Partner With Us", scrollTo: "businessPocs" },
+  ]
+
   const { heroHeading, heroDescription, heroImage, metaTags, pocs, stepsForFlagshipEvents, stepsForCollaborativeEvents, sponsorsTestimonials, partners } = props
   return (
     <main className='bg-white dark:bg-dark'>
-      <BusinessHero id="businessHero" heroHeading={heroHeading} heroDescription={heroDescription} heroImage={heroImage} />
+      <PageNavigation navItems={navItems}></PageNavigation>
+
+      <BusinessHero id="businessHero" heroHeading={heroHeading} heroDescription={heroDescription} heroImage={heroImage}/>
       <Partners id="sponsors" content={partners}/>
       <SectionDivider img="img1" />
       <StepsSection content={stepsForFlagshipEvents} id="flagshipEvents" />
@@ -24,8 +37,8 @@ function BusinessCollaborations(props) {
       <SectionDivider img="img1" />
       <StepsSection content={stepsForCollaborativeEvents} id="collaborativeEvents" />
       <SectionDivider img="img1" />
-      <SectionDescCard id="pocs" name="Collaborate Your Bussiness With Us" desc="wadawd" />
-      <BusinessPOC pocs={pocs} id="pocs"/>
+      <SectionDescCard id="businessPocs" name="Partner With Us" desc="wadawd" />
+      <POCs pocs={pocs}/>
       <SectionDivider img="img1" />
     </main>
   )

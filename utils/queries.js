@@ -75,6 +75,25 @@ const getStepsQuery = `
     }
 `
 
+const getCaseStudiesQuery = `
+    *[_type=="caseStudies"]{
+        _id,
+        title,
+        desc,
+        videoUrl
+    }
+`
+
+const getMentorsQuery = `
+    *[_type=="mentor"]{
+        _id,
+        name,
+        designation,
+        img,
+        social,
+    }
+`
+
 const getTeamsQuery = `
     *[_type=="team"] | order(year desc){
         _id,
@@ -153,4 +172,4 @@ const getBlogStaticPathsQuery = `
     }
 `
 
-module.exports = { getPageQuery, getTestimonialsQuery, getTFCContentQuery, getAboutContentQuery, getVisionContentQuery, getEventsQuery, getInitiativesQuery, getTeamsQuery, getBlogContentQuery, getBlogStaticPathsQuery, getBlogsQuery, getStepsQuery, getPartnersQuery }
+module.exports = { getPageQuery, getTestimonialsQuery, getTFCContentQuery, getAboutContentQuery, getVisionContentQuery, getEventsQuery, getInitiativesQuery, getTeamsQuery, getBlogContentQuery, getBlogStaticPathsQuery, getBlogsQuery, getStepsQuery, getPartnersQuery, getCaseStudiesQuery, getMentorsQuery }

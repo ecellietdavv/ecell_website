@@ -19,9 +19,11 @@ function Dropdown({ items, name }) {
                     {
                         items && items?.map((item, idx) => {
                             return (
-                                <li key={idx} className="block py-4 px-4 cursor-pointer border-b-2 sm:dark:hover:bg-dark/20 sm:hover:bg-mid/20 bg-mid/30">
-                                    <Link key={idx} href={item?.link}>{item?.name}</Link>
-                                </li>
+                                <Link key={idx} href={item?.link}>
+                                    <li onClick={handleToggel} key={idx} className="block py-4 px-4 cursor-pointer border-b-2 sm:dark:hover:bg-dark/20 sm:hover:bg-mid/20 bg-mid/30">
+                                        {item?.name}
+                                    </li>
+                                </Link>
                             )
                         })
                     }

@@ -34,6 +34,8 @@ import testimonial from './testimonials/testimonial'
 import testimonials from './testimonials/testimonials'
 import partners from './partners/partners'
 import partner from './partners/partner'
+import caseStudies from './caseStudies'
+import mentor from './mentor'
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -53,6 +55,7 @@ export default createSchema({
 
     member,
     team,
+    mentor,
 
     initiative,
     initiatives,
@@ -74,8 +77,10 @@ export default createSchema({
 
     partner,
     partners,
+
+    caseStudies,
     
     contact,
-    newsletters
+    newsletters,
   ]),
 })
