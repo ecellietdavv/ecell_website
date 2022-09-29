@@ -26,10 +26,7 @@ function Navbar() {
 
         <ul className="space-x-8 md:flex items-center hidden py-2 px-4 ">
           {navItems && navItems?.map((value, idx) => {
-            if (!value?.scrollTo) return <Link href={value.link} className="hover:underline cursor-pointer text-md" key={idx}>{value.name}</Link>
-            return (
-              <li className="hover:underline cursor-pointer text-md" key={idx} onClick={() => handleScroll(value.scrollTo)}>{value.icon}{value.name}</li>
-            )
+              return <Link href={value.link} className="hover:underline cursor-pointer text-md" key={idx}>{value.name}</Link>
           })}
           <Dropdown name="Collaborations" items={dropdownItems} />
         </ul>

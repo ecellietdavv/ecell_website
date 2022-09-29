@@ -30,7 +30,7 @@ const CaseStudies = ({ caseStudies }) => {
                         {caseStudies && caseStudies?.map((value, idx) => {
                             const { videoUrl, title } = value
                             return (
-                                <div className="w-full h-60 sm:h-80 md:h-96 lg:h-[720px]">
+                                <div key={idx} className="w-full h-60 sm:h-80 md:h-96 lg:h-[720px]">
                                     <iframe width="100%" height="100%" src={`https://www.youtube.com/embed/${videoUrl}`} title={title} frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
                                 </div>
                             );
