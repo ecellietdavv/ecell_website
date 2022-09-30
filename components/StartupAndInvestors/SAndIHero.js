@@ -18,8 +18,8 @@ function SAndIHero({ id, heroHeading, heroDescription, heroImage }) {
                         {heroDescription}
                     </p>
                     <div className="flex flex-col space-y-4 sm:items-center sm:justify-center sm:flex-row sm:space-y-0  sm:space-x-4 lg:justify-start">
-                        <button type='button' className="px-4 xl:px-8 py-3 text-lg font-semibold rounded bg-brand-400 text-dark" onClick={() => handleScroll("caseStudies")}>Join Us</button>
-                        <button type='button' onClick={() => handleScroll("testimonials")} className="px-4 xl:px-8 py-3 text-lg font-semibold border rounded dark:border-gray-100">Case Studies</button>
+                        <button type='button' className="px-4 xl:px-8 py-3 text-lg font-semibold rounded bg-brand-400 text-dark" onClick={() => handleScroll("joinus")}>Join Us</button>
+                        <button type='button' onClick={() => handleScroll("caseStudies")} className="px-4 xl:px-8 py-3 text-lg font-semibold border rounded dark:border-gray-100">Case Studies</button>
                     </div>
                     <div className="mt-4">Or <span className='underline font-semibold cursor-pointer' onClick={() => handleScroll("s_and_i_pocs")}>Contact Us for Assistance</span></div>
                 </div>
