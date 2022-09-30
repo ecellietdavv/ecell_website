@@ -11,6 +11,7 @@ import { sanityClient } from "../utils/sanity"
 import { getEventsQuery, getInitiativesQuery, getTeamsQuery, getPageQuery, getTFCContentQuery, getAboutContentQuery, getVisionContentQuery } from "../utils/queries"
 import HomeHero from "../components/Homepage/HomeHero"
 import PageNavigation from "../components/Navigation/PageNavigation"
+import Idea from "../components/Idea"
 
 function HomePage({ flagshipEvents, flagshipInitiatives, teams, tfc, aboutUs, vision, heroDescription, heroHeading, heroImage, metaTags }) {
   const { events } = flagshipEvents
@@ -37,6 +38,7 @@ function HomePage({ flagshipEvents, flagshipInitiatives, teams, tfc, aboutUs, vi
       <PageNavigation navItems={navItems}></PageNavigation>
 
       <HomeHero id="home" heading={heroHeading} img={heroImage} />
+      <Idea/>
       <TFCtemplate id="moto" content={tfc} name={heroDescription} />
       <VisionMission id="vision" content={vision} />
       <SectionDivider img="img1" />
