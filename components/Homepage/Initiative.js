@@ -22,9 +22,9 @@ const Initiative = ({ initiatives, id }) => {
         </div>
 
         <div className={idx % 2 === 0 ? "order-1 h-full rounded-b-lg bg-dark dark:bg-mid text-white md:rounded-lg shadow-xl md:w-5/12 px-6 py-4 w-full" : "order-1 text-white h-full rounded-b-lg bg-brand-600 md:rounded-lg shadow-xl md:w-5/12 px-6 py-4 w-full"}>
-          <div className="flex justify-between">
-            <h3 className="mb-3 font-bold text-xl">{name}</h3>
-            <p className="mb-3 text-base">{date}</p>
+          <div className="flex justify-between items-center">
+            <h3 className="mb-1 font-bold text-md lg:text-xl">{name}</h3>
+            <p className="mb-1 text-base">{date}</p>
           </div>
           <p className="text-sm leading-snug tracking-wide text-opacity-100">{desc}</p>
         </div>

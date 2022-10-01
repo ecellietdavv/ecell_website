@@ -12,7 +12,7 @@ function Drawer() {
   const appContext = useContext(AppContext)
   const { toggelDrawer, handleToggel } = appContext
 
-  const transitionClass = toggelDrawer ? "fixed z-[60] top-0 sm:hidden block h-screen p-4 overflow-y-auto bg-white w-80 dark:bg-dark translate-x-0 transition-transform duration-300 transform" : "fixed top-0 z-[60] sm:hidden block h-screen p-4 overflow-y-auto bg-white w-80 dark:bg-dark -translate-x-full transition-transform duration-300 transform"
+  const transitionClass = toggelDrawer ? "fixed z-[60] top-0 lg:hidden block h-screen p-4 overflow-y-auto bg-white w-80 dark:bg-dark translate-x-0 transition-transform duration-300 transform" : "fixed top-0 z-[60] lg:hidden block h-screen p-4 overflow-y-auto bg-white w-80 dark:bg-dark -translate-x-full transition-transform duration-300 transform"
 
   return (
     <nav>
