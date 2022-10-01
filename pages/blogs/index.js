@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import React, { useState } from 'react'
-import { getBlogsQuery } from '../../utils/queries'
+import { getBlogsQuery, getPageQuery } from '../../utils/queries'
 import { sanityClient, urlFor } from '../../utils/sanity'
 import ItemsCarousel from 'react-items-carousel';
 import { BiChevronRight, BiChevronLeft } from "react-icons/bi";
@@ -12,7 +12,7 @@ import SectionDescCard from '../../components/UtilComponents/SectionDescCard'
 import PageNavigation from '../../components/Navigation/PageNavigation'
 import { handleScroll } from '../../utils/utilityFunctions'
 
-function Index({ featuredBlogs, allBlogs }) {
+function Index({ featuredBlogs, allBlogs, heroHeading, heroDescription, heroImage, metaTags, pocs }) {
 
     const BlogCard = ({ slug, title, description, mainImage, publishedAt, idx }) => {
         return (
@@ -74,10 +74,12 @@ function Index({ featuredBlogs, allBlogs }) {
             <section id='blogsHome' className="dark:text-gray-100">
                 <div className="container justify-center mx-auto flex flex-col items-center px-4 text-center md:px-10 lg:px-32 min-h-[700px]">
                     <div className="max-w-7xl">
-                        <h1 className="text-4xl font-bold leading-none sm:text-5xl">Our
-                            <span className="dark:text-brand-400 text-brand-500 pl-2">Blogs</span>
+                        <h1 className="text-4xl font-bold leading-none sm:text-5xl">
+                            {heroHeading}
                         </h1>
-                        <p className="px-8 w-3/4 mx-auto mt-8 mb-12 text-lg">Cupiditate minima voluptate temporibus quia? Architecto beatae esse ab amet vero eaque explicabo!</p>
+                        <p className="px-8 w-3/4 mx-auto mt-8 mb-12 text-lg">
+                            {heroDescription}
+                        </p>
                         <div className="flex flex-wrap justify-center">
                             <button className="px-8 py-3 m-2 text-lg font-semibold rounded bg-cyan-400 text-dark" onClick={() => { handleScroll("featuredBlogs") }}>Featured</button>
                             <button onClick={() => { handleScroll("allBlogs") }} className="px-8 py-3 m-2 text-lg border rounded dark:text-gray-50 dark:border-gray-700">All</button>
@@ -146,11 +148,17 @@ function Index({ featuredBlogs, allBlogs }) {
 export const getServerSideProps = async () => {
     const featuredBlogs = await sanityClient.fetch(getBlogsQuery, { category: "Featured Blogs" })
     const allBlogs = await sanityClient.fetch(getBlogsQuery, { category: "All Blogs" })
+    const { heroHeading, heroDescription, heroImage, metaTags, pocs } = await sanityClient.fetch(getPageQuery, { name: "Blogs" })
 
     return {
         props: {
             featuredBlogs,
-            allBlogs
+            allBlogs,
+            heroHeading,
+            heroDescription,
+            heroImage,
+            metaTags,
+            pocs
         }
     }
 }

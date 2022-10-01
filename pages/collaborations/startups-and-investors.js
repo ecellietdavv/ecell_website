@@ -12,7 +12,7 @@ import { getCaseStudiesQuery, getIdeaAndInvestorsQuery, getMentorsQuery, getPage
 import { sanityClient } from '../../utils/sanity'
 
 function StartupsAndInvestors(props) {
-  const { foundingTestimonials, heroHeading, heroDescription, heroImage, metaTags, pocs, caseStudies, mentors, ideaAndInvestors } = props
+  const { foundingTestimonials, heroHeading, heroDescription, heroImage, metaTags, pocs, caseStudies, mentors, mentorTitle, mentorDesc, ideaAndInvestors } = props
 
   const navItems = [
     { name: "Startup & Investors Home", scrollTo: "startupHero" },
@@ -29,7 +29,7 @@ function StartupsAndInvestors(props) {
       <PageNavigation navItems={navItems}></PageNavigation>
       <SAndIHero id="startupHero" heroHeading={heroHeading} heroDescription={heroDescription} heroImage={heroImage} metaTags={metaTags} />
       <SectionDivider img="img1" />
-      <SectionDescCard id="mentors" name="Mentoring" desc="wadawd" />
+      <SectionDescCard id="mentors" name={mentorTitle} desc={mentorDesc} />
       <Mentors mentors={mentors} />
       <SectionDivider img="img1" />
       <SectionDescCard id="foundingTestimonials" name="Founding Testimonials" desc="wadawd" />
@@ -40,8 +40,8 @@ function StartupsAndInvestors(props) {
       <SectionDivider img="img1" />
       <IdeasAndInvestors id="joinus" sections={ideaAndInvestors} />
       <SectionDivider img="img1" />
-      <SectionDescCard id="s_and_i_pocs" name="Contact Us for Queries" desc="wadawd" />
-      <POCs pocs={pocs} />
+      <SectionDescCard id="s_and_i_pocs" name={pocs?.title} desc={pocs?.desc}/>
+      <POCs pocs={pocs?.pocs} />
       <SectionDivider img="img1" />
     </main>
   )
@@ -51,7 +51,7 @@ export const getServerSideProps = async () => {
   const { heroHeading, heroDescription, heroImage, metaTags, pocs } = await sanityClient.fetch(getPageQuery, { name: "Startup And Investors" })
   const foundingTestimonials = await sanityClient.fetch(getTestimonialsQuery, { title: "Founding Testimonials" })
   const caseStudies = await sanityClient.fetch(getCaseStudiesQuery)
-  const mentors = await sanityClient.fetch(getMentorsQuery)
+  const {mentors, title:mentorTitle, desc:mentorDesc} = await sanityClient.fetch(getMentorsQuery)
   const ideaAndInvestors = await sanityClient.fetch(getIdeaAndInvestorsQuery)
 
   return {
@@ -64,6 +64,8 @@ export const getServerSideProps = async () => {
       caseStudies,
       pocs,
       mentors,
+      mentorTitle,
+      mentorDesc,
       ideaAndInvestors,
     }
   }

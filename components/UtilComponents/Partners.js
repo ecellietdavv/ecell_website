@@ -11,7 +11,7 @@ function Partners({ id, content }) {
         const imgSrc = logo ? urlFor(logo).url() : randomPersonImage.male
         return (
             <div key={key} className="flex justify-center w-1/2 p-6 align-middle md:w-1/3 xl:w-1/4">
-                <div className="w-14 h-14 relative">
+                <div className="w-32 h-32 relative">
                     <Image src={imgSrc} layout="fill" objectFit='cover' alt={name} />
                 </div>
             </div>

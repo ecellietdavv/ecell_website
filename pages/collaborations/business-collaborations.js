@@ -37,8 +37,8 @@ function BusinessCollaborations(props) {
       <SectionDivider img="img1" />
       <StepsSection content={stepsForCollaborativeEvents} id="collaborativeEvents" />
       <SectionDivider img="img1" />
-      <SectionDescCard id="businessPocs" name="Partner With Us" desc="wadawd" />
-      <POCs pocs={pocs}/>
+      <SectionDescCard id="businessPocs" name={pocs?.title} desc={pocs?.desc} />
+      <POCs pocs={pocs.pocs}/>
       <SectionDivider img="img1" />
     </main>
   )

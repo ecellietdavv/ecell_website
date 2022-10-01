@@ -1,6 +1,6 @@
 export default {
-    name: 'member',
-    title: 'Member',
+    name: 'alumni',
+    title: 'Alumni',
     type: 'document',
     fields: [
         {
@@ -35,7 +35,7 @@ export default {
             name: 'img',
             title: 'Image',
             type: 'image',
-            description: "Upload the image of member, default value will be a random image.",
+            description: "Upload the image of alumni, default value will be a random image.",
             options: {
                 hotspot: true,
             },
@@ -52,7 +52,7 @@ export default {
                     title: 'Email',
                     type: 'string',
                     initialValue: "https://linktr.ee/ECellIET",
-                    description: "Enter email of member.",
+                    description: "Enter email of alumni.",
                     // validation: Rule => [
                     //     Rule.required().max(150).error('This is a required field.'),
                     // ]
@@ -62,7 +62,7 @@ export default {
                     title: 'Phone',
                     type: 'string',
                     initialValue: "https://linktr.ee/ECellIET",
-                    description: "Enter phone no. of member.",
+                    description: "Enter phone no. of alumni.",
                     // validation: Rule => [
                     //     Rule.required().max(150).error('This is a required field.'),
                     // ]
@@ -72,7 +72,7 @@ export default {
                     title: 'Linked In',
                     type: 'string',
                     initialValue: "https://linktr.ee/ECellIET",
-                    description: "Enter linkedin of member.",
+                    description: "Enter linkedin of alumni.",
                     // validation: Rule => [
                     //     Rule.required().max(150).error('This is a required field.'),
                     // ]

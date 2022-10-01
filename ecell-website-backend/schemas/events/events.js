@@ -9,6 +9,11 @@ export default {
             type: 'string',
         },
         {
+            name: 'desc',
+            title: 'Event Category Description',
+            type: 'string',
+        },
+        {
             name: 'events',
             title: 'Events',
             type: 'array',

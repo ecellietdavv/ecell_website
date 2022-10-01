@@ -9,6 +9,11 @@ export default {
             type: 'string',
         },
         {
+            name: 'desc',
+            title: 'Initiative Category Description',
+            type: 'string',
+        },
+        {
             name: 'initiatives',
             title: 'Initiatives',
             type: 'array',

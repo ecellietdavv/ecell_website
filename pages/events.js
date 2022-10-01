@@ -5,11 +5,11 @@ import { HiFlag } from 'react-icons/hi'
 import EventsHero from '../components/Events/EventsHero'
 import EventsListSection from '../components/Events/EventsListSection'
 import SectionDivider from '../components/UtilComponents/SectionDivider'
-import { getEventsQuery } from '../utils/queries'
+import { getEventsQuery, getPageQuery } from '../utils/queries'
 import { sanityClient } from '../utils/sanity'
 import PageNavigation from '../components/Navigation/PageNavigation'
 
-function events({ flagshipEvents, collaborativeEvents, allEvents }) {
+function events({ flagshipEvents, collaborativeEvents, allEvents, heroHeading, heroDescription, heroImage, metaTags, pocs }) {
 
   const navItems = [
     { name: "Events Home", scrollTo: "eventsHome" },
@@ -21,19 +21,20 @@ function events({ flagshipEvents, collaborativeEvents, allEvents }) {
   return (
     <main className='bg-white dark:bg-dark dark:text-white'>
       <PageNavigation navItems={navItems}></PageNavigation>
-      <EventsHero id='eventsHome' />
+      <EventsHero id='eventsHome' heroHeading={heroHeading} heroDescription={heroDescription} heroImage={heroImage}/>
       <SectionDivider img="img2" />
-      <EventsListSection id="flagshipEvents" name="Flagship Events" Icon={HiFlag} sectionBio="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugit voluptatum error sapiente voluptatem officiis odit soluta neque itaque? Sequi, inventore!" events={flagshipEvents?.events} />
+      <EventsListSection id="flagshipEvents" name={flagshipEvents?.name} Icon={HiFlag} sectionBio={flagshipEvents?.desc} events={flagshipEvents?.events} />
       <SectionDivider img="img1" />
-      <EventsListSection id="collaborativeEvents" name="Collaborative Events" Icon={AiOutlineTeam} sectionBio="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugit voluptatum error sapiente voluptatem officiis odit soluta neque itaque? Sequi, inventore!" events={collaborativeEvents?.events} />
+      <EventsListSection id="collaborativeEvents" name={collaborativeEvents?.name}  Icon={AiOutlineTeam} sectionBio={collaborativeEvents?.desc} events={collaborativeEvents?.events} />
       <SectionDivider img="img3" />
-      <EventsListSection events={allEvents?.events} id="allEvents" name="All Events" Icon={MdEmojiEvents} sectionBio="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugit voluptatum error sapiente voluptatem officiis odit soluta neque itaque? Sequi, inventore!" />
+      <EventsListSection events={allEvents?.events} id="allEvents" name={allEvents?.name} Icon={MdEmojiEvents} sectionBio={allEvents?.desc} />
       <SectionDivider img="img2" />
     </main>
   )
 }
 
 export const getServerSideProps = async () => {
+  const { heroHeading, heroDescription, heroImage, metaTags, pocs } = await sanityClient.fetch(getPageQuery, { name: "Events" })
   const flagshipEvents = await sanityClient.fetch(getEventsQuery, { category: "Flagship Events" })
   const allEvents = await sanityClient.fetch(getEventsQuery, { category: "All Events" })
   const collaborativeEvents = await sanityClient.fetch(getEventsQuery, { category: "Collaborative Events" })
@@ -43,6 +44,11 @@ export const getServerSideProps = async () => {
       flagshipEvents,
       allEvents,
       collaborativeEvents,
+      heroHeading,
+      heroDescription,
+      heroImage,
+      metaTags,
+      pocs
     }
   }
 }

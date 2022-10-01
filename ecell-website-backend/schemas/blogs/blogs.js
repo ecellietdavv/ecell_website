@@ -9,6 +9,11 @@ export default {
             type: 'string',
         },
         {
+            name: 'desc',
+            title: 'Blogs Category Description',
+            type: 'string',
+        },
+        {
             name: 'blogs',
             title: 'Blogs',
             type: 'array',
