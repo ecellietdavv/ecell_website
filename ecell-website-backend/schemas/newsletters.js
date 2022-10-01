@@ -1,3 +1,5 @@
+import client from 'part:@sanity/base/client'
+
 export default {
     name: 'newsletters',
     title: 'Newsletters',
@@ -8,8 +10,17 @@ export default {
             title: 'Email',
             type: 'string',
             validation: Rule => [
-                Rule.required().min(3).error('A name of min. 10 characters is required'),
-                Rule.max(60).warning('Max name limit reached')
+                Rule.max(60).warning('Max name limit reached'),
+                Rule => Rule.required().custom((email) => {
+                    return client.fetch(`count(*[_type == "newsletters" && email == "${email}"])`)
+                        .then(count => {
+                            if (count > 1) {
+                                return 'Already registered on our newsletters!'
+                            } else {
+                                return true
+                            }
+                        })
+                })
             ],
             readOnly: true
         },

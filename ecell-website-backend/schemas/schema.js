@@ -36,6 +36,7 @@ import partners from './partners/partners'
 import partner from './partners/partner'
 import caseStudies from './caseStudies'
 import mentor from './mentor'
+import ideaAndInvestors from './ideaAndInvestors'
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -82,5 +83,6 @@ export default createSchema({
     
     contact,
     newsletters,
+    ideaAndInvestors,
   ]),
 })

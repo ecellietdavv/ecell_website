@@ -172,4 +172,15 @@ const getBlogStaticPathsQuery = `
     }
 `
 
-module.exports = { getPageQuery, getTestimonialsQuery, getTFCContentQuery, getAboutContentQuery, getVisionContentQuery, getEventsQuery, getInitiativesQuery, getTeamsQuery, getBlogContentQuery, getBlogStaticPathsQuery, getBlogsQuery, getStepsQuery, getPartnersQuery, getCaseStudiesQuery, getMentorsQuery }
+const getIdeaAndInvestorsQuery = `
+    *[_type=="ideaAndInvestors"]{
+        _id,
+        title,
+        img,
+        desc,
+        buttonName,
+        action
+    }
+`
+
+module.exports = { getPageQuery, getTestimonialsQuery, getTFCContentQuery, getAboutContentQuery, getVisionContentQuery, getEventsQuery, getInitiativesQuery, getTeamsQuery, getBlogContentQuery, getBlogStaticPathsQuery, getBlogsQuery, getStepsQuery, getPartnersQuery, getCaseStudiesQuery, getMentorsQuery, getIdeaAndInvestorsQuery }

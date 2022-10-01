@@ -2,16 +2,17 @@ import React from 'react'
 import PageNavigation from '../../components/Navigation/PageNavigation'
 import CaseStudies from '../../components/StartupAndInvestors/CaseStudies'
 import FoundingTestimonials from '../../components/StartupAndInvestors/FoundingTestimonials'
+import IdeasAndInvestors from '../../components/StartupAndInvestors/IdeasAndInvestors'
 import Mentors from '../../components/StartupAndInvestors/Mentors'
 import SAndIHero from '../../components/StartupAndInvestors/SAndIHero'
 import POCs from '../../components/UtilComponents/POCs'
 import SectionDescCard from '../../components/UtilComponents/SectionDescCard'
 import SectionDivider from '../../components/UtilComponents/SectionDivider'
-import { getCaseStudiesQuery, getMentorsQuery, getPageQuery, getTestimonialsQuery } from '../../utils/queries'
+import { getCaseStudiesQuery, getIdeaAndInvestorsQuery, getMentorsQuery, getPageQuery, getTestimonialsQuery } from '../../utils/queries'
 import { sanityClient } from '../../utils/sanity'
 
 function StartupsAndInvestors(props) {
-  const {foundingTestimonials, heroHeading, heroDescription, heroImage, metaTags, pocs, caseStudies, mentors} = props
+  const { foundingTestimonials, heroHeading, heroDescription, heroImage, metaTags, pocs, caseStudies, mentors, ideaAndInvestors } = props
 
   const navItems = [
     { name: "Startup & Investors Home", scrollTo: "startupHero" },
@@ -26,18 +27,21 @@ function StartupsAndInvestors(props) {
   return (
     <main className='bg-white dark:bg-dark'>
       <PageNavigation navItems={navItems}></PageNavigation>
-      <SAndIHero id="startupHero" heroHeading={heroHeading} heroDescription={heroDescription} heroImage={heroImage} metaTags={metaTags}/>
+      <SAndIHero id="startupHero" heroHeading={heroHeading} heroDescription={heroDescription} heroImage={heroImage} metaTags={metaTags} />
       <SectionDivider img="img1" />
       <SectionDescCard id="mentors" name="Mentoring" desc="wadawd" />
-      <Mentors mentors={mentors}/>
+      <Mentors mentors={mentors} />
       <SectionDivider img="img1" />
       <SectionDescCard id="foundingTestimonials" name="Founding Testimonials" desc="wadawd" />
-      <FoundingTestimonials content={foundingTestimonials}/>
+      <FoundingTestimonials content={foundingTestimonials} />
       <SectionDivider img="img1" />
       <SectionDescCard id="caseStudies" name="Case Studies" desc="wadawd" />
-      <CaseStudies caseStudies={caseStudies}/>
+      <CaseStudies caseStudies={caseStudies} />
+      <SectionDivider img="img1" />
+      <IdeasAndInvestors id="joinus" sections={ideaAndInvestors} />
+      <SectionDivider img="img1" />
       <SectionDescCard id="s_and_i_pocs" name="Contact Us for Queries" desc="wadawd" />
-      <POCs pocs={pocs}/>
+      <POCs pocs={pocs} />
       <SectionDivider img="img1" />
     </main>
   )
@@ -48,6 +52,7 @@ export const getServerSideProps = async () => {
   const foundingTestimonials = await sanityClient.fetch(getTestimonialsQuery, { title: "Founding Testimonials" })
   const caseStudies = await sanityClient.fetch(getCaseStudiesQuery)
   const mentors = await sanityClient.fetch(getMentorsQuery)
+  const ideaAndInvestors = await sanityClient.fetch(getIdeaAndInvestorsQuery)
 
   return {
     props: {
@@ -58,7 +63,8 @@ export const getServerSideProps = async () => {
       foundingTestimonials,
       caseStudies,
       pocs,
-      mentors
+      mentors,
+      ideaAndInvestors,
     }
   }
 }
