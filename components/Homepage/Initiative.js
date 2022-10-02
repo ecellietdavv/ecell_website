@@ -9,7 +9,10 @@ import { useState } from 'react'
 import ItemsCarousel from 'react-items-carousel';
 import { BiChevronRight, BiChevronLeft } from "react-icons/bi";
 
-const Initiative = ({ initiatives, id }) => {
+const Initiative = ({ content, id }) => {
+
+  const { initiatives, name, desc } = content
+
   const IntiativeCard = ({ img, name, desc, idx, date }) => {
     return (
       <div key={idx} className={idx % 2 === 0 ? "flex p-4 sm:p-0 relative flex-col md:flex-row md:justify-between items-center w-full right-timeline " : " flex p-4 sm:p-0 relative flex-col md:justify-between md:flex-row-reverse items-center w-full"}>
@@ -22,9 +25,9 @@ const Initiative = ({ initiatives, id }) => {
         </div>
 
         <div className={idx % 2 === 0 ? "order-1 h-full rounded-b-lg bg-dark dark:bg-mid text-white md:rounded-lg shadow-xl md:w-5/12 px-6 py-4 w-full" : "order-1 text-white h-full rounded-b-lg bg-brand-600 md:rounded-lg shadow-xl md:w-5/12 px-6 py-4 w-full"}>
-          <div className="flex justify-between">
-            <h3 className="mb-3 font-bold text-xl">{name}</h3>
-            <p className="mb-3 text-base">{date}</p>
+          <div className="flex justify-between items-center">
+            <h3 className="mb-1 font-bold text-md lg:text-xl">{name}</h3>
+            <p className="mb-1 text-base">{date}</p>
           </div>
           <p className="text-sm leading-snug tracking-wide text-opacity-100">{desc}</p>
         </div>
@@ -46,10 +49,7 @@ const Initiative = ({ initiatives, id }) => {
 
   return (
     <section id={id} className='bg-light dark:bg-dark'>
-      <SectionDescCard name="Initiatives" desc="Lorem ipsum, dolor sit amet consectetur adipisicing elit. At
-						repellendus est blanditiis consequuntur iusto nostrum consectetur
-						voluptate ratione, exercitationem sint maxime nisi incidunt? A
-						voluptate deleniti eligendi odit fugit nemo tempore atque nisi ab!"/>
+      <SectionDescCard name={name} desc={desc}/>
 
       <div className="container mx-auto w-full h-full">
         <div className="relative hidden md:grid sm:grid-cols-2 gap-4 sm:gap-6 md:grid-cols-1 py-10 md:p-10 h-full">

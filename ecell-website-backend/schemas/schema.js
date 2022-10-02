@@ -35,8 +35,13 @@ import testimonials from './testimonials/testimonials'
 import partners from './partners/partners'
 import partner from './partners/partner'
 import caseStudies from './caseStudies'
-import mentor from './mentor'
+import mentor from './mentor/mentor'
 import ideaAndInvestors from './ideaAndInvestors'
+import alumni from './alumni/alumni'
+import volunteering from './volunteering'
+import alumnies from './alumni/alumnies'
+import mentors from './mentor/mentors'
+import teams from './teams/teams'
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -56,7 +61,11 @@ export default createSchema({
 
     member,
     team,
+    teams,
+    alumni,
+    alumnies,
     mentor,
+    mentors,
 
     initiative,
     initiatives,
@@ -84,5 +93,7 @@ export default createSchema({
     contact,
     newsletters,
     ideaAndInvestors,
+
+    volunteering,
   ]),
 })

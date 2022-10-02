@@ -11,7 +11,10 @@ import ItemsCarousel from 'react-items-carousel';
 import { useEffect } from "react";
 import { randomIage } from "../../utils/randomAssets";
 
-const Event = ({ events, id }) => {
+const Event = ({ content, id }) => {
+
+	const { events, name, desc } = content
+
 	const EventCard = ({ img, name, desc, idx }) => {
 		const [show, setShow] = useState(false);
 		return (
@@ -67,10 +70,7 @@ const Event = ({ events, id }) => {
 
 	return (
 		<section id={id} className="dark:bg-dark">
-			<SectionDescCard name="Events" desc="Lorem ipsum, dolor sit amet consectetur adipisicing elit. At
-						repellendus est blanditiis consequuntur iusto nostrum consectetur
-						voluptate ratione, exercitationem sint maxime nisi incidunt? A
-						voluptate deleniti eligendi odit fugit nemo tempore atque nisi ab!"/>
+			<SectionDescCard name={name} desc={desc}/>
 
 			<div className="w-full">
 				<div className="max-w-7xl mx-auto justify-center px-6 items-center py-10">

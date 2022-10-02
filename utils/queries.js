@@ -6,9 +6,13 @@ const getPageQuery = `
         heroHeading,
         heroDescription,
         metaTags,
-        pocs[] {
-        _type == 'reference' => @->
-        } | order(name)
+        pocs {
+            title,
+            desc,
+            pocs[] {
+                _type == 'reference' => @->
+            } | order(name)
+        }
     }
 `
 
@@ -43,6 +47,7 @@ const getEventsQuery = `
     *[_type=="events" && name==$category][0]{
         _id,
         name,
+        desc,
         events[]{
             _type == 'reference' => @->{
                 ...,
@@ -56,6 +61,7 @@ const getInitiativesQuery = `
     *[_type=="initiatives" && name==$category][0]{
         _id,
         name,
+        desc,
         initiatives[]{
             _type == 'reference' => @->{
                 ...,
@@ -85,23 +91,39 @@ const getCaseStudiesQuery = `
 `
 
 const getMentorsQuery = `
-    *[_type=="mentor"]{
-        _id,
-        name,
-        designation,
-        img,
-        social,
+    *[_type=="mentors"][0]{
+        title,
+        desc,
+        mentors[]{
+            _type == 'reference' => @->
+        } | order(order desc)
     }
 `
 
+const getAlumniQuery = `
+    *[_type=="alumnies"][0]{
+        title,
+        desc,
+        alumnies[]{
+            _type == 'reference' => @->
+        } | order(order desc)
+}
+`
+
 const getTeamsQuery = `
-    *[_type=="team"] | order(year desc){
-        _id,
-        year,
-        members[] {
-        _type == 'reference' => @->,
-        } | order(name)
-    }
+*[_type=="teams"][0] {
+    _id,
+    title,
+    desc,
+    teams[] {
+        _type == 'reference' => @->{
+            year,
+            members[] {
+            _type == 'reference' => @->,
+            } | order(order desc)
+        }
+    } | order(year desc) 
+}
 `
 
 const getTestimonialsQuery = `
@@ -151,6 +173,7 @@ const getBlogsQuery = `
     *[_type=="blogs" && name==$category][0] {
         _id,
         name,
+        desc,
         blogs[]{
             _type == 'reference' => @->{
                 slug,
@@ -183,4 +206,15 @@ const getIdeaAndInvestorsQuery = `
     }
 `
 
-module.exports = { getPageQuery, getTestimonialsQuery, getTFCContentQuery, getAboutContentQuery, getVisionContentQuery, getEventsQuery, getInitiativesQuery, getTeamsQuery, getBlogContentQuery, getBlogStaticPathsQuery, getBlogsQuery, getStepsQuery, getPartnersQuery, getCaseStudiesQuery, getMentorsQuery, getIdeaAndInvestorsQuery }
+const getVolunteeringQuery = `
+    *[_type=="volunteering"][0]{
+        _id,
+        title,
+        link,
+        img,
+        desc,
+        perks,
+    }
+`
+
+module.exports = { getPageQuery, getTestimonialsQuery, getTFCContentQuery, getAboutContentQuery, getVisionContentQuery, getEventsQuery, getInitiativesQuery, getTeamsQuery, getBlogContentQuery, getBlogStaticPathsQuery, getBlogsQuery, getStepsQuery, getPartnersQuery, getCaseStudiesQuery, getMentorsQuery, getIdeaAndInvestorsQuery, getAlumniQuery, getVolunteeringQuery }

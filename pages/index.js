@@ -13,9 +13,7 @@ import HomeHero from "../components/Homepage/HomeHero"
 import PageNavigation from "../components/Navigation/PageNavigation"
 import Idea from "../components/Idea"
 
-function HomePage({ flagshipEvents, flagshipInitiatives, teams, tfc, aboutUs, vision, heroDescription, heroHeading, heroImage, metaTags }) {
-  const { events } = flagshipEvents
-  const { initiatives } = flagshipInitiatives
+function HomePage({ flagshipEvents, flagshipInitiatives, teams, tfc, aboutUs, vision, heroDescription, heroHeading, heroImage, metaTags, teamsTitle, teamsDesc }) {
 
   const navItems = [
     { name: "Home", scrollTo: "home" },
@@ -44,11 +42,11 @@ function HomePage({ flagshipEvents, flagshipInitiatives, teams, tfc, aboutUs, vi
       <SectionDivider img="img1" />
       <About id="about" content={aboutUs} />
       <SectionDivider img="img2" />
-      <Event id="events" events={events} />
+      <Event id="events" content={flagshipEvents} />
       <SectionDivider img="img1" />
-      <Initiative id="initiatives" initiatives={initiatives} />
+      <Initiative id="initiatives" content={flagshipInitiatives} />
       <SectionDivider img="img2" />
-      <Teams id="teams" teams={teams} />
+      <Teams id="teams" teams={teams} title={teamsTitle} desc={teamsDesc}/>
       <SectionDivider img="img3" />
     </main>
   )
@@ -57,7 +55,7 @@ function HomePage({ flagshipEvents, flagshipInitiatives, teams, tfc, aboutUs, vi
 export const getServerSideProps = async () => {
   const flagshipEvents = await sanityClient.fetch(getEventsQuery, { category: "Flagship Events" })
   const flagshipInitiatives = await sanityClient.fetch(getInitiativesQuery, { category: "Flagship Initiatives" })
-  const teams = await sanityClient.fetch(getTeamsQuery)
+  const {title: teamsTitle, desc:teamsDesc, teams} = await sanityClient.fetch(getTeamsQuery)
   const { heroHeading, heroDescription, heroImage, metaTags } = await sanityClient.fetch(getPageQuery, { name: "Homepage" })
   const aboutUs = await sanityClient.fetch(getAboutContentQuery)
   const vision = await sanityClient.fetch(getVisionContentQuery)
@@ -68,6 +66,8 @@ export const getServerSideProps = async () => {
       flagshipEvents,
       flagshipInitiatives,
       teams,
+      teamsTitle,
+      teamsDesc,
       tfc,
       aboutUs,
       vision,

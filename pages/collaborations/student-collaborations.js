@@ -7,15 +7,15 @@ import Partners from '../../components/UtilComponents/Partners'
 import POCs from '../../components/UtilComponents/POCs'
 import SectionDescCard from '../../components/UtilComponents/SectionDescCard'
 import SectionDivider from '../../components/UtilComponents/SectionDivider'
-import { getPageQuery, getPartnersQuery } from '../../utils/queries'
+import { getAlumniQuery, getPageQuery, getPartnersQuery, getVolunteeringQuery } from '../../utils/queries'
 import { sanityClient } from '../../utils/sanity'
 
 function StudentCollaborations(props) {
-  const { heroHeading, heroDescription, heroImage, metaTags, pocs, alumnies, partners } = props
+  const { heroHeading, heroDescription, heroImage, metaTags, pocs, alumnies, alumniTitle, alumniDesc, partners, volunteeringTitle, volunteeringDesc, volunteeringImg, perks, link } = props
 
   const navItems = [
     { name: "Student Collaborators Home", scrollTo: "studentCollaboratorsHero" },
-    { name: "SOP's", scrollTo: "sops" },
+    { name: "SPO's", scrollTo: "spos" },
     { name: "Volunteering", scrollTo: "volunteering" },
     { name: "Alumni", scrollTo: "alumni" },
     { name: "Contact Us For a Event", scrollTo: "sc_contact" },
@@ -26,15 +26,15 @@ function StudentCollaborations(props) {
       <PageNavigation navItems={navItems}></PageNavigation>
 
       <StudentCollaborationsHero id="studentCollaboratorsHero" heroHeading={heroHeading} heroDescription={heroDescription} heroImage={heroImage} />
-      <Partners id="sops" content={partners} />
+      <Partners id="spos" content={partners} />
       <SectionDivider img="img1" />
-      <SectionDescCard id="volunteering" name="Volunteering" desc="Join us as CA" />
-      <Volunteering/>
+      <SectionDescCard id="volunteering" name={volunteeringTitle} desc={volunteeringDesc} />
+      <Volunteering link={link} img={volunteeringImg} perks={perks} />
       <SectionDivider img="img1" />
-      <Alumni alumnies={alumnies} id="alumni"/>
+      <Alumni title={alumniTitle} desc={alumniDesc} alumnies={alumnies} id="alumni" />
       <SectionDivider img="img1" />
-      <SectionDescCard id="sc_contact" name="Contact Us For a Event" desc="wadawd" />
-      <POCs pocs={pocs}/>
+      <SectionDescCard id="sc_contact" name={pocs?.title} desc={pocs?.desc} />
+      <POCs pocs={pocs?.pocs} />
       <SectionDivider img="img1" />
     </main>
   )
@@ -42,7 +42,9 @@ function StudentCollaborations(props) {
 
 export const getServerSideProps = async () => {
   const { heroHeading, heroDescription, heroImage, metaTags, pocs } = await sanityClient.fetch(getPageQuery, { name: "Student Collaborator" })
-  const partners = await sanityClient.fetch(getPartnersQuery, { title: "SOPs" })
+  const partners = await sanityClient.fetch(getPartnersQuery, { title: "SPOs" })
+  const { title: alumniTitle, desc: alumniDesc, alumnies } = await sanityClient.fetch(getAlumniQuery)
+  const { title: volunteeringTitle, desc: volunteeringDesc, img: volunteeringImg, perks, link } = await sanityClient.fetch(getVolunteeringQuery)
 
   return {
     props: {
@@ -52,7 +54,18 @@ export const getServerSideProps = async () => {
       metaTags,
 
       partners,
-      pocs
+      pocs,
+
+      alumniTitle,
+      alumniDesc,
+      alumnies,
+
+      volunteeringTitle,
+      volunteeringDesc,
+      volunteeringImg,
+      perks,
+      link,
+
     }
   }
 }

@@ -43,12 +43,29 @@ export default {
         {
             name: 'pocs',
             title: 'Person Of Contacts',
-            type: 'array',
-            of: [{
-                type: "reference",
-                to: { type: "member" }
-            }]
-        },
+            type: 'object',
+            fields: [
+                {
+                    name: 'title',
+                    title: 'Title',
+                    type: 'string',
+                },
+                {
+                    name: 'desc',
+                    title: 'Description',
+                    type: 'string',
+                },
+                {
+                    name: 'pocs',
+                    title: 'Persons Of Contact',
+                    type: 'array',
+                    of: [{
+                        type: "reference",
+                        to: { type: "member" }
+                    }]
+                },
+            ]
+        }
     ],
     preview: {
         select: {
