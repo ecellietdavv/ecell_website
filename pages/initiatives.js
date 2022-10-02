@@ -6,7 +6,7 @@ import SectionDivider from '../components/UtilComponents/SectionDivider'
 import { getInitiativesQuery, getPageQuery } from '../utils/queries'
 import { sanityClient } from '../utils/sanity'
 
-function initiatives({ allInitiatives, flagshipInitiatives, heroHeading, heroDescription, heroImage, metaTags, pocs }) {
+function initiatives({ allInitiatives, flagshipInitiatives, heroHeading, heroDescription, heroImage, metaTags, pocs, sectionImages }) {
 
   const navItems = [
     { name: "Initiatives Home", scrollTo: "initiativesHome" },
@@ -17,19 +17,19 @@ function initiatives({ allInitiatives, flagshipInitiatives, heroHeading, heroDes
   return (
     <main>
       <PageNavigation navItems={navItems}></PageNavigation>
-      <InitiativesHero id="initiativesHome" heroHeading={heroHeading} heroDescription={heroDescription} heroImage={heroImage}/>
-      <SectionDivider img="img2" />
+      <InitiativesHero id="initiativesHome" heroHeading={heroHeading} heroDescription={heroDescription} heroImage={heroImage} />
+      <SectionDivider img={sectionImages[0]} />
       <Timeline initiatives={flagshipInitiatives?.initiatives} name={flagshipInitiatives?.name} id="flagshipInitiatives" desc={flagshipInitiatives?.desc} />
-      <SectionDivider img="img1" />
+      <SectionDivider img={sectionImages[1]} />
       <Timeline initiatives={allInitiatives?.initiatives} name={allInitiatives?.name} id="allInitiatives" desc={allInitiatives?.desc} />
-      <SectionDivider img="img3" />
+      <SectionDivider img={sectionImages[2]} />
 
     </main>
   )
 }
 
 export const getServerSideProps = async () => {
-  const { heroHeading, heroDescription, heroImage, metaTags, pocs } = await sanityClient.fetch(getPageQuery, { name: "Initiatives" })
+  const { heroHeading, heroDescription, heroImage, metaTags, pocs, sectionImages } = await sanityClient.fetch(getPageQuery, { name: "Initiatives" })
   const flagshipInitiatives = await sanityClient.fetch(getInitiativesQuery, { category: "Flagship Initiatives" })
   const allInitiatives = await sanityClient.fetch(getInitiativesQuery, { category: "All Initiatives" })
 
@@ -41,7 +41,8 @@ export const getServerSideProps = async () => {
       heroDescription,
       heroImage,
       metaTags,
-      pocs
+      pocs,
+      sectionImages
     }
   }
 }

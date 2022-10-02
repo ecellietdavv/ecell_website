@@ -22,30 +22,30 @@ function BusinessCollaborations(props) {
     { name: "Partner With Us", scrollTo: "businessPocs" },
   ]
 
-  const { heroHeading, heroDescription, heroImage, metaTags, pocs, stepsForFlagshipEvents, stepsForCollaborativeEvents, sponsorsTestimonials, partners } = props
+  const { heroHeading, heroDescription, heroImage, metaTags, pocs, stepsForFlagshipEvents, stepsForCollaborativeEvents, sponsorsTestimonials, partners, sectionImages } = props
   return (
     <main className='bg-white dark:bg-dark'>
       <PageNavigation navItems={navItems}></PageNavigation>
 
-      <BusinessHero id="businessHero" heroHeading={heroHeading} heroDescription={heroDescription} heroImage={heroImage}/>
-      <Partners id="sponsors" content={partners}/>
-      <SectionDivider img="img1" />
+      <BusinessHero id="businessHero" heroHeading={heroHeading} heroDescription={heroDescription} heroImage={heroImage} />
+      <Partners id="sponsors" content={partners} />
+      <SectionDivider img={sectionImages[0]} />
       <StepsSection content={stepsForFlagshipEvents} id="flagshipEvents" />
-      <SectionDivider img="img1" />
+      <SectionDivider img={sectionImages[1]} />
       <SectionDescCard id="testimonials" name="Sponsor Testimonials" desc="wadawd" />
       <Testimonials content={sponsorsTestimonials} />
-      <SectionDivider img="img1" />
+      <SectionDivider img={sectionImages[2]} />
       <StepsSection content={stepsForCollaborativeEvents} id="collaborativeEvents" />
-      <SectionDivider img="img1" />
+      <SectionDivider img={sectionImages[3]} />
       <SectionDescCard id="businessPocs" name={pocs?.title} desc={pocs?.desc} />
-      <POCs pocs={pocs.pocs}/>
-      <SectionDivider img="img1" />
+      <POCs pocs={pocs.pocs} />
+      <SectionDivider img={sectionImages[4]} />
     </main>
   )
 }
 
 export const getServerSideProps = async () => {
-  const { heroHeading, heroDescription, heroImage, metaTags, pocs } = await sanityClient.fetch(getPageQuery, { name: "Business Collaborations" })
+  const { heroHeading, heroDescription, heroImage, metaTags, pocs, sectionImages } = await sanityClient.fetch(getPageQuery, { name: "Business Collaborations" })
   const stepsForFlagshipEvents = await sanityClient.fetch(getStepsQuery, { title: "Flagship Events" })
   const stepsForCollaborativeEvents = await sanityClient.fetch(getStepsQuery, { title: "Collaborative Events" })
   const sponsorsTestimonials = await sanityClient.fetch(getTestimonialsQuery, { title: "Sponsor Testimonials" })
@@ -61,7 +61,8 @@ export const getServerSideProps = async () => {
       stepsForCollaborativeEvents,
       sponsorsTestimonials,
       partners,
-      pocs
+      pocs,
+      sectionImages
     }
   }
 }

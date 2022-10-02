@@ -1,6 +1,7 @@
 import React from 'react'
 import Image from 'next/image'
 import { urlFor } from '../../utils/sanity'
+import { randomPersonImage } from '../../utils/randomAssets'
 
 const Mentors = ({ mentors }) => {
 
@@ -8,8 +9,8 @@ const Mentors = ({ mentors }) => {
         <section className='py-10 lg:p-10'>
             <div className="grid sm:grid-cols-2 gap-10 py-4 mx-4 dark:bg-dark">
                 {mentors.map((mentor, idx) => {
-                    const {name, img, designation, _id} = mentor
-                    const imgUrl = urlFor(img).url()
+                    const { name, img, designation, _id } = mentor
+                    const imgUrl = img ? urlFor(img).url() : randomPersonImage
                     return (
                         <div key={_id}>
                             <div className="bg-brand-200  rounded-t-3xl sm:rounded-r-3xl flex flex-col-reverse md:flex-row mx-auto">

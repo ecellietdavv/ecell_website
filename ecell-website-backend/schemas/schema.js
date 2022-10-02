@@ -42,6 +42,7 @@ import volunteering from './volunteering'
 import alumnies from './alumni/alumnies'
 import mentors from './mentor/mentors'
 import teams from './teams/teams'
+import parallaxImage from './parallaxImage'
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -74,6 +75,7 @@ export default createSchema({
     events,
 
     page,
+    parallaxImage,
     tfc,
     aboutUs,
     vision,
@@ -89,7 +91,7 @@ export default createSchema({
     partners,
 
     caseStudies,
-    
+
     contact,
     newsletters,
     ideaAndInvestors,

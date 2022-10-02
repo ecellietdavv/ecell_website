@@ -8,6 +8,7 @@ import { useEffect } from 'react'
 import { useState } from 'react'
 import ItemsCarousel from 'react-items-carousel';
 import { BiChevronRight, BiChevronLeft } from "react-icons/bi";
+import { motion } from 'framer-motion'
 
 const Initiative = ({ content, id }) => {
 
@@ -15,7 +16,12 @@ const Initiative = ({ content, id }) => {
 
   const IntiativeCard = ({ img, name, desc, idx, date }) => {
     return (
-      <div key={idx} className={idx % 2 === 0 ? "flex p-4 sm:p-0 relative flex-col md:flex-row md:justify-between items-center w-full right-timeline " : " flex p-4 sm:p-0 relative flex-col md:justify-between md:flex-row-reverse items-center w-full"}>
+      <motion.div
+        whileInView={{ y: [100, 0] }}
+        transition={{ duration: 0.5 }}
+        viewport={{ once: true }}
+        whileHover={{ scale: 1.05 }}
+        key={idx} className={idx % 2 === 0 ? "flex p-4 sm:p-0 relative flex-col md:flex-row md:justify-between items-center w-full right-timeline " : " flex p-4 sm:p-0 relative flex-col md:justify-between md:flex-row-reverse items-center w-full"}>
         <div className="order-1 md:w-5/12">
           <Image loading="lazy" width={600} height={200} className="object-cover rounded-t-lg md:rounded-lg" src={urlFor(img).url()} alt={name} />
         </div>
@@ -31,7 +37,7 @@ const Initiative = ({ content, id }) => {
           </div>
           <p className="text-sm leading-snug tracking-wide text-opacity-100">{desc}</p>
         </div>
-      </div>
+      </motion.div>
     )
   }
 
@@ -49,7 +55,7 @@ const Initiative = ({ content, id }) => {
 
   return (
     <section id={id} className='bg-light dark:bg-dark'>
-      <SectionDescCard name={name} desc={desc}/>
+      <SectionDescCard name={name} desc={desc} />
 
       <div className="container mx-auto w-full h-full">
         <div className="relative hidden md:grid sm:grid-cols-2 gap-4 sm:gap-6 md:grid-cols-1 py-10 md:p-10 h-full">

@@ -9,7 +9,7 @@ import { getEventsQuery, getPageQuery } from '../utils/queries'
 import { sanityClient } from '../utils/sanity'
 import PageNavigation from '../components/Navigation/PageNavigation'
 
-function events({ flagshipEvents, collaborativeEvents, allEvents, heroHeading, heroDescription, heroImage, metaTags, pocs }) {
+function events({ flagshipEvents, collaborativeEvents, allEvents, heroHeading, heroDescription, heroImage, metaTags, pocs, sectionImages }) {
 
   const navItems = [
     { name: "Events Home", scrollTo: "eventsHome" },
@@ -21,20 +21,20 @@ function events({ flagshipEvents, collaborativeEvents, allEvents, heroHeading, h
   return (
     <main className='bg-white dark:bg-dark dark:text-white'>
       <PageNavigation navItems={navItems}></PageNavigation>
-      <EventsHero id='eventsHome' heroHeading={heroHeading} heroDescription={heroDescription} heroImage={heroImage}/>
-      <SectionDivider img="img2" />
+      <EventsHero id='eventsHome' heroHeading={heroHeading} heroDescription={heroDescription} heroImage={heroImage} />
+      <SectionDivider img={sectionImages[0]} />
       <EventsListSection id="flagshipEvents" name={flagshipEvents?.name} Icon={HiFlag} sectionBio={flagshipEvents?.desc} events={flagshipEvents?.events} />
-      <SectionDivider img="img1" />
-      <EventsListSection id="collaborativeEvents" name={collaborativeEvents?.name}  Icon={AiOutlineTeam} sectionBio={collaborativeEvents?.desc} events={collaborativeEvents?.events} />
-      <SectionDivider img="img3" />
+      <SectionDivider img={sectionImages[1]} />
+      <EventsListSection id="collaborativeEvents" name={collaborativeEvents?.name} Icon={AiOutlineTeam} sectionBio={collaborativeEvents?.desc} events={collaborativeEvents?.events} />
+      <SectionDivider img={sectionImages[2]} />
       <EventsListSection events={allEvents?.events} id="allEvents" name={allEvents?.name} Icon={MdEmojiEvents} sectionBio={allEvents?.desc} />
-      <SectionDivider img="img2" />
+      <SectionDivider img={sectionImages[3]} />
     </main>
   )
 }
 
 export const getServerSideProps = async () => {
-  const { heroHeading, heroDescription, heroImage, metaTags, pocs } = await sanityClient.fetch(getPageQuery, { name: "Events" })
+  const { heroHeading, heroDescription, heroImage, metaTags, pocs, sectionImages } = await sanityClient.fetch(getPageQuery, { name: "Events" })
   const flagshipEvents = await sanityClient.fetch(getEventsQuery, { category: "Flagship Events" })
   const allEvents = await sanityClient.fetch(getEventsQuery, { category: "All Events" })
   const collaborativeEvents = await sanityClient.fetch(getEventsQuery, { category: "Collaborative Events" })
@@ -48,7 +48,8 @@ export const getServerSideProps = async () => {
       heroDescription,
       heroImage,
       metaTags,
-      pocs
+      pocs,
+      sectionImages
     }
   }
 }

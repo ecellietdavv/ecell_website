@@ -12,7 +12,7 @@ import { getCaseStudiesQuery, getIdeaAndInvestorsQuery, getMentorsQuery, getPage
 import { sanityClient } from '../../utils/sanity'
 
 function StartupsAndInvestors(props) {
-  const { foundingTestimonials, heroHeading, heroDescription, heroImage, metaTags, pocs, caseStudies, mentors, mentorTitle, mentorDesc, ideaAndInvestors } = props
+  const { foundingTestimonials, heroHeading, heroDescription, heroImage, metaTags, pocs, caseStudies, mentors, mentorTitle, mentorDesc, ideaAndInvestors, sectionImages } = props
 
   const navItems = [
     { name: "Startup & Investors Home", scrollTo: "startupHero" },
@@ -28,30 +28,30 @@ function StartupsAndInvestors(props) {
     <main className='bg-white dark:bg-dark'>
       <PageNavigation navItems={navItems}></PageNavigation>
       <SAndIHero id="startupHero" heroHeading={heroHeading} heroDescription={heroDescription} heroImage={heroImage} metaTags={metaTags} />
-      <SectionDivider img="img1" />
+      <SectionDivider img={sectionImages[0]} />
       <SectionDescCard id="mentors" name={mentorTitle} desc={mentorDesc} />
       <Mentors mentors={mentors} />
-      <SectionDivider img="img1" />
+      <SectionDivider img={sectionImages[1]} />
       <SectionDescCard id="foundingTestimonials" name="Founding Testimonials" desc="wadawd" />
       <FoundingTestimonials content={foundingTestimonials} />
-      <SectionDivider img="img1" />
+      <SectionDivider img={sectionImages[2]} />
       <SectionDescCard id="caseStudies" name="Case Studies" desc="wadawd" />
       <CaseStudies caseStudies={caseStudies} />
-      <SectionDivider img="img1" />
+      <SectionDivider img={sectionImages[3]} />
       <IdeasAndInvestors id="joinus" sections={ideaAndInvestors} />
-      <SectionDivider img="img1" />
-      <SectionDescCard id="s_and_i_pocs" name={pocs?.title} desc={pocs?.desc}/>
+      <SectionDivider img={sectionImages[4]} />
+      <SectionDescCard id="s_and_i_pocs" name={pocs?.title} desc={pocs?.desc} />
       <POCs pocs={pocs?.pocs} />
-      <SectionDivider img="img1" />
+      <SectionDivider img={sectionImages[5]} />
     </main>
   )
 }
 
 export const getServerSideProps = async () => {
-  const { heroHeading, heroDescription, heroImage, metaTags, pocs } = await sanityClient.fetch(getPageQuery, { name: "Startup And Investors" })
+  const { heroHeading, heroDescription, heroImage, metaTags, pocs, sectionImages } = await sanityClient.fetch(getPageQuery, { name: "Startup And Investors" })
   const foundingTestimonials = await sanityClient.fetch(getTestimonialsQuery, { title: "Founding Testimonials" })
   const caseStudies = await sanityClient.fetch(getCaseStudiesQuery)
-  const {mentors, title:mentorTitle, desc:mentorDesc} = await sanityClient.fetch(getMentorsQuery)
+  const { mentors, title: mentorTitle, desc: mentorDesc } = await sanityClient.fetch(getMentorsQuery)
   const ideaAndInvestors = await sanityClient.fetch(getIdeaAndInvestorsQuery)
 
   return {
@@ -67,6 +67,7 @@ export const getServerSideProps = async () => {
       mentorTitle,
       mentorDesc,
       ideaAndInvestors,
+      sectionImages
     }
   }
 }
