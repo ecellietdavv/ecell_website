@@ -7,14 +7,15 @@ import { AiOutlineArrowRight } from 'react-icons/ai'
 import { useEffect } from 'react'
 import { useState } from 'react'
 import ItemsCarousel from 'react-items-carousel';
-import { BiChevronRight, BiChevronLeft } from "react-icons/bi";
+import { BiChevronRight, BiChevronLeft, BiLogIn } from "react-icons/bi";
 import { motion } from 'framer-motion'
+import Link from 'next/link'
 
 const Initiative = ({ content, id }) => {
 
   const { initiatives, name, desc } = content
 
-  const IntiativeCard = ({ img, name, desc, idx, date }) => {
+  const IntiativeCard = ({ img, name, desc, idx, date, slug }) => {
     return (
       <motion.div
         whileInView={{ y: [100, 0] }}
@@ -35,7 +36,8 @@ const Initiative = ({ content, id }) => {
             <h3 className="mb-1 font-bold text-md lg:text-xl">{name}</h3>
             <p className="mb-1 text-base">{date}</p>
           </div>
-          <p className="text-sm leading-snug tracking-wide text-opacity-100">{desc}</p>
+          <p className="text-sm leading-snug tracking-wide text-opacity-100 mb-4">{desc}</p>
+          {slug && <Link href={`/blogs/${slug}`}>Read More ...</Link>}
         </div>
       </motion.div>
     )
@@ -62,9 +64,9 @@ const Initiative = ({ content, id }) => {
           <div className="border-2-2 hidden md:block absolute border-opacity-20 border-mid h-full border left-1/2"></div>
           {
             initiatives && initiatives?.map((insitiative, idx) => {
-              const { name, img, desc, date } = insitiative
+              const { name, img, desc, date, blog } = insitiative
               return (
-                <IntiativeCard name={name} img={img} desc={desc} idx={idx} key={idx} date={date} />
+                <IntiativeCard name={name} img={img} desc={desc} idx={idx} key={idx} date={date} slug={blog?.slug?.current} />
               )
             })
           }
