@@ -46,7 +46,7 @@ function HomeHero({ id, heading, img, desc }) {
                         <Image
                             layout='fill'
                             objectFit='cover'
-                            src="/assets/logos/logo_w.png"
+                            src="/assets/Logos/logo_w.png"
                             className=""
                             alt='E-Cell IET DAVV - LOGO'
                         />
