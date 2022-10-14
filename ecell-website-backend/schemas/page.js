@@ -65,6 +65,12 @@ export default {
                     }]
                 },
             ]
+        },
+        {
+            name: "sectionImages",
+            title: "Section Images",
+            type: "array",
+            of: [{ type: "reference", to: { type: "parallaxImage" } }]
         }
     ],
     preview: {

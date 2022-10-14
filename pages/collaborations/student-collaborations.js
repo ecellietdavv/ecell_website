@@ -11,7 +11,7 @@ import { getAlumniQuery, getPageQuery, getPartnersQuery, getVolunteeringQuery } 
 import { sanityClient } from '../../utils/sanity'
 
 function StudentCollaborations(props) {
-  const { heroHeading, heroDescription, heroImage, metaTags, pocs, alumnies, alumniTitle, alumniDesc, partners, volunteeringTitle, volunteeringDesc, volunteeringImg, perks, link } = props
+  const { heroHeading, heroDescription, heroImage, metaTags, pocs, alumnies, alumniTitle, alumniDesc, partners, volunteeringTitle, volunteeringDesc, volunteeringImg, perks, link, sectionImages } = props
 
   const navItems = [
     { name: "Student Collaborators Home", scrollTo: "studentCollaboratorsHero" },
@@ -27,21 +27,21 @@ function StudentCollaborations(props) {
 
       <StudentCollaborationsHero id="studentCollaboratorsHero" heroHeading={heroHeading} heroDescription={heroDescription} heroImage={heroImage} />
       <Partners id="spos" content={partners} />
-      <SectionDivider img="img1" />
+      <SectionDivider img={sectionImages[0]} />
       <SectionDescCard id="volunteering" name={volunteeringTitle} desc={volunteeringDesc} />
       <Volunteering link={link} img={volunteeringImg} perks={perks} />
-      <SectionDivider img="img1" />
+      <SectionDivider img={sectionImages[1]} />
       <Alumni title={alumniTitle} desc={alumniDesc} alumnies={alumnies} id="alumni" />
-      <SectionDivider img="img1" />
+      <SectionDivider img={sectionImages[2]} />
       <SectionDescCard id="sc_contact" name={pocs?.title} desc={pocs?.desc} />
       <POCs pocs={pocs?.pocs} />
-      <SectionDivider img="img1" />
+      <SectionDivider img={sectionImages[3]} />
     </main>
   )
 }
 
 export const getServerSideProps = async () => {
-  const { heroHeading, heroDescription, heroImage, metaTags, pocs } = await sanityClient.fetch(getPageQuery, { name: "Student Collaborator" })
+  const { heroHeading, heroDescription, heroImage, metaTags, pocs, sectionImages } = await sanityClient.fetch(getPageQuery, { name: "Student Collaborator" })
   const partners = await sanityClient.fetch(getPartnersQuery, { title: "SPOs" })
   const { title: alumniTitle, desc: alumniDesc, alumnies } = await sanityClient.fetch(getAlumniQuery)
   const { title: volunteeringTitle, desc: volunteeringDesc, img: volunteeringImg, perks, link } = await sanityClient.fetch(getVolunteeringQuery)
@@ -65,6 +65,7 @@ export const getServerSideProps = async () => {
       volunteeringImg,
       perks,
       link,
+      sectionImages
 
     }
   }

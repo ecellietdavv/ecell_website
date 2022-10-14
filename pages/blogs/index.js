@@ -12,7 +12,7 @@ import SectionDescCard from '../../components/UtilComponents/SectionDescCard'
 import PageNavigation from '../../components/Navigation/PageNavigation'
 import { handleScroll } from '../../utils/utilityFunctions'
 
-function Index({ featuredBlogs, allBlogs, heroHeading, heroDescription, heroImage, metaTags, pocs }) {
+function Index({ featuredBlogs, allBlogs, heroHeading, heroDescription, heroImage, metaTags, pocs, sectionImages }) {
 
     const BlogCard = ({ slug, title, description, mainImage, publishedAt, idx }) => {
         return (
@@ -88,7 +88,7 @@ function Index({ featuredBlogs, allBlogs, heroHeading, heroDescription, heroImag
                 </div>
             </section>
 
-            <SectionDivider img="img1" />
+            <SectionDivider img={sectionImages[0]} />
 
             <section id='featuredBlogs' className="mx-auto">
                 <SectionDescCard name="Featured Blogs" desc="awduihuiawdhiuhwauidhui" />
@@ -119,7 +119,7 @@ function Index({ featuredBlogs, allBlogs, heroHeading, heroDescription, heroImag
                 <Newsletter />
             </section>
 
-            <SectionDivider img="img2" />
+            <SectionDivider img={sectionImages[1]} />
 
             {/* All Blogs  */}
             <section id='allBlogs' className='container max-w-[1920px] mx-auto'>
@@ -140,7 +140,7 @@ function Index({ featuredBlogs, allBlogs, heroHeading, heroDescription, heroImag
                 <Newsletter />
             </section>
 
-            <SectionDivider img="img3" />
+            <SectionDivider img={sectionImages[2]} />
         </main>
     )
 }
@@ -148,7 +148,7 @@ function Index({ featuredBlogs, allBlogs, heroHeading, heroDescription, heroImag
 export const getServerSideProps = async () => {
     const featuredBlogs = await sanityClient.fetch(getBlogsQuery, { category: "Featured Blogs" })
     const allBlogs = await sanityClient.fetch(getBlogsQuery, { category: "All Blogs" })
-    const { heroHeading, heroDescription, heroImage, metaTags, pocs } = await sanityClient.fetch(getPageQuery, { name: "Blogs" })
+    const { heroHeading, heroDescription, heroImage, metaTags, pocs, sectionImages } = await sanityClient.fetch(getPageQuery, { name: "Blogs" })
 
     return {
         props: {
@@ -158,7 +158,8 @@ export const getServerSideProps = async () => {
             heroDescription,
             heroImage,
             metaTags,
-            pocs
+            pocs,
+            sectionImages
         }
     }
 }

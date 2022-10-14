@@ -10,7 +10,7 @@ const TFCMobile = ({ content, name }) => {
 
     return (
         <div className='sm:hidden'>
-            <h2 className='lg:text-4xl px-4 lg:px-0 text-3xl antialiased text-center font-bold dark:text-light'>{name}</h2>
+            <h2 className='lg:text-4xl px-4 lg:px-0 text-3xl antialiased text-center font-bold dark:text-light'>Welcome To E-Cell IET DAVV</h2>
             <div className="border-t-4 my-8 lg:w-1/5 md:w-1/5 w-2/4 mx-auto border-brand-500 border-opacity-20"></div>
             <div className="grid grid-cols-3 w-full justify-center items-center px-6">
                 <button onClick={() => setActive(0)} className={active === 0 ? 'text-center px-6 py-2 bg-brand-600 text-white border-none shadow-md' : 'text-center px-6 py-2 bg-light border-none shadow-md'} type='button'>Think</button>

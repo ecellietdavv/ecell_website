@@ -55,7 +55,7 @@ function EventsListSection({ name, sectionBio, id, events, Icon }) {
 
     useEffect(() => {
         const cardsOnScreenView = window?.innerWidth >= 640 ? 3 : 2
-        const calcHeight = window?.innerWidth >= 640 ? 700 : 1000
+        const calcHeight = window?.innerWidth >= 640 ? 800 : 1000
         const calcReset = events.length / cardsOnScreenView
         setReset(calcReset)
         setHeight(calcHeight)

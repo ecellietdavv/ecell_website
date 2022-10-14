@@ -10,16 +10,17 @@ import { BiChevronRight, BiChevronLeft } from "react-icons/bi";
 import ItemsCarousel from 'react-items-carousel';
 import { useEffect } from "react";
 import { randomIage } from "../../utils/randomAssets";
+import Link from "next/link";
 
 const Event = ({ content, id }) => {
 
 	const { events, name, desc } = content
 
-	const EventCard = ({ img, name, desc, idx }) => {
+	const EventCard = ({ img, name, desc, idx, slug }) => {
 		const [show, setShow] = useState(false);
 		return (
 			<div
-				className="flex group cursor-pointer flex-col text-center text-dark dark:text-light justify-start items-center h-full space-y-2 bg-light rounded-lg border border-light shadow-md dark:bg-dark dark:border-mid"
+				className="flex py-4 group cursor-pointer flex-col text-center text-dark dark:text-light justify-start items-center h-full space-y-2 bg-light rounded-lg border border-light shadow-md dark:bg-dark dark:border-mid"
 				key={idx}
 				onClick={() => setShow(!show)}
 			>
@@ -39,7 +40,13 @@ const Event = ({ content, id }) => {
 				>
 					{name}
 				</h3>
-				{show ? <p className="px-6">{desc}</p> : null}
+				{show ?
+					<div className="space-y-2">
+						<p className="px-6">{desc}</p>
+						{slug && <Link href={`/blogs/${slug}`}>Read More ...</Link>}
+					</div>
+					: null
+				}
 				{show ? (
 					<AiOutlineUp
 						className={`${show ? "text-brand-500" : ""
@@ -70,7 +77,7 @@ const Event = ({ content, id }) => {
 
 	return (
 		<section id={id} className="dark:bg-dark">
-			<SectionDescCard name={name} desc={desc}/>
+			<SectionDescCard name={name} desc={desc} />
 
 			<div className="w-full">
 				<div className="max-w-7xl mx-auto justify-center px-6 items-center py-10">
@@ -87,10 +94,10 @@ const Event = ({ content, id }) => {
 						showSlither={width >= 640}
 					>
 						{events && events?.map((value, idx) => {
-							const { img, name, desc } = value;
+							const { img, name, desc, blog } = value;
 							const imgUrl = img ? urlFor(img)?.url() : randomIage
 							return (
-								<EventCard img={imgUrl} name={name} desc={desc} idx={idx} key={idx} />
+								<EventCard img={imgUrl} name={name} desc={desc} idx={idx} key={idx} slug={blog?.slug?.current} />
 							);
 						})}
 					</ItemsCarousel>

@@ -12,7 +12,10 @@ const getPageQuery = `
             pocs[] {
                 _type == 'reference' => @->
             } | order(name)
-        }
+        },
+        sectionImages[] {
+                _type == 'reference' => @->
+            } | order(_createdAt)
     }
 `
 
