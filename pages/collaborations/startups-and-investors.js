@@ -32,10 +32,10 @@ function StartupsAndInvestors(props) {
       <SectionDescCard id="mentors" name={mentorTitle} desc={mentorDesc} />
       <Mentors mentors={mentors} />
       <SectionDivider img={sectionImages[1]} />
-      <SectionDescCard id="foundingTestimonials" name="Founding Testimonials" desc="wadawd" />
+      <SectionDescCard id="foundingTestimonials" name="Founding Testimonials" desc="Here are some words of wisdom from our founders." />
       <FoundingTestimonials content={foundingTestimonials} />
       <SectionDivider img={sectionImages[2]} />
-      <SectionDescCard id="caseStudies" name="Case Studies" desc="wadawd" />
+      <SectionDescCard id="caseStudies" name="Case Studies" desc="Here are the stories behind some of our startups." />
       <CaseStudies caseStudies={caseStudies} />
       <SectionDivider img={sectionImages[3]} />
       <IdeasAndInvestors id="joinus" sections={ideaAndInvestors} />
