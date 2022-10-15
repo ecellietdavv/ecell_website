@@ -60,7 +60,7 @@ function HomeHero({ id, heading, img, desc }) {
                     </div>
 
                     <div className="flex flex-col items-center justify-center">
-                        <FaTrophy />
+                        <FaTrophy className='text-3xl text-yellow-300' />
                         <div className="bg-gradient-to-r from-brand-500 text-white to-brand-600 px-4 sm:px-10 py-0 sm:py-1 lg:py-2 text-xs sm:text-md md:text-lg lg:text-xl font-semibold">
                             <h1>Think. Feel. Collaborate</h1>
                         </div>
