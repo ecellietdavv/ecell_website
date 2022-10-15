@@ -35,14 +35,11 @@ function HomePage({ flagshipEvents, flagshipInitiatives, teams, tfc, aboutUs, vi
 
       <PageNavigation navItems={navItems}></PageNavigation>
 
-<<<<<<< HEAD
       <HomeHero id="home" heading={heroHeading} img={heroImage} />
       <Idea/>
       <TFCtemplate id="moto" content={tfc} name={heroDescription} />
-=======
       <HomeHero id="home" heading={heroHeading} img={heroImage} desc={heroDescription} />
       <TFCtemplate id="moto" content={tfc} />
->>>>>>> 648e01ed7c7847c7d57daa930892508cd680a227
       <VisionMission id="vision" content={vision} />
       <SectionDivider img={sectionImages[0]} />
       <About id="about" content={aboutUs} />
