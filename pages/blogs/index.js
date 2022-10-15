@@ -11,6 +11,7 @@ import SectionDivider from '../../components/UtilComponents/SectionDivider'
 import SectionDescCard from '../../components/UtilComponents/SectionDescCard'
 import PageNavigation from '../../components/Navigation/PageNavigation'
 import { handleScroll } from '../../utils/utilityFunctions'
+import { motion } from 'framer-motion'
 
 function Index({ featuredBlogs, allBlogs, heroHeading, heroDescription, heroImage, metaTags, pocs, sectionImages }) {
 
@@ -74,15 +75,15 @@ function Index({ featuredBlogs, allBlogs, heroHeading, heroDescription, heroImag
             <section id='blogsHome' className="dark:text-gray-100">
                 <div className="container justify-center mx-auto flex flex-col items-center px-4 text-center md:px-10 lg:px-32 min-h-[700px]">
                     <div className="max-w-7xl">
-                        <h1 className="text-4xl font-bold leading-none sm:text-5xl">
+                        <motion.h1 animate={{y:[50,0],opacity:[0,1]}} transition={{duration:2 ,bounce:1}} className="text-4xl font-bold leading-none sm:text-5xl">
                             {heroHeading}
-                        </h1>
-                        <p className="px-8 w-3/4 mx-auto mt-8 mb-12 text-lg">
+                        </motion.h1>
+                        <motion.p animate={{y:[50,0],opacity:[0,1]}} transition={{delay:0.7,duration:2 ,bounce:1}} className="px-8 w-3/4 mx-auto mt-8 mb-12 text-lg">
                             {heroDescription}
-                        </p>
+                        </motion.p>
                         <div className="flex flex-wrap justify-center">
-                            <button className="px-8 py-3 m-2 text-lg font-semibold rounded bg-cyan-400 text-dark" onClick={() => { handleScroll("featuredBlogs") }}>Featured</button>
-                            <button onClick={() => { handleScroll("allBlogs") }} className="px-8 py-3 m-2 text-lg border rounded dark:text-gray-50 dark:border-gray-700">All</button>
+                            <motion.button animate={{x:[50,0],opacity:[0,1]}} transition={{delay:0.8,duration:2 ,bounce:1}} className="px-8 py-3 m-2 text-lg font-semibold rounded bg-cyan-400 text-dark" onClick={() => { handleScroll("featuredBlogs") }}>Featured</motion.button>
+                            <motion.button animate={{x:[-50,0],opacity:[0,1]}} transition={{delay:0.8,duration:2 ,bounce:1}} onClick={() => { handleScroll("allBlogs") }} className="px-8 py-3 m-2 text-lg border rounded dark:text-gray-50 dark:border-gray-700">All</motion.button>
                         </div>
                     </div>
                 </div>

@@ -16,7 +16,7 @@ function Teams({ teams, id, title, desc }) {
         key={idx}
       >
         <div className="rounded-full relative overflow-hidden h-32 w-32">
-          <Image loading="lazy"
+          <Image  loading="lazy"
             layout="fill"
             objectFit="cover"
             className="duration-200 group-hover:scale-105 ease-in-out"

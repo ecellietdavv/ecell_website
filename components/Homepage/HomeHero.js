@@ -23,8 +23,8 @@ function HomeHero({ id, heading, img, desc }) {
                 <div
                     className="bg-black flex flex-col justify-center space-y-0 xl:space-y-6 items-center absolute z-30 bg-opacity-60 top-0 left-0 h-full w-full">
                     <motion.div
-                        animate={{ y: [50, 0] }}
-                        transition={{ duration: 6 }}
+                        animate={{ y: [50, 5] }}
+                        transition={{ delay: 3.5, duration: 2 }}
                         viewport={{ once: true }}
                         className="flex flex-col w-full justify-center items-center">
                         <div className="h-2 bg-gradient-to-r from-brand-500 to-brand-600 sm:h-4 xl:h-6 md:block hidden w-1/6"></div>
@@ -38,8 +38,8 @@ function HomeHero({ id, heading, img, desc }) {
                     </motion.div>
 
                     <motion.div
-                        animate={{ scale: [3, 1] }}
-                        transition={{ duration: 6 }}
+                        animate={{ scale: [2, 1] , y:[-2,0]}}
+                        transition={{delay:2, duration: 3 }}
                         viewport={{ once: true }}
                         className="relative w-20 h-20 sm:w-36 sm:h-36 xl:w-48 xl:h-48"
                     >
@@ -53,9 +53,9 @@ function HomeHero({ id, heading, img, desc }) {
                     </motion.div>
 
                     <div className="flex-col hidden sm:flex text-white items-center">
-                        <h1 className="uppercase font-extrabold text-sm sm:text-md md:text-2xl lg:text-3xl">
+                        <motion.h1 transition={{delay:3.5,duration:1.5}} animate={{y:[50,0],opacity:[0,1]}} className="uppercase font-extrabold text-sm sm:text-md md:text-2xl lg:text-3xl">
                             {heading}
-                        </h1>
+                        </motion.h1>
                         <h2 className="uppercase sm:text-2xl text-gray-300 font-bold">{desc}</h2>
                     </div>
 
