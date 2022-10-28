@@ -4,6 +4,7 @@ import { useForm, SubmitHandler } from 'react-hook-form'
 import { sanityClient, urlFor } from '../../utils/sanity';
 import Image from 'next/image';
 import { getBlogContentQuery, getBlogStaticPathsQuery } from '../../utils/queries';
+import moment from 'moment'
 
 function BlogPost(props) {
     const { post } = props;
@@ -27,7 +28,7 @@ function BlogPost(props) {
         <main className="mt-10 dark:bg-dark dark:text-light">
             <div className="mb-4 md:mb-0 w-full max-w-7xl mx-auto relative h-96">
                 <div className="absolute left-0 bottom-0 w-full h-full z-10 blogBannerGradient" />
-                <Image layout="fill" objectFit='cover' src={urlFor(post?.mainImage).url()} className="absolute left-0 top-0 w-full h-full z-0 object-cover" />
+                <Image alt={post?.title} layout="fill" objectFit='cover' src={urlFor(post?.mainImage).url()} className="absolute left-0 top-0 w-full h-full z-0 object-cover" />
                 <div className="p-4 absolute bottom-0 left-0 z-20">
                     <div className="space-x-2">
                         {
@@ -44,11 +45,11 @@ function BlogPost(props) {
                         {post?.title}
                     </h2>
                     <div className="flex mt-3 space-x-3">
-                        <Image width={40} height={40} src={urlFor(post?.author?.image).url()}
+                        <Image alt={post?.author?.name} width={40} height={40} src={urlFor(post?.author?.image).url()}
                             className="h-10 w-10 rounded-full object-cover" />
                         <div>
                             <p className="font-semibold text-gray-200 text-sm"> {post?.author?.name} </p>
-                            <p className="font-semibold text-gray-400 text-xs"> {post?.publishedAt}</p>
+                            <p className="font-semibold text-gray-400 text-xs"> {moment(post?.publishedAt).format('MMMM Do YYYY, h:mm:ss a')}</p>
                         </div>
                     </div>
                 </div>

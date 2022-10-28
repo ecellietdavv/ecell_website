@@ -21,11 +21,15 @@ module.exports = {
           700: "#129aa2",
           800: "#0f868e",
           900: "#0d737a",
-        }, 
+        },
         dark: "#27272A",
         mid: "#52525B",
         light: "#F5F5F5",
       },
     },
   },
+  plugins: [
+    require('@tailwindcss/line-clamp'),
+    // ...
+  ],
 };

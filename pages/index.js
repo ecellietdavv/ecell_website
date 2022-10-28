@@ -8,27 +8,27 @@ import VisionMission from "../components/Homepage/Vision/VisionMission"
 import Teams from "../components/Homepage/Teams"
 import SectionDivider from "../components/UtilComponents/SectionDivider"
 import { sanityClient } from "../utils/sanity"
-import { getEventsQuery, getInitiativesQuery, getTeamsQuery, getPageQuery, getTFCContentQuery, getAboutContentQuery, getVisionContentQuery } from "../utils/queries"
+import { getEventsQuery, getInitiativesQuery, getTeamsQuery, getPageQuery, getTFCContentQuery, getAboutContentQuery, getVisionContentQuery, getStartupsQuery } from "../utils/queries"
 import HomeHero from "../components/Homepage/HomeHero"
 import PageNavigation from "../components/Navigation/PageNavigation"
-import Idea from "../components/Idea"
+import Startups from "../components/Homepage/Startups"
 
-function HomePage({ flagshipEvents, flagshipInitiatives, teams, tfc, aboutUs, vision, heroDescription, heroHeading, heroImage, metaTags, teamsTitle, teamsDesc, sectionImages }) {
+function HomePage({ flagshipEvents, flagshipInitiatives, flagshipStartups, teams, tfc, aboutUs, vision, heroDescription, heroHeading, heroImage, metaTags, teamsTitle, teamsDesc, sectionImages }) {
 
   const navItems = [
     { name: "Home", scrollTo: "home" },
     { name: "Moto", scrollTo: "moto" },
-    { name: "Vision", scrollTo: "vision" },
     { name: "About", scrollTo: "about" },
+    { name: "Vision", scrollTo: "vision" },
     { name: "Events", scrollTo: "events" },
-    { name: "Initiatives", scrollTo: "initiatives" },
+    { name: "Startups", scrollTo: "startups" },
+    // { name: "Initiatives", scrollTo: "initiatives" },
     { name: "Teams", scrollTo: "teams" },
   ]
 
   return (
     <main className="w-full">
       <Head>
-        <meta httpEquiv="X-UA-Compatible" content="IE=7" />
         <meta name="description" content="" />
         <meta name="keywords" content="ecell, E-cell, ietdavv, ecelliet, ietclubs, ietsocieties, ecelldavv, davv, ietdavv, engineering davv, ietdavv.edu.in, clubs in ietdavv, engineering, science, enterpreneurship, tech, web, html, jsx, css, nextjs, colleges in indore, colleges with ecell" />
       </Head>
@@ -42,7 +42,8 @@ function HomePage({ flagshipEvents, flagshipInitiatives, teams, tfc, aboutUs, vi
       <SectionDivider img={sectionImages[1]} />
       <Event id="events" content={flagshipEvents} />
       <SectionDivider img={sectionImages[2]} />
-      <Initiative id="initiatives" content={flagshipInitiatives} />
+      <Startups id="startups" content={flagshipStartups} />
+      {/* <Initiative id="initiatives" content={flagshipInitiatives} /> */}
       <SectionDivider img={sectionImages[3]} />
       <Teams id="teams" teams={teams} title={teamsTitle} desc={teamsDesc} />
       <SectionDivider img={sectionImages[4]} />
@@ -52,7 +53,8 @@ function HomePage({ flagshipEvents, flagshipInitiatives, teams, tfc, aboutUs, vi
 
 export const getServerSideProps = async () => {
   const flagshipEvents = await sanityClient.fetch(getEventsQuery, { category: "Flagship Events" })
-  const flagshipInitiatives = await sanityClient.fetch(getInitiativesQuery, { category: "Flagship Initiatives" })
+  const flagshipStartups = await sanityClient.fetch(getStartupsQuery, { category: "Flagship Startups" })
+  // const flagshipInitiatives = await sanityClient.fetch(getInitiativesQuery, { category: "Flagship Initiatives" })
   const { title: teamsTitle, desc: teamsDesc, teams } = await sanityClient.fetch(getTeamsQuery)
   const { heroHeading, heroDescription, heroImage, metaTags, sectionImages } = await sanityClient.fetch(getPageQuery, { name: "Homepage" })
   const aboutUs = await sanityClient.fetch(getAboutContentQuery)
@@ -62,7 +64,8 @@ export const getServerSideProps = async () => {
   return {
     props: {
       flagshipEvents,
-      flagshipInitiatives,
+      flagshipStartups,
+      // flagshipInitiatives,
       teams,
       teamsTitle,
       teamsDesc,

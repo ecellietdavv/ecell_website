@@ -1,8 +1,8 @@
 import React from 'react'
 import PageNavigation from '../../components/Navigation/PageNavigation'
 import Alumni from '../../components/StudentCollaborations/Alumni'
-import StudentCollaborationsHero from '../../components/StudentCollaborations/StudentCollaborationsHero'
 import Volunteering from '../../components/StudentCollaborations/Volunteering'
+import HeroPage from '../../components/UtilComponents/HeroPage'
 import Partners from '../../components/UtilComponents/Partners'
 import POCs from '../../components/UtilComponents/POCs'
 import SectionDescCard from '../../components/UtilComponents/SectionDescCard'
@@ -25,7 +25,7 @@ function StudentCollaborations(props) {
     <main className='bg-white dark:bg-dark'>
       <PageNavigation navItems={navItems}></PageNavigation>
 
-      <StudentCollaborationsHero id="studentCollaboratorsHero" heroHeading={heroHeading} heroDescription={heroDescription} heroImage={heroImage} />
+      <HeroPage id="studentCollaboratorsHero" heroHeading={heroHeading} heroDescription={heroDescription} heroImage={heroImage} button1={{ name: "Volunteering", scrollTo: "volunteering" }} button2={{ name: "Alumni", scrollTo: "alumni" }} extraButton={{ name: "Contact Us for Event Collaborations", scrollTo: "sc_contact" }} />
       <Partners id="spos" content={partners} />
       <SectionDivider img={sectionImages[0]} />
       <SectionDescCard id="volunteering" name={volunteeringTitle} desc={volunteeringDesc} />

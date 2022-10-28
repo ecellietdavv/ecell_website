@@ -16,7 +16,7 @@ function Teams({ teams, id, title, desc }) {
         key={idx}
       >
         <div className="rounded-full relative overflow-hidden h-32 w-32">
-          <Image  loading="lazy"
+          <Image loading="lazy"
             layout="fill"
             objectFit="cover"
             className="duration-200 group-hover:scale-105 ease-in-out"
@@ -65,9 +65,9 @@ function Teams({ teams, id, title, desc }) {
   return (
     <section id={id} className="">
 
-      <SectionDescCard name={title} desc={desc}/>
+      <SectionDescCard name={title} desc={desc} />
 
-      <div className="flex bg-dark dark:bg-mid h-full xl:flex-row flex-col xl:h-screen">
+      <div className="flex bg-dark dark:bg-mid h-full xl:flex-row flex-col xl:h-screen max-h-[1080px] ">
         <div className="xl:w-1/4 xl:h-3/4 m-auto min-h-[300px] h-full grid xl:grid-cols-1 sm:grid-cols-4 grid-cols-3 py-10 justify-center items-center gap-10 xl:gap-0 sm:py-4 px-6 ">
           {teams &&
             teams?.map((team, idx) => {

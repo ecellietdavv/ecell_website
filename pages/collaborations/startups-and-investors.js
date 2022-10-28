@@ -4,7 +4,7 @@ import CaseStudies from '../../components/StartupAndInvestors/CaseStudies'
 import FoundingTestimonials from '../../components/StartupAndInvestors/FoundingTestimonials'
 import IdeasAndInvestors from '../../components/StartupAndInvestors/IdeasAndInvestors'
 import Mentors from '../../components/StartupAndInvestors/Mentors'
-import SAndIHero from '../../components/StartupAndInvestors/SAndIHero'
+import HeroPage from '../../components/UtilComponents/HeroPage'
 import POCs from '../../components/UtilComponents/POCs'
 import SectionDescCard from '../../components/UtilComponents/SectionDescCard'
 import SectionDivider from '../../components/UtilComponents/SectionDivider'
@@ -27,7 +27,10 @@ function StartupsAndInvestors(props) {
   return (
     <main className='bg-white dark:bg-dark'>
       <PageNavigation navItems={navItems}></PageNavigation>
-      <SAndIHero id="startupHero" heroHeading={heroHeading} heroDescription={heroDescription} heroImage={heroImage} metaTags={metaTags} />
+      <HeroPage id="startupHero" heroHeading={heroHeading} heroDescription={heroDescription} heroImage={heroImage} button1={{ name: "Join Us", scrollTo: "joinus" }}
+        button2={{ name: "Case Studies", scrollTo: "caseStudies" }}
+        extraButton={{ name: "Contact Us for Assistance", scrollTo: "s_and_i_pocs" }}
+      />
       <SectionDivider img={sectionImages[0]} />
       <SectionDescCard id="mentors" name={mentorTitle} desc={mentorDesc} />
       <Mentors mentors={mentors} />

@@ -60,6 +60,20 @@ const getEventsQuery = `
     }
 `
 
+const getStartupsQuery = `
+    *[_type=="startups" && name==$category][0]{
+        _id,
+        name,
+        desc,
+        startups[]{
+            _type == 'reference' => @->{
+                ...,
+                blog->{slug}
+            }
+        } | order(date desc)
+    }
+`
+
 const getInitiativesQuery = `
     *[_type=="initiatives" && name==$category][0]{
         _id,
@@ -220,4 +234,4 @@ const getVolunteeringQuery = `
     }
 `
 
-module.exports = { getPageQuery, getTestimonialsQuery, getTFCContentQuery, getAboutContentQuery, getVisionContentQuery, getEventsQuery, getInitiativesQuery, getTeamsQuery, getBlogContentQuery, getBlogStaticPathsQuery, getBlogsQuery, getStepsQuery, getPartnersQuery, getCaseStudiesQuery, getMentorsQuery, getIdeaAndInvestorsQuery, getAlumniQuery, getVolunteeringQuery }
+module.exports = { getPageQuery, getStartupsQuery, getTestimonialsQuery, getTFCContentQuery, getAboutContentQuery, getVisionContentQuery, getEventsQuery, getInitiativesQuery, getTeamsQuery, getBlogContentQuery, getBlogStaticPathsQuery, getBlogsQuery, getStepsQuery, getPartnersQuery, getCaseStudiesQuery, getMentorsQuery, getIdeaAndInvestorsQuery, getAlumniQuery, getVolunteeringQuery }

@@ -23,12 +23,12 @@ function HomeHero({ id, heading, img, desc }) {
         backgroundPosition: "center center",
         backgroundImage: `url('${imgUrl}')`,
       }}
-      className="h-72 sm:h-[600px] lg:h-screen w-full"
+      className="h-72 sm:h-[600px] max-h-[1080px] lg:h-screen w-full"
     >
       {loading && (
         <Image
           alt="E-Cell IET DAVV - LOGO"
-          loading="eager"
+          priority
           layout="fill"
           objectFit="cover"
           className="fixed top-0 h-screen w-screen z-50"
@@ -55,9 +55,9 @@ function HomeHero({ id, heading, img, desc }) {
           </motion.div>
 
           <motion.div
-            animate={{ scale: [2, 1], y: [-2, 0] }}
-            transition={{ delay: 2, duration: 3 }}
+            animate={{ opacity: [0, 1], y: [-2, 0] }}
             viewport={{ once: true }}
+            transition={{ delay: 3.5, duration: 2 }}
             className="relative w-20 h-20 sm:w-36 sm:h-36 xl:w-48 xl:h-48"
           >
             <Image
@@ -82,10 +82,10 @@ function HomeHero({ id, heading, img, desc }) {
             </h2>
           </div>
 
-          <div className="flex flex-col items-center justify-center">
-            <GiTrophyCup className="sm:text-6xl text-3xl text-yellow-300" />
+          <div className="flex flex-col items-center justify-center py-1 sm:py-2">
+            <GiTrophyCup className="lg:text-6xl sm:text-4xl text-3xl text-yellow-300" />
             <div className="bg-gradient-to-r from-brand-500 text-white to-brand-600 px-4 sm:px-10 py-0 sm:py-1 lg:py-2 text-xs sm:text-md md:text-lg lg:text-xl font-semibold">
-              <h1>Think. Feel. Collaborate</h1>
+              <h1>Think. Feel. Collaborate.</h1>
             </div>
           </div>
         </div>

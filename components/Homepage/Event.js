@@ -11,6 +11,7 @@ import ItemsCarousel from 'react-items-carousel';
 import { useEffect } from "react";
 import { randomIage } from "../../utils/randomAssets";
 import Link from "next/link";
+import PortableText from "react-portable-text";
 
 const Event = ({ content, id }) => {
 
@@ -20,30 +21,55 @@ const Event = ({ content, id }) => {
 		const [show, setShow] = useState(false);
 		return (
 			<div
-				className="flex py-4 group cursor-pointer flex-col text-center text-dark dark:text-light justify-start items-center h-full space-y-2 bg-light rounded-lg border border-light shadow-md dark:bg-dark dark:border-mid"
+				className="flex pb-4 group cursor-pointer flex-col text-center text-dark dark:text-light justify-start items-center h-full space-y-2 bg-light rounded-lg border border-light shadow-md dark:bg-dark dark:border-mid"
 				key={idx}
 				onClick={() => setShow(!show)}
 			>
-				<div className="h-52 bg-light overflow-hidden">
+				<div className="h-52 bg-dark/10 dark:bg-light overflow-hidden flex justify-center items-center p-6">
 					<Image loading="lazy"
 						src={img}
 						alt={name}
 						height={490}
 						width={600}
-						className="object-cover group-hover:scale-105 ease-in-out duration-200"
+						className="object-contain group-hover:scale-105 ease-in-out duration-200"
 					/>
 				</div>
 
 				<h3
-					className={`${show ? "text-brand-500 text-xl border-brand-500" : "text-xl"
+					className={`${show ? "text-brand-500 text-xl font-bold border-brand-500" : "text-xl font-bold"
 						}`}
 				>
 					{name}
 				</h3>
 				{show ?
-					<div className="space-y-2">
-						<p className="px-6">{desc}</p>
-						{slug && <Link href={`/blogs/${slug}`}>Read More ...</Link>}
+					<div className="">
+						<PortableText
+							className='px-6 py-2 line-clamp-3'
+							dataset={process.env.NEXT_PUBLIC_SANITY_DATASET}
+							projectId={process.env.NEXT_PUBLIC_SANITY_PROJECT_ID}
+							content={desc}
+							serializers={{
+								h1: (props) => {
+									return <h1 className='text-2xl font-bold my-5' {...props} />
+								},
+								h2: (props) => {
+									return <h2 className='text-xl font-bold my-5' {...props} />
+								},
+								h3: (props) => {
+									return <h3 className='text-xl font-bold my-5' {...props} />
+								},
+								h4: (props) => {
+									return <h4 className='text-xl font-bold my-5' {...props} />
+								},
+								li: ({ children }) => {
+									return <li className='ml-4 list-disc'>{children}</li>
+								},
+								link: ({ href, children }) => {
+									<a href={href} className='text-blue-500 hover:underline'>{children}</a>
+								},
+							}}
+						/>
+						{slug && <span className="font-semibold"><Link href={`/blogs/${slug}`}>Read More ...</Link></span>}
 					</div>
 					: null
 				}

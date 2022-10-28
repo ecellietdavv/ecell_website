@@ -1,6 +1,6 @@
 import React from 'react'
 
-function SectionDescCard({name, desc, id}) {
+function SectionDescCard({ name, desc, id }) {
     return (
         <div id={id} className="bg-brand-500 h-[50vh] max-h-[400px] flex flex-col items-center justify-center md:py-0 text-light">
             <div className="max-w-7xl w-full flex flex-col items-center justify-center space-y-5">

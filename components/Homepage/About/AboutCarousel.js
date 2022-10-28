@@ -1,6 +1,5 @@
 import Image from 'next/image'
 import React, { useState } from 'react'
-import { urlFor } from '../../../utils/sanity'
 import ItemsCarousel from 'react-items-carousel';
 import { BiChevronRight, BiChevronLeft } from "react-icons/bi";
 
@@ -22,13 +21,13 @@ function AboutCarousel({ images }) {
                 showSlither={false}
             >
                 <div className="w-full h-full">
-                    <Image loading="lazy" src={images?.img1} className="object-cover" height={200} width={400} />
+                    <Image alt="Ecell IET DAVV About Image 1" loading="lazy" src={images?.img1} className="object-cover" height={200} width={400} />
                 </div>
                 <div className="w-full h-full">
-                    <Image loading="lazy" src={images?.img2} className="object-cover" height={200} width={400} />
+                    <Image alt="Ecell IET DAVV About Image 2" loading="lazy" src={images?.img2} className="object-cover" height={200} width={400} />
                 </div>
                 <div className="w-full h-full">
-                    <Image loading="lazy" src={images?.img3} className="object-cover" height={200} width={400} />
+                    <Image alt="Ecell IET DAVV About Image 3" loading="lazy" src={images?.img3} className="object-cover" height={200} width={400} />
                 </div>
             </ItemsCarousel>
         </div>

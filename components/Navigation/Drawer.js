@@ -32,7 +32,7 @@ function Drawer() {
             })}
             <Dropdown name="Collaborations" items={dropdownItems} />
           </ul>
-          <button type="button" onClick={() => handleScroll("footer")} className="bg-brand-400 py-3 px-4 rounded-lg my-2 bg-gradient-to-r from-brand-500 to-brand-600 hover:to-brand-600 text-white w-full">Contact Us</button>
+          <button type="button" onClick={() => handleScroll("footer")} className="text-white w-full justify-center bg-gradient-to-r from-brand-500 to-brand-600 hover:to-brand-600 rounded-lg sm:rounded-full px-4 py-3 sm:py-2 text-center inline-flex items-center space-x-2">Contact Us</button>
         </div>
       </div>
     </nav>

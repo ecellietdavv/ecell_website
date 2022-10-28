@@ -1,7 +1,7 @@
 import React from 'react'
-import InitiativesHero from '../components/Initiatives/InitiativesHero'
 import Timeline from '../components/Initiatives/Timeline'
 import PageNavigation from '../components/Navigation/PageNavigation'
+import HeroPage from '../components/UtilComponents/HeroPage'
 import SectionDivider from '../components/UtilComponents/SectionDivider'
 import { getInitiativesQuery, getPageQuery } from '../utils/queries'
 import { sanityClient } from '../utils/sanity'
@@ -17,13 +17,12 @@ function initiatives({ allInitiatives, flagshipInitiatives, heroHeading, heroDes
   return (
     <main>
       <PageNavigation navItems={navItems}></PageNavigation>
-      <InitiativesHero id="initiativesHome" heroHeading={heroHeading} heroDescription={heroDescription} heroImage={heroImage} />
+      <HeroPage id="initiativesHome" heroHeading={heroHeading} heroDescription={heroDescription} heroImage={heroImage} button1={{ name: "Flagship Initiatives", scrollTo: "flagshipInitiatives" }} button2={{ name: "All Initiatives", scrollTo: "allInitiatives" }} />
       <SectionDivider img={sectionImages[0]} />
       <Timeline initiatives={flagshipInitiatives?.initiatives} name={flagshipInitiatives?.name} id="flagshipInitiatives" desc={flagshipInitiatives?.desc} />
       <SectionDivider img={sectionImages[1]} />
       <Timeline initiatives={allInitiatives?.initiatives} name={allInitiatives?.name} id="allInitiatives" desc={allInitiatives?.desc} />
       <SectionDivider img={sectionImages[2]} />
-
     </main>
   )
 }

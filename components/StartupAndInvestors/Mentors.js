@@ -6,8 +6,8 @@ import { randomPersonImage } from '../../utils/randomAssets'
 const Mentors = ({ mentors }) => {
 
     return (
-        <section className='py-10 lg:p-10'>
-            <div className="grid sm:grid-cols-2 gap-10 py-4 mx-4 dark:bg-dark">
+        <section className='py-10 lg:p-10 max-w-7xl mx-auto'>
+            <div className="grid sm:grid-cols-2 gap-10 py-4 mx-auto dark:bg-dark">
                 {mentors.map((mentor, idx) => {
                     const { name, img, designation, _id } = mentor
                     const imgUrl = img ? urlFor(img).url() : randomPersonImage

@@ -1,6 +1,6 @@
 export default {
-    name: 'event',
-    title: 'Event',
+    name: 'startup',
+    title: 'Startup',
     type: 'document',
     fields: [
         {
@@ -13,8 +13,13 @@ export default {
             ]
         },
         {
+            name: 'website',
+            title: 'Website',
+            type: 'string',
+        },
+        {
             name: 'date',
-            title: 'Date Of Event',
+            title: 'Date Of Establishment',
             type: 'date',
             options: {
                 dateFormat: 'DD-MM-YYYY',
@@ -31,7 +36,7 @@ export default {
         },
         {
             name: 'blog',
-            title: 'Event Blog',
+            title: 'Startup Blog',
             type: 'reference',
             to: { type: 'post' }
         },

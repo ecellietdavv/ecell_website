@@ -11,12 +11,12 @@ export default {
         {
             name: 'heroHeading',
             title: 'Hero Heading',
-            type: 'string',
+            type: 'blockContent',
         },
         {
             name: 'heroDescription',
             title: 'Hero Description',
-            type: 'string',
+            type: 'blockContent',
         },
         {
             name: "heroImage",

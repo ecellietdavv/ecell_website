@@ -43,6 +43,8 @@ import alumnies from './alumni/alumnies'
 import mentors from './mentor/mentors'
 import teams from './teams/teams'
 import parallaxImage from './parallaxImage'
+import startup from './startups/startup'
+import startups from './startups/startups'
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -73,6 +75,9 @@ export default createSchema({
 
     event,
     events,
+
+    startup,
+    startups,
 
     page,
     parallaxImage,

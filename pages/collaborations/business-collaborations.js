@@ -1,15 +1,14 @@
 import React from 'react'
-import BusinessHero from '../../components/BusinessCollaborations/BusinessHero'
 import POCs from '../../components/UtilComponents/POCs'
 import StepsSection from '../../components/BusinessCollaborations/StepsSection'
 import Testimonials from '../../components/BusinessCollaborations/Testimonials'
 import PageNavigation from '../../components/Navigation/PageNavigation'
 import Partners from '../../components/UtilComponents/Partners'
-import POC from '../../components/UtilComponents/POC'
 import SectionDescCard from '../../components/UtilComponents/SectionDescCard'
 import SectionDivider from '../../components/UtilComponents/SectionDivider'
 import { getPageQuery, getPartnersQuery, getStepsQuery, getTestimonialsQuery } from '../../utils/queries'
 import { sanityClient } from '../../utils/sanity'
+import HeroPage from '../../components/UtilComponents/HeroPage'
 
 function BusinessCollaborations(props) {
 
@@ -27,7 +26,7 @@ function BusinessCollaborations(props) {
     <main className='bg-white dark:bg-dark'>
       <PageNavigation navItems={navItems}></PageNavigation>
 
-      <BusinessHero id="businessHero" heroHeading={heroHeading} heroDescription={heroDescription} heroImage={heroImage} />
+      <HeroPage id="businessHero" heroHeading={heroHeading} heroDescription={heroDescription} heroImage={heroImage} button1={{ name: "Past Sponsors", scrollTo: "sponsors" }} button2={{ name: "Testimonials", scrollTo: "testimonials" }} extraButton={{ name: "Contact Us for Collaborations", scrollTo: "businessPocs" }} />
       <Partners id="sponsors" content={partners} />
       <SectionDivider img={sectionImages[0]} />
       <StepsSection content={stepsForFlagshipEvents} id="flagshipEvents" />

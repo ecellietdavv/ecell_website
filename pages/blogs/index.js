@@ -10,8 +10,8 @@ import Newsletter from '../../components/UtilComponents/Newsletter'
 import SectionDivider from '../../components/UtilComponents/SectionDivider'
 import SectionDescCard from '../../components/UtilComponents/SectionDescCard'
 import PageNavigation from '../../components/Navigation/PageNavigation'
-import { handleScroll } from '../../utils/utilityFunctions'
-import { motion } from 'framer-motion'
+import HeroPage from '../../components/UtilComponents/HeroPage'
+import moment from 'moment'
 
 function Index({ featuredBlogs, allBlogs, heroHeading, heroDescription, heroImage, metaTags, pocs, sectionImages }) {
 
@@ -24,7 +24,7 @@ function Index({ featuredBlogs, allBlogs, heroHeading, heroDescription, heroImag
                     </div>
                     <div className="p-6 space-y-2">
                         <h3 className="text-2xl font-semibold group-hover:underline group-focus:underline">{title}</h3>
-                        <span className="text-xs dark:text-gray-400">{publishedAt}</span>
+                        <span className="text-xs dark:text-gray-400">{moment(publishedAt).format('MMMM Do YYYY, h:mm:ss a')}</span>
                         <p>{description}</p>
                     </div>
                 </div>
@@ -41,7 +41,7 @@ function Index({ featuredBlogs, allBlogs, heroHeading, heroDescription, heroImag
                     </div>
                     <div className="p-6 space-y-2 lg:col-span-5">
                         <h3 className="text-2xl font-semibold sm:text-4xl group-hover:underline group-focus:underline">{title}</h3>
-                        <span className="text-xs dark:text-gray-400">{publishedAt}</span>
+                        <span className="text-xs dark:text-gray-400">{moment(publishedAt).format('MMMM Do YYYY, h:mm:ss a')}</span>
                         <p>{description}</p>
                     </div>
                 </div>
@@ -71,23 +71,7 @@ function Index({ featuredBlogs, allBlogs, heroHeading, heroDescription, heroImag
         <main className="dark:bg-dark dark:text-gray-100 relative">
             <PageNavigation navItems={navItems}></PageNavigation>
 
-            {/* Blogs Hero  */}
-            <section id='blogsHome' className="dark:text-gray-100">
-                <div className="container justify-center mx-auto flex flex-col items-center px-4 text-center md:px-10 lg:px-32 min-h-[700px]">
-                    <div className="max-w-7xl">
-                        <motion.h1 animate={{y:[50,0],opacity:[0,1]}} transition={{duration:2 ,bounce:1}} className="text-4xl font-bold leading-none sm:text-5xl">
-                            {heroHeading}
-                        </motion.h1>
-                        <motion.p animate={{y:[50,0],opacity:[0,1]}} transition={{delay:0.7,duration:2 ,bounce:1}} className="px-8 w-3/4 mx-auto mt-8 mb-12 text-lg">
-                            {heroDescription}
-                        </motion.p>
-                        <div className="flex flex-wrap justify-center">
-                            <motion.button animate={{x:[50,0],opacity:[0,1]}} transition={{delay:0.8,duration:2 ,bounce:1}} className="px-8 py-3 m-2 text-lg font-semibold rounded bg-cyan-400 text-dark" onClick={() => { handleScroll("featuredBlogs") }}>Featured</motion.button>
-                            <motion.button animate={{x:[-50,0],opacity:[0,1]}} transition={{delay:0.8,duration:2 ,bounce:1}} onClick={() => { handleScroll("allBlogs") }} className="px-8 py-3 m-2 text-lg border rounded dark:text-gray-50 dark:border-gray-700">All</motion.button>
-                        </div>
-                    </div>
-                </div>
-            </section>
+            <HeroPage id='blogsHome' heroHeading={heroHeading} heroDescription={heroDescription} heroImage={heroImage} button1={{ name: "Featured Blogs", scrollTo: "featuredBlogs" }} button2={{ name: "All Blogs", scrollTo: "allBlogs" }} />
 
             <SectionDivider img={sectionImages[0]} />
 

@@ -3,8 +3,7 @@ import Link from 'next/link';
 import React from 'react'
 import { useEffect } from 'react';
 import { useState } from 'react';
-import { AiOutlineArrowRight } from 'react-icons/ai'
-import { BsArrowUpSquareFill } from 'react-icons/bs'
+import PortableText from 'react-portable-text';
 import { randomImage } from '../../utils/randomAssets';
 import { urlFor } from '../../utils/sanity';
 import ViewMore from '../UtilComponents/ViewMore';
@@ -16,11 +15,11 @@ function EventsListSection({ name, sectionBio, id, events, Icon }) {
         return (
             <div className="w-full md:w-1/2 lg:w-1/3 px-4">
                 <div className="max-w-[370px] mx-auto mb-10">
-                    <div className="rounded w-full overflow-hidden">
+                    <div className="rounded w-full shadow-md overflow-hidden">
                         <Image
                             height={350}
                             width={600}
-                            objectFit="cover"
+                            objectFit="contain"
                             src={imgUrl}
                             alt={name}
                             className="w-full"
@@ -40,9 +39,32 @@ function EventsListSection({ name, sectionBio, id, events, Icon }) {
                             </span>
                             {blog?.slug?.current && <Link href={`/blogs/${blog?.slug?.current}`}><span className='cursor-pointer'>Read more..</span></Link>}
                         </h3>
-                        <p className="text-base text-body-color">
-                            {desc}
-                        </p>
+                        {/* <PortableText
+                            className='px-6 py-2 line-clamp-3'
+                            dataset={process.env.NEXT_PUBLIC_SANITY_DATASET}
+                            projectId={process.env.NEXT_PUBLIC_SANITY_PROJECT_ID}
+                            content={desc}
+                            serializers={{
+                                h1: (props) => {
+                                    return <h1 className='text-2xl font-bold my-5' {...props} />
+                                },
+                                h2: (props) => {
+                                    return <h2 className='text-xl font-bold my-5' {...props} />
+                                },
+                                h3: (props) => {
+                                    return <h3 className='text-xl font-bold my-5' {...props} />
+                                },
+                                h4: (props) => {
+                                    return <h4 className='text-xl font-bold my-5' {...props} />
+                                },
+                                li: ({ children }) => {
+                                    return <li className='ml-4 list-disc'>{children}</li>
+                                },
+                                link: ({ href, children }) => {
+                                    <a href={href} className='text-blue-500 hover:underline'>{children}</a>
+                                },
+                            }}
+                        /> */}
                     </div>
                 </div>
             </div>
