@@ -1,15 +1,15 @@
 const navItems = [
     { name: "Home", link: "/" },
-    { name: "Magazine", link: "/magazine" },
+    { name: "Startup & Investors", link: "/collaborations/startups-and-investors" },
     { name: "Events", link: "/events" },
-    { name: "Initiatives", link: "/initiatives" },
     { name: "Blogs", link: "/blogs" },
+    { name: "Magazine", link: "/magazine" },
+    { name: "Initiatives", link: "/initiatives" },
 ]
 
 const dropdownItems = [
-    { name: "Business Collaborations", link: "/collaborations/business-collaborations" },
-    { name: "Startup & Investors", link: "/collaborations/startups-and-investors" },
-    { name: "Student Collaboratios", link: "/collaborations/student-collaborations" },
+    { name: "Business Partnerships", link: "/collaborations/business-collaborations" },
+    { name: "Student Partnerships", link: "/collaborations/student-collaborations" },
 ]
 
 module.exports = { navItems, dropdownItems }
