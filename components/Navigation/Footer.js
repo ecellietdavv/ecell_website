@@ -14,10 +14,10 @@ function Footer() {
 	const navLinks = [
 		{ name: "Home", link: "/" },
 		{ name: "Events", link: "/events" },
+		{ name: "Startup", link: "/startups" },
 		{ name: "Initiatives", link: "/initiatives" },
 		{ name: "Blogs", link: "/blogs" },
 		{ name: "Business Collaborations", link: "/collaborations/business-collaborations" },
-		{ name: "Startup & Investors", link: "/collaborations/startups-and-investors" },
 		{ name: "Student Collaborations", link: "/collaborations/student-collaborations" },
 	];
 
@@ -58,7 +58,7 @@ function Footer() {
 
 	return (
 		<footer id="footer" className="bg-light dark:bg-dark dark:text-white py-4">
-			<div className="px-6 max-w-[1920px] md:px-10 pb-1 mx-auto">
+			<div className="px-6 max-w-screen-2xl md:px-10 pb-1 mx-auto">
 				<div className="grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1 space-y-8 sm:space-y-0 sm:gap-8 sm:space-x-4 my-8">
 
 					{/* Information  */}

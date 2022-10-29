@@ -27,20 +27,20 @@ function EventsListSection({ name, sectionBio, id, events, Icon }) {
                     </div>
                     <div>
                         <span
-                            className=" bg-primary rounded inline-block text-center py-1 px-4 text-xs leading-loose font-semibold dark:text-white"
+                            className=" bg-primary rounded inline-block text-center py-1 text-xs leading-loose font-semibold dark:text-white"
                         >
                             {date}
                         </span>
-                        <h3 className='flex justify-between items-center'>
+                        <h3 className='flex justify-between items-center font-bold text-xl sm:text-2xl lg:text-xl xl:text-2xl'>
                             <span
-                                className=" font-semibold text-xl sm:text-2xl lg:text-xl xl:text-2xl mb-4 inline-block hover:text-primary "
+                                className="  inline-block "
                             >
                                 {name}
                             </span>
                             {blog?.slug?.current && <Link href={`/blogs/${blog?.slug?.current}`}><span className='cursor-pointer'>Read more..</span></Link>}
                         </h3>
-                        {/* <PortableText
-                            className='px-6 py-2 line-clamp-3'
+                        <PortableText
+                            className='py-2 line-clamp-3'
                             dataset={process.env.NEXT_PUBLIC_SANITY_DATASET}
                             projectId={process.env.NEXT_PUBLIC_SANITY_PROJECT_ID}
                             content={desc}
@@ -64,7 +64,7 @@ function EventsListSection({ name, sectionBio, id, events, Icon }) {
                                     <a href={href} className='text-blue-500 hover:underline'>{children}</a>
                                 },
                             }}
-                        /> */}
+                        />
                     </div>
                 </div>
             </div>

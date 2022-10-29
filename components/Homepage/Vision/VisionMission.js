@@ -2,18 +2,26 @@ import React, { useContext } from 'react'
 import Image from 'next/image'
 import { urlFor } from '../../../utils/sanity'
 import ContentModal from './ContentModal'
-import AppContext from '../../../context/AppContext'
 import { randomImage } from '../../../utils/randomAssets'
+import { StoreContext } from '../../../utils/Store'
 
 function VisionMission({ content, id }) {
-    const appContext = useContext(AppContext)
-    const { openModal, handleModal } = appContext
+    const { state, dispatch } = useContext(StoreContext);
+    const { openModal } = state;
+
+    const handleModal = (contentModal) => {
+        openModal
+            ? dispatch({ type: 'CLOSE_MODAL' })
+            : dispatch({ type: 'OPEN_MODAL' });
+        dispatch({ type: 'SET_MODAL_CONTENT', payload: contentModal })
+    };
 
     const ContentCard = ({ content, halfWidth = false }) => {
         const { name, body, img } = content
         const imgUrl = img ? urlFor(img).url() : randomImage
+        const contentModal = { name: name, body: body }
         return (
-            <div onClick={() => handleModal({ name: name, body: body })} className={halfWidth ? "w-full cursor-pointer sm:w-1/2 relative group p-2" : "w-full cursor-pointer sm:w-full relative group p-2"}>
+            <div onClick={() => handleModal(contentModal)} className={halfWidth ? "w-full cursor-pointer sm:w-1/2 relative group p-2" : "w-full cursor-pointer sm:w-full relative group p-2"}>
                 <div className="relative">
                     <Image loading="lazy" height={400} width={600} alt={name} className={`block absolute object-cover object-center w-full h-full rounded-lg`}
                         src={imgUrl} />

@@ -15,12 +15,15 @@ const About = ({ content, id }) => {
     img3: content?.images?.img1 ? urlFor(content?.images?.img3)?.url() : randomImage,
   }
   return (
-    <section id={id} title="About Section" className="bg-light xl:max-h-screen max-h-full dark:bg-dark py-10 text-dark dark:text-white">
-      <div className="grid xl:grid-cols-2 max-w-[1920px] mx-auto sm:items-center xl:h-screen max-h-[1080px] overflow-hidden text-center xl:text-left">
-        <div className="flex flex-col space-y-10 py-10 xl:py-0 xl:space-y-14 mx-6 text-sm sm:text-base sm:mx-20">
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl underline underline-offset-8">{content?.heading}</h1>
+    <section id={id} title="About Section" className="bg-light max-w-screen-2xl dark:bg-dark py-10 text-dark dark:text-white">
+      <div className="grid xl:grid-cols-2 max-w-7xl mx-auto sm:items-center overflow-hidden text-center xl:text-left">
+        <div className="flex flex-col space-y-10 py-10 xl:py-0 xl:space-y-14 sm:mx-6 text-sm sm:text-base">
+          <div className="flex flex-col space-y-1 w-fit mx-auto xl:mx-0">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl w-fit">{content?.heading}</h1>
+            <Image src="/assets/Underline.svg" alt="underline" width="100%" height="50%" />
+          </div>
           <PortableText
-            className='dark:text-slate-300 mx-auto xl:mx-0 lg:w-3/4 space-y-3'
+            className='dark:text-slate-300 mx-auto xl:mx-0 w-3/4 xl:w-5/6 space-y-3'
             dataset={process.env.NEXT_PUBLIC_SANITY_DATASET}
             projectId={process.env.NEXT_PUBLIC_SANITY_PROJECT_ID}
             content={content?.body}

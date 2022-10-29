@@ -33,8 +33,13 @@ export default {
             of: [{
                 type: "object", fields: [
                     {
-                        name: "key",
-                        title: "Key",
+                        name: "name",
+                        title: "Name",
+                        type: "string",
+                    },
+                    {
+                        name: "content",
+                        title: "Content",
                         type: "string",
                     }
                 ]

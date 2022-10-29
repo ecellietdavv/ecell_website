@@ -22,7 +22,7 @@ function Index({ featuredBlogs, allBlogs, heroHeading, heroDescription, heroImag
                     <div className="h-48 relative w-full rounded dark:bg-gray-500">
                         <Image alt={title} role="presentation" layout='fill' objectFit='cover' src={urlFor(mainImage).url()} />
                     </div>
-                    <div className="p-6 space-y-2">
+                    <div className="sm:p-6 py-6 space-y-2">
                         <h3 className="text-2xl font-semibold group-hover:underline group-focus:underline">{title}</h3>
                         <span className="text-xs dark:text-gray-400">{moment(publishedAt).format('MMMM Do YYYY, h:mm:ss a')}</span>
                         <p>{description}</p>
@@ -39,7 +39,7 @@ function Index({ featuredBlogs, allBlogs, heroHeading, heroDescription, heroImag
                     <div className="relative w-full rounded lg:col-span-7 h-48 sm:h-96 dark:bg-mid">
                         <Image layout='fill' objectFit='cover' src={urlFor(mainImage).url()} alt={title} />
                     </div>
-                    <div className="p-6 space-y-2 lg:col-span-5">
+                    <div className="sm:p-6 py-6 space-y-2 lg:col-span-5">
                         <h3 className="text-2xl font-semibold sm:text-4xl group-hover:underline group-focus:underline">{title}</h3>
                         <span className="text-xs dark:text-gray-400">{moment(publishedAt).format('MMMM Do YYYY, h:mm:ss a')}</span>
                         <p>{description}</p>
@@ -76,8 +76,8 @@ function Index({ featuredBlogs, allBlogs, heroHeading, heroDescription, heroImag
             <SectionDivider img={sectionImages[0]} />
 
             <section id='featuredBlogs' className="mx-auto">
-                <SectionDescCard name="Featured Blogs" desc="awduihuiawdhiuhwauidhui" />
-                <div className="p-6 max-w-7xl mx-auto">
+                <SectionDescCard name="Featured Blogs" desc="Our fetured blogs" />
+                <div className="px-6 xl:px-0 py-10 sm:py-20 max-w-7xl mx-auto">
 
                     <ItemsCarousel
                         requestToChangeActive={setActiveItemIndex}
@@ -107,10 +107,10 @@ function Index({ featuredBlogs, allBlogs, heroHeading, heroDescription, heroImag
             <SectionDivider img={sectionImages[1]} />
 
             {/* All Blogs  */}
-            <section id='allBlogs' className='container max-w-[1920px] mx-auto'>
-                <SectionDescCard name="All Blogs" desc="awduihuiawdhiuhwauidhui" />
-                <div style={{ height: 500 * loadMore }} className="relative pb-20 p-6 overflow-hidden">
-                    <div className="grid justify-center grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            <section id='allBlogs' className='container max-w-screen-2xl mx-auto'>
+                <SectionDescCard name="All Blogs" desc="All of our listed blogs" />
+                <div style={{ height: 700 * loadMore }} className="relative pb-20 p-6 overflow-hidden">
+                    <div className="grid py-10 sm:py-20 justify-center grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
                         {
                             allBlogs?.blogs && allBlogs?.blogs?.map((blog, idx) => {
                                 const { slug, title, description, mainImage, publishedAt } = blog

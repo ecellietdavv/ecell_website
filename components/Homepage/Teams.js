@@ -64,7 +64,6 @@ function Teams({ teams, id, title, desc }) {
 
   return (
     <section id={id} className="">
-
       <SectionDescCard name={title} desc={desc} />
 
       <div className="flex bg-dark dark:bg-mid h-full xl:flex-row flex-col xl:h-screen max-h-[1080px] ">

@@ -29,8 +29,15 @@ function HomePage({ flagshipEvents, flagshipInitiatives, flagshipStartups, teams
   return (
     <main className="w-full">
       <Head>
-        <meta name="description" content="" />
-        <meta name="keywords" content="ecell, E-cell, ietdavv, ecelliet, ietclubs, ietsocieties, ecelldavv, davv, ietdavv, engineering davv, ietdavv.edu.in, clubs in ietdavv, engineering, science, enterpreneurship, tech, web, html, jsx, css, nextjs, colleges in indore, colleges with ecell" />
+        {/* <meta name="description" content="" />
+        <meta name="keywords" content="ecell, E-cell, ietdavv, ecelliet, ietclubs, ietsocieties, ecelldavv, davv, ietdavv, engineering davv, ietdavv.edu.in, clubs in ietdavv, engineering, science, enterpreneurship, tech, web, html, jsx, css, nextjs, colleges in indore, colleges with ecell" /> */}
+
+        {
+          metaTags && metaTags?.map((tag, idx) => {
+            const { name, content } = tag
+            return <meta name={name} content={content} key={idx} />
+          })
+        }
       </Head>
 
       <PageNavigation navItems={navItems}></PageNavigation>

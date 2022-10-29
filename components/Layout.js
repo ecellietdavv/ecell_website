@@ -9,7 +9,7 @@ export default function Layout({ children }) {
         <>
             <Navbar />
             <Drawer />
-            <main className="mt-20 max-w-[1920px] mx-auto relative">{children}</main>
+            <main className="mt-20 max-w-screen-2xl mx-auto relative">{children}</main>
             <Footer />
             <ToastContainer
                 position="top-right"

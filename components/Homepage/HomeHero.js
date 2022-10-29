@@ -4,6 +4,7 @@ import { useState } from "react";
 import { GiTrophyCup } from "react-icons/gi";
 import { urlFor } from "../../utils/sanity";
 import { motion } from "framer-motion";
+import PortableText from "react-portable-text";
 
 function HomeHero({ id, heading, img, desc }) {
   const [loading, setLoading] = useState(true);
@@ -70,16 +71,46 @@ function HomeHero({ id, heading, img, desc }) {
           </motion.div>
 
           <div className="flex-col hidden sm:flex text-white items-center">
-            <motion.h1
+            <motion.div
               transition={{ delay: 3.5, duration: 1.5 }}
               animate={{ y: [50, 0], opacity: [0, 1] }}
-              className="uppercase font-extrabold text-sm sm:text-md md:text-2xl lg:text-3xl"
+              className=""
             >
-              {heading}
-            </motion.h1>
-            <h2 className="uppercase sm:text-2xl text-gray-300 font-bold">
-              {desc}
-            </h2>
+              <PortableText
+                className='uppercase font-extrabold text-sm sm:text-md md:text-2xl lg:text-3xl'
+                dataset={process.env.NEXT_PUBLIC_SANITY_DATASET}
+                projectId={process.env.NEXT_PUBLIC_SANITY_PROJECT_ID}
+                content={heading}
+                serializers={{
+                  strong: ({ children }) => {
+                    return <strong className='text-brand-400'>{children}</strong>
+                  },
+                }}
+              />
+            </motion.div>
+            <PortableText
+              className="uppercase sm:text-2xl text-gray-300 font-bold"
+              dataset={process.env.NEXT_PUBLIC_SANITY_DATASET}
+              projectId={process.env.NEXT_PUBLIC_SANITY_PROJECT_ID}
+              content={desc}
+              serializers={{
+                h1: (props) => {
+                  return <h1 className='text-2xl font-bold my-5' {...props} />
+                },
+                h2: (props) => {
+                  return <h2 className='text-xl font-bold my-5' {...props} />
+                },
+                h3: (props) => {
+                  return <h3 className='text-xl font-bold my-5' {...props} />
+                },
+                h4: (props) => {
+                  return <h4 className='text-xl font-bold my-5' {...props} />
+                },
+                li: ({ children }) => {
+                  return <li className='ml-4 list-disc'>{children}</li>
+                },
+              }}
+            />
           </div>
 
           <div className="flex flex-col items-center justify-center py-1 sm:py-2">
