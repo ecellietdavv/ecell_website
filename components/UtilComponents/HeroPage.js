@@ -11,7 +11,7 @@ function HeroPage({ id, heroHeading, heroDescription, heroImage, button1, button
     return (
         <section id={id} className="dark:bg-dark dark:text-gray-100">
             <div className="container flex flex-col justify-center py-6 px-2 sm:p-6 mx-auto sm:py-12 lg:py-24 lg:flex-row lg:justify-between">
-                <div className="flex flex-col justify-center py-6 px-2 sm:p-6 text-center rounded-sm lg:max-w-md xl:max-w-lg lg:text-left">
+                <div className="flex flex-col justify-center py-6 px-2 sm:p-6 text-center rounded-sm lg:max-w-lg xl:max-w-xl lg:text-left">
                     <motion.div animate={{ y: [50, 0], opacity: [0, 1] }} transition={{ duration: 2, bounce: 1 }} className="text-5xl font-bold leading-none xl:text-6xl">
                         <PortableText
                             className=''

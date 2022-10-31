@@ -25,7 +25,7 @@ function BlogPost(props) {
     const [submitted, setSubmitted] = useState(false);
 
     return (
-        <main className="mt-10 dark:bg-dark dark:text-light">
+        <main className="dark:bg-dark pb-20 dark:text-light">
             <div className="mb-4 md:mb-0 w-full max-w-7xl mx-auto relative h-96">
                 <div className="absolute left-0 bottom-0 w-full h-full z-10 blogBannerGradient" />
                 <Image alt={post?.title} layout="fill" objectFit='cover' src={urlFor(post?.mainImage).url()} className="absolute left-0 top-0 w-full h-full z-0 object-cover" />
@@ -79,7 +79,7 @@ function BlogPost(props) {
                                 return <li className='ml-4 list-disc'>{children}</li>
                             },
                             link: ({ href, children }) => {
-                                <a href={href} className='text-blue-500 hover:underline'>{children}</a>
+                                return <a href={href} target="_blank" rel="noreferrer" className='text-blue-500 hover:underline'>{children}</a>
                             },
                         }}
                     />
@@ -103,11 +103,11 @@ function BlogPost(props) {
                         <input {...register("_id")} type="hidden" name="_id" value={post?._id} />
                         <label className='block mb-5'>
                             <span className='text-grey-700'>Name</span>
-                            <input {...register("name", { required: true })} className='shadow border rounded form-input px-3 py2 mt-1 block w-full outline-none' placeholder='Your Name' type="text" name="name" id="name" />
+                            <input {...register("name", { required: true })} className='shadow border rounded form-input px-3 py-2 mt-1 block w-full outline-none' placeholder='Your Name' type="text" name="name" id="name" />
                         </label>
                         <label className='block mb-5'>
                             <span className='text-grey-700'>Email</span>
-                            <input {...register("email", { required: true })} className='shadow border rounded form-input px-3 py2 mt-1 block w-full outline-none' placeholder='Your Name' type="email" name="email" id="email" />
+                            <input {...register("email", { required: true })} className='shadow border rounded form-input px-3 py-2 mt-1 block w-full outline-none' placeholder='Your Name' type="email" name="email" id="email" />
                         </label>
                         <label className='block mb-5'>
                             <span className='text-grey-700'>Comment</span>
@@ -132,7 +132,7 @@ function BlogPost(props) {
             }
 
             {/* Comments */}
-            <div className="flex flex-col p-10 my-10 max-w-2xl mx-auto shadow shadow-brand-500 space-y-2">
+            <div className="flex flex-col p-10 max-w-2xl mx-auto shadow shadow-brand-500 space-y-2">
                 <h3 className='text-4xl'>Comments</h3>
                 <hr className='pb-2' />
                 {
