@@ -29,6 +29,7 @@ function HomePage({ flagshipEvents, flagshipInitiatives, flagshipStartups, teams
   return (
     <main className="w-full">
       <Head>
+        <title>E-CELL IET DAVV | Home</title>
         {
           metaTags && metaTags?.map((tag, idx) => {
             const { name, content } = tag

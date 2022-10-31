@@ -50,7 +50,7 @@ function HomeHero({ id, heading, img, desc }) {
               Winners
             </div>
             <div className="uppercase text-xs md:text-lg text-white font-bold items-center py-1 flex flex-col px-5 bg-black">
-              <h2>National Enterpreneurship Challenge</h2>
+              <h2>National Entrepreneurship Challenge</h2>
               <h2>IIT Bombay</h2>
             </div>
           </motion.div>

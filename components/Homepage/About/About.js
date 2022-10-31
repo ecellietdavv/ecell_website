@@ -16,7 +16,7 @@ const About = ({ content, id }) => {
   }
   return (
     <section id={id} title="About Section" className="bg-light max-w-screen-2xl dark:bg-dark pt-10 text-dark dark:text-white">
-      <div className="grid xl:grid-cols-2 sm:items-center overflow-hidden text-center xl:text-left">
+      <div className="grid xl:grid-cols-2 max-w-7xl mx-auto sm:items-center overflow-hidden text-center xl:text-left">
         <div className="flex flex-col space-y-10 py-10 xl:py-0 xl:space-y-14 sm:mx-6 text-sm sm:text-base">
           <div className="flex flex-col space-y-1 w-fit mx-auto xl:mx-0">
             <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl w-fit">{content?.heading}</h1>
@@ -28,9 +28,9 @@ const About = ({ content, id }) => {
             projectId={process.env.NEXT_PUBLIC_SANITY_PROJECT_ID}
             content={content?.body}
           />
-          <div className="flex justify-center xl:justify-start item-center">
+          {/* <div className="flex justify-center xl:justify-start item-center">
             <GradientButton name="Know More" link="/" Icon={AiOutlineArrowRight} />
-          </div>
+          </div> */}
         </div>
 
         <div className="hidden sm:flex xl:-rotate-45 px-10 py-10 xl:py-0 lg:px-24 xl:px-0 flex-col items-center overflow-hidden space-y-4 w-full">

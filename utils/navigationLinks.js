@@ -8,9 +8,9 @@ const navItems = [
 ]
 
 const dropdownItems = [
-    { name: "Business Collaborations", link: "/collaborations/business-collaborations" },
+    { name: "Business Partnerships", link: "/collaborations/business-collaborations" },
     // { name: "Startup & Investors", link: "/collaborations/startups-and-investors" },
-    { name: "Student Collaboratios", link: "/collaborations/student-collaborations" },
+    { name: "Student Partnerships", link: "/collaborations/student-collaborations" },
 ]
 
 module.exports = { navItems, dropdownItems }
