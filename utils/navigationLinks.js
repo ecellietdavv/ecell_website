@@ -2,8 +2,8 @@ const navItems = [
     { name: "Home", link: "/" },
     { name: "Startups", link: "/startups" },
     { name: "Events", link: "/events" },
-    { name: "Magazine", link: "/magazine" },
-    { name: "Blogs", link: "/blogs" },
+    // { name: "Magazine", link: "/magazine" },
+    // { name: "Blogs", link: "/blogs" },
     { name: "Initiatives", link: "/initiatives" },
 ]
 
