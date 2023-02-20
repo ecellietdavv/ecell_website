@@ -1,10 +1,11 @@
 const navItems = [
     { name: "Home", link: "/" },
-    { name: "Startups", link: "/startups" },
+    // { name: "Startups", link: "/startups" },
     { name: "Events", link: "/events" },
     // { name: "Magazine", link: "/magazine" },
     // { name: "Blogs", link: "/blogs" },
     { name: "Initiatives", link: "/initiatives" },
+    { name: "Bootcamp'23", link: "/bootcamp23" },
 ]
 
 const dropdownItems = [

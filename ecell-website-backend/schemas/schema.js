@@ -45,6 +45,7 @@ import teams from './teams/teams'
 import parallaxImage from './parallaxImage'
 import startup from './startups/startup'
 import startups from './startups/startups'
+import register from './register'
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -102,5 +103,7 @@ export default createSchema({
     ideaAndInvestors,
 
     volunteering,
+
+    register
   ]),
 })

@@ -1,16 +1,11 @@
 import Image from "next/image";
 import React from "react";
-import { useState } from "react";
 import { GiTrophyCup } from "react-icons/gi";
 import { urlFor } from "../../utils/sanity";
 import { motion } from "framer-motion";
 import PortableText from "react-portable-text";
 
 function HomeHero({ id, heading, img, desc }) {
-  const [loading, setLoading] = useState(true);
-  setInterval(() => {
-    setLoading(false);
-  }, 4000);
 
   const imgUrl = urlFor(img).url();
 
@@ -26,22 +21,12 @@ function HomeHero({ id, heading, img, desc }) {
       }}
       className="h-72 sm:h-[600px] max-h-[1080px] lg:h-screen w-full"
     >
-      {loading && (
-        <Image
-          alt="E-Cell IET DAVV - LOGO"
-          priority
-          layout="fill"
-          objectFit="cover"
-          className="fixed top-0 h-screen w-screen z-50"
-          src="/assets/loader.gif"
-        />
-      )}
 
       <div className="relative w-full h-full">
         <div className="bg-black flex flex-col justify-center space-y-0 xl:space-y-6 items-center absolute z-30 bg-opacity-60 top-0 left-0 h-full w-full">
           <motion.div
             animate={{ y: [50, 5] }}
-            transition={{ delay: 3.5, duration: 2 }}
+            transition={{ duration: 2 }}
             viewport={{ once: true }}
             className="flex flex-col w-full justify-center items-center"
           >
@@ -58,7 +43,7 @@ function HomeHero({ id, heading, img, desc }) {
           <motion.div
             animate={{ opacity: [0, 1], y: [-2, 0] }}
             viewport={{ once: true }}
-            transition={{ delay: 3.5, duration: 2 }}
+            transition={{ duration: 2 }}
             className="relative w-20 h-20 sm:w-36 sm:h-36 xl:w-48 xl:h-48"
           >
             <Image
@@ -72,7 +57,7 @@ function HomeHero({ id, heading, img, desc }) {
 
           <div className="flex-col hidden sm:flex text-white items-center">
             <motion.div
-              transition={{ delay: 3.5, duration: 1.5 }}
+              transition={{ duration: 1.5 }}
               animate={{ y: [50, 0], opacity: [0, 1] }}
               className=""
             >

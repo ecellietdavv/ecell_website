@@ -53,7 +53,7 @@ function Navbar() {
 
         <motion.div
           animate={{ x: [-500, 0], scale: [0.5, 1] }}
-          transition={{ duration: 5 }}
+          transition={{ duration: 1.5 }}
           viewport={{ once: true }}
         >
           <Link href="/">
@@ -70,7 +70,7 @@ function Navbar() {
 
         <motion.div
           animate={{ x: [500, 0], scale: [0.5, 1] }}
-          transition={{ duration: 5 }}
+          transition={{ duration: 1.5 }}
           viewport={{ once: true }}
           className="flex space-x-4 items-center justify-center px-4"
         >
