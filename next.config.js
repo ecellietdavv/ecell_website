@@ -2,7 +2,14 @@
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
-  images:{domains: ['xsgames.co', 'mdbcdn.b-cdn.net', 'www.google.com', 'cdn.sanity.io']}
-}
+  images: {
+    domains: [
+      'xsgames.co',
+      'mdbcdn.b-cdn.net',
+      'www.google.com',
+      'cdn.sanity.io',
+    ],
+  },
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;
