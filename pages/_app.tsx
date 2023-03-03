@@ -3,7 +3,10 @@ import '../styles/globals.css';
 import { StoreProvider } from '../utils/Store';
 import type { AppProps } from 'next/app';
 
-function MyApp({ Component, pageProps }: AppProps) {
+function MyApp({ Component, pageProps, ...appProps }: AppProps) {
+  if ([`/admin`].includes(appProps.router.pathname))
+    return <Component {...pageProps} />;
+
   return (
     <StoreProvider>
       <Layout>

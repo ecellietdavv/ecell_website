@@ -38,7 +38,7 @@ export default async function handler(
 
     const mailOptions = {
       from: process.env.GMAIL_USER,
-      to: 'shivangmishra0824@gmail.com',
+      to: 'shivangmishra0824@gmail.com, 21bei054@ietdavv.edu.in',
       subject: `${name} contacted at E-Cell Website.`,
       text: message,
     };

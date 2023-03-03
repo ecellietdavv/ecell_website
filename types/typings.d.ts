@@ -24,7 +24,8 @@ type RegistrationValues = {
   name: string;
   email: string;
   profession: string;
-  collage: string;
+  college: string;
+  phone: string;
   hasStartup: boolean;
   stage: string;
 };
