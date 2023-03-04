@@ -10,7 +10,7 @@ const initialState: StoreState = {
 
 export const StoreContext = createContext({
   state: initialState,
-  dispatch: () => null,
+  dispatch: ({ type }: { type: string }) => null,
 });
 
 export const reducer: any = (state: StoreState, action: StoreAction) => {

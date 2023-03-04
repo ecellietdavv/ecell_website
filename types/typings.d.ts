@@ -29,3 +29,9 @@ type RegistrationValues = {
   hasStartup: boolean;
   stage: string;
 };
+
+type ContactValues = {
+  name: string;
+  email: string;
+  message: string;
+};

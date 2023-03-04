@@ -7,21 +7,26 @@ import {
   BsInstagram,
 } from 'react-icons/bs';
 import { FaQuora } from 'react-icons/fa';
-import { useForm, SubmitHandler } from 'react-hook-form';
+import { useForm } from 'react-hook-form';
 import Link from 'next/link';
 import { toast } from 'react-toastify';
 import Spinner from '../UtilComponents/Spinner';
+import { IconType } from 'react-icons/lib';
+
+type SocialLink = {
+  link: string;
+  Icon: IconType;
+};
 
 function Footer() {
   const {
     register,
     handleSubmit,
-    formState: { errors },
     reset,
     formState: { isSubmitSuccessful },
-    formState,
-  } = useForm();
-  const [processing, setProcessing] = useState(false);
+  } = useForm<ContactValues>();
+
+  const [processing, setProcessing] = useState<boolean>(false);
 
   const navLinks = [
     { name: 'Home', link: '/' },
@@ -39,7 +44,7 @@ function Footer() {
     },
   ];
 
-  const SocialLink = ({ link, Icon }) => {
+  const SocialLink = ({ link, Icon }: SocialLink) => {
     return (
       <a
         href={link}
@@ -52,7 +57,7 @@ function Footer() {
     );
   };
 
-  const onSubmit = async (data) => {
+  const onSubmit = async (data: ContactValues) => {
     setProcessing(true);
     await fetch('/api/contactUs', {
       method: 'POST',
@@ -72,10 +77,10 @@ function Footer() {
   };
 
   useEffect(() => {
-    if (formState.isSubmitSuccessful) {
+    if (isSubmitSuccessful) {
       reset({ name: '', email: '', message: '' });
     }
-  }, [formState, reset]);
+  }, [isSubmitSuccessful, reset]);
 
   const buttonClass = `text-light mt-3 w-full bg-brand-500 dark:bg-brand-500 dark:hover:bg-brand-600 hover:bg-brand-600 focus:outline-none focus:ring-1 justify-center items-center flex space-x-2 focus:ring-blue-200 font-medium rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:hover:bg-brand`;
 
@@ -149,21 +154,19 @@ function Footer() {
             <form onSubmit={handleSubmit(onSubmit)} className="mr-3 mt-4">
               <input
                 type="text"
-                name="name"
                 className="block h-10 text-base placeholder:text-base p-2 mt-2 w-full text-dark bg-white rounded-lg border border-mid focus:ring-mid focus:border-mid dark:bg-mid  dark:placeholder-light dark:text-light dark:focus:ring-mid dark:focus:border-brand-600"
                 placeholder="Your Name"
                 {...register('name', { required: true })}
               />
               <input
                 type="email"
-                name="email"
                 {...register('email', { required: true })}
                 className="block h-10 text-base placeholder:text-base p-2 mt-2 w-full text-dark bg-white rounded-lg border border-mid focus:ring-mid focus:border-mid dark:bg-mid  dark:placeholder-light dark:text-light dark:focus:ring-mid dark:focus:border-brand-600"
                 placeholder="Email Address"
               />
               <textarea
                 {...register('message', { required: true })}
-                rows="5"
+                rows={5}
                 className="block resize-none p-2 mt-2 w-full h-20 text-gray-900 bg-white rounded-lg border border-mid focus:ring-brand-500 focus:border-brand-500 dark:bg-mid  dark:placeholder-light dark:text-white dark:focus:ring-brand-500 dark:focus:border-brand-500"
                 placeholder="Leave a comment..."
               ></textarea>

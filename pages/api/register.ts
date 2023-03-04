@@ -1,5 +1,7 @@
 import sanityClient from '@sanity/client';
 import type { NextApiRequest, NextApiResponse } from 'next';
+import sgMail from '@sendgrid/mail';
+sgMail.setApiKey(process.env.SENDGRID_API_KEY!);
 
 export const config = {
   dataset: process.env.NEXT_PUBLIC_SANITY_DATASET || 'production',
@@ -24,6 +26,20 @@ export default async function handler(
     const { name, college, email, profession, startup, stage, phone } =
       JSON.parse(req.body);
 
+    const msg = {
+      from: 'ecell@ietdavv.edu.in', // Change to your verified sender
+      template_id: process.env.SENDGRID_CONFIRMATION,
+      personalizations: [
+        {
+          subject: `Entrepreneurship Bootcamp'23 Registration Confirmed!`,
+          to: { email: email },
+          // dynamic_template_data: {
+
+          // },
+        },
+      ],
+    };
+
     try {
       await client.create({
         _type: 'register',
@@ -35,10 +51,17 @@ export default async function handler(
         startup,
         stage,
       });
+
+      sgMail
+        .send(msg)
+        .then(() => {
+          console.log('Email sent');
+        })
+        .catch((error: any) => {
+          console.error(error);
+        });
     } catch (error) {
-      return res
-        .status(500)
-        .json({ message: 'Could not submit message', error });
+      return res.status(500).json({ message: 'Could not register!', error });
     }
 
     return res.status(200).json({ message: 'Message submitted!' });

@@ -79,8 +79,8 @@ const Bootcamp23 = () => {
             <input
               {...register('name', { required: true })}
               type="text"
-              placeholder="John Doe"
-              className="w-full p-3 rounded dark:bg-mid"
+              placeholder="Your Name Here"
+              className="w-full p-3 rounded bg-mid/10 dark:bg-mid"
             />
           </div>
           <div>
@@ -88,8 +88,8 @@ const Bootcamp23 = () => {
             <input
               {...register('email', { required: true })}
               type="email"
-              placeholder="jhondoe@gmail.com"
-              className="w-full p-3 rounded dark:bg-mid"
+              placeholder="Your Email Here"
+              className="w-full p-3 rounded bg-mid/10 dark:bg-mid"
             />
           </div>
           <div>
@@ -98,7 +98,7 @@ const Bootcamp23 = () => {
               {...register('phone', { required: true })}
               type="text"
               placeholder="+911234567890"
-              className="w-full p-3 rounded dark:bg-mid"
+              className="w-full p-3 rounded bg-mid/10 dark:bg-mid"
             />
           </div>
           <div>
@@ -107,7 +107,7 @@ const Bootcamp23 = () => {
               {...register('profession', { required: true })}
               type="text"
               placeholder="Student, Software Developer ..."
-              className="w-full p-3 rounded dark:bg-mid"
+              className="w-full p-3 rounded bg-mid/10 dark:bg-mid"
             />
           </div>
           <div>
@@ -116,7 +116,7 @@ const Bootcamp23 = () => {
               {...register('college', { required: true })}
               type="text"
               placeholder="IET DAVV, Indore"
-              className="w-full p-3 rounded dark:bg-mid"
+              className="w-full p-3 rounded bg-mid/10 dark:bg-mid"
             />
           </div>
           <div>
@@ -130,7 +130,7 @@ const Bootcamp23 = () => {
                   onClick={() => {
                     setHasStartup(true);
                   }}
-                  className="w-full p-3 rounded dark:bg-mid cursor-pointer"
+                  className="w-full p-3 rounded bg-mid/10 dark:bg-mid cursor-pointer"
                 />
               </div>
               <div className="flex items-center space-x-2">
@@ -141,7 +141,7 @@ const Bootcamp23 = () => {
                   onClick={() => {
                     setHasStartup(false);
                   }}
-                  className="w-full p-3 rounded dark:bg-mid cursor-pointer"
+                  className="w-full p-3 rounded bg-mid/10 dark:bg-mid cursor-pointer"
                 />
               </div>
             </div>
@@ -151,7 +151,7 @@ const Bootcamp23 = () => {
               <label className="text-sm">What Stage It Is?</label>
               <select
                 {...register('stage', { required: true })}
-                className="w-full p-3 rounded dark:bg-mid"
+                className="w-full p-3 rounded bg-mid/10 dark:bg-mid"
               >
                 <option value="ideation">Ideation</option>
                 <option value="concepting">Concepting</option>
