@@ -35,7 +35,7 @@ function VisionMission({ content, id }) {
             height={400}
             width={600}
             alt={name}
-            className={`block absolute object-cover object-center w-full h-full rounded-lg`}
+            // className={`block absolute object-cover object-center w-full h-full rounded-lg z-0`}
             src={imgUrl}
           />
           <div className="bg-black rounded-lg bg-opacity-50 w-full h-full absolute top-0 left-0 z-10"></div>
