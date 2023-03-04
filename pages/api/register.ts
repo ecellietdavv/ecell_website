@@ -33,9 +33,9 @@ export default async function handler(
         {
           subject: `Entrepreneurship Bootcamp'23 Registration Confirmed!`,
           to: { email: email },
-          // dynamic_template_data: {
-
-          // },
+          dynamic_template_data: {
+            name: name
+          },
         },
       ],
     };

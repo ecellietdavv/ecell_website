@@ -43,13 +43,13 @@ const Bootcamp23 = () => {
   const buttonClass = `text-light mt-3 w-full bg-brand-500 dark:bg-brand-500 dark:hover:bg-brand-600 hover:bg-brand-600 focus:outline-none focus:ring-1 justify-center items-center flex space-x-2 focus:ring-blue-200 font-medium rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:hover:bg-brand`;
 
   return (
-    <main className="dark:bg-dark dark:text-gray-100 flex flex-col items-center pt-16">
+    <main className="dark:bg-dark dark:text-gray-100 flex flex-col items-center pt-16 px-0 xl:px-10">
       <Image
-        height={447}
-        width={1080}
+        height={508}
+        width={1485}
         src="/assets/png/BootcampBanner.png"
         alt="Bootcamp Banner"
-        className="mx-auto"
+        className="mx-auto shadow-xl"
       />
       <div className="grid min-h-screen grid-cols-1 gap-8 px-8 py-16 justify-center items-center mx-auto md:grid-cols-2 md:px-12 lg:px-16 xl:px-32">
         <div className="flex flex-col justify-between">
@@ -61,9 +61,9 @@ const Bootcamp23 = () => {
               Register for Entrepreneurship Bootcamp 2023
             </div>
           </div>
-          <div className="p-6 my-12 py-16 h-52 md:h-72 relative">
+          <div className="p-6 my-12 py-16 h-52 md:h-[540px] relative">
             <Image
-              src="/assets/svg/Bootcamp23.svg"
+              src="/assets/png/Rocket.png"
               alt="Bootcamp'23 Vector"
               layout="fill"
               className="object-cover"
