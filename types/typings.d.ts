@@ -1,3 +1,5 @@
+import { IconType } from 'react-icons/lib';
+
 type StoreState = {
   darkMode: boolean;
   openDrawer: boolean;
@@ -34,4 +36,20 @@ type ContactValues = {
   name: string;
   email: string;
   message: string;
+};
+
+type EventData = {
+  img: string;
+  name: string;
+  date: string;
+  desc: any;
+  blog: string;
+};
+
+type EventsListSectionProps = {
+  name: string;
+  sectionBio: string;
+  id: string;
+  events: EventData[];
+  Icon: IconType;
 };
