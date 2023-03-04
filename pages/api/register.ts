@@ -34,7 +34,7 @@ export default async function handler(
           subject: `Entrepreneurship Bootcamp'23 Registration Confirmed!`,
           to: { email: email },
           dynamic_template_data: {
-            name: name
+            name: name,
           },
         },
       ],
@@ -52,7 +52,7 @@ export default async function handler(
         stage,
       });
 
-      sgMail
+      await sgMail
         .send(msg)
         .then(() => {
           console.log('Email sent');
