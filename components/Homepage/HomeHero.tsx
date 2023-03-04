@@ -1,27 +1,25 @@
-import Image from "next/image";
-import React from "react";
-import { GiTrophyCup } from "react-icons/gi";
-import { urlFor } from "../../utils/sanity";
-import { motion } from "framer-motion";
-import PortableText from "react-portable-text";
+import Image from 'next/image';
+import React from 'react';
+import { GiTrophyCup } from 'react-icons/gi';
+import { urlFor } from '../../utils/sanity';
+import { motion } from 'framer-motion';
+import PortableText from 'react-portable-text';
 
 function HomeHero({ id, heading, img, desc }) {
-
   const imgUrl = urlFor(img).url();
 
   return (
     <section
       id={id}
       style={{
-        backgroundAttachment: "fixed",
-        backgroundRepeat: "no-repeat",
-        backgroundSize: "cover",
-        backgroundPosition: "center center",
+        backgroundAttachment: 'fixed',
+        backgroundRepeat: 'no-repeat',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center center',
         backgroundImage: `url('${imgUrl}')`,
       }}
       className="h-72 sm:h-[600px] max-h-[1080px] lg:h-screen w-full"
     >
-
       <div className="relative w-full h-full">
         <div className="bg-black flex flex-col justify-center space-y-0 xl:space-y-6 items-center absolute z-30 bg-opacity-60 top-0 left-0 h-full w-full">
           <motion.div
@@ -49,7 +47,7 @@ function HomeHero({ id, heading, img, desc }) {
             <Image
               layout="fill"
               objectFit="cover"
-              src="/assets/Logos/logo_w.png"
+              src="/assets/logos/logo_w.png"
               className=""
               alt="E-Cell IET DAVV - LOGO"
             />
@@ -62,13 +60,15 @@ function HomeHero({ id, heading, img, desc }) {
               className=""
             >
               <PortableText
-                className='uppercase font-extrabold text-sm sm:text-md md:text-2xl lg:text-3xl'
+                className="uppercase font-extrabold text-sm sm:text-md md:text-2xl lg:text-3xl"
                 dataset={process.env.NEXT_PUBLIC_SANITY_DATASET}
                 projectId={process.env.NEXT_PUBLIC_SANITY_PROJECT_ID}
                 content={heading}
                 serializers={{
                   strong: ({ children }) => {
-                    return <strong className='text-brand-400'>{children}</strong>
+                    return (
+                      <strong className="text-brand-400">{children}</strong>
+                    );
                   },
                 }}
               />
@@ -80,19 +80,19 @@ function HomeHero({ id, heading, img, desc }) {
               content={desc}
               serializers={{
                 h1: (props) => {
-                  return <h1 className='text-2xl font-bold my-5' {...props} />
+                  return <h1 className="text-2xl font-bold my-5" {...props} />;
                 },
                 h2: (props) => {
-                  return <h2 className='text-xl font-bold my-5' {...props} />
+                  return <h2 className="text-xl font-bold my-5" {...props} />;
                 },
                 h3: (props) => {
-                  return <h3 className='text-xl font-bold my-5' {...props} />
+                  return <h3 className="text-xl font-bold my-5" {...props} />;
                 },
                 h4: (props) => {
-                  return <h4 className='text-xl font-bold my-5' {...props} />
+                  return <h4 className="text-xl font-bold my-5" {...props} />;
                 },
                 li: ({ children }) => {
-                  return <li className='ml-4 list-disc'>{children}</li>
+                  return <li className="ml-4 list-disc">{children}</li>;
                 },
               }}
             />
