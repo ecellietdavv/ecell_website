@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { toast } from 'react-toastify';
 import Spinner from '../components/UtilComponents/Spinner';
+import { RegistrationValues } from '../types/typings';
 
 const Bootcamp23 = () => {
   const [hasStartup, setHasStartup] = useState<boolean>(false);
@@ -61,19 +62,17 @@ const Bootcamp23 = () => {
               Register for Entrepreneurship Bootcamp 2023
             </div>
           </div>
-          <div className="p-6 my-12 py-16 h-52 md:h-[540px] relative">
+          <div className="p-6 py-16 relative">
             <Image
               src="/assets/png/Rocket.png"
               alt="Bootcamp'23 Vector"
-              layout="fill"
-              className="object-cover"
+              height={513}
+              width={487}
+              className="object-cover pr-8 lg:pr-12"
             />
           </div>
         </div>
-        <form
-          onSubmit={handleSubmit(onSubmit)}
-          className="space-y-6 ng-untouched ng-pristine ng-valid"
-        >
+        <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
           <div>
             <label className="text-sm">Full name</label>
             <input

@@ -23,8 +23,16 @@ export default async function handler(
   res: NextApiResponse<Data>
 ) {
   if (req.method === 'POST') {
-    const { name, college, email, profession, startup, stage, phone } =
-      JSON.parse(req.body);
+    const {
+      name,
+      college,
+      email,
+      profession,
+      startup,
+      stage,
+      phone,
+      hasStartup,
+    } = JSON.parse(req.body);
 
     const msg = {
       from: 'ecell@ietdavv.edu.in', // Change to your verified sender
@@ -50,6 +58,7 @@ export default async function handler(
         profession,
         startup,
         stage,
+        hasStartup,
       });
 
       await sgMail
