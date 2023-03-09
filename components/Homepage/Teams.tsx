@@ -1,10 +1,10 @@
-import Image from "next/image";
-import React, { useState } from "react";
-import { MdEmail } from "react-icons/md";
-import { AiFillPhone } from "react-icons/ai";
-import { BsLinkedin } from "react-icons/bs";
-import { urlFor } from "../../utils/sanity";
-import SectionDescCard from "../UtilComponents/SectionDescCard";
+import Image from 'next/image';
+import React, { useState } from 'react';
+import { MdEmail } from 'react-icons/md';
+import { AiFillPhone } from 'react-icons/ai';
+import { BsLinkedin } from 'react-icons/bs';
+import { urlFor } from '../../utils/sanity';
+import SectionDescCard from '../UtilComponents/SectionDescCard';
 
 function Teams({ teams, id, title, desc }) {
   const [activeTeam, setActiveTeam] = useState(0);
@@ -16,7 +16,8 @@ function Teams({ teams, id, title, desc }) {
         key={idx}
       >
         <div className="rounded-full relative overflow-hidden h-32 w-32">
-          <Image loading="lazy"
+          <Image
+            loading="lazy"
             layout="fill"
             objectFit="cover"
             className="duration-200 group-hover:scale-105 ease-in-out"
@@ -25,13 +26,9 @@ function Teams({ teams, id, title, desc }) {
           />
         </div>
 
-        <h1 className="mt-4 text-2xl font-semibold capitalize">
-          {name}
-        </h1>
+        <h1 className="mt-4 text-2xl font-semibold capitalize">{name}</h1>
 
-        <p className="mt-2 capitalize">
-          {designation}
-        </p>
+        <p className="mt-2 capitalize">{designation}</p>
 
         <div className="flex mt-3 dark:text-white -mx-2">
           <a
@@ -41,11 +38,7 @@ function Teams({ teams, id, title, desc }) {
           >
             <MdEmail className="h-6 w-6" />
           </a>
-          <a
-            href={`tel:${social?.phone}`}
-            className="mx-2"
-            aria-label="Phone"
-          >
+          <a href={`tel:${social?.phone}`} className="mx-2" aria-label="Phone">
             <AiFillPhone className="h-6 w-6" />
           </a>
           <a
@@ -66,14 +59,18 @@ function Teams({ teams, id, title, desc }) {
     <section id={id} className="">
       <SectionDescCard name={title} desc={desc} />
 
-      <div className="flex bg-dark dark:bg-mid h-full xl:flex-row flex-col xl:h-screen max-h-[1080px] ">
+      <div className="flex bg-dark dark:bg-mid h-full xl:flex-row flex-col xl:h-screen max-h-[1080px]">
         <div className="xl:w-1/4 xl:h-3/4 m-auto min-h-[300px] h-full grid xl:grid-cols-1 sm:grid-cols-4 grid-cols-3 py-10 justify-center items-center gap-10 xl:gap-0 sm:py-4 px-6 ">
           {teams &&
             teams?.map((team, idx) => {
               return (
                 <button
                   key={idx}
-                  className={idx === activeTeam ? "rounded-full mx-auto bg-brand-500 text-white h-20 w-20 xl:px-10 xl:py-2 text-center xl:rounded-sm border-none xl:h-fit xl:w-fit" : "rounded-full mx-auto bg-light h-20 w-20 xl:px-10 xl:py-2 text-center xl:rounded-sm border-none xl:h-fit xl:w-fit"}
+                  className={
+                    idx === activeTeam
+                      ? 'rounded-full mx-auto bg-brand-500 text-white h-20 w-20 xl:px-10 xl:py-2 text-center xl:rounded-sm border-none xl:h-fit xl:w-fit'
+                      : 'rounded-full mx-auto bg-light h-20 w-20 xl:px-10 xl:py-2 text-center xl:rounded-sm border-none xl:h-fit xl:w-fit'
+                  }
                   onClick={() => {
                     setActiveTeam(idx);
                   }}
@@ -83,7 +80,7 @@ function Teams({ teams, id, title, desc }) {
               );
             })}
         </div>
-        <div className="xl:w-3/4 max-h-screen overflow-y-auto overflow-auto py-6 sm:p-6 bg-light dark:bg-dark dark:text-white">
+        <div className="xl:w-3/4 max-h-screen overflow-y-auto overflow-auto scrollbar-thin scrollbar-thumb-brand-600 scrollbar-track-mid py-6 sm:p-6 bg-light dark:bg-dark dark:text-white">
           <h3 className="text-5xl text-center pb-5 font-semibold">
             Team {teams[activeTeam]?.year}
           </h3>
@@ -95,7 +92,11 @@ function Teams({ teams, id, title, desc }) {
                   name={name}
                   designation={designation}
                   social={social}
-                  img={img ? urlFor(img)?.url() : "https://xsgames.co/randomusers/avatar.php?g=pixel"}
+                  img={
+                    img
+                      ? urlFor(img)?.url()
+                      : 'https://xsgames.co/randomusers/avatar.php?g=pixel'
+                  }
                   idx={idx}
                   key={idx}
                 />
