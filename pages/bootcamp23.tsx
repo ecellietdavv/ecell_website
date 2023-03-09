@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { toast } from 'react-toastify';
 import Spinner from '../components/UtilComponents/Spinner';
+import Stats from '../components/UtilComponents/Stats';
 import { RegistrationValues } from '../types/typings';
 
 const Bootcamp23 = () => {
@@ -22,8 +23,12 @@ const Bootcamp23 = () => {
       method: 'POST',
       body: JSON.stringify({ ...data, hasStartup: hasStartup }),
     })
-      .then(() => {
-        toast.success('Thank you for registering!');
+      .then((res) => {
+        res.status == 200
+          ? toast.success('Thank you for registering!')
+          : toast.info(
+              'Already Registered, Please check your email for verification!'
+            );
       })
       .catch((err) => {
         toast.error(
@@ -52,7 +57,12 @@ const Bootcamp23 = () => {
         alt="Bootcamp Banner"
         className="mx-auto shadow-xl"
       />
-      <div className="grid min-h-screen grid-cols-1 gap-8 px-8 py-16 justify-center items-center mx-auto md:grid-cols-2 md:px-12 lg:px-16 xl:px-32">
+
+      <section>
+        <Stats />
+      </section>
+
+      <div className="grid min-h-screen grid-cols-1 gap-8 px-8 justify-center items-center mx-auto md:grid-cols-2 md:px-12 lg:px-16 xl:px-32">
         <div className="flex flex-col justify-between">
           <div className="space-y-2">
             <h2 className="text-4xl font-bold leading-tight lg:text-5xl">
@@ -72,6 +82,7 @@ const Bootcamp23 = () => {
             />
           </div>
         </div>
+
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
           <div>
             <label className="text-sm">Full name</label>

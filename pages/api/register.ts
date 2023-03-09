@@ -1,6 +1,7 @@
 import sanityClient from '@sanity/client';
 import type { NextApiRequest, NextApiResponse } from 'next';
 import sgMail from '@sendgrid/mail';
+import { checkRegistrationsQuery } from '../../utils/queries';
 sgMail.setApiKey(process.env.SENDGRID_API_KEY!);
 
 export const config = {
@@ -49,6 +50,14 @@ export default async function handler(
     };
 
     try {
+      const data = await client.fetch(checkRegistrationsQuery, {
+        email: email,
+      });
+
+      if (data) {
+        return res.status(400).json({ message: 'Already Registered' });
+      }
+
       await client.create({
         _type: 'register',
         email,
@@ -73,6 +82,6 @@ export default async function handler(
       return res.status(500).json({ message: 'Could not register!', error });
     }
 
-    return res.status(200).json({ message: 'Message submitted!' });
+    return res.status(200).json({ message: 'Registered Sucessfuly!' });
   }
 }
