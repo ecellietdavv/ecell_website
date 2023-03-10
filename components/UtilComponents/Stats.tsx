@@ -5,6 +5,7 @@ import { BiTimeFive } from 'react-icons/bi';
 import { BsFillCalendarDateFill, BsFillPeopleFill } from 'react-icons/bs';
 import { sanityClient } from '../../utils/sanity';
 import { getRegistrationsQuery } from '../../utils/queries';
+import moment from 'moment';
 
 const Stats = () => {
   const [registrations, setRegistrations] = useState<number>(0);
@@ -51,7 +52,7 @@ const Stats = () => {
   };
   return (
     <section className="p-6 my-16 bg-slate-300 dark:bg-mid">
-      <div className="container grid grid-cols-1 gap-6 mx-auto sm:grid-cols-2 xl:grid-cols-3">
+      <div className="container grid grid-cols-1 gap-6 mx-auto sm:grid-cols-2 xl:grid-cols-4">
         <StatsCard
           name="Registrations"
           numeric={true}
@@ -68,6 +69,12 @@ const Stats = () => {
           name="Time"
           numeric={false}
           value={'10 AM-6 PM'}
+          Icon={BiTimeFive}
+        />
+        <StatsCard
+          name="Starts"
+          numeric={false}
+          value={moment('20230320', 'YYYYMMDD').fromNow()}
           Icon={BiTimeFive}
         />
       </div>

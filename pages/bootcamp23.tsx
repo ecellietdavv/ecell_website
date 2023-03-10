@@ -68,11 +68,15 @@ const Bootcamp23 = () => {
             <h2 className="text-4xl font-bold leading-tight lg:text-5xl">
               Entrepreneurship Bootcamp 23
             </h2>
-            <div className="dark:text-gray-400">
-              Register for Entrepreneurship Bootcamp 2023
+            <div className="dark:text-gray-400 flex flex-col space-y-2 py-4">
+              <span>Register for Entrepreneurship Bootcamp 2023.</span>
+              <span className="font-semibold">
+                ** The certificate will only be granted to the attendees who
+                attend every session throughout the course of both days.
+              </span>
             </div>
           </div>
-          <div className="p-6 py-16 relative">
+          <div className="p-6 py-8 relative">
             <Image
               src="/assets/png/Rocket.png"
               alt="Bootcamp'23 Vector"
