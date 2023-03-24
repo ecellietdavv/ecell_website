@@ -1,16 +1,17 @@
 import Cookies from 'js-cookie';
 import { createContext, ReactNode, useReducer } from 'react';
+import { StoreAction, StoreState } from '../types/typings';
 
 const initialState: StoreState = {
   darkMode: Cookies.get('darkMode') === 'ON' ? true : false,
   openDrawer: false,
   openModal: false,
-  modalContent: { name: '', body: '' },
+  modalContent: { name: '', desc: '' },
 };
 
 export const StoreContext = createContext({
   state: initialState,
-  dispatch: ({ type }: { type: string }) => null,
+  dispatch: ({ type, payload }: { type: string; payload?: any }) => null,
 });
 
 export const reducer: any = (state: StoreState, action: StoreAction) => {

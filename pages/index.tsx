@@ -1,5 +1,4 @@
 /* eslint-disable @next/next/no-sync-scripts */
-import Head from 'next/head';
 import TFCtemplate from '../components/Homepage/TFC/TFCtemplate';
 import Event from '../components/Homepage/Event';
 import Initiative from '../components/Homepage/Initiative';
@@ -12,32 +11,25 @@ import {
   getEventsQuery,
   getInitiativesQuery,
   getTeamsQuery,
-  getPageQuery,
-  getTFCContentQuery,
-  getAboutContentQuery,
-  getVisionContentQuery,
   getStartupsQuery,
 } from '../utils/queries';
 import HomeHero from '../components/Homepage/HomeHero';
 import PageNavigation from '../components/Navigation/PageNavigation';
 import Startups from '../components/Homepage/Startups';
 
+type HomePageProps = {
+  flagshipEvents: any;
+  flagshipInitiatives: any;
+  flagshipStartups: any;
+  teams: any;
+};
+
 function HomePage({
   flagshipEvents,
   flagshipInitiatives,
   flagshipStartups,
   teams,
-  tfc,
-  aboutUs,
-  vision,
-  heroDescription,
-  heroHeading,
-  heroImage,
-  metaTags,
-  teamsTitle,
-  teamsDesc,
-  sectionImages,
-}) {
+}: HomePageProps) {
   const navItems = [
     { name: 'Home', scrollTo: 'home' },
     { name: 'Moto', scrollTo: 'moto' },
@@ -51,56 +43,34 @@ function HomePage({
 
   return (
     <main className="w-full">
-      <Head>
-        <title>E-CELL IET DAVV | Home</title>
-        {metaTags &&
-          metaTags?.map((tag, idx) => {
-            const { name, content } = tag;
-            return <meta name={name} content={content} key={idx} />;
-          })}
-      </Head>
-
       <PageNavigation navItems={navItems}></PageNavigation>
       <HomeHero
         id="home"
-        heading={heroHeading}
-        img={heroImage}
-        desc={heroDescription}
+        heading="THE ENTREPRENEURSHIP CELL"
+        img="/assets/winner.png"
       />
-      <TFCtemplate id="moto" content={tfc} name={heroDescription} />
-      <About id="about" content={aboutUs} />
-      <SectionDivider img={sectionImages[0]} />
-      <VisionMission id="vision" content={vision} />
-      <SectionDivider img={sectionImages[1]} />
-      <Event id="events" content={flagshipEvents} />
-      <SectionDivider img={sectionImages[2]} />
-      <Startups id="startups" content={flagshipStartups} />
-      {/* <Initiative id="initiatives" content={flagshipInitiatives} /> */}
-      <SectionDivider img={sectionImages[3]} />
-      <Teams id="teams" teams={teams} title={teamsTitle} desc={teamsDesc} />
-      <SectionDivider img={sectionImages[4]} />
+
+      <TFCtemplate id="moto" />
+      <About id="about" />
+      <SectionDivider img="/assets/section-images/1.JPG" />
+      <VisionMission id="vision" />
+      <SectionDivider img="/assets/section-images/2.JPG" />
+      <Event id="events" events={flagshipEvents} />
+      <SectionDivider img="/assets/section-images/1.JPG" />
+      <Startups id="startups" startups={flagshipStartups} />
+      {/* <Initiative id="initiatives" initiatives={flagshipInitiatives} /> */}
+      <SectionDivider img="/assets/section-images/2.JPG" />
+      <Teams id="teams" teams={teams} />
+      <SectionDivider img="/assets/section-images/1.JPG" />
     </main>
   );
 }
 
-export const getServerSideProps = async () => {
-  const flagshipEvents = await sanityClient.fetch(getEventsQuery, {
-    category: 'Flagship Events',
-  });
-  const flagshipStartups = await sanityClient.fetch(getStartupsQuery, {
-    category: 'Flagship Startups',
-  });
-  // const flagshipInitiatives = await sanityClient.fetch(getInitiativesQuery, { category: "Flagship Initiatives" })
-  const {
-    title: teamsTitle,
-    desc: teamsDesc,
-    teams,
-  } = await sanityClient.fetch(getTeamsQuery);
-  const { heroHeading, heroDescription, heroImage, metaTags, sectionImages } =
-    await sanityClient.fetch(getPageQuery, { name: 'Homepage' });
-  const aboutUs = await sanityClient.fetch(getAboutContentQuery);
-  const vision = await sanityClient.fetch(getVisionContentQuery);
-  const tfc = await sanityClient.fetch(getTFCContentQuery);
+export const getStaticProps = async () => {
+  const flagshipEvents = await sanityClient.fetch(getEventsQuery);
+  const flagshipStartups = await sanityClient.fetch(getStartupsQuery);
+  // const flagshipInitiatives = await sanityClient.fetch(getInitiativesQuery)
+  const teams = await sanityClient.fetch(getTeamsQuery);
 
   return {
     props: {
@@ -108,17 +78,8 @@ export const getServerSideProps = async () => {
       flagshipStartups,
       // flagshipInitiatives,
       teams,
-      teamsTitle,
-      teamsDesc,
-      tfc,
-      aboutUs,
-      vision,
-      heroHeading,
-      heroDescription,
-      heroImage,
-      metaTags,
-      sectionImages,
     },
+    revalidate: 7200,
   };
 };
 

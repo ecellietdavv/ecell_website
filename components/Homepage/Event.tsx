@@ -9,20 +9,31 @@ import { AiOutlineArrowRight } from 'react-icons/ai';
 import { BiChevronRight, BiChevronLeft } from 'react-icons/bi';
 import ItemsCarousel from 'react-items-carousel';
 import { useEffect } from 'react';
-import { randomIage } from '../../utils/randomAssets';
 import Link from 'next/link';
+import { Event } from '../../types/typings';
+import { randomImage } from '../../utils/randomAssets';
 import PortableText from 'react-portable-text';
-import { EventData } from '../../types/typings';
 
-const Event = ({ content, id }) => {
-  const { events, name, desc } = content;
+type EventProps = {
+  events: Event[];
+  id: string;
+};
 
-  const EventCard = ({ img, name, desc, idx, slug }: EventData) => {
+type EventCardData = {
+  img: string;
+  name: string;
+  desc: object[];
+  slug: string;
+};
+
+const Event = ({ events, id }: EventProps) => {
+  const EventCard = ({ img, name, desc, slug }: EventCardData) => {
     const [show, setShow] = useState(false);
+
     return (
       <div
         className="flex pb-4 group cursor-pointer flex-col text-center text-dark dark:text-light justify-start items-center h-full space-y-2 bg-light rounded-lg border border-light shadow-md dark:bg-dark dark:border-mid"
-        key={idx}
+        key={slug}
         onClick={() => setShow(!show)}
       >
         <div className="h-52 bg-dark/10 dark:bg-light overflow-hidden flex justify-center items-center p-6">
@@ -46,9 +57,9 @@ const Event = ({ content, id }) => {
           {name}
         </h3>
         {show ? (
-          <div className="">
+          <div className="px-6 py-2 line-clamp-3">
             <PortableText
-              className="px-6 py-2 line-clamp-3"
+              className=""
               dataset={process.env.NEXT_PUBLIC_SANITY_DATASET}
               projectId={process.env.NEXT_PUBLIC_SANITY_PROJECT_ID}
               content={desc}
@@ -69,9 +80,16 @@ const Event = ({ content, id }) => {
                   return <li className="ml-4 list-disc">{children}</li>;
                 },
                 link: ({ href, children }) => {
-                  <a href={href} className="text-blue-500 hover:underline">
-                    {children}
-                  </a>;
+                  return (
+                    <a
+                      href={href}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="text-blue-500 hover:underline"
+                    >
+                      {children}
+                    </a>
+                  );
                 },
               }}
             />
@@ -110,7 +128,10 @@ const Event = ({ content, id }) => {
 
   return (
     <section id={id} className="dark:bg-dark">
-      <SectionDescCard name={name} desc={desc} />
+      <SectionDescCard
+        name="Flagship Events"
+        desc="Flagship events are the grandest of the grand events annually conducted by E-cell IET DAVV."
+      />
 
       <div className="w-full">
         <div className="max-w-7xl mx-auto justify-center px-6 items-center py-10">
@@ -130,21 +151,23 @@ const Event = ({ content, id }) => {
             slidesToScroll={1}
             showSlither={width >= 640}
           >
-            {events &&
+            {events ? (
               events?.map((value, idx) => {
                 const { img, name, desc, blog } = value;
-                const imgUrl = img ? urlFor(img)?.url() : randomIage;
+                const imgUrl = img ? urlFor(img)?.url() : randomImage;
                 return (
                   <EventCard
                     img={imgUrl}
                     name={name}
                     desc={desc}
-                    idx={idx}
                     key={idx}
-                    slug={blog?.slug?.current}
+                    slug={blog?.slug.current}
                   />
                 );
-              })}
+              })
+            ) : (
+              <p>No Events To Show</p>
+            )}
           </ItemsCarousel>
         </div>
       </div>

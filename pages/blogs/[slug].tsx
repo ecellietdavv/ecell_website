@@ -26,7 +26,7 @@ function BlogPost(props) {
         setSubmitted(true);
       })
       .catch((err) => {
-        console.log(err);
+        console.error(err);
         setSubmitted(false);
       });
   };
@@ -40,7 +40,7 @@ function BlogPost(props) {
         <Image
           alt={post?.title}
           layout="fill"
-          objectFit="cover"
+          style={{ objectFit: 'cover' }}
           src={urlFor(post?.mainImage).url()}
           className="absolute left-0 top-0 w-full h-full z-0 object-cover"
         />

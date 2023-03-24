@@ -7,15 +7,29 @@ import Partners from '../../components/UtilComponents/Partners';
 import SectionDescCard from '../../components/UtilComponents/SectionDescCard';
 import SectionDivider from '../../components/UtilComponents/SectionDivider';
 import {
-  getPageQuery,
-  getPartnersQuery,
-  getStepsQuery,
+  getBusinessPartnersQuery,
+  getPocsQuery,
   getTestimonialsQuery,
 } from '../../utils/queries';
 import { sanityClient } from '../../utils/sanity';
 import HeroPage from '../../components/UtilComponents/HeroPage';
+import { Member, Partner, Testimonial } from '../../types/typings';
+import {
+  stepsForCollaborativeEvents,
+  stepsForFlagshipEvents,
+} from '../../data/stepsData';
 
-function BusinessCollaborations(props) {
+type BusinessCollaborationsProps = {
+  sponsorsTestimonials: Testimonial[];
+  partners: Partner[];
+  pocs: Member[];
+};
+
+function BusinessCollaborations({
+  sponsorsTestimonials,
+  partners,
+  pocs,
+}: BusinessCollaborationsProps) {
   const navItems = [
     { name: 'Business Collaboration Home', scrollTo: 'businessHero' },
     { name: 'Our Sponsors', scrollTo: 'sponsors' },
@@ -25,27 +39,15 @@ function BusinessCollaborations(props) {
     { name: 'Partner With Us', scrollTo: 'businessPocs' },
   ];
 
-  const {
-    heroHeading,
-    heroDescription,
-    heroImage,
-    metaTags,
-    pocs,
-    stepsForFlagshipEvents,
-    stepsForCollaborativeEvents,
-    sponsorsTestimonials,
-    partners,
-    sectionImages,
-  } = props;
   return (
     <main className="bg-white dark:bg-dark">
       <PageNavigation navItems={navItems}></PageNavigation>
 
       <HeroPage
         id="businessHero"
-        heroHeading={heroHeading}
-        heroDescription={heroDescription}
-        heroImage={heroImage}
+        heroHeading="Connect with us for Business Collaborations"
+        heroDescription="Connect with us for beneficial business collaborations to gain access to our exclusive resources and ensure the venture's success."
+        heroImage="/assets/business-collaborations/Hero.jpg"
         button1={{ name: 'Past Sponsors', scrollTo: 'sponsors' }}
         button2={{ name: 'Testimonials', scrollTo: 'testimonials' }}
         extraButton={{
@@ -53,66 +55,47 @@ function BusinessCollaborations(props) {
           scrollTo: 'businessPocs',
         }}
       />
-      <Partners id="sponsors" content={partners} />
-      <SectionDivider img={sectionImages[0]} />
-      <StepsSection content={stepsForFlagshipEvents} id="flagshipEvents" />
-      <SectionDivider img={sectionImages[1]} />
+      <Partners id="sponsors" partners={partners} />
+      <SectionDivider img="/assets/section-images/1.JPG" />
+      <StepsSection steps={stepsForFlagshipEvents} id="flagshipEvents" />
+      <SectionDivider img="/assets/section-images/2.JPG" />
       <SectionDescCard
         id="testimonials"
         name="Sponsor Testimonials"
         desc="wadawd"
       />
-      <Testimonials content={sponsorsTestimonials} />
-      <SectionDivider img={sectionImages[2]} />
+      <Testimonials id="testimonials" testimonials={sponsorsTestimonials} />
+      <SectionDivider img="/assets/section-images/1.JPG" />
       <StepsSection
-        content={stepsForCollaborativeEvents}
+        steps={stepsForCollaborativeEvents}
         id="collaborativeEvents"
       />
-      <SectionDivider img={sectionImages[3]} />
-      <SectionDescCard id="businessPocs" name={pocs?.title} desc={pocs?.desc} />
-      <POCs pocs={pocs.pocs} />
-      <SectionDivider img={sectionImages[4]} />
+      <SectionDivider img="/assets/section-images/2.JPG" />
+      <SectionDescCard
+        id="businessPocs"
+        name="Person Of Contact"
+        desc="For Business Collaborations Contact."
+      />
+      <POCs pocs={pocs} />
+      <SectionDivider img="/assets/section-images/1.JPG" />
     </main>
   );
 }
 
-export const getServerSideProps = async () => {
-  const {
-    heroHeading,
-    heroDescription,
-    heroImage,
-    metaTags,
-    pocs,
-    sectionImages,
-  } = await sanityClient.fetch(getPageQuery, {
-    name: 'Business Collaborations',
-  });
-  const stepsForFlagshipEvents = await sanityClient.fetch(getStepsQuery, {
-    title: 'Flagship Events',
-  });
-  const stepsForCollaborativeEvents = await sanityClient.fetch(getStepsQuery, {
-    title: 'Collaborative Events',
-  });
-  const sponsorsTestimonials = await sanityClient.fetch(getTestimonialsQuery, {
-    title: 'Sponsor Testimonials',
-  });
-  const partners = await sanityClient.fetch(getPartnersQuery, {
-    title: 'Past Sponsors',
+export const getStaticProps = async () => {
+  const sponsorsTestimonials = await sanityClient.fetch(getTestimonialsQuery);
+  const partners = await sanityClient.fetch(getBusinessPartnersQuery);
+  const { pocs } = await sanityClient.fetch(getPocsQuery, {
+    page: 'business-collaborations',
   });
 
   return {
     props: {
-      heroHeading,
-      heroDescription,
-      heroImage,
-      metaTags,
-      stepsForFlagshipEvents,
-      stepsForCollaborativeEvents,
       sponsorsTestimonials,
       partners,
       pocs,
-      sectionImages,
     },
+    revalidate: 7200,
   };
 };
 

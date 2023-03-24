@@ -45,7 +45,7 @@ export default async function handler(
 
     transporter.sendMail(mailOptions, function (error, info) {
       if (error) {
-        console.log(error);
+        console.error(error);
       } else {
         console.log('Email sent: ' + info.response);
       }
@@ -59,7 +59,7 @@ export default async function handler(
         message,
       });
     } catch (error) {
-      console.log(error);
+      console.error(error);
       return res
         .status(500)
         .json({ message: 'Could not submit message', error });

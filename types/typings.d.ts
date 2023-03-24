@@ -1,10 +1,11 @@
 import { IconType } from 'react-icons/lib';
+import { DatetimeComponents, Image, Slug } from 'sanity';
 
 type StoreState = {
   darkMode: boolean;
   openDrawer: boolean;
   openModal: boolean;
-  modalContent: { name: string; body: string };
+  modalContent: { name: string; desc: string };
 };
 
 enum StoreActionType {
@@ -38,18 +39,80 @@ type ContactValues = {
   message: string;
 };
 
-type EventData = {
-  img: string;
+type Event = {
+  img: Image;
   name: string;
   date: string;
-  desc: any;
-  blog: string;
+  desc: object[];
+  blog: {
+    slug: {
+      current: string;
+    };
+  };
 };
 
-type EventsListSectionProps = {
+type Social = {
+  email: string;
+  phone: string;
+  linkedin: string;
+  facebook?: string;
+  twitter?: string;
+  instagram?: string;
+};
+
+type Member = {
   name: string;
-  sectionBio: string;
-  id: string;
-  events: EventData[];
+  designation: string;
+  img: string;
+  social: Social;
+};
+
+type Blog = {
+  title: string;
+  description: string;
+  slug: Slug;
+  author: Author;
+  mainImage: Image;
+  categories: Category[];
+  publishedAt: string;
+  body: any;
+};
+
+type Initiative = {
+  img: Image;
+  name: string;
+  date: string;
+  desc: object[];
+  blog: {
+    slug: {
+      current: string;
+    };
+  };
+};
+
+type Partner = {
+  name: string;
+  logo: Image;
+};
+
+type Testimonial = {
+  name: string;
+  designation: string;
+  desc: string;
+  img: Image;
+  social: Social;
+};
+
+type SocialLinkProps = {
+  link: string;
   Icon: IconType;
 };
+
+type Alumni = {
+  name: string;
+  designation: string;
+  img: Image;
+  social: Social;
+};
+
+type Mentor = {};

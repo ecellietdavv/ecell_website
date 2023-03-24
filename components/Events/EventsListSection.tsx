@@ -3,11 +3,20 @@ import Link from 'next/link';
 import React from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
+import { IconType } from 'react-icons/lib';
 import PortableText from 'react-portable-text';
-import { EventData, EventsListSectionProps } from '../../types/typings';
+import { Event } from '../../types/typings';
 import { randomImage } from '../../utils/randomAssets';
 import { urlFor } from '../../utils/sanity';
 import ViewMore from '../UtilComponents/ViewMore';
+
+type EventsListSectionProps = {
+  name: string;
+  sectionBio: string;
+  id: string;
+  events: Event[];
+  Icon: IconType;
+};
 
 function EventsListSection({
   name,
@@ -16,7 +25,8 @@ function EventsListSection({
   events,
   Icon,
 }: EventsListSectionProps) {
-  const EventCard = ({ img, name, date, desc, blog }: EventData) => {
+  const EventCard = ({ event }: { event: Event }) => {
+    const { img, name, date, desc, blog } = event;
     const imgUrl = img ? urlFor(img).url() : randomImage;
     return (
       <div className="w-full md:w-1/2 lg:w-1/3 px-4">
@@ -119,20 +129,13 @@ function EventsListSection({
           </div>
         </div>
         <div className="flex flex-wrap -mx-4">
-          {events &&
-            events.map((event: EventData, idx: number) => {
-              const { name, img, desc, date, blog } = event;
-              return (
-                <EventCard
-                  name={name}
-                  img={img}
-                  desc={desc}
-                  key={idx}
-                  date={date}
-                  blog={blog}
-                />
-              );
-            })}
+          {events ? (
+            events.map((event: Event, idx: number) => {
+              return <EventCard key={idx} event={event} />;
+            })
+          ) : (
+            <div className="">No Events to Display</div>
+          )}
         </div>
 
         <ViewMore action={handleLoading} reset={loadMore >= reset} />

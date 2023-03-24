@@ -30,7 +30,6 @@ function Navbar() {
   const [dark, setDark] = useState(false);
 
   const darkModeChangeHandler = () => {
-    console.log(darkMode);
     dispatch({ type: darkMode ? 'DARK_MODE_OFF' : 'DARK_MODE_ON' });
     const newDarkMode = !darkMode;
     jsCookie.set('darkMode', newDarkMode ? 'ON' : 'OFF');

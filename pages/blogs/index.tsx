@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import React, { useState } from 'react';
-import { getBlogsQuery, getPageQuery } from '../../utils/queries';
+import { getBlogsQuery } from '../../utils/queries';
 import { sanityClient, urlFor } from '../../utils/sanity';
 import ItemsCarousel from 'react-items-carousel';
 import { BiChevronRight, BiChevronLeft } from 'react-icons/bi';
@@ -12,37 +12,20 @@ import SectionDescCard from '../../components/UtilComponents/SectionDescCard';
 import PageNavigation from '../../components/Navigation/PageNavigation';
 import HeroPage from '../../components/UtilComponents/HeroPage';
 import moment from 'moment';
+import { Blog } from '../../types/typings';
 
-function Index({
-  featuredBlogs,
-  allBlogs,
-  heroHeading,
-  heroDescription,
-  heroImage,
-  metaTags,
-  pocs,
-  sectionImages,
-}) {
-  const BlogCard = ({
-    slug,
-    title,
-    description,
-    mainImage,
-    publishedAt,
-    idx,
-  }) => {
+function Index({ featuredBlogs, allBlogs }) {
+  const BlogCard = (blog: Blog) => {
+    const { slug, title, description, mainImage, publishedAt } = blog;
     return (
       <Link rel="noopener noreferrer" href={`/blogs/${slug?.current}`}>
-        <div
-          key={idx}
-          className="max-w-sm mx-auto w-full cursor-pointer sm:max-w-full group hover:no-underline focus:no-underline dark:bg-mid"
-        >
+        <div className="max-w-sm mx-auto w-full cursor-pointer sm:max-w-full group hover:no-underline focus:no-underline dark:bg-mid">
           <div className="h-48 relative w-full rounded dark:bg-gray-500">
             <Image
               alt={title}
               role="presentation"
               layout="fill"
-              objectFit="cover"
+              style={{ objectFit: 'cover' }}
               src={urlFor(mainImage).url()}
             />
           </div>
@@ -60,41 +43,41 @@ function Index({
     );
   };
 
-  const FeaturedBlogCard = ({
-    slug,
-    title,
-    description,
-    mainImage,
-    publishedAt,
-    idx,
-  }) => {
-    return (
-      <Link rel="noopener noreferrer" href={`/blogs/${slug?.current}`}>
-        <div
-          key={idx}
-          className="block cursor-pointer max-w-sm gap-3 mx-auto sm:max-w-full group hover:no-underline focus:no-underline lg:grid lg:grid-cols-12 dark:bg-mid"
-        >
-          <div className="relative w-full rounded lg:col-span-7 h-48 sm:h-96 dark:bg-mid">
-            <Image
-              layout="fill"
-              objectFit="cover"
-              src={urlFor(mainImage).url()}
-              alt={title}
-            />
-          </div>
-          <div className="sm:p-6 py-6 space-y-2 lg:col-span-5">
-            <h3 className="text-2xl font-semibold sm:text-4xl group-hover:underline group-focus:underline">
-              {title}
-            </h3>
-            <span className="text-xs dark:text-gray-400">
-              {moment(publishedAt).format('MMMM Do YYYY, h:mm:ss a')}
-            </span>
-            <p>{description}</p>
-          </div>
-        </div>
-      </Link>
-    );
-  };
+  // const FeaturedBlogCard = ({
+  //   slug,
+  //   title,
+  //   description,
+  //   mainImage,
+  //   publishedAt,
+  //   idx,
+  // }) => {
+  //   return (
+  //     <Link rel="noopener noreferrer" href={`/blogs/${slug?.current}`}>
+  //       <div
+  //         key={idx}
+  //         className="block cursor-pointer max-w-sm gap-3 mx-auto sm:max-w-full group hover:no-underline focus:no-underline lg:grid lg:grid-cols-12 dark:bg-mid"
+  //       >
+  //         <div className="relative w-full rounded lg:col-span-7 h-48 sm:h-96 dark:bg-mid">
+  //           <Image
+  //             layout="fill"
+  //             style={{objectFit: "cover"}}
+  //             src={urlFor(mainImage).url()}
+  //             alt={title}
+  //           />
+  //         </div>
+  //         <div className="sm:p-6 py-6 space-y-2 lg:col-span-5">
+  //           <h3 className="text-2xl font-semibold sm:text-4xl group-hover:underline group-focus:underline">
+  //             {title}
+  //           </h3>
+  //           <span className="text-xs dark:text-gray-400">
+  //             {moment(publishedAt).format('MMMM Do YYYY, h:mm:ss a')}
+  //           </span>
+  //           <p>{description}</p>
+  //         </div>
+  //       </div>
+  //     </Link>
+  //   );
+  // };
 
   const [activeItemIndex, setActiveItemIndex] = useState(0);
 
@@ -117,9 +100,9 @@ function Index({
 
       <HeroPage
         id="blogsHome"
-        heroHeading={heroHeading}
-        heroDescription={heroDescription}
-        heroImage={heroImage}
+        heroHeading="Our Latest Blogs!"
+        heroDescription="Curious about what exactly happens in our events? Read it all out in our infotainment blogs."
+        heroImage="/assets/png/Rocket.png"
         button1={{ name: 'Featured Blogs', scrollTo: 'featuredBlogs' }}
         button2={{ name: 'All Blogs', scrollTo: 'allBlogs' }}
       />

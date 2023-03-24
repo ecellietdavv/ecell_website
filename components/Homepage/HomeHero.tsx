@@ -1,13 +1,15 @@
 import Image from 'next/image';
 import React from 'react';
 import { GiTrophyCup } from 'react-icons/gi';
-import { urlFor } from '../../utils/sanity';
 import { motion } from 'framer-motion';
-import PortableText from 'react-portable-text';
 
-function HomeHero({ id, heading, img, desc }) {
-  const imgUrl = urlFor(img).url();
+type HomeHeroProps = {
+  id: string;
+  heading: string;
+  img: string;
+};
 
+function HomeHero({ id, heading, img }: HomeHeroProps) {
   return (
     <section
       id={id}
@@ -16,7 +18,7 @@ function HomeHero({ id, heading, img, desc }) {
         backgroundRepeat: 'no-repeat',
         backgroundSize: 'cover',
         backgroundPosition: 'center center',
-        backgroundImage: `url('${imgUrl}')`,
+        backgroundImage: `url('${img}')`,
       }}
       className="h-72 sm:h-[600px] max-h-[1080px] lg:h-screen w-full"
     >
@@ -59,43 +61,13 @@ function HomeHero({ id, heading, img, desc }) {
               animate={{ y: [50, 0], opacity: [0, 1] }}
               className=""
             >
-              <PortableText
-                className="uppercase font-extrabold text-sm sm:text-md md:text-2xl lg:text-3xl"
-                dataset={process.env.NEXT_PUBLIC_SANITY_DATASET}
-                projectId={process.env.NEXT_PUBLIC_SANITY_PROJECT_ID}
-                content={heading}
-                serializers={{
-                  strong: ({ children }) => {
-                    return (
-                      <strong className="text-brand-400">{children}</strong>
-                    );
-                  },
-                }}
-              />
+              <h1 className="uppercase font-extrabold text-sm sm:text-md md:text-2xl lg:text-3xl">
+                {heading}
+              </h1>
             </motion.div>
-            <PortableText
-              className="uppercase sm:text-2xl text-gray-300 font-bold"
-              dataset={process.env.NEXT_PUBLIC_SANITY_DATASET}
-              projectId={process.env.NEXT_PUBLIC_SANITY_PROJECT_ID}
-              content={desc}
-              serializers={{
-                h1: (props) => {
-                  return <h1 className="text-2xl font-bold my-5" {...props} />;
-                },
-                h2: (props) => {
-                  return <h2 className="text-xl font-bold my-5" {...props} />;
-                },
-                h3: (props) => {
-                  return <h3 className="text-xl font-bold my-5" {...props} />;
-                },
-                h4: (props) => {
-                  return <h4 className="text-xl font-bold my-5" {...props} />;
-                },
-                li: ({ children }) => {
-                  return <li className="ml-4 list-disc">{children}</li>;
-                },
-              }}
-            />
+            <h2 className="uppercase sm:text-2xl text-gray-300 font-bold">
+              IET DAVV
+            </h2>
           </div>
 
           <div className="flex flex-col items-center justify-center py-1 sm:py-2">

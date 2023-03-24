@@ -34,7 +34,7 @@ export default async function handler(
         comment,
       });
     } catch (error) {
-      console.log(error);
+      console.error(error);
       return res
         .status(500)
         .json({ message: 'Could not submit comment', error });

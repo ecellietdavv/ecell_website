@@ -6,29 +6,34 @@ export default defineType({
   type: 'document',
   fields: [
     defineField({
-      name: 'title',
-      title: 'Title',
+      name: 'year',
+      title: 'Year',
       type: 'string',
-    }),
-    defineField({
-      name: 'desc',
-      title: 'Description',
-      type: 'string',
-    }),
-    defineField({
-      name: 'teams',
-      title: 'Teams',
-      type: 'array',
-      of: [{ type: 'reference', to: { type: 'team' } }],
       validation: (Rule) => [
-        Rule.required().error('Atleast one team is required'),
+        Rule.required().min(4).max(4).error('Enter Year in YYYY format'),
       ],
     }),
+    defineField({
+      name: 'members',
+      title: 'Members',
+      type: 'array',
+      of: [{ type: 'reference', to: { type: 'member' } }],
+      validation: (Rule) => [
+        Rule.required().error('Atleast one member is required'),
+      ],
+    }),
+  ],
+  orderings: [
+    {
+      title: 'Year Sorting',
+      name: 'yearDesc',
+      by: [{ field: 'year', direction: 'desc' }],
+    },
   ],
 
   preview: {
     select: {
-      title: 'title',
+      title: 'year',
     },
   },
 });

@@ -5,16 +5,25 @@ import { AiFillPhone } from 'react-icons/ai';
 import { BsLinkedin } from 'react-icons/bs';
 import { urlFor } from '../../utils/sanity';
 import SectionDescCard from '../UtilComponents/SectionDescCard';
+import { Member } from '../../types/typings';
 
-function Teams({ teams, id, title, desc }) {
+type Team = {
+  year: string;
+  members: Member[];
+};
+
+type TeamsProps = {
+  teams: Team[];
+  id: string;
+};
+
+function Teams({ teams, id }: TeamsProps) {
   const [activeTeam, setActiveTeam] = useState(0);
 
-  const MemberCard = ({ name, designation, img, social, idx }) => {
+  const MemberCard = ({ name, designation, img, social }: Member) => {
+    const { email, linkedin, phone } = social;
     return (
-      <div
-        className="flex group flex-col items-center p-8 transition-colors duration-200 transform cursor-pointer group bg-light border border-dark dark:bg-mid dark:border-light dark:text-white hover:bg-brand-700 hover:text-white rounded-xl"
-        key={idx}
-      >
+      <div className="flex group flex-col items-center p-8 transition-colors duration-200 transform cursor-pointer group bg-light border border-dark dark:bg-mid dark:border-light dark:text-white hover:bg-brand-700 hover:text-white rounded-xl">
         <div className="rounded-full relative overflow-hidden h-32 w-32">
           <Image
             loading="lazy"
@@ -31,18 +40,14 @@ function Teams({ teams, id, title, desc }) {
         <p className="mt-2 capitalize">{designation}</p>
 
         <div className="flex mt-3 dark:text-white -mx-2">
-          <a
-            href={`mailto:${social?.email}`}
-            className="mx-2"
-            aria-label="Email"
-          >
+          <a href={`mailto:${email}`} className="mx-2" aria-label="Email">
             <MdEmail className="h-6 w-6" />
           </a>
-          <a href={`tel:${social?.phone}`} className="mx-2" aria-label="Phone">
+          <a href={`tel:${phone}`} className="mx-2" aria-label="Phone">
             <AiFillPhone className="h-6 w-6" />
           </a>
           <a
-            href={social?.linkedin}
+            href={linkedin}
             target="_blank"
             className="mx-2"
             aria-label="Linkedin"
@@ -57,7 +62,10 @@ function Teams({ teams, id, title, desc }) {
 
   return (
     <section id={id} className="">
-      <SectionDescCard name={title} desc={desc} />
+      <SectionDescCard
+        name="Our Teams"
+        desc="'The names behind the giant', -These are the various teams who have worked with outstanding dedication and sincerity to let E-CELL IET DAVV reach these heights where it stands today."
+      />
 
       <div className="flex bg-dark dark:bg-mid h-full xl:flex-row flex-col xl:h-screen max-h-[1080px]">
         <div className="xl:w-1/4 xl:h-3/4 m-auto min-h-[300px] h-full grid xl:grid-cols-1 sm:grid-cols-4 grid-cols-3 py-10 justify-center items-center gap-10 xl:gap-0 sm:py-4 px-6 ">
@@ -85,8 +93,9 @@ function Teams({ teams, id, title, desc }) {
             Team {teams[activeTeam]?.year}
           </h3>
           <div className="grid sm:grid-cols-2 2xl:grid-cols-3 gap-6 p-5">
-            {teams[activeTeam]?.members?.map((member, idx) => {
+            {teams[activeTeam]?.members?.map((member: Member, idx: number) => {
               const { name, designation, social, img } = member;
+
               return (
                 <MemberCard
                   name={name}
@@ -97,7 +106,6 @@ function Teams({ teams, id, title, desc }) {
                       ? urlFor(img)?.url()
                       : 'https://xsgames.co/randomusers/avatar.php?g=pixel'
                   }
-                  idx={idx}
                   key={idx}
                 />
               );
