@@ -84,7 +84,7 @@ export const getTeamsQuery = `
     ...,
     members[] {
         _type == 'reference' => @->
-    }
+    } | order(order desc) 
 } | order(year desc) 
 `;
 
