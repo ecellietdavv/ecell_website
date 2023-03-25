@@ -6,8 +6,21 @@ import { BiChevronRight, BiChevronLeft } from 'react-icons/bi';
 import { BsFacebook, BsLinkedin, BsTwitter } from 'react-icons/bs';
 import { urlFor } from '../../utils/sanity';
 import { randomPersonImage } from '../../utils/randomAssets';
+import { SocialLinkProps, Testimonial } from '../../types/typings';
 
-const FoundingTestimonials = ({ id, content }) => {
+type FoundingTestimonialsProps = {
+  id: string;
+  testimonials: Testimonial[];
+};
+
+type FoundingTestimonialsCardProps = {
+  testimonial: Testimonial;
+};
+
+const FoundingTestimonials = ({
+  id,
+  testimonials,
+}: FoundingTestimonialsProps) => {
   const [activeItemIndex, setActiveItemIndex] = useState(0);
   const [width, setWidth] = useState(1080);
 
@@ -21,9 +34,7 @@ const FoundingTestimonials = ({ id, content }) => {
     else return 1;
   };
 
-  const { testimonials, title } = content;
-
-  const SocialLink = ({ link, Icon }) => {
+  const SocialLink = ({ link, Icon }: SocialLinkProps) => {
     return (
       <a href={link} className="text-white" target="_blank" rel="noreferrer">
         <Icon className="w-6 h-6" />
@@ -32,17 +43,13 @@ const FoundingTestimonials = ({ id, content }) => {
   };
 
   const FoundingTestimonialsCard = ({
-    name,
-    img,
-    desc,
-    key,
-    designation,
-    social,
-  }) => {
+    testimonial,
+  }: FoundingTestimonialsCardProps) => {
+    const { name, img, desc, designation, social } = testimonial;
     const imgUrl = img ? urlFor(img).url() : randomPersonImage.female;
 
     return (
-      <div key={key} className="">
+      <div className="">
         <div className="rounded-2xl bg-dark/10 dark:bg-mid dark:text-white snap-center mx-auto my-6">
           <div className="p-4">
             <svg
@@ -73,8 +80,8 @@ const FoundingTestimonials = ({ id, content }) => {
               </h3>
               <h4 className="text-center text-gray-300">{designation}</h4>
               <div className="flex space-x-5 py-4 justify-center">
-                <SocialLink Icon={BsFacebook} link={social?.facebook} />
-                <SocialLink Icon={BsTwitter} link={social?.twitter} />
+                <SocialLink Icon={BsFacebook} link={social?.facebook!} />
+                <SocialLink Icon={BsTwitter} link={social?.twitter!} />
                 <SocialLink Icon={BsLinkedin} link={social?.linkedin} />
               </div>
             </div>
@@ -105,15 +112,8 @@ const FoundingTestimonials = ({ id, content }) => {
         >
           {testimonials &&
             testimonials?.map((testimonial, idx) => {
-              const { name, img, desc, designation } = testimonial;
               return (
-                <FoundingTestimonialsCard
-                  name={name}
-                  img={img}
-                  desc={desc}
-                  key={idx}
-                  designation={designation}
-                />
+                <FoundingTestimonialsCard testimonial={testimonial} key={idx} />
               );
             })}
         </ItemsCarousel>

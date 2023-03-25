@@ -115,4 +115,15 @@ type Alumni = {
   social: Social;
 };
 
-type Mentor = {};
+type Mentor = {
+  name: string;
+  designation: string;
+  img: Image;
+  social: Social;
+};
+
+type CaseStudy = {
+  title: string;
+  desc: object[];
+  videoUrl: string;
+};

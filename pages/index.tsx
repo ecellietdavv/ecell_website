@@ -16,6 +16,7 @@ import {
 import HomeHero from '../components/Homepage/HomeHero';
 import PageNavigation from '../components/Navigation/PageNavigation';
 import Startups from '../components/Homepage/Startups';
+import { NextSeo } from 'next-seo';
 
 type HomePageProps = {
   flagshipEvents: any;
@@ -43,6 +44,7 @@ function HomePage({
 
   return (
     <main className="w-full">
+      <NextSeo title="Home" description="A short description goes here." />
       <PageNavigation navItems={navItems}></PageNavigation>
       <HomeHero
         id="home"

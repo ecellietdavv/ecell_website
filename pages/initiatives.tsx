@@ -1,3 +1,4 @@
+import { NextSeo } from 'next-seo';
 import React from 'react';
 import Timeline from '../components/Initiatives/Timeline';
 import PageNavigation from '../components/Navigation/PageNavigation';
@@ -27,6 +28,10 @@ function initiatives({
 
   return (
     <main>
+      <NextSeo
+        title="Initiatives"
+        description="Proactivity is one of the seven habits found in the most successful habits around the globe. E-cell IET DAVV actively helps all its members to seek innovative ideas and then we proactively take initiatives to convert these ideas into reality. These are some of our initiatives."
+      />
       <PageNavigation navItems={navItems}></PageNavigation>
       <HeroPage
         id="initiativesHome"

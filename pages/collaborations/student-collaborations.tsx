@@ -1,3 +1,4 @@
+import { NextSeo } from 'next-seo';
 import React from 'react';
 import PageNavigation from '../../components/Navigation/PageNavigation';
 import Alumnus from '../../components/StudentCollaborations/Alumnus';
@@ -39,6 +40,10 @@ function StudentCollaborations({
 
   return (
     <main className="bg-white dark:bg-dark">
+      <NextSeo
+        title="Student Collaborations"
+        description="Collaborate with us as Student Collaborator"
+      />
       <PageNavigation navItems={navItems}></PageNavigation>
 
       <HeroPage

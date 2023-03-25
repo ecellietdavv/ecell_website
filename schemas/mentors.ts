@@ -44,7 +44,6 @@ export default defineType({
       options: {
         hotspot: true,
       },
-      initialValue: 'https://i.pravatar.cc/1000',
     }),
     defineField({
       name: 'social',
@@ -69,9 +68,6 @@ export default defineType({
           type: 'string',
           initialValue: 'https://linktr.ee/ECellIET',
           description: 'Enter phone no. of mentor.',
-          // validation: Rule => [
-          //     Rule.required().max(150).error('This is a required field.'),
-          // ]
         },
         {
           name: 'linkedin',

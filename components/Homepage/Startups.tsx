@@ -11,23 +11,22 @@ import ItemsCarousel from 'react-items-carousel';
 import { useEffect } from 'react';
 import Link from 'next/link';
 import PortableText from 'react-portable-text';
-import { EventData } from '../../types/typings';
+import { Event } from '../../types/typings';
 import { randomImage } from '../../utils/randomAssets';
 
 type StartupProps = {
-  startups: EventData[];
+  startups: Event[];
   id: string;
 };
 
 type StartupCardData = {
-  img: string;
-  name: string;
-  desc: string;
-  slug: string;
+  startup: Event;
 };
 
 const Startups = ({ startups, id }: StartupProps) => {
-  const StartupCard = ({ img, name, desc, slug }: StartupCardData) => {
+  const StartupCard = ({ startup }: StartupCardData) => {
+    const { img, name, desc, blog } = startup;
+    const slug = blog?.slug.current;
     const [show, setShow] = useState(false);
     return (
       <div
@@ -38,7 +37,7 @@ const Startups = ({ startups, id }: StartupProps) => {
         <div className="h-52 bg-dark/10 dark:bg-light overflow-hidden flex justify-center items-center p-6">
           <Image
             loading="lazy"
-            src={img}
+            src={urlFor(img).url()}
             alt={name}
             height={490}
             width={600}
@@ -56,8 +55,42 @@ const Startups = ({ startups, id }: StartupProps) => {
           {name}
         </h3>
         {show ? (
-          <div className="px-6 py-2 line-clamp-3">
-            <p>{desc}</p>
+          <div className="px-6 line-clamp-3">
+            <PortableText
+              className=""
+              dataset={process.env.NEXT_PUBLIC_SANITY_DATASET}
+              projectId={process.env.NEXT_PUBLIC_SANITY_PROJECT_ID}
+              content={desc}
+              serializers={{
+                h1: (props) => {
+                  return <h1 className="text-2xl font-bold my-5" {...props} />;
+                },
+                h2: (props) => {
+                  return <h2 className="text-xl font-bold my-5" {...props} />;
+                },
+                h3: (props) => {
+                  return <h3 className="text-xl font-bold my-5" {...props} />;
+                },
+                h4: (props) => {
+                  return <h4 className="text-xl font-bold my-5" {...props} />;
+                },
+                li: ({ children }) => {
+                  return <li className="ml-4 list-disc">{children}</li>;
+                },
+                link: ({ href, children }) => {
+                  return (
+                    <a
+                      href={href}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="text-blue-500 hover:underline"
+                    >
+                      {children}
+                    </a>
+                  );
+                },
+              }}
+            />
             {slug && (
               <span className="font-semibold">
                 <Link href={`/blogs/${slug}`}>Read More ...</Link>
@@ -117,18 +150,8 @@ const Startups = ({ startups, id }: StartupProps) => {
             showSlither={width >= 640}
           >
             {startups &&
-              startups?.map((value, idx) => {
-                const { img, name, desc, blog } = value;
-                const imgUrl = img ? urlFor(img)?.url() : randomImage;
-                return (
-                  <StartupCard
-                    img={imgUrl}
-                    name={name}
-                    desc={desc}
-                    key={idx}
-                    slug={blog?.slug?.current}
-                  />
-                );
+              startups?.map((startup, idx) => {
+                return <StartupCard key={idx} startup={startup} />;
               })}
           </ItemsCarousel>
         </div>

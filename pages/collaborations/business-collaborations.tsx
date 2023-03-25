@@ -18,6 +18,7 @@ import {
   stepsForCollaborativeEvents,
   stepsForFlagshipEvents,
 } from '../../data/stepsData';
+import { NextSeo } from 'next-seo';
 
 type BusinessCollaborationsProps = {
   sponsorsTestimonials: Testimonial[];
@@ -41,6 +42,11 @@ function BusinessCollaborations({
 
   return (
     <main className="bg-white dark:bg-dark">
+      <NextSeo
+        title="Business Collaborations"
+        description="Connect with us for beneficial business collaborations to gain access to our exclusive resources and ensure the venture's success."
+      />
+
       <PageNavigation navItems={navItems}></PageNavigation>
 
       <HeroPage

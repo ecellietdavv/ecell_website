@@ -17,8 +17,8 @@ function MyApp({ Component, pageProps, ...appProps }: AppProps) {
           url: 'https://www.ecellietdavv.in/',
           siteName: 'E-CELL IET DAVV',
         }}
-        defaultTitle="Home"
-        titleTemplate="E-CELL IET DAVV"
+        defaultTitle="Home | E-CELL IET DAVV"
+        titleTemplate="%s | E-CELL IET DAVV"
       />
       <Layout>
         <Component {...pageProps} />

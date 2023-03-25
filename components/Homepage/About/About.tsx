@@ -17,7 +17,6 @@ const About = ({ id }: AboutProps) => {
   return (
     <section
       id={id}
-      title="About Section"
       className="bg-light max-w-screen-2xl dark:bg-dark pt-10 text-dark dark:text-white"
     >
       <div className="grid xl:grid-cols-2 max-w-7xl mx-auto sm:items-center overflow-hidden text-center xl:text-left">
@@ -51,7 +50,7 @@ const About = ({ id }: AboutProps) => {
         <div className="hidden sm:flex xl:-rotate-45 px-10 py-10 xl:py-0 lg:px-24 xl:px-0 flex-col items-center overflow-hidden space-y-4 w-full">
           <div className="w-full flex items-end h-96 space-x-4">
             <div
-              className="bg-gray-600 drop-shadow-xl h-full w-full xl:h-1/2 xl:w-1/3 bg-blend-multiply"
+              className="bg-gray-600 relative overflow-hidden drop-shadow-xl h-full w-full xl:h-1/2 xl:w-1/3 bg-blend-multiply"
               style={{ background: `url(${images[0]})` }}
             >
               <Image
@@ -60,11 +59,11 @@ const About = ({ id }: AboutProps) => {
                 loading="lazy"
                 src={images[0]}
                 layout="fill"
-                objectFit="contain"
+                style={{ objectFit: 'contain' }}
               />
             </div>
             <div
-              className="bg-gray-600 drop-shadow-xl h-full w-full xl:w-2/3 bg-blend-multiply"
+              className="bg-gray-600 relative overflow-hidden drop-shadow-xl h-full w-full xl:w-2/3 bg-blend-multiply"
               style={{ background: `url(${images[1]})` }}
             >
               <Image
@@ -73,12 +72,12 @@ const About = ({ id }: AboutProps) => {
                 loading="lazy"
                 src={images[1]}
                 layout="fill"
-                objectFit="contain"
+                style={{ objectFit: 'contain' }}
               />
             </div>
           </div>
           <div
-            className="w-full bg-gray-600 h-96 drop-shadow-xl bg-blend-multiply"
+            className="w-full relative overflow-hidden bg-gray-600 h-96 drop-shadow-xl bg-blend-multiply"
             style={{ background: `url(${images[2]})` }}
           >
             <Image
@@ -87,7 +86,7 @@ const About = ({ id }: AboutProps) => {
               loading="lazy"
               src={images[2]}
               layout="fill"
-              objectFit="contain"
+              style={{ objectFit: 'contain' }}
             />
           </div>
         </div>

@@ -63,6 +63,7 @@ function Navbar() {
               }
               width={70}
               height={70}
+              alt="E-Cell IET DAVV Logo"
             />
           </Link>
         </motion.div>

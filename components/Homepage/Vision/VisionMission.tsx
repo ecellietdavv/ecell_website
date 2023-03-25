@@ -43,13 +43,17 @@ function VisionMission({ id }: Vison) {
           halfWidth ? 'sm:w-1/2' : 'sm:w-full'
         )}
       >
-        <div className="relative">
+        <div
+          className={classnames(
+            'relative h-40',
+            halfWidth ? 'sm:h-40' : 'sm:h-80'
+          )}
+        >
           <Image
             loading="lazy"
-            height={400}
-            width={600}
+            fill
             alt={name}
-            // className={`block absolute object-cover object-center w-full h-full rounded-lg z-0`}
+            style={{ objectFit: 'cover' }}
             src={img}
           />
           <div className="bg-black rounded-lg bg-opacity-50 w-full h-full absolute top-0 left-0 z-10"></div>

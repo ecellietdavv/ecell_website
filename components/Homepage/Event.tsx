@@ -57,7 +57,7 @@ const Event = ({ events, id }: EventProps) => {
           {name}
         </h3>
         {show ? (
-          <div className="px-6 py-2 line-clamp-3">
+          <div className="px-6 line-clamp-3">
             <PortableText
               className=""
               dataset={process.env.NEXT_PUBLIC_SANITY_DATASET}

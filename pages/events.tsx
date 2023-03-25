@@ -13,6 +13,7 @@ import { sanityClient } from '../utils/sanity';
 import PageNavigation from '../components/Navigation/PageNavigation';
 import HeroPage from '../components/UtilComponents/HeroPage';
 import { Event } from '../types/typings';
+import { NextSeo } from 'next-seo';
 
 type EventsPageProps = {
   flagshipEvents: Event[];
@@ -33,7 +34,12 @@ function events({
 
   return (
     <main className="bg-white dark:bg-dark dark:text-white">
+      <NextSeo
+        title="Events"
+        description="Through the various events conducted by us, we provide our students the opportunities to develop and groom entrepreneurial qualities like the ability to think on their feet, to effectively organize and handle national-level events, and adaptability to efficiently collaborate with different groups. Here are some events conducted by us."
+      />
       <PageNavigation navItems={navItems}></PageNavigation>
+
       <HeroPage
         id="eventsHome"
         heroHeading="Successful Events in our paradigm"
