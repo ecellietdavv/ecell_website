@@ -1,7 +1,7 @@
 import classNames from 'classnames';
 import Image from 'next/image';
 import React from 'react';
-import { eventData } from '../../data/ES_EventsData';
+import { eventData } from '../../data/ES23/eventData';
 
 type Event = {
   name: string;
