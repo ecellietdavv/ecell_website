@@ -23,6 +23,7 @@ const Esummit23 = () => {
         <Statistics />
         <LaunchingVideo />
         <Timeline date={new Date()} />
+        <FlagshipEvents />
       </main>
     </>
   );

@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import React from 'react';
+import { motion } from 'framer-motion';
 
 const Hero = () => {
   const handlePointerMove = (e: any) => {
@@ -18,12 +19,20 @@ const Hero = () => {
         <div className="flex justify-center items-center sm:w-1/2 flex-col">
           <div className="space-y-12 w-3/4">
             <div className="">
-              <span className="text-lg lg:text-xl xl:text-2xl uppercase text-white font-medium">
+              <motion.span
+                animate={{ y: [50, 0] }}
+                transition={{ ease: 'easeInOut' }}
+                className="text-lg lg:text-xl xl:text-2xl uppercase text-white font-medium"
+              >
                 INTRODUCING
-              </span>
-              <h1 className="text-4xl lg:text-5xl xl:text-7xl uppercase text-white font-bold">
+              </motion.span>
+              <motion.h1
+                animate={{ y: [50, 0] }}
+                transition={{ ease: 'easeInOut', delay: 0.5 }}
+                className="text-4xl lg:text-5xl xl:text-7xl uppercase text-white font-bold"
+              >
                 Esummit&apos;23
-              </h1>
+              </motion.h1>
             </div>
 
             <p className="lg:text-md xl:text-lg text-gray-400">
@@ -55,7 +64,11 @@ const Hero = () => {
             </button>
           </div>
         </div>
-        <div className="sm:w-1/2 flex flex-col justify-center items-center">
+        <motion.div
+          animate={{ x: [100, -50, 0], opacity: [0, 100] }}
+          transition={{ ease: 'easeInOut' }}
+          className="sm:w-1/2 flex flex-col justify-center items-center"
+        >
           <Image
             src="/assets/logos/ES Logo.svg"
             height={600}
@@ -63,7 +76,7 @@ const Hero = () => {
             className="hidden sm:block"
             alt="ESummit'23 Logo"
           />
-        </div>
+        </motion.div>
       </div>
     </section>
   );

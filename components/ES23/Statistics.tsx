@@ -5,6 +5,7 @@ import { BsFillPersonFill, BsFillStarFill } from 'react-icons/bs';
 import { MdAppRegistration } from 'react-icons/md';
 import { SiGithubsponsors } from 'react-icons/si';
 import Marquee from 'react-fast-marquee';
+import { motion } from 'framer-motion';
 
 type StatsCardProps = {
   name: string;
@@ -36,7 +37,12 @@ const StatsCard = ({ name, value, Icon }: StatsCardProps) => {
 
 const Statistics = () => {
   return (
-    <main className="sm:h-screen sm:max-h-[600px] lg:max-h-full sm:overflow-hidden flex items-center justify-end relative">
+    <motion.section
+      whileInView={{ x: [100, 0] }}
+      transition={{ ease: 'easeInOut' }}
+      viewport={{ once: true }}
+      className="sm:h-screen sm:max-h-[600px] lg:max-h-full sm:overflow-hidden flex items-center justify-end relative"
+    >
       <div className="hidden sm:block w-full absolute z-0 top-20">
         <Marquee
           gradient={true}
@@ -75,7 +81,7 @@ const Statistics = () => {
           <StatsCard name="Sponsors" value={5} Icon={SiGithubsponsors} />
         </div>
       </div>
-    </main>
+    </motion.section>
   );
 };
 
