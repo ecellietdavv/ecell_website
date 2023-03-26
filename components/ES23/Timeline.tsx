@@ -48,7 +48,18 @@ const Timeline = (props: Props) => {
     };
 
     return (
-      <li className="relative flex space-x-6 sm:block sm:space-x-0">
+      <motion.li
+        whileInView={{
+          x: [-100, 0],
+          opacity: [0, 100],
+        }}
+        transition={{
+          delay: number * 0.1,
+          ease: 'easeInOut',
+        }}
+        viewport={{ once: true }}
+        className="relative flex space-x-6 sm:block sm:space-x-0"
+      >
         <div className="flex items-center">
           <div
             className={classNames(
@@ -76,14 +87,14 @@ const Timeline = (props: Props) => {
             ) : null}
           </time>
         </div>
-      </li>
+      </motion.li>
     );
   };
 
   return (
     <section
       id="timeline"
-      className="sm:h-screen sm:max-h-[600px] lg:max-h-full sm:overflow-hidden flex flex-col items-center justify-center relative"
+      className="sm:h-screen sm:max-h-[600px] md:max-h-[900px] xl:max-h-full sm:overflow-hidden flex flex-col items-center justify-center relative"
     >
       <DotsBG />
       <Image
@@ -103,7 +114,7 @@ const Timeline = (props: Props) => {
       >
         Timeline
       </motion.h1>
-      <ol className="items-center grid grid-cols-1 sm:grid-cols-4 gap-y-4 sm:gap-y-16 py-20">
+      <ol className="items-center grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-y-4 sm:gap-y-16 py-10 lg:py-20">
         {timelineData.map((data, key) => {
           return (
             <TimelineNode
