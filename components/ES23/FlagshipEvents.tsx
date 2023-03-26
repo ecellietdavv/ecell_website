@@ -1,6 +1,6 @@
 import classNames from 'classnames';
 import React from 'react';
-import { eventData } from '../../data/ES_EventsData';
+import { eventData } from '../../data/ES23/eventData';
 
 type Event = {
   name: string;

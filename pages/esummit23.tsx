@@ -5,6 +5,7 @@ import LaunchingVideo from '../components/ES23/LaunchingVideo';
 import { Montserrat } from 'next/font/google';
 import { NextSeo } from 'next-seo';
 import Statistics from '../components/ES23/Statistics';
+import Timeline from '../components/ES23/Timeline';
 const montserrat = Montserrat({ subsets: ['latin'] });
 
 const Esummit23 = () => {
@@ -16,12 +17,12 @@ const Esummit23 = () => {
       />
       <main
         style={montserrat.style}
-        className="bg-black space-y-20 sm:space-y-0"
+        className="bg-black space-y-24 sm:space-y-0"
       >
         <Hero />
         <Statistics />
         <LaunchingVideo />
-        {/* <FlagshipEvents /> */}
+        <Timeline date={new Date()} />
       </main>
     </>
   );

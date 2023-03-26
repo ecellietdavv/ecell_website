@@ -54,9 +54,7 @@ const Statistics = () => {
         <div className="flex justify-between space-y-4 sm:space-y-0 flex-col sm:flex-row">
           <div className="flex flex-col">
             <h3 className="text-lg lg:text-lg xl:text-xl">Some Of Our</h3>
-            <h2 className="text-3xl lg:text-3xl xl:text-4xl text-white font-bold uppercase">
-              Statistics
-            </h2>
+            <h2 className="heading">Statistics</h2>
           </div>
           <p className="sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl text-gray-400">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi ex
