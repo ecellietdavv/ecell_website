@@ -4,6 +4,7 @@ import CountUp from 'react-countup';
 import { BsFillPersonFill, BsFillStarFill } from 'react-icons/bs';
 import { MdAppRegistration } from 'react-icons/md';
 import { SiGithubsponsors } from 'react-icons/si';
+import Marquee from 'react-fast-marquee';
 
 type StatsCardProps = {
   name: string;
@@ -13,13 +14,13 @@ type StatsCardProps = {
 
 const StatsCard = ({ name, value, Icon }: StatsCardProps) => {
   return (
-    <div className="flex p-4 space-x-4 rounded-lg md:space-x-6 bg-mid/20 dark:bg-dark/20">
-      <div className="flex justify-center p-2 align-middle rounded-lg sm:p-4 text-mandys-pink-100">
-        <Icon className="text-4xl" />
+    <div className="flex flex-col sm:flex-row p-4 space-y-2 sm:space-y-0 sm:space-x-4 rounded-lg md:space-x-6 bg-mid/20">
+      <div className="flex justify-center items-center rounded-lg text-mandys-pink-100">
+        <Icon className="h-10 w-10" />
       </div>
-      <div className="flex flex-col justify-center align-middle">
-        <p className="capitalize text-lg text-gray-400">{name}</p>
-        <p className="text-5xl font-semibold dark:text-white leading-none">
+      <div className="flex flex-col space-y-1 justify-center items-center text-center">
+        <p className="capitalize lg:text-md xl:text-lg text-gray-400">{name}</p>
+        <p className="text-3xl lg:text-3xl xl:text-5xl font-semibold dark:text-white leading-none">
           {typeof value === 'number' ? (
             <span>
               <CountUp end={value} duration={1} /> +
@@ -35,16 +36,29 @@ const StatsCard = ({ name, value, Icon }: StatsCardProps) => {
 
 const Statistics = () => {
   return (
-    <main className="h-screen flex items-center justify-end">
-      <div className="bg-dark rounded-l-xl shadow-[0px_50px_100px_rgba(249,115,22,_0.7)] w-3/4 px-12 py-10 text-gray-200">
-        <div className="flex justify-between">
+    <main className="sm:h-screen max-h-[600px] lg:max-h-full sm:overflow-hidden flex items-center justify-end relative">
+      <div className="hidden sm:block">
+        <Marquee
+          gradient={true}
+          speed={100}
+          gradientColor={[0, 0, 0]}
+          direction="left"
+          className="uppercase top-20 text-gray-400 font-bold text-7xl h-36 absolute z-0 -rotate-12"
+        >
+          <span className="px-12 text-orange-500">VISION OF TRANSCENDENCE</span>
+          <span className="px-12 text-rose-500">VISION OF TRANSCENDENCE</span>
+        </Marquee>
+      </div>
+
+      <div className="bg-dark rounded-xl lg:rounded-l-xl z-10 mx-auto sm:mx-0 w-11/12 xl:w-5/6 2xl:w-3/4 px-8 sm:px-12 py-10 text-gray-200">
+        <div className="flex justify-between space-y-4 sm:space-y-0 flex-col sm:flex-row">
           <div className="flex flex-col">
-            <h3 className="text-xl">Some Of Our</h3>
-            <h2 className="text-4xl text-white font-bold uppercase">
+            <h3 className="text-lg lg:text-lg xl:text-xl">Some Of Our</h3>
+            <h2 className="text-3xl lg:text-3xl xl:text-4xl text-white font-bold uppercase">
               Statistics
             </h2>
           </div>
-          <p className="max-w-xl text-gray-400">
+          <p className="sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl text-gray-400">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi ex
             voluptatum laudantium unde rem fugiat, tenetur corrupti libero
             cumque consectetur mollitia ipsum id debitis quas dignissimos.
@@ -52,7 +66,7 @@ const Statistics = () => {
           </p>
         </div>
 
-        <div className="w-full grid grid-cols-4 gap-4 py-10">
+        <div className="w-full grid grid-cols-2 lg:grid-cols-4 gap-4 pt-10">
           <StatsCard name="Events" value={10} Icon={BsFillStarFill} />
           <StatsCard name="Speakers" value={20} Icon={BsFillPersonFill} />
           <StatsCard

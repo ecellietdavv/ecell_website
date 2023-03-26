@@ -14,10 +14,13 @@ const Esummit23 = () => {
         title="Esummit 23"
         description="Through the various events conducted by us, we provide our students the opportunities to develop and groom entrepreneurial qualities like the ability to think on their feet, to effectively organize and handle national-level events, and adaptability to efficiently collaborate with different groups. Here are some events conducted by us."
       />
-      <main style={montserrat.style} className="bg-black">
+      <main
+        style={montserrat.style}
+        className="bg-black space-y-40 sm:space-y-0"
+      >
         <Hero />
         <Statistics />
-        {/* <LaunchingVideo /> */}
+        <LaunchingVideo />
         {/* <FlagshipEvents /> */}
       </main>
     </>

@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import React from 'react';
 
 const Hero = () => {
@@ -11,28 +12,28 @@ const Hero = () => {
   return (
     <section
       onPointerMove={handlePointerMove}
-      className="h-screen relative gradientBackground"
+      className="relative gradientBackground"
     >
-      <div className="bg-gradient-to-r flex from-black to-transparent h-screen w-full z-10 absolute top-0 left-0">
-        <div className="flex justify-center items-center w-1/2 flex-col">
+      <div className="bg-gradient-to-r flex from-black to-transparent h-full w-full z-10 absolute top-0 left-0">
+        <div className="flex justify-center items-center sm:w-1/2 flex-col">
           <div className="space-y-12 w-3/4">
             <div className="">
-              <span className="text-2xl uppercase text-white font-medium">
+              <span className="text-lg lg:text-xl xl:text-2xl uppercase text-white font-medium">
                 INTRODUCING
               </span>
-              <h1 className="text-7xl uppercase text-white font-bold">
+              <h1 className="text-4xl lg:text-5xl xl:text-7xl uppercase text-white font-bold">
                 Esummit&apos;23
               </h1>
             </div>
 
-            <p className="text-lg text-gray-400">
+            <p className="lg:text-md xl:text-lg text-gray-400">
               Lorem ipsum dolor sit amet consectetur adipisicing elit.
               Repudiandae, dolores expedita consequuntur esse nemo odio natus
               dolore cumque sunt debitis aliquam reiciendis saepe? Perspiciatis
               quae esse quod, asperiores sapiente pariatur?
             </p>
 
-            <button className="relative inline-flex items-center px-12 py-3 overflow-hidden text-lg font-medium text-orange-500 border-2 border-orange-500 rounded-full hover:text-white group hover:bg-gray-50">
+            <button className="relative inline-flex items-center px-12 py-3 overflow-hidden lg:text-md xl:text-lg font-medium text-orange-500 border-2 border-orange-500 rounded-full hover:text-white group hover:bg-gray-50">
               <span className="absolute left-0 block w-full h-0 transition-all bg-orange-600 opacity-100 group-hover:h-full top-1/2 group-hover:top-0 duration-400 ease"></span>
               <span className="absolute right-0 flex items-center justify-start w-10 h-10 duration-300 transform translate-x-full group-hover:translate-x-0 ease">
                 <svg
@@ -54,7 +55,14 @@ const Hero = () => {
             </button>
           </div>
         </div>
-        <div className="w-1/2"></div>
+        <div className="sm:w-1/2 flex flex-col justify-center items-center">
+          {/* <Image
+            src="/assets/logos/ES23.svg"
+            height={400}
+            width={400}
+            alt="ESummit'23 Logo"
+          /> */}
+        </div>
       </div>
     </section>
   );
