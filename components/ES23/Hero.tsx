@@ -21,14 +21,14 @@ const Hero = () => {
             <div className="">
               <motion.span
                 animate={{ y: [50, 0] }}
-                transition={{ ease: 'easeInOut' }}
+                transition={{ ease: 'easeInOut', duration: 1 }}
                 className="text-lg lg:text-xl xl:text-2xl uppercase text-white font-medium"
               >
                 INTRODUCING
               </motion.span>
               <motion.h1
                 animate={{ y: [50, 0] }}
-                transition={{ ease: 'easeInOut', delay: 0.5 }}
+                transition={{ ease: 'easeInOut', delay: 0.5, duration: 2 }}
                 className="text-4xl lg:text-5xl xl:text-7xl uppercase text-white font-bold"
               >
                 Esummit&apos;23
@@ -66,7 +66,7 @@ const Hero = () => {
         </div>
         <motion.div
           animate={{ x: [100, -50, 0], opacity: [0, 100] }}
-          transition={{ ease: 'easeInOut' }}
+          transition={{ ease: 'easeInOut', duration: 4 }}
           className="sm:w-1/2 flex flex-col justify-center items-center"
         >
           <Image

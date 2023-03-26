@@ -56,6 +56,7 @@ const Timeline = (props: Props) => {
         transition={{
           delay: number * 0.1,
           ease: 'easeInOut',
+          duration: 4,
         }}
         viewport={{ once: true }}
         className="relative flex space-x-6 sm:block sm:space-x-0"

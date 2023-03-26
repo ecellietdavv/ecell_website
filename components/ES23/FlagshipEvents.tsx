@@ -26,6 +26,7 @@ const EventCard = ({ event, idx }: EventCardProps) => {
       transition={{
         delay: idx * 0.1,
         ease: 'easeInOut',
+        duration: 3,
       }}
       viewport={{ once: true }}
       className={classNames(
