@@ -1,22 +1,22 @@
 export const eventData = [
   {
-    name: 'Event 1',
-    desc: 'awidlaiwdj',
+    name: 'Engagement is the Key',
+    desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. A leo at venenatis gravida. Augue aliquet fusce dolor augue convallis. Sed faucibus eget a sapien mattis laoreet.',
     img: '/assets/ES/Events/0.jpg',
   },
   {
-    name: 'Event 1',
-    desc: 'awidlaiwdj',
+    name: 'Engagement is the Key',
+    desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. A leo at venenatis gravida. Augue aliquet fusce dolor augue convallis. Sed faucibus eget a sapien mattis laoreet.',
     img: '/assets/ES/Events/0.jpg',
   },
   {
-    name: 'Event 1',
-    desc: 'awidlaiwdj',
+    name: 'Engagement is the Key',
+    desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. A leo at venenatis gravida. Augue aliquet fusce dolor augue convallis. Sed faucibus eget a sapien mattis laoreet.',
     img: '/assets/ES/Events/0.jpg',
   },
   {
-    name: 'Event 1',
-    desc: 'awidlaiwdj',
+    name: 'Engagement is the Key',
+    desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. A leo at venenatis gravida. Augue aliquet fusce dolor augue convallis. Sed faucibus eget a sapien mattis laoreet.',
     img: '/assets/ES/Events/0.jpg',
   },
 ];
