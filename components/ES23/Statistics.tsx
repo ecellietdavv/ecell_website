@@ -38,7 +38,7 @@ const StatsCard = ({ name, value, Icon }: StatsCardProps) => {
 const Statistics = () => {
   return (
     <motion.section
-      whileInView={{ y: [100, 0] }}
+      whileInView={{ x: [100, 0] }}
       transition={{ ease: 'easeInOut', duration: 2, delay: 1 }}
       viewport={{ once: true }}
       className="sm:h-screen sm:max-h-[600px] lg:max-h-full sm:overflow-hidden flex items-center justify-end relative"
