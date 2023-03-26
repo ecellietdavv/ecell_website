@@ -14,7 +14,7 @@ const Hero = () => {
       onPointerMove={handlePointerMove}
       className="relative gradientBackground"
     >
-      <div className="bg-gradient-to-r flex from-black to-transparent h-full w-full z-10 absolute top-0 left-0">
+      <div className="bg-gradient-to-r flex flex-col justify-center sm:flex-row from-black to-transparent h-full w-full z-10 absolute top-0 left-0">
         <div className="flex justify-center items-center sm:w-1/2 flex-col">
           <div className="space-y-12 w-3/4">
             <div className="">
@@ -56,12 +56,13 @@ const Hero = () => {
           </div>
         </div>
         <div className="sm:w-1/2 flex flex-col justify-center items-center">
-          {/* <Image
-            src="/assets/logos/ES23.svg"
-            height={400}
-            width={400}
+          <Image
+            src="/assets/logos/ES Logo.svg"
+            height={600}
+            width={600}
+            className="hidden sm:block"
             alt="ESummit'23 Logo"
-          /> */}
+          />
         </div>
       </div>
     </section>

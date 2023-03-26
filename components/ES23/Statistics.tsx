@@ -36,14 +36,14 @@ const StatsCard = ({ name, value, Icon }: StatsCardProps) => {
 
 const Statistics = () => {
   return (
-    <main className="sm:h-screen max-h-[600px] lg:max-h-full sm:overflow-hidden flex items-center justify-end relative">
-      <div className="hidden sm:block">
+    <main className="sm:h-screen sm:max-h-[600px] lg:max-h-full sm:overflow-hidden flex items-center justify-end relative">
+      <div className="hidden sm:block w-full absolute z-0 top-20">
         <Marquee
           gradient={true}
           speed={100}
           gradientColor={[0, 0, 0]}
           direction="left"
-          className="uppercase top-20 text-gray-400 font-bold text-7xl h-36 absolute z-0 -rotate-12"
+          className="uppercase text-gray-400 font-bold text-7xl h-36 -rotate-12"
         >
           <span className="px-12 text-orange-500">VISION OF TRANSCENDENCE</span>
           <span className="px-12 text-rose-500">VISION OF TRANSCENDENCE</span>

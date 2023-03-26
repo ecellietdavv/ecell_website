@@ -4,7 +4,7 @@ type Props = {};
 
 const LaunchingVideo = (props: Props) => {
   return (
-    <div className="sm:h-screen max-h-[600px] lg:max-h-full flex text-center flex-col w-full justify-center items-center relative">
+    <div className="sm:h-screen sm:max-h-[600px] lg:max-h-full flex text-center flex-col w-full justify-center items-center relative">
       <div className="z-10 space-y-6 sm:space-y-16 w-11/12 lg:w-3/5">
         <h1 className="text-3xl sm:text-4xl font-semibold uppercase text-white ">
           HAVE A LOOK AT ESUMMIT&apos;23

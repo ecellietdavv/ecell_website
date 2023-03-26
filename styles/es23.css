@@ -1,6 +1,6 @@
  .gradientBackground {
     height: 100vh;
-    max-height: 600px;
+    max-height: 640px;
     margin: 0;
     --x: calc(var(--posX, 0) * 1px);
     --y: calc(var(--posY, 0) * 1px);
@@ -29,11 +29,5 @@
     background-blend-mode: overlay, overlay, difference, difference, difference,
       normal;
   }
-
- @media (min-width: 1024px) {
-    .gradientBackground {
-        max-height: 100% !important;
-    }
-}
 
   

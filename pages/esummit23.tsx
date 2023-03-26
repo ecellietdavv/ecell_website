@@ -16,7 +16,7 @@ const Esummit23 = () => {
       />
       <main
         style={montserrat.style}
-        className="bg-black space-y-40 sm:space-y-0"
+        className="bg-black space-y-20 sm:space-y-0"
       >
         <Hero />
         <Statistics />
