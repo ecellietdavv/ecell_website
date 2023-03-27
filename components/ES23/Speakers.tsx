@@ -1,14 +1,28 @@
+import moment from 'moment';
 import Image from 'next/image';
 import React, { useRef } from 'react';
+import { speakerData } from '../../data/ES23/speakerData';
 import { randomPersonImage } from '../../utils/randomAssets';
 
-type Props = {};
+type Speaker = {
+  name: string;
+  img: string;
+};
 
-const SpeakerCard = () => {
+type SpeakerCardProps = {
+  speaker: Speaker;
+  eventName: string;
+  eventDate: string;
+};
+
+const SpeakerCard = ({ speaker, eventDate, eventName }: SpeakerCardProps) => {
+  const { name, img } = speaker;
+  const date = moment(eventDate).date();
+  const month = moment(eventDate).format('MMM');
   return (
     <div className="relative flex items-end justify-start w-full min-w-[300px] text-left bg-center bg-cover h-96 dark:bg-gray-500">
       <Image
-        src={randomPersonImage.female}
+        src={img}
         alt="name"
         fill
         className="z-0"
@@ -17,25 +31,25 @@ const SpeakerCard = () => {
       <div className="absolute z-10 top-0 bottom-0 left-0 right-0 bg-gradient-to-b via-transparent from-gray-900 to-gray-900"></div>
       <div className="absolute z-10 top-0 left-0 right-0 flex items-center justify-between mx-5 mt-3">
         <p className="px-3 py-2 text-xs font-semibold tracking-wider uppercase text-gray-100">
-          Event 1
+          {eventName}
         </p>
         <div className="flex flex-col justify-start text-center text-gray-100">
           <span className="text-3xl font-semibold leading-none tracking-wide">
-            04
+            {date}
           </span>
-          <span className="leading-none uppercase">Aug</span>
+          <span className="leading-none uppercase">{month}</span>
         </div>
       </div>
       <h2 className="z-10 p-5">
         <span className="font-semibold text-2xl hover:underline text-gray-100">
-          Speaker 1
+          {name}
         </span>
       </h2>
     </div>
   );
 };
 
-const Speakers = (props: Props) => {
+const Speakers = () => {
   const scrollRef = useRef<HTMLDivElement | undefined>();
 
   const handleScrollRight = () => {
@@ -49,7 +63,7 @@ const Speakers = (props: Props) => {
   return (
     <section className="sm:h-screen sm:max-h-[600px] md:max-h-[900px] xl:max-h-full sm:overflow-hidden flex flex-col items-center justify-center relative space-y-8">
       <div className="flex justify-between items-center w-5/6">
-        <h1 className="heading">Meet Our Speakers</h1>
+        <h1 className="heading text-left">Meet Our Speakers</h1>
         <div className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-2 text-white">
           <button
             title="previous"
@@ -95,12 +109,17 @@ const Speakers = (props: Props) => {
           ref={scrollRef}
           className="flex gap-5 w-full overflow-auto scrollbar-none"
         >
-          <SpeakerCard />
-          <SpeakerCard />
-          <SpeakerCard />
-          <SpeakerCard />
-          <SpeakerCard />
-          <SpeakerCard />
+          {speakerData.map((it, idx) => {
+            const { speaker, eventDate, eventName } = it;
+            return (
+              <SpeakerCard
+                eventDate={eventDate}
+                eventName={eventName}
+                speaker={speaker}
+                key={idx}
+              />
+            );
+          })}
         </div>
       </div>
     </section>

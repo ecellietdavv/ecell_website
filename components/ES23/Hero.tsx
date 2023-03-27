@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import React from 'react';
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 
 const Hero = () => {
   const handlePointerMove = (e: any) => {
@@ -42,7 +43,10 @@ const Hero = () => {
               quae esse quod, asperiores sapiente pariatur?
             </p>
 
-            <button className="relative inline-flex items-center px-12 py-3 overflow-hidden lg:text-md xl:text-lg font-medium text-orange-500 border-2 border-orange-500 rounded-full hover:text-white group hover:bg-gray-50">
+            <Link
+              href="/esummit23/register"
+              className="relative inline-flex items-center px-12 py-3 overflow-hidden lg:text-md xl:text-lg font-medium text-orange-500 border-2 border-orange-500 rounded-full hover:text-white group hover:bg-gray-50"
+            >
               <span className="absolute left-0 block w-full h-0 transition-all bg-orange-600 opacity-100 group-hover:h-full top-1/2 group-hover:top-0 duration-400 ease"></span>
               <span className="absolute right-0 flex items-center justify-start w-10 h-10 duration-300 transform translate-x-full group-hover:translate-x-0 ease">
                 <svg
@@ -61,7 +65,7 @@ const Hero = () => {
                 </svg>
               </span>
               <span className="relative">REGISTER NOW</span>
-            </button>
+            </Link>
           </div>
         </div>
         <motion.div

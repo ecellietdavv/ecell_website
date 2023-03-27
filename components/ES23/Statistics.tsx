@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { IconType } from 'react-icons/lib';
 import CountUp from 'react-countup';
 import { BsFillPersonFill, BsFillStarFill } from 'react-icons/bs';
@@ -6,12 +6,20 @@ import { MdAppRegistration } from 'react-icons/md';
 import { SiGithubsponsors } from 'react-icons/si';
 import Marquee from 'react-fast-marquee';
 import { motion } from 'framer-motion';
+import { sanityClient } from '../../utils/sanity';
+import { eventData } from '../../data/ES23/eventData';
+import { speakerData } from '../../data/ES23/speakerData';
+import { sponsorData } from '../../data/ES23/sponsorData';
 
 type StatsCardProps = {
   name: string;
   value: number | string;
   Icon: IconType;
 };
+
+export const getRegistrationsQuery = `
+    *[_type=="es23_registrations"]
+`;
 
 const StatsCard = ({ name, value, Icon }: StatsCardProps) => {
   return (
@@ -24,7 +32,7 @@ const StatsCard = ({ name, value, Icon }: StatsCardProps) => {
         <p className="text-3xl lg:text-3xl xl:text-5xl font-semibold dark:text-white leading-none">
           {typeof value === 'number' ? (
             <span>
-              <CountUp end={value} duration={1} /> +
+              <CountUp end={value} duration={3} /> +
             </span>
           ) : (
             value
@@ -36,6 +44,17 @@ const StatsCard = ({ name, value, Icon }: StatsCardProps) => {
 };
 
 const Statistics = () => {
+  const [registrations, setRegistrations] = useState<number>(0);
+
+  useEffect(() => {
+    const getRegistrations = async () => {
+      const registrations = await sanityClient.fetch(getRegistrationsQuery);
+      setRegistrations(registrations.length);
+    };
+
+    getRegistrations();
+  }, []);
+
   return (
     <motion.section
       whileInView={{ x: [100, 0] }}
@@ -71,14 +90,26 @@ const Statistics = () => {
         </div>
 
         <div className="w-full grid grid-cols-2 lg:grid-cols-4 gap-4 pt-10">
-          <StatsCard name="Events" value={10} Icon={BsFillStarFill} />
-          <StatsCard name="Speakers" value={20} Icon={BsFillPersonFill} />
+          <StatsCard
+            name="Events"
+            value={eventData.length}
+            Icon={BsFillStarFill}
+          />
+          <StatsCard
+            name="Speakers"
+            value={speakerData.length}
+            Icon={BsFillPersonFill}
+          />
           <StatsCard
             name="Registrations"
-            value={100}
+            value={registrations}
             Icon={MdAppRegistration}
           />
-          <StatsCard name="Sponsors" value={5} Icon={SiGithubsponsors} />
+          <StatsCard
+            name="Sponsors"
+            value={sponsorData.length}
+            Icon={SiGithubsponsors}
+          />
         </div>
       </div>
     </motion.section>

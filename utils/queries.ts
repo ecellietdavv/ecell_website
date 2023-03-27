@@ -99,11 +99,3 @@ export const getPartnersQuery = `
 export const getBusinessPartnersQuery = `
     *[_type=="partners" && businessPartner == true] | order(name)
 `;
-
-export const getRegistrationsQuery = `
-    *[_type=="register"]
-`;
-
-export const checkRegistrationsQuery = `
-    *[_type == 'register' && email == $email][0]
-`;

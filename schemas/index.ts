@@ -21,6 +21,7 @@ import mentors from './mentors';
 
 import register from './register';
 import pocs from './pocs';
+import es23_registrations from './eventsRegistrations/es23_registrations';
 
 // Then we give our schema to the builder and provide the result to Sanity
 export const schemaTypes = [
@@ -46,5 +47,8 @@ export const schemaTypes = [
 
   contact,
   newsletters,
+
+  //Event Registrations
   register,
+  es23_registrations,
 ];
