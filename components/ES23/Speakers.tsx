@@ -20,7 +20,7 @@ const SpeakerCard = ({ speaker, eventDate, eventName }: SpeakerCardProps) => {
   const date = moment(eventDate).date();
   const month = moment(eventDate).format('MMM');
   return (
-    <div className="relative flex items-end justify-start w-full min-w-[300px] text-left bg-center bg-cover h-96 dark:bg-gray-500">
+    <div className="relative flex items-end justify-start w-full min-w-[300px] text-left bg-center bg-cover h-96">
       <Image
         src={img}
         alt="name"

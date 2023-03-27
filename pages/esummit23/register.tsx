@@ -73,7 +73,7 @@ const ES23Register = () => {
         <div className="flex flex-col xl:max-w-lg">
           <div className="space-y-2">
             <motion.h2
-              animate={{ y: [50, 0] }}
+              animate={{ y: [50, 0], opacity: [0, 100] }}
               transition={{ ease: 'easeInOut', delay: 0.5, duration: 2 }}
               className="text-4xl font-bold leading-tight lg:text-5xl"
             >
