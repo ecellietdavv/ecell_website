@@ -1,7 +1,6 @@
 import sanityClient from '@sanity/client';
 import type { NextApiRequest, NextApiResponse } from 'next';
 import sgMail from '@sendgrid/mail';
-import { checkRegistrationsQuery } from '../../utils/queries';
 sgMail.setApiKey(process.env.SENDGRID_API_KEY!);
 
 export const config = {
@@ -13,6 +12,9 @@ export const config = {
 };
 
 const client = sanityClient(config);
+const checkRegistrationsQuery = `
+    *[_type == 'es23_registrations' && email == $email][0]
+`;
 
 type Data = {
   message: string;
@@ -24,23 +26,14 @@ export default async function handler(
   res: NextApiResponse<Data>
 ) {
   if (req.method === 'POST') {
-    const {
-      name,
-      college,
-      email,
-      profession,
-      startup,
-      stage,
-      phone,
-      hasStartup,
-    } = JSON.parse(req.body);
+    const { name, college, email, profession, phone } = JSON.parse(req.body);
 
     const msg = {
       from: 'ecell@ietdavv.edu.in', // Change to your verified sender
-      template_id: process.env.SENDGRID_CONFIRMATION,
+      template_id: process.env.ES23_CONFIRMATION,
       personalizations: [
         {
-          subject: `Entrepreneurship Bootcamp'23 Registration Confirmed!`,
+          subject: `ESummit23 Registration Confirmed! 🎉`,
           to: { email: email },
           dynamic_template_data: {
             name: name,
@@ -59,15 +52,12 @@ export default async function handler(
       }
 
       await client.create({
-        _type: 'register',
+        _type: 'es23_registrations',
         email,
         name,
         college,
         phone,
         profession,
-        startup,
-        stage,
-        hasStartup,
       });
 
       await sgMail

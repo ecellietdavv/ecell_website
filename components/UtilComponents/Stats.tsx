@@ -4,8 +4,11 @@ import { IconBaseProps } from 'react-icons/lib';
 import { BiTimeFive } from 'react-icons/bi';
 import { BsFillCalendarDateFill, BsFillPeopleFill } from 'react-icons/bs';
 import { sanityClient } from '../../utils/sanity';
-import { getRegistrationsQuery } from '../../utils/queries';
 import moment from 'moment';
+
+const getRegistrationsQuery = `
+    *[_type=="register"]
+`;
 
 const Stats = () => {
   const [registrations, setRegistrations] = useState<number>(0);

@@ -31,7 +31,7 @@
   }
 
   .heading {
-    @apply text-3xl lg:text-3xl xl:text-4xl text-white font-bold uppercase
+    @apply text-3xl lg:text-3xl xl:text-4xl text-white font-bold uppercase text-center
   }
 
   

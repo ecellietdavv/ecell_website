@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { IconType } from 'react-icons/lib';
 import CountUp from 'react-countup';
 import { BsFillPersonFill, BsFillStarFill } from 'react-icons/bs';
@@ -6,12 +6,20 @@ import { MdAppRegistration } from 'react-icons/md';
 import { SiGithubsponsors } from 'react-icons/si';
 import Marquee from 'react-fast-marquee';
 import { motion } from 'framer-motion';
+import { sanityClient } from '../../utils/sanity';
+import { eventData } from '../../data/ES23/eventData';
+import { speakerData } from '../../data/ES23/speakerData';
+import { sponsorData } from '../../data/ES23/sponsorData';
 
 type StatsCardProps = {
   name: string;
   value: number | string;
   Icon: IconType;
 };
+
+export const getRegistrationsQuery = `
+    *[_type=="es23_registrations"]
+`;
 
 const StatsCard = ({ name, value, Icon }: StatsCardProps) => {
   return (
@@ -24,7 +32,7 @@ const StatsCard = ({ name, value, Icon }: StatsCardProps) => {
         <p className="text-3xl lg:text-3xl xl:text-5xl font-semibold dark:text-white leading-none">
           {typeof value === 'number' ? (
             <span>
-              <CountUp end={value} duration={1} /> +
+              <CountUp end={value} duration={3} /> +
             </span>
           ) : (
             value
@@ -36,11 +44,20 @@ const StatsCard = ({ name, value, Icon }: StatsCardProps) => {
 };
 
 const Statistics = () => {
+  const [registrations, setRegistrations] = useState<number>(0);
+
+  useEffect(() => {
+    const getRegistrations = async () => {
+      const registrations = await sanityClient.fetch(getRegistrationsQuery);
+      setRegistrations(registrations.length);
+    };
+
+    getRegistrations();
+  }, []);
+
   return (
-    <motion.section
-      whileInView={{ x: [100, 0] }}
-      transition={{ ease: 'easeInOut' }}
-      viewport={{ once: true }}
+    <section
+      id="es23_statistics"
       className="sm:h-screen sm:max-h-[600px] lg:max-h-full sm:overflow-hidden flex items-center justify-end relative"
     >
       <div className="hidden sm:block w-full absolute z-0 top-20">
@@ -56,7 +73,12 @@ const Statistics = () => {
         </Marquee>
       </div>
 
-      <div className="bg-dark rounded-xl lg:rounded-l-xl z-10 mx-auto sm:mx-0 w-11/12 xl:w-5/6 2xl:w-3/4 px-8 sm:px-12 py-10 text-gray-200">
+      <motion.div
+        whileInView={{ x: [100, 0] }}
+        transition={{ ease: 'easeInOut', duration: 2 }}
+        viewport={{ once: true }}
+        className="bg-dark rounded-xl lg:rounded-l-xl z-10 mx-auto sm:mx-0 w-11/12 xl:w-5/6 2xl:w-3/4 px-8 sm:px-12 py-10 text-gray-200"
+      >
         <div className="flex justify-between space-y-4 sm:space-y-0 flex-col sm:flex-row">
           <div className="flex flex-col">
             <h3 className="text-lg lg:text-lg xl:text-xl">Some Of Our</h3>
@@ -71,17 +93,29 @@ const Statistics = () => {
         </div>
 
         <div className="w-full grid grid-cols-2 lg:grid-cols-4 gap-4 pt-10">
-          <StatsCard name="Events" value={10} Icon={BsFillStarFill} />
-          <StatsCard name="Speakers" value={20} Icon={BsFillPersonFill} />
+          <StatsCard
+            name="Events"
+            value={eventData.length}
+            Icon={BsFillStarFill}
+          />
+          <StatsCard
+            name="Speakers"
+            value={speakerData.length}
+            Icon={BsFillPersonFill}
+          />
           <StatsCard
             name="Registrations"
-            value={100}
+            value={registrations}
             Icon={MdAppRegistration}
           />
-          <StatsCard name="Sponsors" value={5} Icon={SiGithubsponsors} />
+          <StatsCard
+            name="Sponsors"
+            value={sponsorData.length}
+            Icon={SiGithubsponsors}
+          />
         </div>
-      </div>
-    </motion.section>
+      </motion.div>
+    </section>
   );
 };
 

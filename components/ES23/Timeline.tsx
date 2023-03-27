@@ -56,6 +56,7 @@ const Timeline = (props: Props) => {
         transition={{
           delay: number * 0.1,
           ease: 'easeInOut',
+          duration: 4,
         }}
         viewport={{ once: true }}
         className="relative flex space-x-6 sm:block sm:space-x-0"
@@ -93,7 +94,7 @@ const Timeline = (props: Props) => {
 
   return (
     <section
-      id="timeline"
+      id="es23_timeline"
       className="sm:h-screen sm:max-h-[600px] md:max-h-[900px] xl:max-h-full sm:overflow-hidden flex flex-col items-center justify-center relative"
     >
       <DotsBG />
@@ -103,17 +104,7 @@ const Timeline = (props: Props) => {
         alt="Timeline BG"
         fill
       />
-      <motion.h1
-        whileInView={{ y: [50, 0] }}
-        transition={{
-          ease: 'easeInOut',
-          duration: 1,
-        }}
-        viewport={{ once: true }}
-        className="heading text-center"
-      >
-        Timeline
-      </motion.h1>
+      <h1 className="heading">Timeline</h1>
       <ol className="items-center grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-y-4 sm:gap-y-16 py-10 lg:py-20">
         {timelineData.map((data, key) => {
           return (

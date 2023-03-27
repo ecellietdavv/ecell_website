@@ -24,12 +24,13 @@ const EventCard = ({ event, idx }: EventCardProps) => {
         opacity: [0, 100],
       }}
       transition={{
-        delay: idx * 0.1,
+        delay: idx * 0.5,
         ease: 'easeInOut',
+        duration: 3,
       }}
       viewport={{ once: true }}
       className={classNames(
-        'flex flex-col md:gap-6 text-white justify-center items-center space-y-4 max-w-sm mx-auto group'
+        'flex flex-col md:gap-6 text-white justify-center items-center space-y-4 max-w-sm mx-auto group cursor-pointer'
       )}
     >
       <div className="relative w-full h-80 overflow-hidden">
@@ -49,17 +50,20 @@ const EventCard = ({ event, idx }: EventCardProps) => {
   );
 };
 
-const FlagshipEvents = () => {
+const Events = () => {
   return (
-    <div className="lg:min-h-screen sm:max-h-[600px] md:max-h-full sm:overflow-hidden flex flex-col items-center justify-center relative">
-      <h1 className="heading">Flagship Events</h1>
+    <section
+      id="es23_events"
+      className="lg:min-h-screen sm:max-h-[600px] md:max-h-full sm:overflow-hidden flex flex-col items-center justify-center relative"
+    >
+      <h1 className="heading">Events</h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-16 w-5/6 mx-auto py-10 lg:py-20">
         {eventData.map((event, idx) => {
           return <EventCard key={idx} idx={idx} event={event} />;
         })}
       </div>
-    </div>
+    </section>
   );
 };
 
-export default FlagshipEvents;
+export default Events;

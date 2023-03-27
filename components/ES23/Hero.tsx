@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import React from 'react';
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 
 const Hero = () => {
   const handlePointerMove = (e: any) => {
@@ -14,6 +15,7 @@ const Hero = () => {
     <section
       onPointerMove={handlePointerMove}
       className="relative gradientBackground"
+      id="es23_home"
     >
       <div className="bg-gradient-to-r flex flex-col justify-center sm:flex-row from-black to-transparent h-full w-full z-10 absolute top-0 left-0">
         <div className="flex justify-center items-center sm:w-1/2 flex-col">
@@ -21,14 +23,14 @@ const Hero = () => {
             <div className="">
               <motion.span
                 animate={{ y: [50, 0] }}
-                transition={{ ease: 'easeInOut' }}
+                transition={{ ease: 'easeInOut', duration: 1 }}
                 className="text-lg lg:text-xl xl:text-2xl uppercase text-white font-medium"
               >
                 INTRODUCING
               </motion.span>
               <motion.h1
                 animate={{ y: [50, 0] }}
-                transition={{ ease: 'easeInOut', delay: 0.5 }}
+                transition={{ ease: 'easeInOut', delay: 0.5, duration: 2 }}
                 className="text-4xl lg:text-5xl xl:text-7xl uppercase text-white font-bold"
               >
                 Esummit&apos;23
@@ -41,7 +43,10 @@ const Hero = () => {
               Become a crucial part of this two days exciting event. Register today and grab the chance to get a priceless experience!
             </p>
 
-            <button className="relative inline-flex items-center px-12 py-3 overflow-hidden lg:text-md xl:text-lg font-medium text-orange-500 border-2 border-orange-500 rounded-full hover:text-white group hover:bg-gray-50">
+            <Link
+              href="/esummit23/register"
+              className="relative inline-flex items-center px-12 py-3 overflow-hidden lg:text-md xl:text-lg font-medium text-orange-500 border-2 border-orange-500 rounded-full hover:text-white group hover:bg-gray-50"
+            >
               <span className="absolute left-0 block w-full h-0 transition-all bg-orange-600 opacity-100 group-hover:h-full top-1/2 group-hover:top-0 duration-400 ease"></span>
               <span className="absolute right-0 flex items-center justify-start w-10 h-10 duration-300 transform translate-x-full group-hover:translate-x-0 ease">
                 <svg
@@ -60,12 +65,12 @@ const Hero = () => {
                 </svg>
               </span>
               <span className="relative">REGISTER NOW</span>
-            </button>
+            </Link>
           </div>
         </div>
         <motion.div
           animate={{ x: [100, -50, 0], opacity: [0, 100] }}
-          transition={{ ease: 'easeInOut' }}
+          transition={{ ease: 'easeInOut', duration: 4 }}
           className="sm:w-1/2 flex flex-col justify-center items-center"
         >
           <Image

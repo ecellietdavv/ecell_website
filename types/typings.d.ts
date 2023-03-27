@@ -23,16 +23,6 @@ type StoreAction = {
   payload: number;
 };
 
-type RegistrationValues = {
-  name: string;
-  email: string;
-  profession: string;
-  college: string;
-  phone: string;
-  hasStartup: boolean;
-  stage: string;
-};
-
 type ContactValues = {
   name: string;
   email: string;

@@ -1,16 +1,27 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 
 type Props = {};
 
 const LaunchingVideo = (props: Props) => {
   return (
-    <div className="sm:h-screen sm:max-h-[600px] lg:max-h-full flex text-center flex-col w-full justify-center items-center relative">
+    <section
+      id="es23_launching_video"
+      className="sm:h-screen sm:max-h-[600px] lg:max-h-full flex text-center flex-col w-full justify-center items-center relative"
+    >
+      <Image
+        src="/assets/ES/Rocket.svg"
+        height={400}
+        width={400}
+        alt="Rocket"
+        className="absolute z-10 left-0 -top-20 animate-up-down hidden xl:block"
+      />
       <div className="z-10 space-y-6 sm:space-y-16 w-11/12 lg:w-3/5">
         <h1 className="heading">HAVE A LOOK AT ESUMMIT&apos;23</h1>
         <motion.div
           whileInView={{ opacity: [0, 100] }}
-          transition={{ ease: 'easeInOut' }}
+          transition={{ ease: 'easeInOut', duration: 4 }}
           viewport={{ once: true }}
           className="relative overflow-hidden w-full pt-[56.25%] shadow-[0px_50px_100px_rgba(249,115,22,_0.7)]"
         >
@@ -24,7 +35,7 @@ const LaunchingVideo = (props: Props) => {
           ></iframe>
         </motion.div>
       </div>
-    </div>
+    </section>
   );
 };
 

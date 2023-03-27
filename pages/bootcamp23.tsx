@@ -4,7 +4,16 @@ import { useForm } from 'react-hook-form';
 import { toast } from 'react-toastify';
 import Spinner from '../components/UtilComponents/Spinner';
 import Stats from '../components/UtilComponents/Stats';
-import { RegistrationValues } from '../types/typings';
+
+type RegistrationValues = {
+  name: string;
+  email: string;
+  profession: string;
+  college: string;
+  phone: string;
+  hasStartup: boolean;
+  stage: string;
+};
 
 const Bootcamp23 = () => {
   const [hasStartup, setHasStartup] = useState<boolean>(false);
@@ -19,7 +28,7 @@ const Bootcamp23 = () => {
 
   const onSubmit = async (data: RegistrationValues) => {
     setProcessing(true);
-    await fetch('/api/register', {
+    await fetch('/api/bootcamp23/register', {
       method: 'POST',
       body: JSON.stringify({ ...data, hasStartup: hasStartup }),
     })
