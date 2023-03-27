@@ -60,7 +60,7 @@ const ES23Register = () => {
   return (
     <main
       style={montserrat.style}
-      className="bg-black relative text-white flex flex-col justify-center items-center py-16 sm:max-h-[800px] xl:max-h-full"
+      className="bg-black overflow-x-hidden relative text-white flex flex-col justify-center items-center py-16 sm:max-h-[800px] xl:max-h-full"
     >
       <NextSeo
         title="E-Summit 23 Register"
@@ -109,7 +109,7 @@ const ES23Register = () => {
               {...register('name', { required: true })}
               type="text"
               placeholder="Your Name Here"
-              className="w-full p-3 rounded bg-mid/10 dark:bg-mid"
+              className="w-full p-3 rounded bg-mid/10 "
             />
           </div>
           <div className="space-y-1">
@@ -118,7 +118,7 @@ const ES23Register = () => {
               {...register('email', { required: true })}
               type="email"
               placeholder="Your Email Here"
-              className="w-full p-3 rounded bg-mid/10 dark:bg-mid"
+              className="w-full p-3 rounded bg-mid/10 "
             />
           </div>
           <div className="space-y-1">
@@ -127,7 +127,7 @@ const ES23Register = () => {
               {...register('phone', { required: true })}
               type="text"
               placeholder="+911234567890"
-              className="w-full p-3 rounded bg-mid/10 dark:bg-mid"
+              className="w-full p-3 rounded bg-mid/10 "
             />
           </div>
           <div className="space-y-1">
@@ -136,7 +136,7 @@ const ES23Register = () => {
               {...register('profession', { required: true })}
               type="text"
               placeholder="Student, Software Developer ..."
-              className="w-full p-3 rounded bg-mid/10 dark:bg-mid"
+              className="w-full p-3 rounded bg-mid/10 "
             />
           </div>
           <div className="space-y-1">
@@ -145,7 +145,7 @@ const ES23Register = () => {
               {...register('college', { required: true })}
               type="text"
               placeholder="IET DAVV, Indore"
-              className="w-full p-3 rounded bg-mid/10 dark:bg-mid"
+              className="w-full p-3 rounded bg-mid/10 "
             />
           </div>
 

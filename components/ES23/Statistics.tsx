@@ -75,7 +75,7 @@ const Statistics = () => {
 
       <motion.div
         whileInView={{ x: [100, 0] }}
-        transition={{ ease: 'easeInOut', duration: 2, delay: 1 }}
+        transition={{ ease: 'easeInOut', duration: 2 }}
         viewport={{ once: true }}
         className="bg-dark rounded-xl lg:rounded-l-xl z-10 mx-auto sm:mx-0 w-11/12 xl:w-5/6 2xl:w-3/4 px-8 sm:px-12 py-10 text-gray-200"
       >
