@@ -56,10 +56,8 @@ const Statistics = () => {
   }, []);
 
   return (
-    <motion.section
-      whileInView={{ x: [100, 0] }}
-      transition={{ ease: 'easeInOut', duration: 2, delay: 1 }}
-      viewport={{ once: true }}
+    <section
+      id="es23_statistics"
       className="sm:h-screen sm:max-h-[600px] lg:max-h-full sm:overflow-hidden flex items-center justify-end relative"
     >
       <div className="hidden sm:block w-full absolute z-0 top-20">
@@ -75,7 +73,12 @@ const Statistics = () => {
         </Marquee>
       </div>
 
-      <div className="bg-dark rounded-xl lg:rounded-l-xl z-10 mx-auto sm:mx-0 w-11/12 xl:w-5/6 2xl:w-3/4 px-8 sm:px-12 py-10 text-gray-200">
+      <motion.div
+        whileInView={{ x: [100, 0] }}
+        transition={{ ease: 'easeInOut', duration: 2, delay: 1 }}
+        viewport={{ once: true }}
+        className="bg-dark rounded-xl lg:rounded-l-xl z-10 mx-auto sm:mx-0 w-11/12 xl:w-5/6 2xl:w-3/4 px-8 sm:px-12 py-10 text-gray-200"
+      >
         <div className="flex justify-between space-y-4 sm:space-y-0 flex-col sm:flex-row">
           <div className="flex flex-col">
             <h3 className="text-lg lg:text-lg xl:text-xl">Some Of Our</h3>
@@ -111,8 +114,8 @@ const Statistics = () => {
             Icon={SiGithubsponsors}
           />
         </div>
-      </div>
-    </motion.section>
+      </motion.div>
+    </section>
   );
 };
 

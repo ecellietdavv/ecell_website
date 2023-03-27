@@ -7,6 +7,7 @@ import { Montserrat } from 'next/font/google';
 import { NextSeo } from 'next-seo';
 import DotsBG from '../../components/ES23/DotsBG';
 const montserrat = Montserrat({ subsets: ['latin'] });
+import { motion } from 'framer-motion';
 
 type RegistrationValues = {
   name: string;
@@ -59,10 +60,10 @@ const ES23Register = () => {
   return (
     <main
       style={montserrat.style}
-      className="bg-black text-white flex flex-col justify-center items-center py-16 sm:max-h-[800px] xl:max-h-full"
+      className="bg-black relative text-white flex flex-col justify-center items-center py-16 sm:max-h-[800px] xl:max-h-full"
     >
       <NextSeo
-        title="Esummit 23 Register"
+        title="E-Summit 23 Register"
         description="Through the various events conducted by us, we provide our students the opportunities to develop and groom entrepreneurial qualities like the ability to think on their feet, to effectively organize and handle national-level events, and adaptability to efficiently collaborate with different groups. Here are some events conducted by us."
       />
 
@@ -71,9 +72,13 @@ const ES23Register = () => {
       <div className="grid z-10 grid-cols-1 gap-8 px-8 justify-between w-full items-center mx-auto md:grid-cols-2 md:px-12 lg:px-16 xl:px-32">
         <div className="flex flex-col xl:max-w-lg">
           <div className="space-y-2">
-            <h2 className="text-4xl font-bold leading-tight lg:text-5xl">
+            <motion.h2
+              animate={{ y: [50, 0] }}
+              transition={{ ease: 'easeInOut', delay: 0.5, duration: 2 }}
+              className="text-4xl font-bold leading-tight lg:text-5xl"
+            >
               E-Summit&apos;23
-            </h2>
+            </motion.h2>
             <div className="text-gray-400 flex flex-col space-y-2 py-4">
               <span>Register for E-Summit 2023.</span>
               <span className="font-semibold">
@@ -82,7 +87,11 @@ const ES23Register = () => {
               </span>
             </div>
           </div>
-          <div className=" relative">
+          <motion.div
+            animate={{ x: [100, -50, 0], opacity: [0, 100] }}
+            transition={{ ease: 'easeInOut', duration: 4 }}
+            className=" relative"
+          >
             <Image
               src="/assets/logos/ES Logo.svg"
               height={400}
@@ -90,7 +99,7 @@ const ES23Register = () => {
               className=""
               alt="ESummit'23 Logo"
             />
-          </div>
+          </motion.div>
         </div>
 
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">

@@ -94,7 +94,7 @@ const Timeline = (props: Props) => {
 
   return (
     <section
-      id="timeline"
+      id="es23_timeline"
       className="sm:h-screen sm:max-h-[600px] md:max-h-[900px] xl:max-h-full sm:overflow-hidden flex flex-col items-center justify-center relative"
     >
       <DotsBG />

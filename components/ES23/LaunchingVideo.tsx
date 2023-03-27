@@ -6,7 +6,10 @@ type Props = {};
 
 const LaunchingVideo = (props: Props) => {
   return (
-    <div className="sm:h-screen sm:max-h-[600px] lg:max-h-full flex text-center flex-col w-full justify-center items-center relative">
+    <section
+      id="es23_launching_video"
+      className="sm:h-screen sm:max-h-[600px] lg:max-h-full flex text-center flex-col w-full justify-center items-center relative"
+    >
       <Image
         src="/assets/ES/Rocket.svg"
         height={400}
@@ -32,7 +35,7 @@ const LaunchingVideo = (props: Props) => {
           ></iframe>
         </motion.div>
       </div>
-    </div>
+    </section>
   );
 };
 

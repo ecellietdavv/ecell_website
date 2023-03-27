@@ -15,6 +15,7 @@ const Hero = () => {
     <section
       onPointerMove={handlePointerMove}
       className="relative gradientBackground"
+      id="es23_home"
     >
       <div className="bg-gradient-to-r flex flex-col justify-center sm:flex-row from-black to-transparent h-full w-full z-10 absolute top-0 left-0">
         <div className="flex justify-center items-center sm:w-1/2 flex-col">

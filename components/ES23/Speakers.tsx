@@ -61,7 +61,10 @@ const Speakers = () => {
   };
 
   return (
-    <section className="sm:h-screen sm:max-h-[600px] md:max-h-[900px] xl:max-h-full sm:overflow-hidden flex flex-col items-center justify-center relative space-y-8">
+    <section
+      id="es23_speakers"
+      className="sm:h-screen sm:max-h-[600px] md:max-h-[900px] xl:max-h-full sm:overflow-hidden flex flex-col items-center justify-center relative space-y-8"
+    >
       <div className="flex justify-between items-center w-5/6">
         <h1 className="heading text-left">Meet Our Speakers</h1>
         <div className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-2 text-white">

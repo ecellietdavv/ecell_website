@@ -52,14 +52,17 @@ const EventCard = ({ event, idx }: EventCardProps) => {
 
 const Events = () => {
   return (
-    <div className="lg:min-h-screen sm:max-h-[600px] md:max-h-full sm:overflow-hidden flex flex-col items-center justify-center relative">
+    <section
+      id="es23_events"
+      className="lg:min-h-screen sm:max-h-[600px] md:max-h-full sm:overflow-hidden flex flex-col items-center justify-center relative"
+    >
       <h1 className="heading">Events</h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-16 w-5/6 mx-auto py-10 lg:py-20">
         {eventData.map((event, idx) => {
           return <EventCard key={idx} idx={idx} event={event} />;
         })}
       </div>
-    </div>
+    </section>
   );
 };
 
