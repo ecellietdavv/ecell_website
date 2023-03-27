@@ -107,7 +107,7 @@ const Speakers = () => {
         </div>
       </div>
 
-      <div className="max-w-screen-xl w-5/6 mx-auto dark:bg-gray-800 dark:text-gray-100">
+      <div className="max-w-screen-xl w-5/6 mx-auto">
         <div
           ref={scrollRef}
           className="flex gap-5 w-full overflow-auto scrollbar-none"
