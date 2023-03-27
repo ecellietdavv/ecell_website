@@ -36,10 +36,9 @@ const Hero = () => {
             </div>
 
             <p className="lg:text-md xl:text-lg text-gray-400">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Repudiandae, dolores expedita consequuntur esse nemo odio natus
-              dolore cumque sunt debitis aliquam reiciendis saepe? Perspiciatis
-              quae esse quod, asperiores sapiente pariatur?
+              The future belongs to those who believe in the beauty of their dreams.
+              E-Summit is not just a dream, it is The Vision of Transcendence.
+              Become a crucial part of this two days exciting event. Register today and grab the chance to get a priceless experience!
             </p>
 
             <button className="relative inline-flex items-center px-12 py-3 overflow-hidden lg:text-md xl:text-lg font-medium text-orange-500 border-2 border-orange-500 rounded-full hover:text-white group hover:bg-gray-50">
