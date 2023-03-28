@@ -8,6 +8,7 @@ import { NextSeo } from 'next-seo';
 import DotsBG from '../../components/ES23/DotsBG';
 const montserrat = Montserrat({ subsets: ['latin'] });
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 
 type RegistrationValues = {
   name: string;
@@ -18,7 +19,6 @@ type RegistrationValues = {
 };
 
 const ES23Register = () => {
-  const [hasStartup, setHasStartup] = useState<boolean>(false);
   const [processing, setProcessing] = useState<boolean>(false);
 
   const {
@@ -77,7 +77,7 @@ const ES23Register = () => {
               transition={{ ease: 'easeInOut', delay: 0.5, duration: 2 }}
               className="text-4xl font-bold leading-tight lg:text-5xl"
             >
-              E-Summit&apos;23
+              <Link href="/esummit23">E-Summit&apos;23</Link>
             </motion.h2>
             <div className="text-gray-400 flex flex-col space-y-2 py-4">
               <span>Register for E-Summit 2023.</span>
@@ -89,7 +89,7 @@ const ES23Register = () => {
           </div>
           <motion.div
             animate={{ x: [100, -50, 0], opacity: [0, 100] }}
-            transition={{ ease: 'easeInOut', duration: 4 }}
+            transition={{ ease: 'easeInOut', duration: 2 }}
             className=" relative"
           >
             <Image
@@ -152,7 +152,7 @@ const ES23Register = () => {
           <button
             type="submit"
             disabled={processing}
-            className="relative w-full justify-center inline-flex items-center px-12 py-3 overflow-hidden lg:text-md xl:text-lg font-medium text-orange-500 border-2 border-orange-500 rounded-full hover:text-white group hover:bg-gray-50"
+            className="relative w-full justify-center inline-flex items-center px-12 py-3 overflow-hidden lg:text-md xl:text-lg font-medium text-orange-500 border-2 border-orange-500 rounded-full hover:text-white group hover:bg-gray-50 disabled:animate-pulse"
           >
             <span className="absolute left-0 block w-full h-0 transition-all bg-orange-600 opacity-100 group-hover:h-full top-1/2 group-hover:top-0 duration-400 ease"></span>
             <span className="absolute right-0 flex items-center justify-start w-10 h-10 duration-300 transform translate-x-full group-hover:translate-x-0 ease">

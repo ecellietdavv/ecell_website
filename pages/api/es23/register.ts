@@ -27,6 +27,7 @@ export default async function handler(
 ) {
   if (req.method === 'POST') {
     const { name, college, email, profession, phone } = JSON.parse(req.body);
+    const emailFormated = email.trim().toLowerCase();
 
     const msg = {
       from: 'ecell@ietdavv.edu.in', // Change to your verified sender
@@ -34,7 +35,7 @@ export default async function handler(
       personalizations: [
         {
           subject: `ESummit23 Registration Confirmed! 🎉`,
-          to: { email: email },
+          to: { email: emailFormated },
           dynamic_template_data: {
             name: name,
           },
@@ -44,7 +45,7 @@ export default async function handler(
 
     try {
       const data = await client.fetch(checkRegistrationsQuery, {
-        email: email,
+        email: emailFormated,
       });
 
       if (data) {
@@ -53,7 +54,7 @@ export default async function handler(
 
       await client.create({
         _type: 'es23_registrations',
-        email,
+        email: emailFormated,
         name,
         college,
         phone,

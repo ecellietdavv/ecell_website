@@ -49,14 +49,14 @@ const Timeline = (props: Props) => {
 
     return (
       <motion.li
-        whileInView={{
+        animate={{
           x: [-100, 0],
           opacity: [0, 100],
         }}
         transition={{
           delay: number * 0.1,
           ease: 'easeInOut',
-          duration: 4,
+          duration: 1,
         }}
         viewport={{ once: true }}
         className="relative flex space-x-6 sm:block sm:space-x-0"

@@ -21,15 +21,15 @@ const Hero = () => {
         <div className="flex justify-center items-center sm:w-1/2 flex-col">
           <div className="space-y-12 w-3/4">
             <div className="">
-              <motion.span
+              <motion.h2
                 animate={{ y: [50, 0] }}
                 transition={{ ease: 'easeInOut', duration: 1 }}
                 className="text-lg lg:text-xl xl:text-2xl uppercase text-white font-medium"
               >
                 INTRODUCING
-              </motion.span>
+              </motion.h2>
               <motion.h1
-                animate={{ y: [50, 0] }}
+                animate={{ y: [50, 0], opacity: [0, 100] }}
                 transition={{ ease: 'easeInOut', delay: 0.5, duration: 2 }}
                 className="text-4xl lg:text-5xl xl:text-7xl uppercase text-white font-bold"
               >
@@ -38,9 +38,11 @@ const Hero = () => {
             </div>
 
             <p className="lg:text-md xl:text-lg text-gray-400">
-              The future belongs to those who believe in the beauty of their dreams.
-              E-Summit is not just a dream, it is The Vision of Transcendence.
-              Become a crucial part of this two days exciting event. Register today and grab the chance to get a priceless experience!
+              The future belongs to those who believe in the beauty of their
+              dreams. E-Summit is not just a dream, it is The Vision of
+              Transcendence. Become a crucial part of this two days exciting
+              event. Register today and grab the chance to get a priceless
+              experience!
             </p>
 
             <Link
@@ -70,7 +72,7 @@ const Hero = () => {
         </div>
         <motion.div
           animate={{ x: [100, -50, 0], opacity: [0, 100] }}
-          transition={{ ease: 'easeInOut', duration: 4 }}
+          transition={{ ease: 'easeInOut', duration: 2 }}
           className="sm:w-1/2 flex flex-col justify-center items-center"
         >
           <Image

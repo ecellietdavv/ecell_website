@@ -55,7 +55,7 @@ const Bootcamp23 = () => {
     }
   }, [isSubmitSuccessful, reset]);
 
-  const buttonClass = `text-light mt-3 w-full bg-brand-500 dark:bg-brand-500 dark:hover:bg-brand-600 hover:bg-brand-600 focus:outline-none focus:ring-1 justify-center items-center flex space-x-2 focus:ring-blue-200 font-medium rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:hover:bg-brand`;
+  const buttonClass = `text-light mt-3 w-full bg-brand-500 dark:bg-brand-500 dark:hover:bg-brand-600 hover:bg-brand-600 focus:outline-none focus:ring-1 justify-center items-center flex space-x-2 focus:ring-blue-200 font-medium rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:hover:bg-brand disabled:animate:pulse`;
 
   return (
     <main className="dark:bg-dark dark:text-gray-100 flex flex-col items-center pt-16 px-0 xl:px-10">
@@ -185,7 +185,7 @@ const Bootcamp23 = () => {
               </select>
             </div>
           ) : null}
-          <button type="submit" className={buttonClass}>
+          <button disabled={processing} type="submit" className={buttonClass}>
             <span>Register</span>
             {processing && <Spinner />}
           </button>

@@ -19,14 +19,14 @@ const EventCard = ({ event, idx }: EventCardProps) => {
   const { name, desc, img } = event;
   return (
     <motion.div
-      whileInView={{
+      animate={{
         y: [100, 0],
         opacity: [0, 100],
       }}
       transition={{
         delay: idx * 0.5,
         ease: 'easeInOut',
-        duration: 3,
+        duration: 1,
       }}
       viewport={{ once: true }}
       className={classNames(

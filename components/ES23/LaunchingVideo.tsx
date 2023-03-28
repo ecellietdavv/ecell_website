@@ -20,8 +20,8 @@ const LaunchingVideo = (props: Props) => {
       <div className="z-10 space-y-6 sm:space-y-16 w-11/12 lg:w-3/5">
         <h1 className="heading">HAVE A LOOK AT ESUMMIT&apos;23</h1>
         <motion.div
-          whileInView={{ opacity: [0, 100] }}
-          transition={{ ease: 'easeInOut', duration: 4 }}
+          animate={{ opacity: [0, 100] }}
+          transition={{ ease: 'easeInOut', duration: 2 }}
           viewport={{ once: true }}
           className="relative overflow-hidden w-full pt-[56.25%] shadow-[0px_50px_100px_rgba(249,115,22,_0.7)]"
         >
