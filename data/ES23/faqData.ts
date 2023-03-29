@@ -1,18 +1,14 @@
 export const FAQs = [
   {
-    ques: 'Is this free of cost?',
-    ans: 'Completely free of cost to attend and gain knowledge.',
+    ques: 'What is E-Summit?',
+    ans: 'E-Summit23 is the Annual Entrepreneurship Fest of DAVV.',
   },
   {
-    ques: 'Will i get participation certificate?',
-    ans: 'Yes, participation certificate would be provided',
+    ques: 'When is the event going to be held? ',
+    ans: 'E-Summit23 is going to be held on 11th & 12th April, 2023 at Main Auditorium, Takshila Campus, DAVV.',
   },
   {
-    ques: 'Is this free of cost?',
-    ans: 'Completely free of cost to attend and gain knowledge.',
-  },
-  {
-    ques: 'Will i get participation certificate?',
-    ans: 'Yes, participation certificate would be provided',
+    ques: 'What is the registration fee for the E-Summit23? ',
+    ans: 'For students, the registration for E-Summit23 is free.',
   },
 ];
