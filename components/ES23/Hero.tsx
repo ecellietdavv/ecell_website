@@ -39,6 +39,8 @@ const Hero = () => {
 
             <p className="lg:text-md xl:text-lg text-gray-400">
               The future belongs to those who dream with all their Heart and possess the will of transforming their dreams into reality.
+              E-Summit is not just a dream, it is The Vision of Transcendence.
+              Become a crucial part of this two days exciting event. Register today and grab the chance to get a priceless experience!
             </p>
 
             <Link
