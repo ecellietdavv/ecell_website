@@ -2,34 +2,35 @@ export const timelineData = [
   {
     startDate: '12-10-2022',
     endDate: '01-15-2023',
-    title: 'Student Application Open',
+    title: 'Inauguration',
+  },
+  {
+    startDate: '12-10-2022',
+    endDate: '01-15-2023',
+    title: 'Speaker Session',
   },
   {
     startDate: '01-12-2023',
-    title: 'Inaugural Ceremony',
+    title: 'Lunch Break',
   },
   {
     startDate: '01-15-2023',
     endDate: '01-23-2023',
-    title: 'Proposal Writing session',
+    title: 'Startup Exhibition',
   },
   {
     startDate: '01-24-2023',
     endDate: '01-28-2023',
-    title: 'Community Bonding phase',
+    title: 'Speaker Session',
   },
   {
     startDate: '01-28-2023',
     endDate: '03-15-2023',
-    title: 'Coding Phase',
+    title: 'Shark Tank',
   },
   {
     startDate: '03-15-2023',
     endDate: '03-24-2023',
-    title: 'Mentor Feedback Phase',
-  },
-  {
-    startDate: '03-25-2023',
-    title: 'Closing Ceremony',
+    title: 'Internship Fair Interviews',
   },
 ];

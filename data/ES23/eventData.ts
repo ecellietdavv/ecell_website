@@ -2,7 +2,7 @@ export const eventData = [
   {
     name: 'Internship Fair ',
     desc: 'Top Companies of India will come to provide internships to the students',
-    img: '/assets/ES/Events/SharksTank.png',
+    img: '/assets/ES/Events/internship.jpeg',
   },
   {
     name: 'Startup Exhibition',

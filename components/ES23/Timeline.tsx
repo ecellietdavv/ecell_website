@@ -105,6 +105,7 @@ const Timeline = (props: Props) => {
         fill
       />
       <h1 className="heading">Timeline</h1>
+      <h1 className="text-2xl font-semibold my-3 text-white">Day 1</h1>
       <ol className="items-center grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-y-4 sm:gap-y-16 py-10 lg:py-20">
         {timelineData.map((data, key) => {
           return (
