@@ -1,7 +1,11 @@
 export const FAQs = [
   {
     ques: 'What is E-Summit?',
-    ans: 'E-Summit23 is the Annual Entrepreneurship Fest of DAVV.',
+    ans: 'E-summit is the Annual Entrepreneurship Fest of DAVV which will collectively refer to an array of unique events and inspiring conferences that focus on entrepreneurship, innovation, and startup culture.',
+  },
+  {
+    ques: 'What are the activities that will take place at the E-Summit23?',
+    ans: 'The summit will offer keynote speeches, panel discussions, and networking sessions, all aimed at providing valuable insights and strategies for successful business launches and expansions.',
   },
   {
     ques: 'When is the event going to be held? ',
@@ -9,6 +13,6 @@ export const FAQs = [
   },
   {
     ques: 'What is the registration fee for the E-Summit23? ',
-    ans: 'For students, the registration for E-Summit23 is free.',
+    ans: 'Registering for E-Summit23 is absolutely free for Students.',
   },
 ];
