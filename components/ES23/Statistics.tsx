@@ -85,10 +85,10 @@ const Statistics = () => {
             <h2 className="heading">Statistics</h2>
           </div>
           <p className="sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl text-gray-400">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi ex
-            voluptatum laudantium unde rem fugiat, tenetur corrupti libero
-            cumque consectetur mollitia ipsum id debitis quas dignissimos.
-            Repudiandae dolorum voluptas tempore!
+            No event becomes huge because the organizers said so. But the numbers don&apos;t lie.
+            Here are some of the key statistics related to E-summit23 telling the story of why &apos;E-Summit23&apos;
+            might be the opportunity of a lifetime for students and entrepreneurship enthusiasts.
+
           </p>
         </div>
 
