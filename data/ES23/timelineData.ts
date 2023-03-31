@@ -1,36 +1,45 @@
-export const timelineData = [
+export const timelineDataDay1 = [
   {
-    startDate: '12-10-2022',
-    endDate: '01-15-2023',
+    startTime: Date.parse('2023-04-11T11:00'),
+    endTime: Date.parse('2023-04-11T13:30'),
     title: 'Inauguration',
   },
   {
-    startDate: '12-10-2022',
-    endDate: '01-15-2023',
-    title: 'Speaker Session',
+    startTime: Date.parse('2023-04-11T11:00'),
+    endTime: Date.parse('2023-04-11T13:30'),
+    title: 'Inauguration',
   },
   {
-    startDate: '01-12-2023',
-    title: 'Lunch Break',
+    startTime: Date.parse('2023-04-11T11:00'),
+    endTime: Date.parse('2023-04-11T13:30'),
+    title: 'Inauguration',
   },
   {
-    startDate: '01-15-2023',
-    endDate: '01-23-2023',
-    title: 'Startup Exhibition',
+    startTime: Date.parse('2023-04-11T11:00'),
+    endTime: Date.parse('2023-04-11T13:30'),
+    title: 'Inauguration',
+  },
+];
+
+export const timelineDataDay2 = [
+  {
+    startTime: Date.parse('2023-04-12T11:00'),
+    endTime: Date.parse('2023-04-12T13:30'),
+    title: 'Inauguration',
   },
   {
-    startDate: '01-24-2023',
-    endDate: '01-28-2023',
-    title: 'Speaker Session',
+    startTime: Date.parse('2023-04-12T11:00'),
+    endTime: Date.parse('2023-04-12T13:30'),
+    title: 'Inauguration',
   },
   {
-    startDate: '01-28-2023',
-    endDate: '03-15-2023',
-    title: 'Shark Tank',
+    startTime: Date.parse('2023-04-12T11:00'),
+    endTime: Date.parse('2023-04-12T13:30'),
+    title: 'Inauguration',
   },
   {
-    startDate: '03-15-2023',
-    endDate: '03-24-2023',
-    title: 'Internship Fair Interviews',
+    startTime: Date.parse('2023-04-12T11:00'),
+    endTime: Date.parse('2023-04-12T13:30'),
+    title: 'Inauguration',
   },
 ];

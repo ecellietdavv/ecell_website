@@ -4,57 +4,41 @@ export const speakerData = [
   {
     speaker: {
       name: 'Jhon Doe',
-      img: randomPersonImage.female,
+      img: '/assets/ES/Speakers/Speaker1.jpg',
     },
-    eventName: 'Startup Boost',
-    eventDate: '12-10-2022',
+    eventName: 'Yet to be revealed!',
+    eventDate: '04-11-2023',
   },
   {
     speaker: {
       name: 'Jhon Doe',
-      img: randomPersonImage.male,
+      img: '/assets/ES/Speakers/Speaker1.jpg',
     },
-    eventName: 'Startup Boost',
-    eventDate: '12-15-2022',
+    eventName: 'Yet to be revealed!',
+    eventDate: '04-11-2023',
   },
   {
     speaker: {
       name: 'Jhon Doe',
-      img: randomPersonImage.female,
+      img: '/assets/ES/Speakers/Speaker1.jpg',
     },
-    eventName: 'Startup Boost',
-    eventDate: '08-10-2022',
+    eventName: 'Yet to be revealed!',
+    eventDate: '04-11-2023',
   },
   {
     speaker: {
       name: 'Jhon Doe',
-      img: randomPersonImage.male,
+      img: '/assets/ES/Speakers/Speaker2.jpg',
     },
-    eventName: 'Startup Boost',
-    eventDate: '12-13-2022',
+    eventName: 'Yet to be revealed!',
+    eventDate: '04-12-2023',
   },
   {
     speaker: {
       name: 'Jhon Doe',
-      img: randomPersonImage.male,
+      img: '/assets/ES/Speakers/Speaker2.jpg',
     },
-    eventName: 'Startup Boost',
-    eventDate: '12-15-2022',
-  },
-  {
-    speaker: {
-      name: 'Jhon Doe',
-      img: randomPersonImage.female,
-    },
-    eventName: 'Startup Boost',
-    eventDate: '08-10-2022',
-  },
-  {
-    speaker: {
-      name: 'Jhon Doe',
-      img: randomPersonImage.male,
-    },
-    eventName: 'Startup Boost',
-    eventDate: '12-13-2022',
+    eventName: 'Yet to be revealed!',
+    eventDate: '04-12-2023',
   },
 ];

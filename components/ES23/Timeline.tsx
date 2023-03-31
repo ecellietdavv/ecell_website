@@ -1,10 +1,14 @@
 import classNames from 'classnames';
 import Image from 'next/image';
-import React from 'react';
+import React, { useState } from 'react';
 import moment from 'moment';
 import { motion } from 'framer-motion';
-import { timelineData } from '../../data/ES23/timelineData';
+import {
+  timelineDataDay1,
+  timelineDataDay2,
+} from '../../data/ES23/timelineData';
 import DotsBG from './DotsBG';
+import { AiFillLeftSquare, AiFillRightSquare } from 'react-icons/ai';
 
 type Props = {
   date: Date;
@@ -12,8 +16,8 @@ type Props = {
 
 type NodeData = {
   title: string;
-  startDate: string;
-  endDate?: string;
+  startTime: string;
+  endTime?: string;
 };
 type NodeProps = {
   nodeData: NodeData;
@@ -23,12 +27,15 @@ type NodeProps = {
 
 const Timeline = (props: Props) => {
   const { date } = props;
+  const [day, setDay] = useState(1);
+  const timelineData = day === 1 ? timelineDataDay1 : timelineDataDay2;
+
   const TimelineNode = (props: NodeProps) => {
     const { nodeData, number, end } = props;
-    const { startDate, endDate, title } = nodeData;
+    const { startTime, endTime, title } = nodeData;
 
-    const sd = moment(startDate).toDate();
-    const ed = endDate ? moment(endDate).toDate() : null;
+    const sd = moment(startTime).toDate();
+    const ed = endTime ? moment(endTime).toDate() : null;
     const d = moment(date).toDate();
 
     const returnClass = () => {
@@ -79,11 +86,11 @@ const Timeline = (props: Props) => {
             {title}
           </h4>
           <time className="block mb-2 text-sm font-normal leading-none text-gray-100">
-            {moment(startDate).format('Do MMM YYYY')}
-            {endDate ? (
+            {moment(startTime).format('h:mm A')}
+            {endTime ? (
               <span className="">
                 {' '}
-                <span>-</span> {moment(endDate).format('Do MMM YYYY')}
+                <span>-</span> {moment(endTime).format('h:mm A')}
               </span>
             ) : null}
           </time>
@@ -105,7 +112,21 @@ const Timeline = (props: Props) => {
         fill
       />
       <h1 className="heading">Timeline</h1>
-      <h1 className="text-2xl font-semibold my-3 text-white">Day 1</h1>
+      <div className="text-2xl font-semibold my-3 text-white flex space-x-4 items-center z-10">
+        <AiFillLeftSquare
+          className="cursor-pointer"
+          onClick={() => {
+            setDay(1);
+          }}
+        />
+        <span>Day {day}</span>
+        <AiFillRightSquare
+          className="cursor-pointer"
+          onClick={() => {
+            setDay(2);
+          }}
+        />
+      </div>
       <ol className="items-center grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-y-4 sm:gap-y-16 py-10 lg:py-20">
         {timelineData.map((data, key) => {
           return (
