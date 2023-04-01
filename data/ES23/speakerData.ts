@@ -3,7 +3,7 @@ import { randomPersonImage } from '../../utils/randomAssets';
 export const speakerData = [
   {
     speaker: {
-      name: 'Jhon Doe',
+      name: 'Stay Tuned!',
       img: '/assets/ES/Speakers/Speaker1.jpg',
     },
     eventName: 'Yet to be revealed!',
@@ -11,7 +11,7 @@ export const speakerData = [
   },
   {
     speaker: {
-      name: 'Jhon Doe',
+      name: 'Stay Tuned!',
       img: '/assets/ES/Speakers/Speaker1.jpg',
     },
     eventName: 'Yet to be revealed!',
@@ -19,7 +19,7 @@ export const speakerData = [
   },
   {
     speaker: {
-      name: 'Jhon Doe',
+      name: 'Stay Tuned!',
       img: '/assets/ES/Speakers/Speaker1.jpg',
     },
     eventName: 'Yet to be revealed!',
@@ -27,7 +27,7 @@ export const speakerData = [
   },
   {
     speaker: {
-      name: 'Jhon Doe',
+      name: 'Stay Tuned!',
       img: '/assets/ES/Speakers/Speaker2.jpg',
     },
     eventName: 'Yet to be revealed!',
@@ -35,7 +35,7 @@ export const speakerData = [
   },
   {
     speaker: {
-      name: 'Jhon Doe',
+      name: 'Stay Tuned!',
       img: '/assets/ES/Speakers/Speaker2.jpg',
     },
     eventName: 'Yet to be revealed!',

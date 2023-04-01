@@ -169,7 +169,7 @@ const ES23Register = () => {
                 Online
               </option>
               <option className="text-black" value="Offline">
-                Ofiline
+                Offline
               </option>
               <option className="text-black" value="Freinds Refral">
                 Freinds Refral
