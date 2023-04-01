@@ -19,10 +19,11 @@ const SponsorImg = ({ sponsor, idx }: SponsorProps) => {
   const { name, img } = sponsor;
 
   return (
-    <div className="relative w-24 h-24 mx-10">
+    <div className="relative w-40 h-24 mx-10">
       <Image
         layout="fill"
         style={{ objectFit: 'cover' }}
+        title={name}
         src={img}
         alt={name}
       />
@@ -34,7 +35,7 @@ const Sponsors = (props: Props) => {
   return (
     <section id="es23_sponsors" className="px-6 sm:px-0">
       <div className="container flex flex-col justify-center p-4 mx-auto md:p-8">
-        <h1 className="heading mb-12">Sponsors</h1>
+        <h1 className="heading mb-12">Past Sponsors</h1>
         <Marquee
           gradient={true}
           speed={100}

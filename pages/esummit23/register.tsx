@@ -16,6 +16,8 @@ type RegistrationValues = {
   profession: string;
   college: string;
   phone: string;
+  modeOfHear: string;
+  age: number;
 };
 
 const ES23Register = () => {
@@ -60,7 +62,7 @@ const ES23Register = () => {
   return (
     <main
       style={montserrat.style}
-      className="bg-black overflow-x-hidden relative text-white flex flex-col justify-center items-center py-16 sm:max-h-[800px] xl:max-h-full"
+      className="bg-black overflow-x-hidden relative text-white flex flex-col justify-center items-center py-16 sm:max-h-[800px] lg:max-h-full"
     >
       <NextSeo
         title="E-Summit 23 Register"
@@ -69,7 +71,7 @@ const ES23Register = () => {
 
       <DotsBG />
 
-      <div className="grid z-10 grid-cols-1 gap-8 px-8 justify-between w-full items-center mx-auto md:grid-cols-2 md:px-12 lg:px-16 xl:px-32">
+      <div className="grid z-10 grid-cols-1 gap-8 px-8 justify-between w-full lg:py-10 mx-auto md:grid-cols-2 md:px-12 lg:px-16 xl:px-32">
         <div className="flex flex-col xl:max-w-lg">
           <div className="space-y-2">
             <motion.h2
@@ -77,14 +79,12 @@ const ES23Register = () => {
               transition={{ ease: 'easeInOut', delay: 0.5, duration: 2 }}
               className="text-4xl font-bold leading-tight lg:text-5xl"
             >
-              <Link href="/esummit23">E-Summit&apos;23</Link>
+              <Link href="/esummit23" className="hover:underline">
+                E-Summit&apos;23
+              </Link>
             </motion.h2>
-            <div className="text-gray-400 flex flex-col space-y-2 py-4">
+            <div className="text-gray-400">
               <span>Register for E-Summit 2023.</span>
-              <span className="font-semibold">
-                ** The certificate will only be granted to the attendees who
-                attend every session throughout the course of both days.
-              </span>
             </div>
           </div>
           <motion.div
@@ -131,6 +131,17 @@ const ES23Register = () => {
             />
           </div>
           <div className="space-y-1">
+            <label className="text-sm">Age</label>
+            <input
+              {...register('age', { required: true })}
+              type="number"
+              placeholder="18"
+              min={10}
+              max={80}
+              className="w-full p-3 rounded bg-mid/10 "
+            />
+          </div>
+          <div className="space-y-1">
             <label className="text-sm">Profession</label>
             <input
               {...register('profession', { required: true })}
@@ -147,6 +158,23 @@ const ES23Register = () => {
               placeholder="IET DAVV, Indore"
               className="w-full p-3 rounded bg-mid/10 "
             />
+          </div>
+          <div className="space-y-1">
+            <label className="text-sm">How Did You Hear About Us?</label>
+            <select
+              {...register('modeOfHear', { required: true })}
+              className="w-full p-3 rounded bg-mid/10"
+            >
+              <option className="text-black" value="online">
+                Online
+              </option>
+              <option className="text-black" value="offline">
+                Ofiline
+              </option>
+              <option className="text-black" value="other">
+                Other
+              </option>
+            </select>
           </div>
 
           <button

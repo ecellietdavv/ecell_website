@@ -3,11 +3,14 @@ import Image from 'next/image';
 import React from 'react';
 import { eventData } from '../../data/ES23/eventData';
 import { motion } from 'framer-motion';
+import { IoOpenOutline } from 'react-icons/io5';
+import Link from 'next/link';
 
 type Event = {
   name: string;
   desc: string;
   img: string;
+  registration_form: string;
 };
 
 type EventCardProps = {
@@ -16,7 +19,7 @@ type EventCardProps = {
 };
 
 const EventCard = ({ event, idx }: EventCardProps) => {
-  const { name, desc, img } = event;
+  const { name, desc, img, registration_form } = event;
   return (
     <motion.div
       animate={{
@@ -43,7 +46,15 @@ const EventCard = ({ event, idx }: EventCardProps) => {
         />
       </div>
       <div className="w-full space-y-4">
-        <p className="text-white font-semibold text-2xl lg:text-3xl">{name}</p>
+        <Link
+          href={registration_form}
+          rel="noreffer"
+          target="_blank"
+          prefetch={false}
+          className="text-white font-semibold text-2xl lg:text-3xl flex items-center group-hover:underline space-x-3"
+        >
+          <span>{name}</span> <IoOpenOutline />
+        </Link>
         <p className="text-sm lg:text-md text-gray-400">{desc}</p>
       </div>
     </motion.div>

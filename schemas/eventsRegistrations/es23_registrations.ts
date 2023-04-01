@@ -30,6 +30,13 @@ export default defineType({
       readOnly: true,
     }),
     defineField({
+      name: 'age',
+      title: 'Age',
+      type: 'number',
+      readOnly: true,
+      initialValue: 20,
+    }),
+    defineField({
       name: 'profession',
       title: 'Profession',
       type: 'string',
@@ -40,6 +47,13 @@ export default defineType({
       title: 'college',
       type: 'string',
       readOnly: true,
+    }),
+    defineField({
+      name: 'modeOfHear',
+      title: 'Mode Of Hear',
+      type: 'string',
+      readOnly: true,
+      initialValue: 'Online',
     }),
   ],
   preview: {

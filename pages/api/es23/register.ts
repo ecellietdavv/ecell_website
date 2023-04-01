@@ -26,8 +26,10 @@ export default async function handler(
   res: NextApiResponse<Data>
 ) {
   if (req.method === 'POST') {
-    const { name, college, email, profession, phone } = JSON.parse(req.body);
+    const { name, college, email, profession, phone, modeOfHear, age } =
+      JSON.parse(req.body);
     const emailFormated = email.trim().toLowerCase();
+    const ageFormated = parseInt(age);
 
     const msg = {
       from: 'ecell@ietdavv.edu.in', // Change to your verified sender
@@ -59,6 +61,8 @@ export default async function handler(
         college,
         phone,
         profession,
+        modeOfHear,
+        age: ageFormated,
       });
 
       await sgMail
