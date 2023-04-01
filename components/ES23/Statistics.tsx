@@ -82,13 +82,14 @@ const Statistics = () => {
         <div className="flex justify-between space-y-4 sm:space-y-0 flex-col sm:flex-row">
           <div className="flex flex-col">
             <h3 className="text-lg lg:text-lg xl:text-xl">Some Of Our</h3>
-            <h2 className="heading">Statistics</h2>
+            <h2 className="heading text-left">Statistics</h2>
           </div>
           <p className="sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl text-gray-400">
-            No event becomes huge because the organizers said so. But the numbers don&apos;t lie.
-            Here are some of the key statistics related to E-summit23 telling the story of why &apos;E-Summit23&apos;
-            might be the opportunity of a lifetime for students and entrepreneurship enthusiasts.
-
+            No event becomes huge because the organizers said so. But the
+            numbers don&apos;t lie. Here are some of the key statistics related
+            to E-summit23 telling the story of why &apos;E-Summit23&apos; might
+            be the opportunity of a lifetime for students and entrepreneurship
+            enthusiasts.
           </p>
         </div>
 

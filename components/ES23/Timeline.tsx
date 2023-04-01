@@ -82,7 +82,7 @@ const Timeline = (props: Props) => {
           ) : null}
         </div>
         <div className="mt-3 sm:pr-8">
-          <h4 className="text-lg font-semibold text-white whitespace-nowrap">
+          <h4 className="text-lg max-w-[250px] sm:max-w-[300px] font-semibold text-white">
             {title}
           </h4>
           <time className="block mb-2 text-sm font-normal leading-none text-gray-100">
