@@ -165,14 +165,14 @@ const ES23Register = () => {
               {...register('modeOfHear', { required: true })}
               className="w-full p-3 rounded bg-mid/10"
             >
-              <option className="text-black" value="online">
+              <option className="text-black" value="Online">
                 Online
               </option>
-              <option className="text-black" value="offline">
+              <option className="text-black" value="Offline">
                 Ofiline
               </option>
-              <option className="text-black" value="other">
-                Other
+              <option className="text-black" value="Freinds Refral">
+                Freinds Refral
               </option>
             </select>
           </div>
