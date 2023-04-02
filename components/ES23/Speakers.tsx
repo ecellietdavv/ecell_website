@@ -7,6 +7,7 @@ import { randomPersonImage } from '../../utils/randomAssets';
 type Speaker = {
   name: string;
   img: string;
+  designation: string;
 };
 
 type SpeakerCardProps = {
@@ -16,7 +17,7 @@ type SpeakerCardProps = {
 };
 
 const SpeakerCard = ({ speaker, eventDate, eventName }: SpeakerCardProps) => {
-  const { name, img } = speaker;
+  const { name, img, designation } = speaker;
   const date = moment(eventDate).date();
   const month = moment(eventDate).format('MMM');
   return (
@@ -40,11 +41,18 @@ const SpeakerCard = ({ speaker, eventDate, eventName }: SpeakerCardProps) => {
           <span className="leading-none uppercase">{month}</span>
         </div>
       </div>
-      <h2 className="z-10 p-5">
-        <span className="font-semibold text-2xl hover:underline text-gray-100">
-          {name}
-        </span>
-      </h2>
+      <div className="z-10 p-5">
+        <h2 className="z-10 p-1">
+          <span className="font-semibold text-2xl hover:underline text-gray-100">
+            {name}
+          </span>
+        </h2>
+        <h4 className="">
+          <span className="font-md text-md hover:underline text-gray-100">
+            {designation}
+          </span>
+        </h4>
+      </div>  
     </div>
   );
 };
