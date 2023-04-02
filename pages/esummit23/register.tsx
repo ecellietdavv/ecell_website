@@ -80,11 +80,15 @@ const ES23Register = () => {
               className="text-4xl font-bold leading-tight lg:text-5xl"
             >
               <Link href="/esummit23" className="hover:underline">
-                E-Summit&apos;23
+                <span>E-Summit&apos;23</span>
               </Link>
             </motion.h2>
             <div className="text-gray-400">
-              <span>Register for E-Summit 2023.</span>
+              <span>
+                Register for E-Summit&apos;23 now to gain valuable insights and
+                networking opportunities, and don&apos;t pass up the opportunity
+                to connect with industry leaders and improve your skills.
+              </span>
             </div>
           </div>
           <motion.div

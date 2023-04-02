@@ -42,17 +42,17 @@ const SpeakerCard = ({ speaker, eventDate, eventName }: SpeakerCardProps) => {
         </div>
       </div>
       <div className="z-10 p-5">
-        <h2 className="z-10 p-1">
+        <h2 className="">
           <span className="font-semibold text-2xl hover:underline text-gray-100">
             {name}
           </span>
         </h2>
         <h4 className="">
-          <span className="font-md text-md hover:underline text-gray-100">
+          <span className="font-md text-md hover:underline text-gray-400">
             {designation}
           </span>
         </h4>
-      </div>  
+      </div>
     </div>
   );
 };

@@ -55,7 +55,7 @@ const EventCard = ({ event, idx }: EventCardProps) => {
         >
           <span>{name}</span> <IoOpenOutline />
         </Link>
-        <p className="text-sm lg:text-md text-gray-400">{desc}</p>
+        <p className="text-md text-gray-400">{desc}</p>
       </div>
     </motion.div>
   );

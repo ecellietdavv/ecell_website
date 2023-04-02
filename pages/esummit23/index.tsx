@@ -21,7 +21,7 @@ const Esummit23 = () => {
     { name: 'Events', scrollTo: 'es23_events' },
     { name: 'Speakers', scrollTo: 'es23_speakers' },
     { name: 'FAQs', scrollTo: 'es23_faqs' },
-    { name: 'Past Sponsors', scrollTo: 'es23_sponsors' },
+    { name: 'Our Sponsors Family', scrollTo: 'es23_sponsors' },
   ];
 
   return (

@@ -33,14 +33,16 @@ const Hero = () => {
                 transition={{ ease: 'easeInOut', delay: 0.5, duration: 2 }}
                 className="text-4xl lg:text-5xl xl:text-7xl uppercase text-white font-bold"
               >
-                Esummit&apos;23
+                E-summit&apos;23
               </motion.h1>
             </div>
 
             <p className="lg:text-md xl:text-lg text-gray-400">
-              The future belongs to those who dream with all their Heart and possess the will of transforming their dreams into reality.
+              The future belongs to those who dream with all their Heart and
+              possess the will of transforming their dreams into reality.
               E-Summit is not just a dream, it is The Vision of Transcendence.
-              Become a crucial part of this two days exciting event. Register today and grab the chance to get a priceless experience!
+              Become a crucial part of this two days exciting event. Register
+              today and grab the chance to get a priceless experience!
             </p>
 
             <Link

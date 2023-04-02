@@ -7,7 +7,7 @@ export const speakerData = [
       designation: 'Founder, MBA Chai Wala',
       img: '/assets/ES/Speakers/praful.png',
     },
-    eventName: 'Yet to be revealed!',
+    eventName: 'Keynote Speaker',
     eventDate: '04-11-2023',
   },
   {
@@ -16,7 +16,7 @@ export const speakerData = [
       designation: 'Founder, Chai Sutta Bar',
       img: '/assets/ES/Speakers/anubhav.png',
     },
-    eventName: 'Yet to be revealed!',
+    eventName: 'Keynote Speaker',
     eventDate: '04-11-2023',
   },
   {
@@ -25,7 +25,7 @@ export const speakerData = [
       designation: 'Motivational Speaker',
       img: '/assets/ES/Speakers/himeesh.png',
     },
-    eventName: 'Yet to be revealed!',
+    eventName: 'Keynote Speaker',
     eventDate: '04-11-2023',
   },
   {
@@ -34,7 +34,7 @@ export const speakerData = [
       designation: 'YouTube Influencer',
       img: '/assets/ES/Speakers/arsh.png',
     },
-    eventName: 'Yet to be revealed!',
+    eventName: 'Keynote Speaker',
     eventDate: '04-12-2023',
   },
   {
@@ -43,7 +43,7 @@ export const speakerData = [
       designation: 'Founder, MarkitUp',
       img: '/assets/ES/Speakers/ishaan.png',
     },
-    eventName: 'Yet to be revealed!',
+    eventName: 'Keynote Speaker',
     eventDate: '04-12-2023',
   },
   {
@@ -52,7 +52,7 @@ export const speakerData = [
       designation: 'Vice President, Vodafone',
       img: '/assets/ES/Speakers/nilesh.png',
     },
-    eventName: 'Yet to be revealed!',
+    eventName: 'Keynote Speaker',
     eventDate: '04-12-2023',
   },
   {
@@ -61,7 +61,7 @@ export const speakerData = [
       designation: 'CEO, StackOS.io',
       img: '/assets/ES/Speakers/vishnu.png',
     },
-    eventName: 'Yet to be revealed!',
+    eventName: 'Keynote Speaker',
     eventDate: '04-12-2023',
   },
 ];
