@@ -35,7 +35,7 @@ const Sponsors = (props: Props) => {
   return (
     <section id="es23_sponsors" className="px-6 sm:px-0">
       <div className="container flex flex-col justify-center p-4 mx-auto md:p-8">
-        <h1 className="heading mb-12">Past Sponsors</h1>
+        <h1 className="heading mb-12">Our Sponsor Family</h1>
         <Marquee
           gradient={true}
           speed={100}
