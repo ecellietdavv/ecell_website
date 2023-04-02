@@ -47,8 +47,8 @@ const SpeakerCard = ({ speaker, eventDate, eventName }: SpeakerCardProps) => {
             {name}
           </span>
         </h2>
-        <h4 className="z-10 p-1">
-          <span className="font-md text-lg hover:underline text-gray-100">
+        <h4 className="">
+          <span className="font-md text-md hover:underline text-gray-100">
             {designation}
           </span>
         </h4>
