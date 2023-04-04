@@ -175,8 +175,8 @@ const ES23Register = () => {
               <option className="text-black" value="Offline">
                 Offline
               </option>
-              <option className="text-black" value="Freinds Refral">
-                Freinds Refral
+              <option className="text-black" value="Friends Referral">
+                Friend&apos;s Referral
               </option>
             </select>
           </div>
