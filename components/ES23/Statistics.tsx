@@ -96,22 +96,22 @@ const Statistics = () => {
         <div className="w-full grid grid-cols-2 lg:grid-cols-4 gap-4 pt-10">
           <StatsCard
             name="Events"
-            value={eventData.length}
+            value={10}
             Icon={BsFillStarFill}
           />
           <StatsCard
             name="Speakers"
-            value={speakerData.length}
+            value={15}
             Icon={BsFillPersonFill}
           />
           <StatsCard
             name="Registrations"
-            value={registrations}
+            value={1500}
             Icon={MdAppRegistration}
           />
           <StatsCard
-            name="Sponsors"
-            value={sponsorData.length}
+            name="Companies"
+            value={15}
             Icon={SiGithubsponsors}
           />
         </div>
