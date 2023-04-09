@@ -9,6 +9,7 @@ import {
 } from '../../data/ES23/timelineData';
 import DotsBG from './DotsBG';
 import { AiFillLeftSquare, AiFillRightSquare } from 'react-icons/ai';
+import { BiDownArrowAlt, BiUpArrowAlt } from 'react-icons/bi';
 
 type Props = {
   date: Date;
@@ -33,6 +34,7 @@ const Timeline = (props: Props) => {
   const TimelineNode = (props: NodeProps) => {
     const { nodeData, number, end } = props;
     const { startTime, endTime, title } = nodeData;
+    const [viewMore, setViewMore] = useState(false);
 
     const sd = moment(startTime).toDate();
     const ed = endTime ? moment(endTime).toDate() : null;
@@ -81,10 +83,26 @@ const Timeline = (props: Props) => {
             <div className="hidden sm:flex w-full h-0.5 bg-gray-700"></div>
           ) : null}
         </div>
-        <div className="mt-3 sm:pr-8">
-          <h4 className="text-lg max-w-[250px] sm:max-w-[300px] font-semibold text-white">
+        <div className="mt-3 sm:pr-8 space-y-2">
+          <h4
+            className={classNames(
+              'text-sm max-w-[250px] sm:max-w-[300px] font-semibold text-white',
+              viewMore ? '' : 'line-clamp-2'
+            )}
+          >
             {title}
           </h4>
+          {title.length > 70 ? (
+            <button
+              className="text-white flex items-center space-x-2"
+              onClick={() => {
+                setViewMore(!viewMore);
+              }}
+            >
+              <span>{viewMore ? 'View less' : 'View more'}</span>
+              {viewMore ? <BiUpArrowAlt /> : <BiDownArrowAlt />}
+            </button>
+          ) : null}
           <time className="block mb-2 text-sm font-normal leading-none text-gray-100">
             {moment(startTime).format('h:mm A')}
             {endTime ? (
@@ -102,7 +120,7 @@ const Timeline = (props: Props) => {
   return (
     <section
       id="es23_timeline"
-      className="sm:h-screen sm:max-h-[600px] md:max-h-[900px] xl:max-h-full sm:overflow-hidden flex flex-col items-center justify-center relative"
+      className="flex flex-col items-center justify-center relative py-10 sm:py-20"
     >
       <DotsBG />
       <Image
@@ -112,14 +130,18 @@ const Timeline = (props: Props) => {
         fill
       />
       <h1 className="heading">Timeline</h1>
-      <div className="text-2xl font-semibold my-3 text-white flex space-x-4 items-center z-10">
+      <div className="text-xl sm:text-2xl font-semibold my-3 text-white flex space-x-4 items-center z-10">
         <AiFillLeftSquare
           className="cursor-pointer"
           onClick={() => {
             setDay(1);
           }}
         />
-        <span>Day {day}</span>
+        <span>
+          Day {day} &#40;
+          {moment(day === 1 ? '2023-04-11' : '2023-04-12').format('LL')}
+          &#41;
+        </span>
         <AiFillRightSquare
           className="cursor-pointer"
           onClick={() => {
@@ -127,7 +149,7 @@ const Timeline = (props: Props) => {
           }}
         />
       </div>
-      <ol className="items-center grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-y-4 sm:gap-y-16 py-10 lg:py-20">
+      <ol className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-y-4 sm:gap-y-16 py-10 lg:py-20 items-start">
         {timelineData.map((data, key) => {
           return (
             <TimelineNode

@@ -12,7 +12,8 @@ export const timelineDataDay1 = [
   {
     startTime: Date.parse('2023-04-12T11:00'),
     endTime: Date.parse('2023-04-12T12:50'),
-    title: 'Inauguration - Chief Guests - Shri Shankar Lalwani Ji (Hon&apos;ble Member of Parliament), Ms. Anugjya Handoo (Asst. Director, MSME)',
+    title:
+      "Inauguration - Chief Guests - Shri Shankar Lalwani Ji (Hon'ble Member of Parliament), Ms. Anugjya Handoo (Asst. Director, MSME)",
   },
   {
     startTime: Date.parse('2023-04-11T13:00'),
@@ -32,7 +33,8 @@ export const timelineDataDay1 = [
   {
     startTime: Date.parse('2023-04-11T14:40'),
     endTime: Date.parse('2023-04-11T15:10'),
-    title: 'Keynote - Mr. Arsh Goyal (Technical Speaker, Gold Medalist, Ex-ISRO',
+    title:
+      'Keynote - Mr. Arsh Goyal (Technical Speaker, Gold Medalist, Ex-ISRO',
   },
   {
     startTime: Date.parse('2023-04-11T15:20'),
@@ -65,12 +67,14 @@ export const timelineDataDay2 = [
   {
     startTime: Date.parse('2023-04-12T11:00'),
     endTime: Date.parse('2023-04-12T12:15'),
-    title: 'Alumni Chronicles - Ms. Vineeta, (Founder & CEO, Systango) Mr. Abhimanyu Sikarawar, Co-founder - Ottoedge, Mr. Naman Jaiswal - Senior PM - ZEE5, IIMK',
+    title:
+      'Alumni Chronicles - Ms. Vineeta, (Founder & CEO, Systango) Mr. Abhimanyu Sikarawar, Co-founder - Ottoedge, Mr. Naman Jaiswal - Senior PM - ZEE5, IIMK',
   },
   {
     startTime: Date.parse('2023-04-12T12:20'),
     endTime: Date.parse('2023-04-12T13:30'),
-    title: 'Panel Discussion - Mr. Sawan S Laddha (Founder Workie, Forbes 40U40), Mr. Himanshu Chaturvedi (Founder Motiongellity), Ms. Aditi Chourasia (Founder Supersourcing)',
+    title:
+      'Panel Discussion - Mr. Sawan S Laddha (Founder Workie, Forbes 40U40), Mr. Himanshu Chaturvedi (Founder Motiongellity), Ms. Aditi Chourasia (Founder Supersourcing)',
   },
   {
     startTime: Date.parse('2023-04-12T13:30'),
@@ -85,12 +89,8 @@ export const timelineDataDay2 = [
   {
     startTime: Date.parse('2023-04-12T15:10'),
     endTime: Date.parse('2023-04-12T16:40'),
-    title: 'SHARKS TANK (Rachna) (Final Round Judges - Runway Incubators, Bangalore, IIT Indore Incubation Center, Vodafone Group',
-  },
-  {
-    startTime: Date.parse('2023-04-12T15:10'),
-    endTime: Date.parse('2023-04-12T16:40'),
-    title: 'SHARKS TANK (Rachna) (Final Round Judges - Runway Incubators, Bangalore, IIT Indore Incubation Center, Vodafone Group',
+    title:
+      'SHARKS TANK (Rachna) (Final Round Judges - Runway Incubators, Bangalore, IIT Indore Incubation Center, Vodafone Group',
   },
   {
     startTime: Date.parse('2023-04-12T17:10'),
