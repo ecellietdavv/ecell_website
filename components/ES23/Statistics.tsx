@@ -94,26 +94,14 @@ const Statistics = () => {
         </div>
 
         <div className="w-full grid grid-cols-2 lg:grid-cols-4 gap-4 pt-10">
-          <StatsCard
-            name="Events"
-            value={10}
-            Icon={BsFillStarFill}
-          />
-          <StatsCard
-            name="Speakers"
-            value={15}
-            Icon={BsFillPersonFill}
-          />
+          <StatsCard name="Events" value={10} Icon={BsFillStarFill} />
+          <StatsCard name="Speakers" value={15} Icon={BsFillPersonFill} />
           <StatsCard
             name="Registrations"
-            value={1500}
+            value={800 + registrations}
             Icon={MdAppRegistration}
           />
-          <StatsCard
-            name="Companies"
-            value={15}
-            Icon={SiGithubsponsors}
-          />
+          <StatsCard name="Companies" value={15} Icon={SiGithubsponsors} />
         </div>
       </motion.div>
     </section>
