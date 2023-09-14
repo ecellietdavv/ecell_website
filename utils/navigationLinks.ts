@@ -2,10 +2,10 @@ export const navItems = [
   { name: 'Home', link: '/' },
   // { name: "Startups", link: "/startups" },
   { name: 'Events', link: '/events' },
-  // { name: "Magazine", link: "/magazine" },
   // { name: "Blogs", link: "/blogs" },
   { name: 'Initiatives', link: '/initiatives' },
   { name: "E-Summit'23", link: '/esummit23' },
+  { name: "Vritant", link: "/magazine" },
 ];
 
 export const dropdownItems = [
