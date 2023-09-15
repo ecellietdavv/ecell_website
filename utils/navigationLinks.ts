@@ -5,7 +5,7 @@ export const navItems = [
   // { name: "Blogs", link: "/blogs" },
   { name: 'Initiatives', link: '/initiatives' },
   { name: "E-Summit'23", link: '/esummit23' },
-  { name: "Newsletter", link: "/magazine" },
+  { name: "Newsletter", link: "/newsletter" },
 ];
 
 export const dropdownItems = [
