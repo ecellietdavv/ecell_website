@@ -41,8 +41,9 @@ const Magazine = () => {
         {
           selectedYear === 2024 ? 
           (   
-            <div className='h-40 flex justify-center items-center'>
-              <h1>Coming Soon</h1>
+            <div style={{position: "relative", paddingTop: "max(60%,324px)", width:"100%", height:0 }}>
+              <iframe style={{position:"absolute", border:"none", width:"100%", height:"100%", left:0, top:0}} src="https://online.fliphtml5.com/dkehx/bqcq/"  seamless="seamless" scrolling="no" frameBorder="0" allowtransparency="true" allowfullscreen="true" >
+              </iframe>
             </div>
           ) : (
             <div style={{position: "relative", paddingTop: "max(60%,324px)", width:"100%", height:0 }}>
