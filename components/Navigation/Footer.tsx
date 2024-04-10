@@ -121,7 +121,7 @@ function Footer() {
               Vishwavidyalaya, Khandwa Road Indore-452017 (M.P.)
             </p>
             <p className="mt-3">
-              ph :<span className="font-semibold">+91 82900 37627</span>
+              ph :<span className="font-semibold">+91 88398 50111</span>
             </p>
           </div>
 
