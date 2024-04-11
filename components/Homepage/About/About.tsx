@@ -35,15 +35,7 @@ const About = ({ id }: AboutProps) => {
           </div>
 
           <p className="dark:text-slate-300 text-sm lg:text-lg mx-auto xl:mx-0 w-3/4 xl:w-5/6 space-y-3">
-            It's a widely accepted saying that "Entrepreneurs are people who
-            solve problems instead of complaining about them" and here at
-            Entrepreneurship Cell, IET DAVV, it's our goal to make the students
-            of today, the entrepreneurs of tomorrow. Entrepreneurs with
-            technical knowledge like our students have an extraordinary capacity
-            to innovate as well as on both, the technical and business fronts.
-            It's our mission not only to introduce disciplined entrepreneurship
-            to our students but to nourish their entrepreneurial spirit to
-            transform their dreams and aspiration into reality.
+            Welcome to E-Cell IET DAVV, a student-driven initiative focused on developing an entrepreneurial spirit amongst young minds. Our mission is to provide a platform for aspiring entrepreneurs and innovators to explore and execute their ideas. We are proud to have helped numerous startups grow and achieve success, with our members winning various entrepreneurship challenges such as National Entrepreneurs challenge at IIT BOMBAY, runner up at Entrepreneurship development drive hosted by IIT MADRAS and being recognized by esteemed institutions. Our goals are to help students develop essential skills such as teamwork, leadership, and critical thinking, preparing them to face the challenges of the corporate world confidently. We strive to create opportunities for our members to network, collaborate, and learn from experienced professionals, further enhancing their growth prospects. Join us as we empower the next generation of entrepreneurs and change-makers.
           </p>
         </div>
 

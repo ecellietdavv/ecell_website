@@ -30,13 +30,13 @@ function HomeHero({ id, heading, img }: HomeHeroProps) {
             viewport={{ once: true }}
             className="flex flex-col w-full justify-center items-center"
           >
-            <div className="h-2 bg-gradient-to-r from-brand-500 to-brand-600 sm:h-4 xl:h-6 md:block hidden w-1/6"></div>
-            <div className="text-white bg-gradient-to-r from-brand-500 to-brand-600  px-3 py-0 font-extrabold uppercase text-xs sm:text-lg lg:text-2xl sm:h-9 sm:w-1/4 text-center">
-              Winners
+            <div className="h-2 bg-gradient-to-r from-brand-500 to-brand-600 sm:h-4 xl:h-6 md:block hidden w-1/6 rounded-t-lg"></div>
+            <div className="text-white bg-gradient-to-r from-brand-500 to-brand-600  px-3 py-0 font-extrabold uppercase text-xs sm:text-lg lg:text-2xl sm:h-9 sm:w-1/4 text-center rounded-t-lg">
+              Esummit 2k23
             </div>
-            <div className="uppercase text-xs md:text-lg text-white font-bold items-center py-1 flex flex-col px-5 bg-black">
-              <h2>National Entrepreneurship Challenge</h2>
-              <h2>IIT Bombay</h2>
+            <div className="uppercase text-xs md:text-lg text-white font-bold items-center py-1 flex flex-col px-5 bg-black rounded-lg">
+              <h2>Central India's Largest Entrepreneurship</h2>
+              <h2>summit</h2>
             </div>
           </motion.div>
 
