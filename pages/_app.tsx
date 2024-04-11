@@ -3,6 +3,15 @@ import '../styles/globals.css';
 import { StoreProvider } from '../utils/Store';
 import type { AppProps } from 'next/app';
 import { DefaultSeo } from 'next-seo';
+import ReactGA from "react-ga4";
+
+ReactGA.initialize("G-R7MWFNR1D1");
+
+// ReactGA.send({
+//   hitType: "pageview",
+//   page: window.location.pathname, // change this
+// })
+
 
 function MyApp({ Component, pageProps, ...appProps }: AppProps) {
   if ([`/admin`].includes(appProps.router.pathname))
