@@ -54,7 +54,7 @@ function HomePage({
 
       <TFCtemplate id="moto" />
       <About id="about" />
-      <SectionDivider img="/assets/section-images/1.JPG" />
+      <SectionDivider img="/assets/section-images/1.jpg" />
       <VisionMission id="vision" />
       <SectionDivider img="/assets/section-images/2.JPG" />
       <Event id="events" events={flagshipEvents} />
