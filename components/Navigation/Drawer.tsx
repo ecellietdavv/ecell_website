@@ -56,6 +56,14 @@ function Drawer() {
                 </Link>
               );
             })}
+            <a
+              className="cursor-pointer bg-mid/30 dark:text-white w-full dark:bg-mid py-3 text-center rounded-lg text-md"
+              href="https://rachna-frontend.vercel.app/"
+              target='_blank'
+              rel="noreferrer" 
+            >
+              Innovision
+            </a>
             <Dropdown name="Collaborations" items={dropdownItems} />
           </ul>
           <button
